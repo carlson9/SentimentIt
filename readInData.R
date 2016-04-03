@@ -1,43 +1,53 @@
-#####
-readInData <- function(batchNumber) {
+#' Read in Data
+#'
+#' Reads in data for specified batch numbers from the website
+#'
+#' @param batchNumbers a vector of batchnumbers 
+#'
+#' @return output a dataframe with the data from the specified rows
+#' @author Jacob M. Montgomery
+#' @note Sometimes the server will fail to send the data to your computer, 
+#'      so this function will try again until it successfully connects to the server.
+#' @examples
+#' x <- 204:208
+#' myData <- readInData(x) 
+#' y <- c(204, 206, 208, 207)
+#' myData2 <- readInData(y)
+#' @seealso \code{\link{subtractSquares}}, \code{\link{addSquares}}
+#' @rdname readInData
+readInDataHelper <- function(batchNumber) {
+  myurl<- GET(paste0('https://sentimentit.herokuapp.com/api/batches/',batchNumber,'/download.json'))
+  myurl <- rawToChar(as.raw(myurl$content))
+  myurl <- strsplit(myurl,'\"')[[1]][4]
+  x <- getURL(myurl)
+  while(nchar(x)<1000){
+    Sys.sleep(20)
+    x <- getURL(myurl)
+  }
+  myurl<- GET(paste0('https://sentimentit.herokuapp.com/api/batches/',batchNumber,'/download.json'))
+  hold <- as.data.frame(read.csv(text = x), stringsAsFactors = FALSE)
+  for(k in 1:ncol(hold)){
+    if(is.factor(hold[,k])) hold[,k] <- as.character(hold[,k])
+  }
+}
+#' @export
+readInData <- function(batchNumbers) {
   # Required packages 
   require(httr)
   require(jsonlite)
   require(RCurl)
-  length_batch <- length(batchNumber)
-
-  # try_count will count how many times function tries to connect to server
-  # Will try five times before giving up
-  try_count <- 0
+  require(plyr)
+  # I use adply because it is easier to do non-sequential 
+  # batch numbers with apply than with a for loop and it allows me to
+  # control inputs into the function.
+  output <- adply(.data=batchNumbers, 
+                  .fun=readInDataHelper, .margins=1)
   #https://sentimentit.com/api/batches/1/download.json 
-  while(try_count <= 5){
-    # TODO: Currently code resets output matrix each try. I am unsure if it should
-    # keep batch numbers which work successfully.
-    output_matrix <- NULL
-    for (i in 1:length_batch){
-      output<- GET(paste0('https://sentimentit.herokuapp.com/api/batches/',batchNumber[i],'/download.json'))
-      myurl <- rawToChar(as.raw(output$content))
-      myurl <- strsplit(myurl,'\"')[[1]][4]
-      x <- getURL(myurl)
-      data <- read.csv(text = x)
-      output_matrix <- cbind(output_matrix, data)
-    }
-    # check if output is correct. If not function tries again.
-    if(nrow(output_matrix) > 1 & ncol(output_matrix) == length_batch ) {
-      try_count <- 6
-    } else {
-      print("Can not connect to server. Will try again in two minutes.")
-      try_count <- try_count + 1
-      Sys.sleep(120)
-    }
-  }
-  if(nrow(output_matrix) < 1 | ncol(output_matrix) != length_batch){
-    return("Could not connect to server now. Please check your batch numbers are accurate and try again later.")
-  }
-  batch_names <- paste("batch ", batchNumber)
-  colnames(output_matrix) <- batch_names
-  return(output_matrix)
+  batch_names <- paste("batch ", batchNumbers)
+  colnames(output) <- batch_names
+  return(output)
 }
+
 
 
 
