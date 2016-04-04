@@ -46,9 +46,11 @@ readInData <- function(batchNumbers) {
                   .fun=readInDataHelper, .margins=1)
   #https://sentimentit.com/api/batches/1/download.json 
   # TODO: Column names for data frame
-  colnames(output) <- c("number","batch number ordered", "batch number")
+  colnames(output) <- c(NULL,"batch_id","comparison_id", "document_id", 
+                        "result", "hit_id", "worker_id", "completed_at")
   return(output)
 }
+readInData(204)
 
 
 
