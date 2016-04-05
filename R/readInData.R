@@ -2,7 +2,7 @@
 #'
 #' Reads in data for specified batch numbers from the website
 #'
-#' @param batchNumbers a vector of batch numbers to download data from.  
+#' @param batchNumbers a vector of batch numbers to download data for.  
 #'
 #' @return output a dataframe with the data from the specified batches
 #' @author Jacob M. Montgomery
