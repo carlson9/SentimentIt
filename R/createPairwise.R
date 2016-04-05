@@ -15,14 +15,14 @@ createPairwise <- function(ids, number_per){
   # This code sets up the random pairwise comparisons
   pairwise<-cbind(rep(documents, (number_per+1)%/%2), matrix(replicate((number_per+1)%/%2, sample(documents)), ncol=1))
   duplicates<-pairwise[which(pairwise[,1]==pairwise[,2]),]
-  
+
   # some ugly code to keep documents from being compared with themselves
   if(!is.null(nrow(duplicates))){
     while(nrow(duplicates)>1){
       duplicates[,1]<-duplicates[sample(1:nrow(duplicates)),1]
       pairwise[which(pairwise[,1]==pairwise[,2]),]<-duplicates
       duplicates<-matrix(pairwise[which(pairwise[,1]==pairwise[,2]),], ncol=2)
-    }	
+    }
     if(nrow(duplicates)==1){
       oneIndex<-which(pairwise[,1]==pairwise[,2])
       oneValue<-pairwise[oneIndex,2]
@@ -43,3 +43,4 @@ createPairwise <- function(ids, number_per){
   }
   return(pairwise)
 }
+#' @export
