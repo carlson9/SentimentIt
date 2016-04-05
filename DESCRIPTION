@@ -1,11 +1,11 @@
 Package: sentimentIt
-Type: Package
+Type: Package for document review.
 Title: To use for sending out sentiment documents to review.
 Version: 0.1
 Date: 2016-04-04
 Author: David Carlson
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Maintainer: David Carlson 
+Description: This package sends out, reads, and brings in data regarding reviewing sentiment texts.
+License: 0.0.1
 LazyData: TRUE
 RoxygenNote: 5.0.1
