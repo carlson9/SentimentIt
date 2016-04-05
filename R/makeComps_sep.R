@@ -16,7 +16,7 @@
 #' @author David Carlson
 #' @note Makes use of the createPairwise function. Also requires the jsonlite and httr packages.
 #' @rdname makeComps_sep
-
+#' @export
 makeComps_sep <- function(ids, number_per, batches, question, per_batch=1000, path=NULL, name=NULL, idsAsComps=FALSE){
   if(!idsAsComps){
     pairwise <- createPairwise(ids, number_per)

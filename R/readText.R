@@ -14,6 +14,7 @@
 #'
 #' @author David Carlson
 #' @rdname readText
+#' @export
 readText <- function(pathfrom, pathto=NULL, what='character', sep='\n', quiet=TRUE, index=NULL, which_source='apiR', ...){
   if(!is.null(index)){
     hold.table <- read.table(file=pathfrom, sep=sep, ...)

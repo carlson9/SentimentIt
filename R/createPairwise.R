@@ -9,6 +9,7 @@
 #'
 #' @note This function requires the usage of the plyr package.
 #' @rdname createPairwise
+#' @export
 createPairwise <- function(ids, number_per){
   documents <- unique(as.numeric(ids))
   require(plyr)

@@ -10,6 +10,7 @@
 #'
 #' @note This function requires the usage of the httr and jsonlite packages.
 #' @rdname createHITSSmall
+#' @export
 createHITSSmall<-function(comp_ids=NULL, HITsetting=9, batch_id){
   require(httr)
   require(jsonlite)
