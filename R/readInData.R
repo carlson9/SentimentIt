@@ -8,6 +8,7 @@
 #' @author Jacob M. Montgomery
 #' @note Sometimes the server will fail to send the data to your computer, 
 #'      so this function will try again until it successfully connects to the server.
+#'      This package requieres httr, jsonlite, and RCurl to work.
 #' @examples
 #' 
 #' x <- 204:208
@@ -21,7 +22,10 @@ readInData <- function(batchNumbers) {
   require(httr)
   require(jsonlite)
   require(RCurl)
+  # Put the batchNumbers in numerical order since the server runs 
+  # faster when in order.
   batchNumbers <- batchNumbers[sort.list(batchNumbers)]
+  try_count <- 0
   output<-data.frame()
   for(i in batchNumbers){
     myurl<- GET(paste0('https://sentimentit.herokuapp.com/api/batches/',i,'/download.json'))
@@ -29,9 +33,16 @@ readInData <- function(batchNumbers) {
     myurl <- strsplit(myurl,'\"')[[1]][4]
     
     x <- getURL(myurl)
-    while(nchar(x)<1000){
+    while(nchar(x)<1000 & try_count < 6){
       Sys.sleep(20)
       x <- getURL(myurl)
+      try_count <- try_count + 1
+    }
+    if (try_count == 5 &){
+      warning_message <- paste("Failed to connect to server to retrieve
+                               batch number",i, ". Try again and makes sure the batch number exists.")
+      warning(warning_message)
+      stop()
     }
     myurl<- GET(paste0('https://sentimentit.herokuapp.com/api/batches/',i,'/download.json'))
     hold <- as.data.frame(read.csv(text = x), stringsAsFactors = FALSE)
@@ -42,7 +53,6 @@ readInData <- function(batchNumbers) {
   }
  return(output) 
 }
-
 
 
 
