@@ -9,3 +9,4 @@ Description: This package sends out, reads, and brings in data regarding reviewi
 License: 0.0.1
 LazyData: TRUE
 RoxygenNote: 5.0.1
+Suggests: testthat

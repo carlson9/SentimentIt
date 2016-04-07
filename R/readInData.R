@@ -2,47 +2,64 @@
 #'
 #' Reads in data for specified batch numbers from the website
 #'
-#' @param batchNumbers a vector of batch numbers to download data for.  
+#' @param batchNumbers a vector of batch numbers to download data for.
 #'
-#' @return output a dataframe with the data from the specified batches
+#' @return output a dataframe with the data from the specified batches with columns
+#' \describe{
+#'   \item{batch_id}{the batch number}
+#'   \item{comparison_id}{id number of the comparison being made}
+#'   \item{document_id}{id number of the document}
+#'   \item{result}{result of document comparison}
+#'   \item{hit_id}{id of the hit}
+#'   \item{worker_id}{id of the worker who did the comparison}
+#'   \item{completed_at}{time comaparison was completed}
+#' }
 #' @author Jacob M. Montgomery
-#' @note Sometimes the server will fail to send the data to your computer, 
-#'      so this function will try again until it successfully connects to the server.
-#'      This package requieres httr, jsonlite, and RCurl to work.
+#' @note Sometimes the server will fail to send the data to your computer,
+#'      so this function will try again 5 times until it successfully connects to the server.
+#'      This function requires
+#'      \itemize{
+#'        \item httr
+#'        \item jsonlite
+#'        \item RCurl
+#'      }
 #' @examples
-#' 
+#'
 #' x <- 204:208
-#' myData <- readInData(x) 
+#' myData <- readInData(x)
 #' y <- c(204, 206, 208, 207)
 #' myData2 <- readInData(y)
 #' @rdname readInData
 #' @export
 readInData <- function(batchNumbers) {
-  # Required packages 
+  # Required packages
   require(httr)
   require(jsonlite)
   require(RCurl)
-  # Put the batchNumbers in numerical order since the server runs 
-  # faster when in order.
+  if (!is.vector(batchNumbers) | !is.numeric(batchNumbers)) {
+
+    stop("batchNumbers needs to be a vector of numerics")
+  }
+  # Put the batchNumbers in numerical order and remove duplicates
+  batchNumbers <- unique(batchNumbers)
   batchNumbers <- batchNumbers[sort.list(batchNumbers)]
-  try_count <- 0
   output<-data.frame()
   for(i in batchNumbers){
     myurl<- GET(paste0('https://sentimentit.herokuapp.com/api/batches/',i,'/download.json'))
     myurl <- rawToChar(as.raw(myurl$content))
     myurl <- strsplit(myurl,'\"')[[1]][4]
-    
     x <- getURL(myurl)
-    while(nchar(x)<1000 & try_count < 6){
+    # attempt to connect to server until data is downloaded
+    try_count <- 0
+    while(nchar(x) < 1000 & try_count < 10){
       Sys.sleep(20)
       x <- getURL(myurl)
-      try_count <- try_count + 1
+      try_count = try_count + 1
     }
-    if (try_count == 5 &){
-      warning_message <- paste("Failed to connect to server to retrieve
-                               batch number",i, ". Try again and makes sure the batch number exists.")
-      warning(warning_message)
-      stop()
+    if(nchar(x) < 1000 & try_count == 10){
+      message <- paste("Failed to download batch", i,
+                       "try again later and check that the batch number exists.")
+      warning(message)
     }
     myurl<- GET(paste0('https://sentimentit.herokuapp.com/api/batches/',i,'/download.json'))
     hold <- as.data.frame(read.csv(text = x), stringsAsFactors = FALSE)
@@ -51,9 +68,8 @@ readInData <- function(batchNumbers) {
     }
     output <- rbind(output,hold)
   }
- return(output) 
+ return(output)
 }
-
 
 
 

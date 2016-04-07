@@ -4,13 +4,14 @@ library(roxygen2)
 library(jsonlite)
 library(httr)
 library(plyr)
+library(testthat)
 
-setwd("") # This will need to be changed to match your directory of where the package is.
-
+setwd("/Users/davidflast/Documents/SentimentIt")
+# This will need to be changed to match your directory of where the package is.
 ## This is run once when the package strcuture is first created
 
 
-## At this point put the *.R files into the correcto directories and edit the DESCRIPTION file
+## At this point put the *.R files into the correct directories and edit the DESCRIPTION file
 
 ## Let's look through the R directory in this order:
 
@@ -23,7 +24,15 @@ setwd("") # This will need to be changed to match your directory of where the pa
 
 # Now the NAMESPACE
 
+# set up tests and data in package
+devtools::use_testthat()
 ## This can be run many times as the code is updates
 current.code <- as.package("sentimentIt")
 load_all(current.code)
 document(current.code)
+test_file(path="tests/testthat/readInDataTests.R")
+
+# Create data set for readInData
+readInDataExample <- readInData(204:208)
+devtools::use_data(readInDataExample)
+
