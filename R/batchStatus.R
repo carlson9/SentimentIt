@@ -13,8 +13,13 @@
 #'   \item expired_count
 #' }
 #' @author David Carlson
-#'
 #' @note This function requires the usage of the jsonlite packages
+#' @examples
+#'
+#' x <- 204:208
+#' status <- batchStatus(x)
+#' y <- c(204, 206, 208, 207)
+#' status2 <- batchStatus(y)
 #' @rdname batchStatus
 #' @export
 batch_status <- function(batch_id){

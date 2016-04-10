@@ -7,22 +7,37 @@
 readInData(batchNumbers)
 }
 \arguments{
-\item{batchNumbers}{a vector of batch numbers to download data from.}
+\item{batchNumbers}{a vector of batch numbers to download data for.}
 }
 \value{
-output a dataframe with the data from the specified batches
+output a dataframe with the data from the specified batches with columns
+\describe{
+  \item{batch_id}{the batch number}
+  \item{comparison_id}{id number of the comparison being made}
+  \item{document_id}{id number of the document}
+  \item{result}{result of document comparison}
+  \item{hit_id}{id of the hit}
+  \item{worker_id}{id of the worker who did the comparison}
+  \item{completed_at}{time comaparison was completed}
+}
 }
 \description{
 Reads in data for specified batch numbers from the website
 }
 \note{
-Sometimes the server will fail to send the data to your computer, 
-     so this function will try again until it successfully connects to the server.
+Sometimes the server will fail to send the data to your computer,
+     so this function will try again 5 times until it successfully connects to the server.
+     This function requires
+     \itemize{
+       \item httr
+       \item jsonlite
+       \item RCurl
+     }
 }
 \examples{
 
 x <- 204:208
-myData <- readInData(x) 
+myData <- readInData(x)
 y <- c(204, 206, 208, 207)
 myData2 <- readInData(y)
 }

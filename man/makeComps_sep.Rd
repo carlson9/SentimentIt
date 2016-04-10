@@ -18,7 +18,11 @@ makeComps_sep(ids, number_per, batches, question, per_batch = 1000,
 
 \item{per_batch}{If true, this does not print the amount of items read prior.}
 
-\item{idsAsComps}{}
+\item{path}{File path}
+
+\item{name}{File name}
+
+\item{idsAsComps}{IDs as comparison}
 }
 \value{
 A table with the text and correspondings ID's that can be sent.

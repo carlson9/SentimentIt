@@ -14,6 +14,8 @@ readText(pathfrom, pathto = NULL, what = "character", sep = "\\n",
 
 \item{quiet}{If true, this does not print the amount of items read prior.}
 
+\item{index}{The index number}
+
 \item{which_source}{What type of file is the text being drawn from.}
 
 \item{pathFrom}{Where the text will be drawn from.}

@@ -8,17 +8,19 @@
 #' @param batch_id id of the Batch of comparisons
 #'
 #' @return out ID for batch of comparisons
-#'
 #' @author David Carlson
-#'
 #' @note This function requires the usage of the httr and jsonlite packages.
+#' @examples
+#'
+#' createHITS(ids=10,HITsetting=2)
+#' createHITS(batch_id=204)
 #' @rdname createHITS
 #' @export
-create_hits<-function(ids=NULL, HITsetting=NULL, batch_id){
+create_hits <- function(ids=NULL, HITsetting=NULL, batch_id){
   require(httr)
   require(jsonlite)
   if(is.null(comp_ids)){
-    args <- paste('batch_id=', batch_id,"" sep='')
+    args <- paste('batch_id=', batch_id,"" ,sep='')
   }else{
     args <- paste('hit_setting=', HITsetting, '&ids=', paste(comp_ids,collapse=','), sep='')
   }
