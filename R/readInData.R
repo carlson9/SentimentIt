@@ -37,7 +37,6 @@ readInData <- function(batchNumbers) {
   require(jsonlite)
   require(RCurl)
   if (!is.vector(batchNumbers) | !is.numeric(batchNumbers)) {
-
     stop("batchNumbers needs to be a vector of numerics")
   }
   # Put the batchNumbers in numerical order and remove duplicates

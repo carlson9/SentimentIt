@@ -5,7 +5,7 @@ library(jsonlite)
 library(httr)
 library(plyr)
 library(testthat)
-
+?GET
 setwd("/Users/davidflast/Documents/SentimentIt")
 # This will need to be changed to match your directory of where the package is.
 ## This is run once when the package strcuture is first created
@@ -30,6 +30,7 @@ devtools::use_testthat()
 current.code <- as.package("sentimentIt")
 load_all(current.code)
 document(current.code)
+
 test_file(path="tests/testthat/readInDataTests.R")
 
 # Create data set for readInData

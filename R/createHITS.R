@@ -1,21 +1,24 @@
-#' Views the hits and data of reviews of two documents.
+#' Create New Hits for comparisons
+#' 
+#' This function takes in id numbers of texts and hit settings, or a batch id, and it creates 
+#' HITS for comparison.
+#' 
+#' @param ids Comma-separated list of comparison ids for which to create hits
+#' @param HITsetting id of the HIT Setting to use for the created HITs
+#' @param batch_id id of the Batch of comparisons
 #'
-#' @param comp_ids The id numbers of the texts you want to use.
-#' @param HITsetting HITsetting
-#' @param batch_id Which batch will the reviews be taken from.
-#'
-#' @return Creates a document with the texts to be compared.
+#' @return out ID for batch of comparisons
 #'
 #' @author David Carlson
 #'
 #' @note This function requires the usage of the httr and jsonlite packages.
-#' @rdname createHITSSmall
+#' @rdname createHITS
 #' @export
-createHITSSmall<-function(comp_ids=NULL, HITsetting=9, batch_id){
+create_hits<-function(ids=NULL, HITsetting=NULL, batch_id){
   require(httr)
   require(jsonlite)
   if(is.null(comp_ids)){
-    args <- paste('batch_id=', batch_id, sep='')
+    args <- paste('batch_id=', batch_id,"" sep='')
   }else{
     args <- paste('hit_setting=', HITsetting, '&ids=', paste(comp_ids,collapse=','), sep='')
   }
@@ -27,4 +30,3 @@ createHITSSmall<-function(comp_ids=NULL, HITsetting=9, batch_id){
   }
   return(out)
 }
-#' @export
