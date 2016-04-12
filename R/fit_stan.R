@@ -1,21 +1,34 @@
-#' Fit STAN Model with Square
+#' Fit STAN Model
 #'
-#' Fit STAN model with square
+#' Fit STAN model
 #'
 #'
-#' @param data a dataset
+#' @param data A csv file or a vector of batch numbers
+#' @param chains The number of chains (defalt is 3)
+#' @param iter The number of iteration (defalt is 2500)
+#' @param seed Set seed (defalt is 1234)
 #'
 #' @return STAN output
 #'
 #' @author David Carlson
 #'
-#' @rdname fit_stan_squre
+#' @seealso \code{\link{fit_stan_hier}}, \code{\link{ckeck_workers}}, \code{\link{stanWrapper}}
+#'
+#' @rdname fit_stan
 #'
 #' @export
-fit_stan_square <- function(data){
-  require(rstan)
+fit_stan <- function(data, chains=3, iter=2500, seed=1234){
+
   rstan_options(auto_write = TRUE)
   options(mc.cores = parallel::detectCores())
+
+  if(is.vector(data)==TRUE){
+    data <- readInData(data)
+  }
+
+  if(dim(data)[2] != 7){
+    stop("data dimension mismatches")
+  }
 
   y <- data$result[seq(1, dim(data)[1], by=2)]
   z <- y
@@ -31,13 +44,13 @@ fit_stan_square <- function(data){
   P <- length(unique(j))
 
   ### need to recode ids ###
-  hold.ids <- sort(unique(g))
-  hold.ids.real <- g
+  #hold.ids <- sort(unique(g))
+  #hold.ids.real <- g
   #length(as.factor(g))
   g <- as.numeric(as.factor(g))
   h <- as.numeric(as.factor(h))
 
-  fit <- stan(file="~/SentimentIt/SentimentIt/model_code_square.stan", data=c("y", "g", "h", "N", "M", "P", "j"),
-              chains=3, iter=2500, seed=1234)
+  fit <- stan(file="~/SentimentIt/model_code.stan", data=c("y", "g", "h", "N", "M", "P", "j"),
+              chains=chains, iter=iter, seed=seed)
   return(fit)
 }

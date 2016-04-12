@@ -1,9 +1,0 @@
-{
-    "path" : "~/SentimentIt/SentimentIt",
-    "sortOrder" : [
-        {
-            "ascending" : true,
-            "columnIndex" : 2
-        }
-    ]
-}
