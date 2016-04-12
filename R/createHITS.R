@@ -16,13 +16,16 @@
 #' createHITS(batch_id=204)
 #' @rdname createHITS
 #' @export
-create_hits <- function(ids=NULL, HITsetting=NULL, batch_id){
+createHITS <- function(ids=NULL, HITsetting=NULL, batch_id){
   require(httr)
   require(jsonlite)
-  if(is.null(comp_ids)){
+  if(!is.numeric(ids) | !is.numeric(HITsetting) | !is.numeric(batch_id)){
+    stop("All arguments need to be numeric.")
+  }
+  if(is.null(ids)){
     args <- paste('batch_id=', batch_id,"" ,sep='')
   }else{
-    args <- paste('hit_setting=', HITsetting, '&ids=', paste(comp_ids,collapse=','), sep='')
+    args <- paste('hit_setting=', HITsetting, '&ids=', paste(ids,collapse=','), sep='')
   }
   myget <- GET(paste('http://sentimentit.herokuapp.com/api/comparisons/create_hits?',
                      args, sep=''))

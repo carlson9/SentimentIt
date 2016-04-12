@@ -5,7 +5,8 @@ library(jsonlite)
 library(httr)
 library(plyr)
 library(testthat)
-?GET
+
+# Davidflasterstein path
 setwd("/Users/davidflast/Documents")
 # This will need to be changed to match your directory of where the package is.
 ## This is run once when the package strcuture is first created
@@ -29,7 +30,9 @@ setwd("/Users/davidflast/Documents")
 current.code <- as.package("sentimentIt")
 load_all(current.code)
 document(current.code)
-?readInData
+# test_dir continues to throw error that I cannot change the working directory. 
+# need to figure out what is relative path so we can run all tests.
+test_dir(path="tests/testthat")
 
 test_file(path="tests/testthat/readInDataTests.R")
 

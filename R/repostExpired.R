@@ -9,4 +9,4 @@ repostExpired <- function(batch_id){
     PUT('https://sentimentit.herokuapp.com/api/batches/',i,'/repost_expired.json')
   }
 }
-repostExpired(2)
+
