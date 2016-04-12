@@ -4,7 +4,7 @@ Title: A package for interacting with SentimentIt website through R
 Version: 0.1
 Date: 2016-04-04
 Authors@R: c(
-    person("Jacob", "Montgomery", email = "jacob.montgomery@wustl.edu", role = c("cre","aut")),
+    person("Jacob", "Montgomery", email = "jacob.montgomery@wustl.edu", role = "aut"),
     person("David", "Carlson", email = "carlson.david@wustl.edu", role = c("aut", "cre")))
 Description: This package interacts with the SentimentIt website. It can download data
     from completed batches, create new batches, and manage with Amazon Turk workers.
