@@ -1,12 +1,22 @@
 Package: sentimentIt
 Type: Package for document review.
-Title: To use for sending out sentiment documents to review.
+Title: A package for interacting with SentimentIt website through R
 Version: 0.1
 Date: 2016-04-04
-Author: David Carlson
-Maintainer: David Carlson 
-Description: This package sends out, reads, and brings in data regarding reviewing sentiment texts.
+Authors@R: c(
+    person("Jacob", "Montgomery", email = "jacob.montgomery@wustl.edu", role = c("cre","aut")),
+    person("David", "Carlson", email = "carlson.david@wustl.edu", role = c("aut", "cre")))
+Description: This package interacts with the SentimentIt website. It can download data
+    from completed batches, create new batches, and manage with Amazon Turk workers.
 License: 0.0.1
 LazyData: TRUE
 RoxygenNote: 5.0.1
-Suggests: testthat
+Collate:
+Imports:
+    plyr,
+    jsonlite,
+    httr,
+    RCurl
+Suggests: 
+    testthat,
+    devtools
