@@ -16,8 +16,8 @@ Imports:
     plyr,
     jsonlite,
     httr,
-    RCurl
-	rstan
+    RCurl,
+	  rstan
 Suggests: 
     testthat,
     devtools

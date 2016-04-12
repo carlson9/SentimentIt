@@ -31,7 +31,8 @@ createHITS <- function(ids=NULL, HITsetting=NULL, batch_id){
                      args, sep=''))
   mytry <- try(out<-fromJSON(rawToChar(as.raw(myget$content))))
   if(class(mytry) == "try-error"){
-    out <- NULL
+    out <- 'error'
   }
   return(out)
 }
+

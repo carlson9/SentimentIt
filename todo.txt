@@ -38,6 +38,21 @@ David
 
 
     2nd: once the above is done, we will need to write several wrapper functions that can run through the entire workflow -- this will need to have several lower level wrappers so that the user can choose which level of automation they want. we will also want to create some more lower level automated functions. this will include putting the timed function into the package after ensuring it would work with some trivial functionality, and we will also want to create a very similar function (possibly using a lower level function that the timed one could also use) that uses batch status instead of time. These functions will also need to use Taishi's functions so it can ban workers automatically. We will discuss details once the first assignment is done.
+  2nd: 
+## work flow:
+# make batches on GUI
+# create comparisons with vector of batches using 
+#   makeComps_sep(ids, number_per, batches, question, 
+#    per_batch=1000, path=NULL, name=NULL)
+# if above step is put into wrapper function need to add
+#    Sys.sleep(10 minutes default but make arg) to make sure they get up
+# make HITs using createHITStimed(batches, time_per, mintime, maxtime)
+# check workers every time batch is in arg checkWorkersAt
+# ban and certify workers that are deviant argument of two cert names
+# after it is completed, repost all batches
+###
+# another wrapper that checks status of batches and reposts when <5 are not done
+
 
 
 

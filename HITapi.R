@@ -189,6 +189,7 @@ createHITStimed <- function(batches, time_per, mintime, maxtime){
       out[i] <- 'error'
     }
     Sys.sleep(time_per*3600)
+    # fitSTan, checkWorkers
     #could alter above to check if batch is completed
   }
   return(out)
@@ -280,13 +281,18 @@ checkNotDone <- function(batches, pairwisepath='pairwise.Rdata'){
 
 ## work flow:
 # make batches on GUI
-# create comparisons with vector of batches using makeComps_sep(ids, number_per, batches, question, per_batch=1000, path=NULL, name=NULL)
-# if above step is put into wrapper function need to add Sys.sleep to make sure they get up
+# create comparisons with vector of batches using 
+#   makeComps_sep(ids, number_per, batches, question, 
+#    per_batch=1000, path=NULL, name=NULL)
+# if above step is put into wrapper function need to add
+#    Sys.sleep(10 minutes default but make arg) to make sure they get up
 # make HITs using createHITStimed(batches, time_per, mintime, maxtime)
-# run checkNotDone(batches, pairwisepath='pairwise.Rdata')
-# make new batch(es) on GUI
-# use makeComps_sep() but set ids to pairwise missing and idsAsComps TRUE
-# continue as needed
+# check workers every time batch is in arg checkWorkersAt
+# ban and certify workers that are deviant argument of two cert names
+# after it is completed, repost all batches
+###
+# another wrapper that checks status of batches and reposts when <5 are not done
+
 
 
 #takes a stan model fit as argument model, doc_ids (a vector), probability R, stage (l in the write-up), and num.posterior (number of rows of posterior to use, evenly spaced)
