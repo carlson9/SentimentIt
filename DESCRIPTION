@@ -17,7 +17,7 @@ Imports:
     jsonlite,
     httr,
     RCurl,
-	  rstan
+	rstan
 Suggests: 
     testthat,
     devtools

@@ -4,12 +4,15 @@
 \alias{fit_stan_hier}
 \title{Fit STAN Hierarchical Model}
 \usage{
-fit_stan_hier(data, hier_data, chains, iter, seed)
+fit_stan_hier(data, hierarchy_data, hierarchy_var, chains = 3, iter = 2500,
+  seed = 1234)
 }
 \arguments{
 \item{data}{A csv file or a vector of batch numbers}
 
-\item{hier_data}{The data used for a hierarchy. One column should be document id and the other column should be a group used as a hierarchy}
+\item{hierarchy_data}{A file that contains the variable that is used as a hierarchy}
+
+\item{hierarchy_var}{A name of the variable in \code{hierarchy_data} that is used as a hierarchy}
 
 \item{chains}{The number of chains (defalt is 3)}
 
