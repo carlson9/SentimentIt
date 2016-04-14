@@ -10,7 +10,7 @@
 #' @param iter The number of iteration (defalt is 2500)
 #' @param seed Set seed (defalt is 1234)
 #' 
-#' @return fit_hier 
+#' @return fitStanHier 
 #'
 #' @author David Carlson
 #'
