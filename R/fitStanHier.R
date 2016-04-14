@@ -24,7 +24,7 @@ fitStanHier <- function(data, hierarchy_data, hierarchy_var, chains=3, iter=2500
   rstan_options(auto_write = TRUE)
   options(mc.cores = parallel::detectCores())
 
-  if(is.vector(data)==TRUE){
+  if(is.vector(data)){
     data <- readInData(data)
   }
 
@@ -49,7 +49,7 @@ fitStanHier <- function(data, hierarchy_data, hierarchy_var, chains=3, iter=2500
   M <- length(unique(c(g, h)))
   N <- length(y)
   P <- length(unique(j))
-  D <- length(unique(c(q, k)))
+  D <- length(unique(k))
   ### need to recode ids ###
   #hold.ids <- sort(unique(g))
   #hold.ids.real <- g

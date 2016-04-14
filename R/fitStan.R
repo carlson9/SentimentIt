@@ -22,7 +22,7 @@ fitStan <- function(data, chains=3, iter=2500, seed=1234){
   rstan_options(auto_write = TRUE)
   options(mc.cores = parallel::detectCores())
 
-  if(is.vector(data)==TRUE){
+  if(is.vector(data)){
     data <- readInData(data)
   }
 
