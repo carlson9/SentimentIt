@@ -9,7 +9,6 @@
 #'
 #' @return out ID for batch of comparisons
 #' @author David Carlson
-#' @note This function requires the usage of the httr and jsonlite packages.
 #' @examples
 #'
 #' createHITS(ids=10,HITsetting=2)
@@ -17,8 +16,6 @@
 #' @rdname createHITS
 #' @export
 createHITS <- function(ids=NULL, HITsetting=NULL, batch_id){
-  require(httr)
-  require(jsonlite)
   if(!is.numeric(ids) | !is.numeric(HITsetting) | !is.numeric(batch_id)){
     stop("All arguments need to be numeric.")
   }

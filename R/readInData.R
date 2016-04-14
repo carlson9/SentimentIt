@@ -17,12 +17,6 @@
 #' @author Jacob M. Montgomery
 #' @note Sometimes the server will fail to send the data to your computer,
 #'      so this function will try again 5 times until it successfully connects to the server.
-#'      This function requires
-#'      \itemize{
-#'        \item httr
-#'        \item jsonlite
-#'        \item RCurl
-#'      }
 #' @examples
 #'
 #' x <- 204:208
@@ -32,10 +26,6 @@
 #' @rdname readInData
 #' @export
 readInData <- function(batchNumbers) {
-  # Required packages
-  require(httr)
-  require(jsonlite)
-  require(RCurl)
   if (!is.vector(batchNumbers) | !is.numeric(batchNumbers)) {
     stop("batchNumbers needs to be a vector of numerics")
   }

@@ -12,12 +12,24 @@ License: 0.0.1
 LazyData: TRUE
 RoxygenNote: 5.0.1
 Collate:
+    'createHITS.R'
+    'batchStatus.R'
+    'createPairwise.R'
+    'readInData.R'
+    'readText.R'
+    'repostExpired.R'
+    'checkWorkers.R'
+    'fitStan.R'
+    'fitStanHier.R'
+    'stanWrapper.R'
+    'makeCompsSep.R'
+    'createHITSTimed.R'
 Imports:
     plyr,
     jsonlite,
     httr,
     RCurl,
-	rstan
+	  RStan
 Suggests: 
     testthat,
     devtools

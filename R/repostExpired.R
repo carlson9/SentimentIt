@@ -1,5 +1,17 @@
+#' Repost expired HITS from a batch
+#' 
+#' This function takes in expired batch_ids and reposts them to create new comparisons.
+#' 
+#' @param batch_id ID of batch to check
+#'
+#' @return out reposted count
+#' @author David Carlson
+#' @examples
+#'
+#' repostExpired(batch_id=2)
+#' @rdname repostExpired
+#' @export
 repostExpired <- function(batch_id){
-  require(jsonlite)
   if (!is.vector(batch_id) | !is.numeric(batch_id)) {
     stop("batch_id needs to be a vector of numerics")
   }

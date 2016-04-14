@@ -21,8 +21,6 @@ readText <- function(pathfrom, pathto=NULL, what='character', sep='\n', quiet=TR
     textToSend <- hold.table[,index]
   }else textToSend <- scan(file=pathfrom, what=what, sep=sep, quiet=quiet, ...)
   args <- mapply(function(x,y) list(text=x, source=y), textToSend, which_source, SIMPLIFY=FALSE, USE.NAMES=FALSE)
-  require(jsonlite)
-  require(httr)
   args <- toJSON(list("documents"=args), auto_unbox=TRUE)
   mypost <- POST('http://sentimentit.herokuapp.com/api/documents/find_or_create.json',
                  body = args, content_type_json(),

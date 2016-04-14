@@ -12,7 +12,6 @@
 #' @export
 createPairwise <- function(ids, number_per){
   documents <- unique(as.numeric(ids))
-  require(plyr)
   # This code sets up the random pairwise comparisons
   pairwise<-cbind(rep(documents, (number_per+1)%/%2), matrix(replicate((number_per+1)%/%2, sample(documents)), ncol=1))
   duplicates<-pairwise[which(pairwise[,1]==pairwise[,2]),]

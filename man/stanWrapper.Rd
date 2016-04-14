@@ -4,16 +4,13 @@
 \alias{stanWrapper}
 \title{Fit STAN Model and Detect Outlying Workers}
 \usage{
-stanWrapper(data, hierarchy_data = NULL, hierarchy_var = NULL,
-  returnFit = FALSE, plot = FALSE, file = NULL, chains = 3,
-  iter = 2500, seed = 1234)
+stanWrapper(data, hier_data = NULL, returnFit = FALSE, plot = FALSE,
+  file = NULL, chains = 3, iter = 2500, seed = 1234)
 }
 \arguments{
 \item{data}{A csv file or a vector of batch numbers}
 
-\item{hierarchy_data}{A file that contains the variable that is used as a hierarchy (defalt is NULL)}
-
-\item{hierarchy_var}{A name of the variable in \code{hierarchy_data} that is used as a hierarchy (defalt is NULL)}
+\item{hier_data}{The data used for a hierarchy. One column should be document id and the other column should be a group used as a hierarchy. Defalt is NULL, and unless speficied, this function fits fit_stan}
 
 \item{returnFit}{Return a fit object if TRUE (degfalt is FALSE)}
 
