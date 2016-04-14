@@ -4,7 +4,7 @@
 #'
 #' @param batches Vector of Batch numbers to check
 #'
-#' @return
+#' @return out ID for batch of comparisons
 #' @author Jacob M. Montgomery
 #' @note 
 #' @examples
@@ -12,20 +12,16 @@
 #' @rdname createHITSTimed
 #' @export
 createHITStimed <- function(batches, time_per, mintime, 
-                            maxtime, worker_check=NULL){
+                            maxtime, checkWorkersAt=NULL){
   out <- vector()
   for(i in batches){
     checkTime(mintime, maxtime)
     x <- createHITS(batch_id=i)
     out[i] <- x
     Sys.sleep(time_per*3600)
-    # TODO: Add in fitStan and checkWorkers to check and ban workers
-    # every time an indicated batch is run.
-    if(any(i %in% worker_check)) {
+    if(any(i %in% checkWorkersAt)) {
       stanWrapper(data=i)
     }
-    # fitSTan, checkWorkers
-    #could alter above to check if batch is completed
   }
   return(out)
 }

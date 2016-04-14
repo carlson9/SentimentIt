@@ -14,10 +14,10 @@
 #'
 #' @seealso \code{\link{fit_stan}}, \code{\link{fit_stan_hier}}, \code{\link{stanWrapper}}
 #'
-#' @rdname check_workers
+#' @rdname checkWorkers
 #'
 #' @export
-check_workers <- function(fit, data, plot=FALSE, file=NULL){
+checkWorkers <- function(fit, data, plot=FALSE, file=NULL){
 
   if(!("worker_id" %in% colnames(data))){
     stop("worker_id is not in data")

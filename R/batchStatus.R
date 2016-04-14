@@ -23,7 +23,6 @@
 #' @rdname batchStatus
 #' @export
 batch_status <- function(batch_id){
-  require(jsonlite)
   if (!is.vector(batch_id) | !is.numeric(batch_id)) {
     stop("batch_id needs to be a vector of numerics")
   }

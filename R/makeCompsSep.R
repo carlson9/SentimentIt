@@ -1,6 +1,6 @@
-#' Reads in text.
+#' Create Comparisons
 #'
-#' Reads in text from website to be reviewed.
+#' Create comparisons using multiple batch numbers.
 #'
 #' @param ids The id numbers of the texts you want to use.
 #' @param number_per How many documents per batch to be compared.
@@ -11,13 +11,13 @@
 #' @param name File name
 #' @param idsAsComps IDs as comparison
 #'
-#' @return A table with the text and correspondings ID's that can be sent.
+#' @return out a table with the text and correspondings ID's that can be sent.
 #'
 #' @author David Carlson
 #' @note Makes use of the createPairwise function. Also requires the jsonlite and httr packages.
-#' @rdname makeComps_sep
+#' @rdname makeCompsSep
 #' @export
-makeComps_sep <- function(ids, number_per, batches, question, per_batch=1000, path=NULL, name=NULL, idsAsComps=FALSE){
+makeCompsSep <- function(ids, number_per, batches, question, per_batch=1000, path=NULL, name=NULL, idsAsComps=FALSE){
   if(!idsAsComps){
     pairwise <- createPairwise(ids, number_per)
     save(pairwise, file=paste0(path, 'pairwise', name, '.Rdata'))
@@ -51,4 +51,3 @@ makeComps_sep <- function(ids, number_per, batches, question, per_batch=1000, pa
   return(out)
 
 }
-#' @export
