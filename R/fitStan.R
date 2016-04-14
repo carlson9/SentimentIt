@@ -12,7 +12,7 @@
 #'
 #' @author David Carlson
 #'
-#' @seealso \code{\link{fit_stan_hier}}, \code{\link{ckeck_workers}}, \code{\link{stanWrapper}}
+#' @seealso \code{\link{fitStanHier}}, \code{\link{checkWorkers}}, \code{\link{stanWrapper}}
 #'
 #' @rdname fitStan
 #'
