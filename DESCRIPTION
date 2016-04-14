@@ -13,6 +13,7 @@ LazyData: TRUE
 RoxygenNote: 5.0.1
 Collate:
     'createHITS.R'
+    'createBatches.R'
     'batchStatus.R'
     'createPairwise.R'
     'readInData.R'
@@ -29,7 +30,7 @@ Imports:
     jsonlite,
     httr,
     RCurl,
-	  RStan
+	  rstan
 Suggests: 
     testthat,
     devtools

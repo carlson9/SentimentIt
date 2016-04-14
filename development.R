@@ -30,15 +30,4 @@ setwd("/Users/davidflast/Documents")
 current.code <- as.package("sentimentIt")
 load_all(current.code)
 document(current.code)
-# test_dir continues to throw error that I cannot change the working directory. 
-# need to figure out what is relative path so we can run all tests.
-test_dir(path="tests/testthat")
-
-test_file(path="tests/testthat/readInDataTests.R")
-
-# set up tests and data in package
-devtools::use_testthat()
-# Create data set for readInData
-readInDataExample <- readInData(204:208)
-devtools::use_data(readInDataExample)
-
+check(current.code)

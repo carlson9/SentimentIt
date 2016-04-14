@@ -4,7 +4,8 @@
 #'
 #'
 #' @param data A csv file or a vector of batch numbers
-#' @param hier_data The data used for a hierarchy. One column should be document id and the other column should be a group used as a hierarchy. Defalt is NULL, and unless speficied, this function fits fit_stan
+#' @param hierarchy_data A file that contains the variable that is used as a hierarchy (defalt is NULL)
+#' @param hierarchy_var A name of the variable in \code{hierarchy_data} that is used as a hierarchy (defalt is NULL)
 #' @param returnFit Return a fit object if TRUE (degfalt is FALSE)
 #' @param plot If TRUE, create a histogram with a rug plot (defalt is FALSE)
 #' @param file Save the histogram to path and file name specified (defalt is NULL)
@@ -24,7 +25,8 @@
 #' @rdname stanWrapper
 #'
 #' @export
-stanWrapper <- function(data, hier_data=NULL, returnFit=FALSE, plot=FALSE, file=NULL,
+stanWrapper <- function(data, hierarchy_data=NULL, hierarchy_var=NULL,
+                        returnFit=FALSE, plot=FALSE, file=NULL,
                         chains=3, iter=2500, seed=1234){
 
   if(dim(data)[2] != 7){
@@ -32,8 +34,9 @@ stanWrapper <- function(data, hier_data=NULL, returnFit=FALSE, plot=FALSE, file=
   }
 
   # fit fit_stan or fit_stan_hier
-  if(is.null(hier_data)==FALSE){
-    fit <- fit_stan_hier(data, hier_data=hier_data, chains=chains, iter=iter, seed=seed)
+  if(is.null(hierarchy_data)==FALSE & is.null(hierarchy_var)==FALSE){
+    fit <- fit_stan_hier(data, hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
+                         chains=chains, iter=iter, seed=seed)
   }
   else{
     fit <- fit_stan(data, chains=chains, iter=iter, seed=seed)
