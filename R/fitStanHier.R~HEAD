@@ -9,20 +9,22 @@
 #' @param chains The number of chains (defalt is 3)
 #' @param iter The number of iteration (defalt is 2500)
 #' @param seed Set seed (defalt is 1234)
+#' 
+#' @return fitStanHier 
 #'
 #' @author David Carlson
 #'
 #' @seealso \code{\link{fit_stan_hier}}, \code{\link{ckeck_workers}}, \code{\link{stanWrapper}}
 #'
-#' @rdname fit_stan_hier
+#' @rdname fitStanHier
 #'
 #' @export
-fit_stan_hier <- function(data, hierarchy_data, hierarchy_var, chains=3, iter=2500, seed=1234){
+fitStanHier <- function(data, hierarchy_data, hierarchy_var, chains=3, iter=2500, seed=1234){
 
   rstan_options(auto_write = TRUE)
   options(mc.cores = parallel::detectCores())
 
-  if(is.vector(data)==TRUE){
+  if(is.vector(data)){
     data <- readInData(data)
   }
 
@@ -47,7 +49,7 @@ fit_stan_hier <- function(data, hierarchy_data, hierarchy_var, chains=3, iter=25
   M <- length(unique(c(g, h)))
   N <- length(y)
   P <- length(unique(j))
-  D <- length(unique(c(q, k)))
+  D <- length(unique(k))
   ### need to recode ids ###
   #hold.ids <- sort(unique(g))
   #hold.ids.real <- g

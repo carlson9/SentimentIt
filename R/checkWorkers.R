@@ -25,13 +25,13 @@ checkWorkers <- function(fit, data, plot=FALSE, file=NULL){
 
   bs <- summary(fit)$summary[grep("b", rownames(summary(fit)$summary), "mean")]
   workers <- levels(data$worker_id[seq(1, dim(data)[1], by=2)])
-  j <- as.numeric(workers)
+  j <- as.numeric(data$worker_id[seq(1, dim(data)[1], by=2)])
   ban_workers <- workers[which(bs < 1 & table(j) > 100)]
 
-  if(plot){
+  if(plot==TRUE){
     plot(hist(bs, main='Histogram of Worker Estimates'))
     rug(bs)
-    if(!is.null(file)){
+    if(is.null(file)==FALSE){
       pdf(file)
       hist(bs, main='Histogram of Worker Estimates')
       rug(bs)

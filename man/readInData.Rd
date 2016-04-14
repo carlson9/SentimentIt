@@ -27,12 +27,6 @@ Reads in data for specified batch numbers from the website
 \note{
 Sometimes the server will fail to send the data to your computer,
      so this function will try again 5 times until it successfully connects to the server.
-     This function requires
-     \itemize{
-       \item httr
-       \item jsonlite
-       \item RCurl
-     }
 }
 \examples{
 

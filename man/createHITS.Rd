@@ -20,9 +20,6 @@ out ID for batch of comparisons
 This function takes in id numbers of texts and hit settings, or a batch id, and it creates 
 HITS for comparison.
 }
-\note{
-This function requires the usage of the httr and jsonlite packages.
-}
 \examples{
 
 createHITS(ids=10,HITsetting=2)
