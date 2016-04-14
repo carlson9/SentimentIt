@@ -24,7 +24,6 @@ Collate:
     'stanWrapper.R'
     'makeCompsSep.R'
     'createHITSTimed.R'
-    
 Imports:
     plyr,
     jsonlite,
