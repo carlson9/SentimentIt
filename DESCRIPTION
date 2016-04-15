@@ -25,6 +25,7 @@ Collate:
     'stanWrapper.R'
     'makeCompsSep.R'
     'createHITSTimed.R'
+    'batchesWrapper.R'
 Imports:
     plyr,
     jsonlite,

@@ -25,7 +25,7 @@ makeCompsSep(ids, number_per, batches, question, per_batch = 1000,
 \item{idsAsComps}{IDs as comparison}
 }
 \value{
-out a table with the text and correspondings ID's that can be sent.
+out a table with the text and correspondings ID's that have been sent.
 }
 \description{
 Create comparisons using multiple batch numbers.

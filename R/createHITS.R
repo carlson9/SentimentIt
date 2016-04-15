@@ -14,6 +14,11 @@
 #' createHITS(ids=10,HITsetting=2)
 #' createHITS(batch_id=204)
 #' @rdname createHITS
+#' @import plyr
+#' @import jsonlite
+#' @import httr
+#' @import RCurl
+#' @import rstan
 #' @export
 createHITS <- function(ids=NULL, HITsetting=NULL, batch_id){
   if(!is.numeric(ids) | !is.numeric(HITsetting) | !is.numeric(batch_id)){

@@ -11,7 +11,7 @@
 #' @param name File name
 #' @param idsAsComps IDs as comparison
 #'
-#' @return out a table with the text and correspondings ID's that can be sent.
+#' @return out a table with the text and correspondings ID's that have been sent.
 #'
 #' @author David Carlson
 #' @note Makes use of the createPairwise function. Also requires the jsonlite and httr packages.
@@ -29,8 +29,6 @@ makeCompsSep <- function(ids, number_per, batches, question, per_batch=1000, pat
     print('Not enough batches supplied')
     return(NULL)
   }
-  require(jsonlite)
-  require(httr)
   out <- vector()
   for(i in 1:(num_comps%/%per_batch)){
     args <- list(question=question, ids=pairwise[((i-1)*per_batch+1):(i*per_batch),], batch_id=batches[i])
@@ -49,5 +47,4 @@ makeCompsSep <- function(ids, number_per, batches, question, per_batch=1000, pat
     out <- c(out, unlist(fromJSON(rawToChar(as.raw(mypost$content)))))
   }
   return(out)
-
 }
