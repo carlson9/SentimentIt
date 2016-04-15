@@ -12,7 +12,7 @@
 #'
 #' @author David Carlson
 #'
-#' @seealso \code{\link{fit_stan_hier}}, \code{\link{ckeck_workers}}, \code{\link{stanWrapper}}
+#' @seealso \code{\link{fitStanHier}}, \code{\link{checkWorkers}}, \code{\link{stanWrapper}}
 #'
 #' @rdname fitStan
 #'
@@ -22,7 +22,7 @@ fitStan <- function(data, chains=3, iter=2500, seed=1234){
   rstan_options(auto_write = TRUE)
   options(mc.cores = parallel::detectCores())
 
-  if(is.vector(data)==TRUE){
+  if(is.vector(data)){
     data <- readInData(data)
   }
 

@@ -1,4 +1,4 @@
-#' Wrapper Timed
+#' Create HITS Timed
 #'
 #' Creates batches, and waits a certain 
 #'
@@ -11,7 +11,8 @@
 #'
 #' @rdname createHITSTimed
 #' @export
-createHITStimed <- function(batches, time_per, mintime, maxtime, checkWorkersAt=NULL){
+createHITStimed <- function(batches, time_per, mintime, 
+                            maxtime, checkWorkersAt=NULL){
   out <- vector()
   for(i in batches){
     checkTime(mintime, maxtime)

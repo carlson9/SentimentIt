@@ -19,7 +19,7 @@
 #'
 #' @author David Carlson
 #'
-#' @seealso \code{\link{fit_stan_hier}}, \code{\link{ckeck_workers}}, \code{\link{stanWrapper}}
+#' @seealso \code{\link{fitStan}}, \code{\link{checkWorkers}}, \code{\link{stanWrapper}}
 
 #'
 #' @rdname stanWrapper
@@ -44,7 +44,7 @@ stanWrapper <- function(data, hierarchy_data=NULL, hierarchy_var=NULL,
 
   outlying <- check_workers(fit, data, plot=plot, file=file)
 
-  if(returnFit==FALSE){
+  if(!returnFit){
     return(list(outlying_workers=outlying, stan_fit=NULL))
   }
   else{
