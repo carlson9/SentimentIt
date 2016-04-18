@@ -30,7 +30,7 @@ Imports:
     jsonlite,
     httr,
     RCurl,
-	  RStan
+	rstan
 Suggests: 
     testthat,
     devtools

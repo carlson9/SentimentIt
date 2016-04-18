@@ -1,4 +1,5 @@
-fit_stan Demo file for fit_stan
-check_workers Demo file for check_workers
-fit_stan_hier Demo file for fit_stan_hier
+fitStan Demo file for fitStan
+checkWorkers Demo file for checkWorkers
+fitStanHier Demo file for fitStanHier
 stanWrapper Demo file for stanWrapper
+extractCoef Demo file for extractCoef
