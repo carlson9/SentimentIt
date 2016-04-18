@@ -25,12 +25,13 @@ Collate:
     'makeCompsSep.R'
     'createHITSTimed.R'
     'batchesWrapper.R'
+    'extractCoef.R'
 Imports:
     plyr,
     jsonlite,
     httr,
     RCurl,
-	rstan
-Suggests: 
+    rstan
+Suggests:
     testthat,
     devtools
