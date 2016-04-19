@@ -10,14 +10,11 @@
 #' @rdname revokeCert
 #' @export
 createCert <- function(cert, workers){
-  require(jsonlite)
-  require(httr)
   out <- vector()
   args <- list(certification = cert, workers = workers)
   args <- toJSON(args, auto_unbox=TRUE)
   mypost <- POST('http://sentimentit.herokuapp.com/api/certifications/revoke.json',
                  body = args, content_type_json(),
                  encode='json')
-  #  browser()
   out <- c(out, unlist(fromJSON(rawToChar(as.raw(mypost$content)))))
 #' @export
