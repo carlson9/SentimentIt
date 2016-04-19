@@ -52,6 +52,10 @@ David
 # after it is completed, repost all batches
 ###
 # another wrapper that checks status of batches and reposts when <5 are not done
+David
+document createHITStimed and readText
+Taishi
+batchesWrapper and timedWrapper
 
 
 
