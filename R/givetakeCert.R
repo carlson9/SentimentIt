@@ -10,12 +10,8 @@
 #'
 #' @rdname givetakeCert
 #' 
-#' @importFrom pgk sentimentIt
-#' 
 #' @export
-createCert <- function(certone, certtwo, workers){
-  require(jsonlite)
-  require(httr)
+givetakeCert <- function(certone, certtwo, workers){
   revokeCert(certone, workers)
   createCert(certtwo, workers)
 }
