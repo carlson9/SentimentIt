@@ -5,7 +5,6 @@
 #' @param batches Vector of Batch numbers to check.
 #' @param min_time Earliest that hits can be created.
 #' @param max_time Latest time that hits can be created.
-#' @param wait_time Time to wait till next hit creation.
 #' @param threshold Point at which a batch is considered done.
 #' @param rate The rate by which the progress of a batch will be checked.
 #' 
