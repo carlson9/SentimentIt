@@ -9,7 +9,7 @@
 #'
 #' @rdname checkCert
 #' @export
-createCert <- function(cert, workers){
+checkCert <- function(cert, workers){
   out <- vector()
   args <- list(certification = cert, workers = workers)
   args <- toJSON(args, auto_unbox=TRUE)
