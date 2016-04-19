@@ -13,11 +13,23 @@ createCert <- function(cert, workers){
   out <- vector()
   args <- list(certification = cert, workers = workers)
   args <- toJSON(args, auto_unbox=TRUE)
+  if(length(workers) = 1)){
   URL <- paste0("http://sentimentit.herokuapp.com/api/certifications/", as.character(cert),
           "/turk_workers/", as.character(workers), ".json")
   mypost <- POST(URL, body = args, content_type_json(),
           encode='json')
   out <- c(out, unlist(fromJSON(rawToChar(as.raw(mypost$content)))))
   return(out)
+  }
+  if(length(workers) > 1){
+  for (i in workers){
+  URL <- paste0("http://sentimentit.herokuapp.com/api/certifications/", as.character(cert),
+          "/turk_workers/", as.character(workers[i]), ".json")
+  mypost <- POST(URL, body = args, content_type_json(),
+          encode='json')
+  out <- c(out, unlist(fromJSON(rawToChar(as.raw(mypost$content)))))
+  return(out)
+  }
+  }
 }
 #' @export
