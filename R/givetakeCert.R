@@ -12,7 +12,7 @@
 #' 
 #' @export
 givetakeCert <- function(certone, certtwo, workers){
-  revokeCert(certone, workers)
-  createCert(certtwo, workers)
+  createCert(certone, workers)
+  revokeCert(certtwo, workers)
 }
 #' @export
