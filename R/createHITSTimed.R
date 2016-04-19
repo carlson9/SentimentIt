@@ -12,15 +12,16 @@
 #' @rdname createHITSTimed
 #' @export
 createHITStimed <- function(batches, time_per, mintime, 
-                            maxtime, checkWorkersAt=NULL){
+                            maxtime, certone, certtwo, checkWorkersAt=NULL){
   out <- vector()
+  banned_workers <- vector()
   for(i in batches){
     checkTime(mintime, maxtime)
     x <- createHITS(batch_id=i)
-    out[i] <- x
+    out <- rbind(out, x)
     Sys.sleep(time_per*3600)
-    if(any(i %in% checkWorkersAt)) {
-      stanWrapper(data=i)
+    if(i %in% batches[checkWorkersAt]) {
+       givetakeCert(certone, certtwo, stanWrapper(data=i)[[1]])
     }
   }
   return(out)
