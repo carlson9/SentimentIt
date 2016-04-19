@@ -11,10 +11,14 @@
 #'
 #' @rdname createHITSTimed
 #' @export
-batchesWrapper <- function(hit_setting_id, num_batches, ids, number_per, question,checkWorkersAt=NULL,
+batchesWrapper <- function(hit_setting_id, num_batches, pathfrom, pathto=NULL, 
+                           what='character', sep='\n', quiet=TRUE, index=NULL, which_source='apiR', 
+                           number_per, question,checkWorkersAt=NULL,
                            rest_time=60, time_per=1,mintime=8,maxtime=22, certone=NULL, certtwo=NULL,
                            path=NULL, name=NULL, idsAsComps=FALSE){
    batches <- createBatches(hit_setting_id = hit_setting, num_batches = num_batches)
+   ids <- readText(pathfrom=pathfrom, pathto=pathto, what=what, sep=sep, quiet=quiet, 
+            index=index, which_source=which_source)
   # creates comparisons attached to the created batches. 
   makeCompsSep(ids=ids, number_per=number_per, batches=batches, question=question,
                path=path,name=name,idsAsComps=idsAsComps)

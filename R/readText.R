@@ -38,4 +38,3 @@ readText <- function(pathfrom, pathto=NULL, what='character', sep='\n', quiet=TR
     }else write.table(cbind(hold.table, ids), pathto, sep='\t', row.names=FALSE)
   }
 }
-#' @export
