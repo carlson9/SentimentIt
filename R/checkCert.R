@@ -14,5 +14,3 @@ checkCert <- function(cert, workers){
                        "/turk_workers/", as.character(workers), ".json"))
   return(fromJSON(rawToChar(as.raw(mypost$content)))$allowed)
 }
-#' @export
-
