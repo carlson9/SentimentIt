@@ -5,4 +5,10 @@ Final Project Goals – Applied Statistical Programming
 Create package for sentimentIt that runs functions that do the following:
 
 -	Create certifications and revoke them for workers for sentimentIt.
+- Create unit tests for functions.
+- Track hits from the batches.
+- Randomly creates pairs of documents to be reviewed by workers.
+- Assign new certifications to workers and assign them to the banned list if they are not up to par.
+- Create higher level functions to 
+
 -	Reads text from documents 
