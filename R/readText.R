@@ -1,6 +1,6 @@
-#' Reads in text.
+#' Writes out text.
 #'
-#' Reads in text from website to be reviewed.
+#' Find/create documents and retrieve ids
 #'
 #' @param pathFrom Where the text will be drawn from.
 #' @param pathTo Where to send the text to be reviewed to.
@@ -10,7 +10,7 @@
 #' @param index The index number
 #' @param which_source What type of file is the text being drawn from.
 #' 
-#' @return A table with the text and correspondings ID's that can be sent.
+#' @return List of ids corresponding to documents sent
 #'
 #' @author David Carlson
 #' @rdname readText

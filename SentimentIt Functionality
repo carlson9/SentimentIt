@@ -1,0 +1,7 @@
+SentimentIT Summary
+Our goal is to create an R package that interacts with the SentimentIt API. Our functions help 
+automate many of the elements of the API so researchers can easily interact with the API through R. The basic functions 
+do simple tasks like creating HITS, posting documents to the API, reading in data from the API, checking workers, and
+revoking worker qualifications. These functions are then put into a series of wrappers which offer the user different
+levels of automation. Some levels allow the user to time when batches are posted, and the final wrapper SentimentIt 
+automates the entire process from start to finish.

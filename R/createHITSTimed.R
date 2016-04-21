@@ -3,12 +3,15 @@
 #' Creates batches, and waits a certain 
 #'
 #' @param batches Vector of Batch numbers to check
+#' @param time_per Time per batch to post on to Mechanical Turk
+#' @param mintime The earliest time in the morning to post comparisons to workers
+#' @param maxtime The latest time at night to post comparisons to workers
+#' @param certone
+#' @param certtwo
+#' @param checkWorkersAt batch positions to check workers(i.e. batches 1, 3, 5)
 #'
-#' @return out ID for batch of comparisons
+#' @return out IDs for batches of comparisons
 #' @author Jacob M. Montgomery
-#' @note 
-#' @examples
-#'
 #' @rdname createHITSTimed
 #' @export
 createHITStimed <- function(batches, time_per, mintime, 
