@@ -11,10 +11,10 @@
 #' @export
 createCert <- function(cert, workers){
   if(!is.character(cert) | nchar(cert)<1){
-    stop("You must input a non-blank certification and one made of characters."
+    stop("You must input a non-blank certification and one made of characters.")
   }
   if(!is.character(workers) | nchar(workers)<1){
-    stop("You must input a non-blank certification and one made of characters."
+    stop("You must input a non-blank certification and one made of characters.")
   }
   out <- vector()
   args <- list(certification = cert, workers = workers)
@@ -25,4 +25,3 @@ createCert <- function(cert, workers){
   out <- c(out, unlist(fromJSON(rawToChar(as.raw(mypost$content)))))
   return(out)
 }
-#' @export
