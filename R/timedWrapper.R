@@ -1,4 +1,4 @@
-#' Timed Wrapper
+#' sentimentIt
 #'
 #' A wrapper function of batchesWrapper and repostExpired
 #'
@@ -34,9 +34,8 @@
 #' @seealso \code{\link{batchesWrapper}}, \code{\link{repostExpired}}
 #'
 #' @rdname timedWrapper
-#'
 #' @export
-timedWrapper <- function(timed, hit_setting_id, num_batches=1,
+sentimentIt <- function(timed, hit_setting_id, num_batches=1,
                          pathfrom, pathto=NULL, what='character', sep='\n', quiet=TRUE,
                          index=NULL, which_source='apiR',
                          number_per, batches, question, per_batch=1000, path=NULL,
