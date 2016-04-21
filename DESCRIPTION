@@ -25,6 +25,7 @@ Collate:
     'makeCompsSep.R'
     'createHITSTimed.R'
     'batchesWrapper.R'
+    'timedWrapper.R'
     'extractCoef.R'
 Imports:
     plyr,

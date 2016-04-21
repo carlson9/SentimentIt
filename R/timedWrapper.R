@@ -1,31 +1,57 @@
-#' Create Comparisons
+#' Timed Wrapper
 #'
-#' Create comparisons using multiple batch numbers.
+#' A wrapper function of batchesWrapper and repostExpired
 #'
-#' @param ids The id numbers of the texts you want to use.
-#' @param number_per How many documents per batch to be compared.
-#' @param batches The number of batches to be made.
-#' @param question Where to separate text by line.
-#' @param per_batch If true, this does not print the amount of items read prior.
+#' @param hit_setting_id ID of HIT setting to use
+#' @param num_batches number of batches to create using the HIT setting
+#' @param pathFrom Where the text will be drawn from
+#' @param pathTo Where to send the text to be reviewed to
+#' @param what The text to be sent and used in the data frame
+#' @param sep Where to separate text by line
+#' @param quiet If true, this does not print the amount of items read prior
+#' @param index The index number
+#' @param which_source What type of file is the text being drawn from
+#' @param number_per How many documents per batch to be compared
+#' @param batches The number of batches to be made
+#' @param question Where to separate text by line
+#' @param per_batch If true, this does not print the amount of items read prior
 #' @param path File path
 #' @param name File name
 #' @param idsAsComps IDs as comparison
+#' @param time_per Defalt is 1
+#' @param mintime Defalt is 8
+#' @param maxtime Defalt is 22
+#' @param certone Defalt is NULL
+#' @param certtwo Defalt isNULL
+#' @param checkWorkersAt Defalt is NULL
+#' @param rest_time Defalt is 60
 #'
-#' @return out a table with the text and correspondings ID's that have been sent.
+#' @return
 #'
 #' @author David Carlson
-#' @note Makes use of the createPairwise function. Also requires the jsonlite and httr packages.
-#' @rdname makeCompsSep
+#'
+#' @seealso \code{\link{batchesWrapper}}, \code{\link{repostExpired}}
+#'
+#' @rdname timedWrapper
+#'
 #' @export
-timedWrapper <- function(hit_setting_id, num_batches, number_per, question,checkWorkersAt=NULL,
-                         rest_time=60, time_per=1, mintime=8, maxtime=22, path=NULL, name=NULL, 
-                         idsAsComps=FALSE, certone, certtwo, pathfrom, pathto=NULL, what='character', 
-                         sep='\n', quiet=TRUE, index=NULL, which_source='apiR', ...){
-  batches <- batchesWrapper(hit_setting_id=hit_setting_id, num_batches=num_batches, 
-                            pathfrom=pathfrom, pathto=pathto, what=what, 
-                            sep=sep, quiet=quiet, index=index, which_source=which_source, number_per=number_per,
-                            question=question, checkWorkersAt=checkWorkersAt,rest_time=rest_time,
-                            time_per=time_per, mintime=mintime,maxtime=maxtime,
-                            certone=certone,certtwo=certtwo,path=path, name=name, idsAsComps=idsAsComps)
+timedWrapper <- function(hit_setting_id, num_batches=1,
+                         pathfrom, pathto=NULL, what='character', sep='\n', quiet=TRUE,
+                         index=NULL, which_source='apiR',
+                         number_per, batches, question, per_batch=1000, path=NULL,
+                         name=NULL, idsAsComps=FALSE,
+                         time_per=1, mintime=8, maxtime=22, certone=NULL, certtwo=NULL,
+                         checkWorkersAt=NULL,
+                         rest_time=60, ...){
+
+  batches <- batchesWrapper(hit_setting_id=hit_setting_id, num_batches=num_batches,
+                            pathfrom=pathfrom, pathto=pathto, what=what, sep=sep, quiet=quiet,
+                            index=index, which_source=which_source,
+                            number_per=number_per, batches=batches, question=question,
+                            per_batch=per_batch, path=path, name=name, idsAsComps=idsAsComps,
+                            time_per=time_per, mintime=mintime, maxtime=maxtime,
+                            certone=certone, certtwo=certtwo, checkWorkersAt=NULL,
+                            rest_time=60, ...)
+
   repostExpired(batches)
 }
