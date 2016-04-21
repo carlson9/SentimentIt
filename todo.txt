@@ -56,8 +56,32 @@ David
 document createHITStimed and readText
 Taishi
 batchesWrapper and timedWrapper
+David 
+batchstatus
+batchesWrapper
+checkBatches
+createHITS
+createHITSTimed
+makeCompsSep
+readInData
+repostExpired
 
+Taishi
+timedWrapper
+checkWorkers
+createPairwise
+fitStan
+fitStanHier
+StanWrapper
 
+Joe
+SentimentIt
+checkCert
+createCert
+createHITSbatch
+giveTakeCert
+readText
+revokeCert
 
 
 
