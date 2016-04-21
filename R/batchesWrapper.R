@@ -2,7 +2,7 @@
 #'
 #' A wrapper function of createBatches, readText
 #'
-#'
+#' @param timed HITS are replaced by time, not batch status
 #' @param hit_setting_id ID of HIT setting to use
 #' @param num_batches number of batches to create using the HIT setting
 #' @param pathFrom Where the text will be drawn from
@@ -38,14 +38,14 @@
 #' @rdname batchesWrapper
 #'
 #' @export
-batchesWrapper <- function(hit_setting_id, num_batches=1,
+batchesWrapper <- function(timed,hit_setting_id, num_batches=1,
                            pathfrom, pathto=NULL, what='character', sep='\n', quiet=TRUE,
                            index=NULL, which_source='apiR',
                            number_per, batches, question, per_batch=1000, path=NULL,
                            name=NULL, idsAsComps=FALSE,
-                           time_per=1, mintime=8, maxtime=22, certone=NULL, certtwo=NULL,
+                           time_per=1, mintime=9, maxtime=22, certone=NULL, certtwo=NULL,
                            checkWorkersAt=NULL,
-                           rest_time=60, ...){
+                           rest_time=60,rate=20,threshold=1000, ...){
 
   batches <- createBatches(hit_setting_id=hit_setting, num_batches=num_batches)
 
@@ -58,8 +58,13 @@ batchesWrapper <- function(hit_setting_id, num_batches=1,
   Sys.sleep(rest_time)
 
   # Create HITS for each of the created batches
-  createHITSTimed(batches=batches, time_per=time_per, mintime=mintime, maxtime=maxtime,
-                  checkWorkersAt=batches[checkWorkersAt], certone=certone, certtwo=certtwo)
+  if(timed){
+   createHITSTimed(batches=batches, time_per=time_per, mintime=mintime, maxtime=maxtime,
+                    checkWorkersAt=batches[checkWorkersAt], certone=certone, certtwo=certtwo)
+  } else{
+    createHITSBatch(batches=batches, min_time=min_time, max_time=max_time, 
+                           rate=rate, threshold=threshold, checkWorkersAt=batches[checkWorkersAt])
+  }
 
   return(batches)
 }
