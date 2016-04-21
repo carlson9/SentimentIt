@@ -33,7 +33,10 @@
 #'
 #' @examples
 #'
-#' @seealso \code{\link{createBatches}}, \code{\link{readText}}, \code{\link{makeCompsSep}}, \code{\link{createHITSTimed}}
+#' @seealso \code{\link{batchStatus}}, \code{\link{createHITSTimed}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
+#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
+#' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
 #'
 #' @rdname batchesWrapper
 #'
