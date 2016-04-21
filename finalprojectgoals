@@ -5,7 +5,7 @@ What we have done:
 
 Created package for sentimentIt that runs functions that do the following:
 
--	Create certifications and revoke them for workers for sentimentIt.
+-	Give certifications and revoke them for workers for sentimentIt.
 - Create unit tests for functions.
 - Track hits from the batches.
 - Randomly creates pairs of documents to be reviewed by workers.
@@ -18,7 +18,8 @@ Created package for sentimentIt that runs functions that do the following:
 Goals for end:
 
 - Have to create HITS based on progress in batch status.
-- Creates wrappers for different functions in sentimentIt package.
+- Create 3 wrappers for different functions in sentimentIt package.
+- Add unit tests for functions, use if for warnings, try catches, etc. for dumb actions of users.    
 
 SentimentIT Summary
 Our goal is to create an R package that interacts with the SentimentIt API. Our functions help 
