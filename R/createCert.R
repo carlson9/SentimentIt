@@ -10,6 +10,9 @@
 #' @rdname createCert
 #' @export
 createCert <- function(cert, workers){
+  if(!is.character(cert) | nchar(cert)<1){
+    stop("You must input a non-blank certification and one made of characters."
+  }
   out <- vector()
   args <- list(certification = cert, workers = workers)
   args <- toJSON(args, auto_unbox=TRUE)
