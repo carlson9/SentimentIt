@@ -1,8 +1,9 @@
 Final Project Goals – Applied Statistical Programming 
 
 
+What we have done:
 
-Create package for sentimentIt that runs functions that do the following:
+Created package for sentimentIt that runs functions that do the following:
 
 -	Create certifications and revoke them for workers for sentimentIt.
 - Create unit tests for functions.
@@ -12,3 +13,8 @@ Create package for sentimentIt that runs functions that do the following:
 - Create higher level functions to use
 -	Reads text from documents 
 - Use these functionalities in STAN.
+
+
+Goals for end:
+- Have to create HITS based on progress in batch status.
+- Creates wrappers for different functions in sentimentIt package.
