@@ -61,7 +61,7 @@ batchesWrapper <- function(timed, hit_setting_id, question, pathfrom, num_batche
   
   # read text into API 
   ids <- readText(pathfrom=pathfrom, pathto=pathto, what=what, sep=sep, quiet=quiet,
-                  index=index, which_source=which_source)
+                  index=index, which_source=which_source, ...)#this will NOT work! look at the example - this does not return ids
   
   # creates comparisons attached to the created batches.
   makeCompsSep(ids=ids, number_per=number_per, batches=batches, question=question,
