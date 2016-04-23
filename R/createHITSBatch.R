@@ -31,7 +31,7 @@ createHITSBatch <- function(batches, min_time=9,
         done <- (((status$submitted_count - status$completed_count) <= threshold) | (as.numeric(format(Sys.time(), "M%")) - current > 240))
       }
     if(i %in% batches[checkWorkersAt]) {
-      givetakeCert(certone, certtwo, stanWrapper(data=i)[[1]])    
+      givetakeCert(certone, certtwo, stanWrapper(data=batches[1:length(out)])[[1]])    
     }
   }
   return(out)
