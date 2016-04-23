@@ -25,7 +25,7 @@ createHITStimed <- function(batches, time_per, mintime,
   for(i in batches){
     checkTime(mintime, maxtime)
     x <- createHITS(batch_id=i)
-    out <- rbind(out, x)
+    out <- c(out, x)
     Sys.sleep(time_per*3600)
     if(i %in% batches[checkWorkersAt]) {
        givetakeCert(certone, certtwo, stanWrapper(data=i)[[1]])

@@ -2,7 +2,7 @@
 #'
 #' Find/create documents and retrieve ids
 #'
-#' @param pathFrom Where the text will be drawn from.
+#' @param pathFrom What file path the data will be drawn form, or actual data
 #' @param pathTo Where to send the text to be reviewed to.
 #' @param what The text to be sent and used in the data frame.
 #' @param sep Where to separate text by line.
@@ -17,7 +17,11 @@
 #' @export
 readText <- function(pathfrom, pathto=NULL, what='character', sep='\n', quiet=TRUE, index=NULL, which_source='apiR', ...){
   if(!is.null(index)){
+    if(!is.character(pathfrom)){
+      hold.table = pathfrom
+    } else {
     hold.table <- read.table(file=pathfrom, sep=sep, ...)
+    }
     textToSend <- hold.table[,index]
   }else textToSend <- scan(file=pathfrom, what=what, sep=sep, quiet=quiet, ...)
   args <- mapply(function(x,y) list(text=x, source=y), textToSend, which_source, SIMPLIFY=FALSE, USE.NAMES=FALSE)

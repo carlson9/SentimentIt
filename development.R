@@ -31,3 +31,7 @@ current.code <- as.package("sentimentIt")
 load_all(current.code)
 document(current.code)
 check(current.code)
+
+
+
+

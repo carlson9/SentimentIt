@@ -56,8 +56,9 @@ David
 document createHITStimed and readText
 Taishi
 batchesWrapper and timedWrapper
+
 David 
-batchstatus
+!batchstatus
 batchesWrapper
 checkBatches
 createHITS
@@ -65,6 +66,7 @@ createHITSTimed
 makeCompsSep
 readInData
 repostExpired
+movieReviewData
 
 Taishi
 timedWrapper
