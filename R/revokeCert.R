@@ -9,7 +9,7 @@
 #'
 #' @rdname revokeCert
 #' @export
-createCert <- function(cert, workers){
+revokeCert <- function(cert, workers){
  if(!is.character(cert) | nchar(cert)<1){
     stop("You must input a non-blank certification and one made of characters.")
   }
