@@ -60,13 +60,13 @@ batchesWrapper and timedWrapper
 David 
 !batchstatus
 batchesWrapper
-checkBatches
-createHITS
+!createBatches
+!createHITS
 createHITSTimed
-makeCompsSep
-readInData
-repostExpired
-movieReviewData
+!makeCompsSep (unsure how to test)
+!readInData
+!repostExpired
+!movieReviewData
 
 Taishi
 timedWrapper

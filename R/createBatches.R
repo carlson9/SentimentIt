@@ -1,16 +1,18 @@
 #' Create new batches
 #' 
-#' This function creates new batches with a HIT setting.
+#' This function creates new batches with the desired HIT setting 
+#' and the desired number of batches.
 #' 
 #' @param ids ID of HIT setting to use
-#' @param num_batches number of batches to create using the HIT setting
+#' @param num_batches number of separate batches to create
 #'
-#' @return out ID of batches created
+#' @return batch_ids ID of batches created
 #' @author David Carlson
 #' @examples
-#'
-#' createHITS(ids=10,HITsetting=2)
-#' createHITS(batch_id=204)
+#' \dontrun{
+#' createBatches(hit_setting_id=2, num_batches=4)
+#' createBatches(hit_setting_id=2)
+#' }
 #' @rdname createBatches
 #' @export
 createBatches <- function(hit_setting_id, num_batches=1){

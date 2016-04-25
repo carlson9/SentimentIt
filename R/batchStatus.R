@@ -1,6 +1,8 @@
 #' Check batch status
 #' 
-#' This function checks the indicated batch_id numbers and returns their status.
+#' This function checks the indicated batch_id numbers and returns 
+#' their status.This returns the number of comparisons submitted and 
+#' the number completed.
 #' 
 #' @param batch_id ID of batch to check
 #'
@@ -13,7 +15,6 @@
 #'   \item expired_count
 #' }
 #' @author David Carlson
-#' @seealso \code{\link{batchesWrapper}}, \code{\link{sentimentIt}}
 #' @examples
 #' 
 #' \dontrun{ 
@@ -21,14 +22,12 @@
 #' status <- batchStatus(x)
 #' y <- c(204, 206, 208, 207)
 #' status2 <- batchStatus(y)
-<<<<<<< Updated upstream
+#' }
 #' @seealso \code{\link{createHITSTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
 #' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
 #' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
 #' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
-=======
 #' }
->>>>>>> Stashed changes
 #' @rdname batchStatus
 #' @export
 batch_status <- function(batch_id){

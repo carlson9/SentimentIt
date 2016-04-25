@@ -1,23 +1,39 @@
 #' Create Comparisons
 #'
-#' Create comparisons using multiple batch numbers.
+#' Creates separate comparisons using document IDs. This outputs a file with a table of text
+#' and corresponding ids for Mechanical Turk comparisons.
 #'
-#' @param ids The id numbers of the texts you want to use.
-#' @param number_per How many documents per batch to be compared.
-#' @param batches The number of batches to be made.
-#' @param question Where to separate text by line.
-#' @param per_batch If true, this does not print the amount of items read prior.
-#' @param path File path
-#' @param name File name
-#' @param idsAsComps IDs as comparison
+#' @param ids numerical IDs for the documents
+#' @param number_per number of comparisons desired
+#' @param batches batch IDs to be used for the HITs
+#' @param question the question the worker will see once the worker selects the HIT
+#' @param per_batch number of comparisons perbatch desired
+#' @param path File path: if NULL, file will be stored in working direcotry
+#' @param name File name: If NULL, file will be named pairwise.Rdata
+#' @param idsAsComps an indicator as to whether or not the IDs provided refer 
+#'                   to comparison IDs rather than document IDs
 #'
 #' @return out a table with the text and correspondings ID's that have been sent.
 #'
 #' @author David Carlson
-#' @note Makes use of the createPairwise function. Also requires the jsonlite and httr packages.
+#' @example 
+#' 
+#' \dontrun {
+#' docInfo <- read.table("ReviewsWithIds",header=TRUE)
+#' makeCompsSep(ids=docInfo[,'ids'], number_per=10, batches=batch_ids,
+#'              question=’Below is text taken from two movie reviews.Please 
+#'              choose the text that you think comesfrom the most positive review’,
+#'              path='Comparisons/', name='first10')
+#' }
+#' @seealso \code{\link{createHITSTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
+#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
+#' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
+#' }
 #' @rdname makeCompsSep
 #' @export
-makeCompsSep <- function(ids, number_per, batches, question, per_batch=1000, path=NULL, name=NULL, idsAsComps=FALSE){
+makeCompsSep <- function(ids, number_per, batches, question, per_batch=1000, 
+                         path=NULL, name=NULL, idsAsComps=FALSE){
   if(!idsAsComps){
     pairwise <- createPairwise(ids, number_per)
     save(pairwise, file=paste0(path, 'pairwise', name, '.Rdata'))
