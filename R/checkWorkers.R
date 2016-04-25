@@ -12,15 +12,23 @@
 #'
 #' @author David Carlson
 #'
-#' @seealso \code{\link{batchStatus}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{createHITSTimed}},\code{\link{createBatches}},
+#' @seealso \code{\link{batchStatus}}, \code{\link{batchesWrapper}}, \code{\link{createHITSTimed}},\code{\link{checkWorkers}},\code{\link{createBatches}},
 #' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
 #' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
-#' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
+#' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}}
 #'
 #' @rdname checkWorkers
 #'
 #' @export
 checkWorkers <- function(fit, data, plot=FALSE, file=NULL){
+
+  if(class(fit) != "stanfit"){
+    stop("fit should be class stanfit")
+  }
+
+  if(dim(data)[2] != 7){
+    stop("data dimension mismatches")
+  }
 
   if(!("worker_id" %in% colnames(data))){
     stop("worker_id is not in data")

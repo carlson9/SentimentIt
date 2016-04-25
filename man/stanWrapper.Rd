@@ -4,13 +4,16 @@
 \alias{stanWrapper}
 \title{Fit STAN Model and Detect Outlying Workers}
 \usage{
-stanWrapper(data, hier_data = NULL, returnFit = FALSE, plot = FALSE,
-  file = NULL, chains = 3, iter = 2500, seed = 1234)
+stanWrapper(data, hierarchy_data = NULL, hierarchy_var = NULL,
+  returnFit = FALSE, plot = FALSE, file = NULL, chains = 3,
+  iter = 2500, seed = 1234)
 }
 \arguments{
 \item{data}{A csv file or a vector of batch numbers}
 
-\item{hier_data}{The data used for a hierarchy. One column should be document id and the other column should be a group used as a hierarchy. Defalt is NULL, and unless speficied, this function fits fit_stan}
+\item{hierarchy_data}{A file that contains the variable that is used as a hierarchy (defalt is NULL)}
+
+\item{hierarchy_var}{A name of the variable in \code{hierarchy_data} that is used as a hierarchy (defalt is NULL)}
 
 \item{returnFit}{Return a fit object if TRUE (degfalt is FALSE)}
 
@@ -36,6 +39,9 @@ Fit STAN model or detect outlying workers
 David Carlson
 }
 \seealso{
-\code{\link{fit_stan_hier}}, \code{\link{ckeck_workers}}, \code{\link{stanWrapper}}
+\code{\link{batchStatus}}, \code{\link{batchesWrapper}}, \code{\link{createHITSTimed}},\code{\link{checkWorkers}},\code{\link{createBatches}},
+\code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+\code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
+\code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}}
 }
 

@@ -9,12 +9,15 @@
 #' @param chains The number of chains (defalt is 3)
 #' @param iter The number of iteration (defalt is 2500)
 #' @param seed Set seed (defalt is 1234)
-#' 
-#' @return fitStanHier 
+#'
+#' @return fitStanHier
 #'
 #' @author David Carlson
 #'
-#' @seealso \code{\link{fitStanHier}}, \code{\link{checkWorkers}}, \code{\link{stanWrapper}}
+#' @seealso \code{\link{batchStatus}}, \code{\link{batchesWrapper}}, \code{\link{createHITSTimed}},\code{\link{checkWorkers}},\code{\link{createBatches}},
+#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
+#' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}}
 #'
 #' @rdname fitStanHier
 #'
@@ -28,7 +31,9 @@ fitStanHier <- function(data, hierarchy_data, hierarchy_var, chains=3, iter=2500
     data <- readInData(data)
   }
 
-  if(dim(data)[2] != 7){
+  data1 <- data
+
+  if(dim(data1)[2] != 7){
     stop("data dimension is incorrect")
   }
 
@@ -36,16 +41,16 @@ fitStanHier <- function(data, hierarchy_data, hierarchy_var, chains=3, iter=2500
     stop("hierarchy_var should be a name of a column in hierarchy_data")
   }
 
-  y <- data$result[seq(1, dim(data)[1], by=2)]
+  y <- data1$result[seq(1, dim(data1)[1], by=2)]
   z <- y
   z[z==0] <- -1
-  data$document_id_old <- data$document_id
-  data$document_id <- as.numeric(as.factor(data$document_id))
-  g <- data$document_id[seq(1, dim(data)[1], by=2)]
-  h <- data$document_id[seq(1, dim(data)[1], by=2) + 1]
-  j <- as.numeric(data$worker_id[seq(1, dim(data)[1], by=2)])
-  k <- as.numeric(as.factor(as.character(hierarchy_data[,hierarchy_var])))
-  #unique(data$worker_id[seq(1,dim(data)[1],by=2)])
+  data1$document_id_old <- data1$document_id
+  data1$document_id <- as.numeric(as.factor(data1$document_id))
+  g <- data1$document_id[seq(1, dim(data1)[1], by=2)]
+  h <- data1$document_id[seq(1, dim(data1)[1], by=2) + 1]
+  j <- as.numeric(data1$worker_id[seq(1, dim(data1)[1], by=2)])
+  k <- as.numeric(as.factor(as.character(hierarchy_data1[,hierarchy_var])))
+  #unique(data1$worker_id[seq(1,dim(data1)[1],by=2)])
   M <- length(unique(c(g, h)))
   N <- length(y)
   P <- length(unique(j))

@@ -19,8 +19,10 @@
 #'
 #' @author David Carlson
 #'
-#' @seealso \code{\link{fitStan}}, \code{\link{checkWorkers}}, \code{\link{stanWrapper}}
-
+#' @seealso \code{\link{batchStatus}}, \code{\link{batchesWrapper}}, \code{\link{createHITSTimed}},\code{\link{checkWorkers}},\code{\link{createBatches}},
+#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
+#' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}}
 #'
 #' @rdname stanWrapper
 #'
@@ -29,20 +31,26 @@ stanWrapper <- function(data, hierarchy_data=NULL, hierarchy_var=NULL,
                         returnFit=FALSE, plot=FALSE, file=NULL,
                         chains=3, iter=2500, seed=1234){
 
-  if(dim(data)[2] != 7){
+  if(is.vector(data)){
+    data <- readInData(data)
+  }
+
+  data1 <- data
+
+  if(dim(data1)[2] != 7){
     stop("data dimension mismatches")
   }
 
   # fit fit_stan or fit_stan_hier
   if(is.null(hierarchy_data)==FALSE & is.null(hierarchy_var)==FALSE){
-    fit <- fit_stan_hier(data, hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
+    fit <- fit_stan_hier(data1, hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
                          chains=chains, iter=iter, seed=seed)
   }
   else{
-    fit <- fit_stan(data, chains=chains, iter=iter, seed=seed)
+    fit <- fit_stan(data1, chains=chains, iter=iter, seed=seed)
   }
 
-  outlying <- check_workers(fit, data, plot=plot, file=file)
+  outlying <- check_workers(fit, data1, plot=plot, file=file)
 
   if(!returnFit){
     return(list(outlying_workers=outlying, stan_fit=NULL))

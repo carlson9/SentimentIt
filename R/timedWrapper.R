@@ -1,8 +1,7 @@
-#' sentimentIt
+#' Timed Wrapper
 #'
 #' A wrapper function of batchesWrapper and repostExpired
 #'
-#' @param timed HITS are replaced by time, not batch status
 #' @param hit_setting_id ID of HIT setting to use
 #' @param num_batches number of batches to create using the HIT setting
 #' @param pathFrom Where the text will be drawn from
@@ -31,11 +30,15 @@
 #'
 #' @author David Carlson
 #'
-#' @seealso \code{\link{batchesWrapper}}, \code{\link{repostExpired}}
+#' @seealso \code{\link{batchStatus}}, \code{\link{batchesWrapper}}, \code{\link{createHITSTimed}},\code{\link{checkWorkers}},\code{\link{createBatches}},
+#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
+#' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
 #'
 #' @rdname timedWrapper
+#'
 #' @export
-sentimentIt <- function(timed, hit_setting_id, num_batches=1,
+timedWrapper <- function(hit_setting_id, num_batches=1,
                          pathfrom, pathto=NULL, what='character', sep='\n', quiet=TRUE,
                          index=NULL, which_source='apiR',
                          number_per, batches, question, per_batch=1000, path=NULL,
@@ -44,7 +47,7 @@ sentimentIt <- function(timed, hit_setting_id, num_batches=1,
                          checkWorkersAt=NULL,
                          rest_time=60, ...){
 
-  batches <- batchesWrapper(timed,hit_setting_id=hit_setting_id, num_batches=num_batches,
+  batches <- batchesWrapper(hit_setting_id=hit_setting_id, num_batches=num_batches,
                             pathfrom=pathfrom, pathto=pathto, what=what, sep=sep, quiet=quiet,
                             index=index, which_source=which_source,
                             number_per=number_per, batches=batches, question=question,
