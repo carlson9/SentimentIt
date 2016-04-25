@@ -7,10 +7,24 @@
 #'
 #' @author David Carlson
 #'
+#' @seealso \code{\link{batchStatus}}, \code{\link{batchesWrapper}}, \code{\link{createHITSTimed}},\code{\link{checkWorkers}},\code{\link{createBatches}},
+#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
+#' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}}
+
 #' @note This function requires the usage of the plyr package.
 #' @rdname createPairwise
 #' @export
 createPairwise <- function(ids, number_per){
+
+  if(!is.numeric(ids)){
+    stop("ids should be numeric")
+  }
+
+  if(!is.numeric(number_per)){
+    stop("number_per should be numeric")
+  }
+
   documents <- unique(as.numeric(ids))
   # This code sets up the random pairwise comparisons
   pairwise<-cbind(rep(documents, (number_per+1)%/%2), matrix(replicate((number_per+1)%/%2, sample(documents)), ncol=1))
