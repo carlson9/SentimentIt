@@ -14,6 +14,11 @@
 #' createBatches(hit_setting_id=2)
 #' }
 #' @rdname createBatches
+#' @seealso \code{\link{createHITSTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createHITSTimed}},
+#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
+#' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
+#' }
 #' @export
 createBatches <- function(hit_setting_id, num_batches=1){
   if(!is.numeric(hit_setting_id)){
