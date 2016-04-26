@@ -1,9 +1,9 @@
 #' Create new batches
 #' 
-#' This function creates new batches with the desired HIT setting 
+#' This function creates new batches with the desired Task setting 
 #' and the desired number of batches.
 #' 
-#' @param hit_setting_id ID of HIT setting to use
+#' @param hit_setting_id ID of Task setting to use
 #' @param num_batches number of separate batches to create
 #'
 #' @return batch_ids ID of batches created
@@ -14,8 +14,8 @@
 #' createBatches(hit_setting_id=2)
 #' }
 #' @rdname createBatches
-#' @seealso \code{\link{createHITSTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createHITSTimed}},
-#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' @seealso \code{\link{createTasksTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createTasksTimed}},
+#' \code{\link{createCert}},\code{\link{createTasks}}, \code{\link{createTasksBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
 #' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
 #' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
 #' }

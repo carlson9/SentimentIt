@@ -1,4 +1,4 @@
-#' Create HITS timed by batch progress.
+#' Create Tasks timed by batch progress.
 #'
 #' Creates batches, and waits a certain time based on the progress of batch.
 #'
@@ -24,14 +24,14 @@
 #' @note
 #' @examples
 #'
-#' @rdname createHITSBatch
-#' @seealso \code{\link{createHITSTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
-#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSTimed}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' @rdname createTasksBatch
+#' @seealso \code{\link{createTasksTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
+#' \code{\link{createCert}},\code{\link{createTasks}}, \code{\link{createTasksTimed}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
 #' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
 #' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
 #' }
 #' @export
-createHITSBatch <- function(batches, certone, certtwo, min_time=9,
+createTasksBatch <- function(batches, certone, certtwo, min_time=9,
                    max_time=22, rate=1/3, threshold=5, checkWorkersAt=NULL,
                    hierarchy_data=NULL, hierarchy_var=NULL,
                    returnFit=FALSE, plot=FALSE, file=NULL,
@@ -51,7 +51,7 @@ createHITSBatch <- function(batches, certone, certtwo, min_time=9,
   out <- vector()
   for(i in batches){
     checkTime(min_time, max_time)
-    x <- createHITS(batch_id=i)
+    x <- createTasks(batch_id=i)
     out[i] <- x
     done <- FALSE
     current <- as.numeric(format(Sys.time(), "%M"))

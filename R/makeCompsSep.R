@@ -5,8 +5,8 @@
 #'
 #' @param ids numerical IDs for the documents
 #' @param number_per number of comparisons desired
-#' @param batches batch IDs to be used for the HITs
-#' @param question the question the worker will see once the worker selects the HIT
+#' @param batches batch IDs to be used for the Tasks
+#' @param question the question the worker will see once the worker selects the Task
 #' @param per_batch number of comparisons perbatch desired
 #' @param path File path: if NULL, file will be stored in working direcotry
 #' @param name File name: If NULL, file will be named pairwise.Rdata
@@ -25,8 +25,8 @@
 #'              choose the text that you think comesfrom the most positive review’,
 #'              path='Comparisons/', name='first10')
 #' }
-#' @seealso \code{\link{createHITSTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
-#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' @seealso \code{\link{createTasksTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
+#' \code{\link{createCert}},\code{\link{createTasks}}, \code{\link{createTasksBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
 #' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
 #' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
 #' }

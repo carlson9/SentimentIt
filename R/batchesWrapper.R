@@ -3,10 +3,17 @@
 #' A wrapper function of createBatches, readText
 #'
 #' @param readDocumentsFrom What file path the data will be drawn form, or actual data
+<<<<<<< Updated upstream
 #' @param hit_setting_id ID of HIT setting to use
 #' @param question the question the worker will see once the worker selects the HIT
 #' @param timed If True, HITS will be created by time, if not by batch
 #' @param writeDocumentsTo  Where to send the text to be reviewed to.
+=======
+#' @param hit_setting_id ID of Task setting to use
+#' @param question the question the worker will see once the worker selects the Task
+#' @param timed If True, Tasks will be created by time, if not by batch
+#' @param writeDocumentsTo Where to send the text to be reviewed to.
+>>>>>>> Stashed changes
 #' @param what The text to be sent and used in the data frame.
 #' @param sep Where to separate text by line.
 #' @param quiet If true, this does not print the amount of items read prior.
@@ -36,20 +43,20 @@
 #'
 #' @author Jacob M. Montgomery
 #'
-#' @seealso \code{\link{batchStatus}}, \code{\link{createHITSTimed}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
-#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' @seealso \code{\link{batchStatus}}, \code{\link{createTasksTimed}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
+#' \code{\link{createCert}},\code{\link{createTasks}}, \code{\link{createTasksBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
 #' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
 #' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}}
 #' @example
 #' \dontrun{
-#' batchesWrapper(timed=TRUE, hit_setting_id=2,question=,pathfrom="/dropbox/documents/questions")
+#' batchesWrapper(timed=TRUE, hit_setting_id=2,question=,readDocumentsFrom="/dropbox/documents/questions")
 #'}
 #'
 #' @rdname batchesWrapper
 #'
 #' @export
-batchesWrapper <- function(pathfrom, hit_setting_id, question,
-                           timed=TRUE, pathto=NULL, what="character",
+batchesWrapper <- function(readDocumentsFrom, hit_setting_id, question,
+                           timed=TRUE, writeDocumentsTo=NULL, what="character",
                            sep="\n", quiet=TRUE,
                            index=NULL, which_source="apiR",
                            number_per=20, per_batch=1000,
@@ -64,13 +71,13 @@ batchesWrapper <- function(pathfrom, hit_setting_id, question,
                            seed=1234, n.cores=3, ...){
 
   # read text into API
-  if(is.null(pathto)){
-  textDoc <- readText(pathfrom=pathfrom, pathto=pathto, what=what, sep=sep, quiet=quiet,
+  if(is.null(writeDocumentsTo)){
+  textDoc <- readText(readDocumentsFrom=readDocumentsFrom, writeDocumentsTo=writeDocumentsTo, what=what, sep=sep, quiet=quiet,
                   index=index, which_source=which_source, ...)
   } else {
-    readText(pathfrom=pathfrom, pathto=pathto, what=what, sep=sep, quiet=quiet,
+    readText(readDocumentsFrom=readDocumentsFrom, writeDocumentsTo=writeDocumentsTo, what=what, sep=sep, quiet=quiet,
              index=index, which_source=which_source, ...)
-    textDoc <- read.csv(paste(pathto,".csv",sep="")) #I am unsure what file type read Text outputs
+    textDoc <- read.csv(paste(writeDocumentsTo,".csv",sep="")) #I am unsure what file type read Text outputs
   }
   # num batches is created from length of ids * number of comparisons / number per batch
   num_batches <- length(textdoc$ids) * number_per / per_batch
@@ -80,14 +87,14 @@ batchesWrapper <- function(pathfrom, hit_setting_id, question,
                path=path, name=name)
   Sys.sleep(rest_time)
 
-  # Create HITS for each of the created batches
+  # Create Tasks for each of the created batches
   if(timed){
-   createHITSTimed(batches=batches, time_per=time_per, mintime=mintime, maxtime=maxtime,
+   createTasksTimed(batches=batches, time_per=time_per, mintime=mintime, maxtime=maxtime,
                     checkWorkersAt=batches[checkWorkersAt], certone=certone, certtwo=certtwo,
                    hierarchy_data=hierarchy_data,  hierarchy_var=hierarchy_var, returnFit=returnFit,
                    plot=plot, file=file, chains=chains, iter=iter, seed=seed, n.cores=n.cores)
   } else{
-    createHITSBatch(batches=batches, min_time=min_time, max_time=max_time,
+    createTasksBatch(batches=batches, min_time=min_time, max_time=max_time,
                            rate=rate, threshold=threshold, checkWorkersAt=batches[checkWorkersAt])
   }
   return(batches)

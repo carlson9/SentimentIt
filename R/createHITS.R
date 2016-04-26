@@ -1,9 +1,9 @@
-#' Create New Hits for comparisons
+#' Create New tasks for comparisons
 #' 
-#' This function posts batches to Mechanical Turk as HITS
+#' This function posts batches to Mechanical Turk as Tasks
 #' 
 #' @param ids Comma-separated list of comparison ids for which to create hits
-#' @param HITsetting id of the HIT Setting to use for the created HITs
+#' @param Tasksetting id of the Task Setting to use for the created Tasks
 #' @param batch_id id of the Batch of comparisons
 #'
 #' @return out ID for batch of comparisons
@@ -11,24 +11,24 @@
 #' @examples
 #' 
 #' \dontrun{
-#' createHITS(ids=10,HITsetting=2)
-#' createHITS(batch_id=204)
+#' createTasks(ids=10,Tasksetting=2)
+#' createTasks(batch_id=204)
 #' }
-#' @rdname createHITS
-#' @seealso \code{\link{createHITSTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
-#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' @rdname createTasks
+#' @seealso \code{\link{createTasksTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
+#' \code{\link{createCert}},\code{\link{createTasks}}, \code{\link{createTasksBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
 #' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
 #' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
 #' }
 #' @export
-createHITS <- function(ids=NULL, HITsetting=NULL, batch_id){
-  if(!is.numeric(ids) | !is.numeric(HITsetting) | !is.numeric(batch_id)){
+createTasks <- function(ids=NULL, Tasksetting=NULL, batch_id){
+  if(!is.numeric(ids) | !is.numeric(Tasksetting) | !is.numeric(batch_id)){
     stop("All arguments need to be numeric.")
   }
   if(is.null(ids)){
     args <- paste('batch_id=', batch_id,"" ,sep='')
   }else{
-    args <- paste('hit_setting=', HITsetting, '&ids=', paste(ids,collapse=','), sep='')
+    args <- paste('hit_setting=', Tasksetting, '&ids=', paste(ids,collapse=','), sep='')
   }
   myget <- GET(paste('http://sentimentit.herokuapp.com/api/comparisons/create_hits?',
                      args, sep=''))

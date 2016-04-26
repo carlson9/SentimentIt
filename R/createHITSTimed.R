@@ -1,4 +1,4 @@
-#' Create HITS Timed
+#' Create Tasks Timed
 #'
 #' Creates batches, and waits a certain
 #'
@@ -24,12 +24,12 @@
 #' @return out IDs for batches of comparisons
 #' @author Jacob M. Montgomery
 #' @seealso \code{\link{batchStatus}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
-#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' \code{\link{createCert}},\code{\link{createTasks}}, \code{\link{createTasksBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
 #' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
 #' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}}
-#' @rdname createHITSTimed
+#' @rdname createTasksTimed
 #' @export
-createHITStimed <- function(batches, time_per, mintime,
+createTaskstimed <- function(batches, time_per, mintime,
                             maxtime, certone, certtwo, checkWorkersAt=NULL,hierarchy_data=NULL,
                             hierarchy_var=NULL, returnFit=FALSE, plot=FALSE, file=NULL,
                             chains=3, iter=2500, seed=1234, n.cores=3){
@@ -37,7 +37,7 @@ createHITStimed <- function(batches, time_per, mintime,
   banned_workers <- vector()
   for(i in batches){
     checkTime(mintime, maxtime)
-    x <- createHITS(batch_id=i)
+    x <- createTasks(batch_id=i)
     out <- c(out, x)
     Sys.sleep(time_per*3600)
     if(i %in% batches[checkWorkersAt]) {

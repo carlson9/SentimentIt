@@ -1,7 +1,7 @@
-#' Repost expired HITS from a batch
+#' Repost expired Tasks from a batch
 #' 
-#' This will repost all of the expired HITs from the vector of batch IDs, because once all
-#' batches are complete it is common that a few HITS remain incomplete.
+#' This will repost all of the expired Tasks from the vector of batch IDs, because once all
+#' batches are complete it is common that a few Tasks remain incomplete.
 #' 
 #' @param batch_id ID of batch to check
 #'
@@ -12,8 +12,8 @@
 #' repostExpired(batch_id=2)
 #' }
 #' @rdname repostExpired
-#' @seealso \code{\link{createHITSTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
-#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' @seealso \code{\link{createTasksTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
+#' \code{\link{createCert}},\code{\link{createTasks}}, \code{\link{createTasksBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
 #' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
 #' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
 #' }

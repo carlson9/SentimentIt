@@ -2,11 +2,11 @@
 #'
 #' A wrapper function of batchesWrapper and repostExpired
 #'
-#' @param pathFrom What file path the data will be drawn form, or actual data
-#' @param hit_setting_id ID of HIT setting to use
-#' @param question the question the worker will see once the worker selects the HIT
-#' @param timed If True, HITS will be created by time, if not by batch
-#' @param pathTo Where to send the text to be reviewed to.
+#' @param readDocumentsFrom What file path the data will be drawn form, or actual data
+#' @param hit_setting_id ID of Task setting to use
+#' @param question the question the worker will see once the worker selects the Task
+#' @param timed If True, Tasks will be created by time, if not by batch
+#' @param writeDocumentsTo Where to send the text to be reviewed to.
 #' @param what The text to be sent and used in the data frame.
 #' @param sep Where to separate text by line.
 #' @param quiet If true, this does not print the amount of items read prior.
@@ -36,16 +36,16 @@
 #'
 #' @author David Carlson
 #'
-#' @seealso \code{\link{batchStatus}}, \code{\link{batchesWrapper}}, \code{\link{createHITSTimed}},\code{\link{checkWorkers}},\code{\link{createBatches}},
-#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' @seealso \code{\link{batchStatus}}, \code{\link{batchesWrapper}}, \code{\link{createTasksTimed}},\code{\link{checkWorkers}},\code{\link{createBatches}},
+#' \code{\link{createCert}},\code{\link{createTasks}}, \code{\link{createTasksBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
 #' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
 #' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}}
 #'
 #' @rdname timedWrapper
 #'
 #' @export
-timedWrapper <- function(pathfrom, hit_setting_id, question,
-                         timed=TRUE, pathto=NULL, what="character",
+timedWrapper <- function(readDocumentsFrom, hit_setting_id, question,
+                         timed=TRUE, writeDocumentsTo=NULL, what="character",
                          sep="\n", quiet=TRUE,
                          index=NULL, which_source="apiR",
                          number_per=20, per_batch=1000,
@@ -60,8 +60,8 @@ timedWrapper <- function(pathfrom, hit_setting_id, question,
                          seed=1234, n.cores=3, ...){
 
   # use batchesWrapper function
-  batches <- batchesWrapper(pathfrom=pathfrom, hit_setting_id=hit_setting_id,
-                            question=question, timed=timed, pathto=pathto,
+  batches <- batchesWrapper(readDocumentsFrom=readDocumentsFrom, hit_setting_id=hit_setting_id,
+                            question=question, timed=timed, writeDocumentsTo=writeDocumentsTo,
                             what=what, sep=sep, quiet=quiet, index=index,
                             which_source=which_source, number_per=number_per,
                             per_batch=per_batch, path=path, name=name,
@@ -74,6 +74,6 @@ timedWrapper <- function(pathfrom, hit_setting_id, question,
                             chains=chain, iter=iter,
                             seed=seed, n.cores=n.cores, ...)
 
-  # repost all of the expired HITs from the vector of batch IDs based on batchesWrapper
+  # repost all of the expired Tasks from the vector of batch IDs based on batchesWrapper
   repostExpired(batches)
 }
