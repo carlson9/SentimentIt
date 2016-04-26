@@ -17,19 +17,20 @@
 #' @param chains The number of chains (defalt is 3)
 #' @param iter The number of iteration (defalt is 2500)
 #' @param seed Set seed (defalt is 1234)
-#' 
+#' @param n.cores Number of cores to be used in stan fit (default is 3)
+#'
 #' @return out ID for batch of comparisons
 #' @author Jacob M. Montgomery
-#' @note 
+#' @note
 #' @examples
 #'
 #' @rdname createHITSBatch
 #' @export
-createHITSBatch <- function(batches, certone, certtwo min_time=9, 
+createHITSBatch <- function(batches, certone, certtwo, min_time=9,
                    max_time=22, rate=1/3, threshold=5, checkWorkersAt=NULL,
                    hierarchy_data=NULL, hierarchy_var=NULL,
                    returnFit=FALSE, plot=FALSE, file=NULL,
-                   chains=3, iter=2500, seed=1234)){
+                   chains=3, iter=2500, seed=1234, n.cores=3){
   out <- vector()
   for(i in batches){
     checkTime(min_time, max_time)
@@ -43,10 +44,10 @@ createHITSBatch <- function(batches, certone, certtwo min_time=9,
         done <- (((status$submitted_count - status$completed_count) <= threshold) | (as.numeric(format(Sys.time(), "M%")) - current > 240))
       }
     if(i %in% batches[checkWorkersAt]) {
-      givetakeCert(certone, certtwo, stanWrapper(data=batches[1:length(out)])[[1]],
+      givetakeCert(certone, certtwo, stanWrapper(data=batches[1:length(out)],
                    hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
                    returnFit=returnFit, plot=plot, file=file,
-                   chains=chains, iter=iter, seed=seed))    
+                   chains=chains, iter=iter, seed=seed, n.cores=n.cores)[[1]])
     }
   }
   return(out)
