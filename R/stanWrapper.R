@@ -12,7 +12,7 @@
 #' @param chains The number of chains (defalt is 3)
 #' @param iter The number of iteration (defalt is 2500)
 #' @param seed Set seed (defalt is 1234)
-#' @param n.core Number of cores to be used in stan fit (default is 3)
+#' @param n.cores Number of cores to be used in stan fit (default is 3)
 #'
 #' @return A list containing
 #'  \item{outlying_workers}{Outlying workers' IDs who have beta coefficients less than 1 and answered more than 100}
@@ -30,7 +30,7 @@
 #' @export
 stanWrapper <- function(data, hierarchy_data=NULL, hierarchy_var=NULL,
                         returnFit=FALSE, plot=FALSE, file=NULL,
-                        chains=3, iter=2500, seed=1234, n.core=3){
+                        chains=3, iter=2500, seed=1234, n.cores=3){
 
   if(is.vector(data)){
     data <- readInData(data)
@@ -45,10 +45,10 @@ stanWrapper <- function(data, hierarchy_data=NULL, hierarchy_var=NULL,
   # fit fit_stan or fit_stan_hier
   if(is.null(hierarchy_data)==FALSE & is.null(hierarchy_var)==FALSE){
     fit <- fit_stan_hier(data1, hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
-                         chains=chains, iter=iter, seed=seed, n.core=n.core)
+                         chains=chains, iter=iter, seed=seed, n.cores=n.cores)
   }
   else{
-    fit <- fit_stan(data1, chains=chains, iter=iter, seed=seed, n.core=n.core)
+    fit <- fit_stan(data1, chains=chains, iter=iter, seed=seed, n.cores=n.cores)
   }
 
   outlying <- check_workers(fit, data1, plot=plot, file=file)

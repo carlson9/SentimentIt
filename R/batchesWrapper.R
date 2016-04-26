@@ -85,7 +85,7 @@ batchesWrapper <- function(pathfrom, hit_setting_id, question,
    createHITSTimed(batches=batches, time_per=time_per, mintime=mintime, maxtime=maxtime,
                     checkWorkersAt=batches[checkWorkersAt], certone=certone, certtwo=certtwo,
                    hierarchy_data=hierarchy_data,  hierarchy_var=hierarchy_var, returnFit=returnFit,
-                   plot=plot, file=file, chains=chains, iter=iter, seed=seed, n.core=n.core)
+                   plot=plot, file=file, chains=chains, iter=iter, seed=seed, n.cores=n.cores)
   } else{
     createHITSBatch(batches=batches, min_time=min_time, max_time=max_time,
                            rate=rate, threshold=threshold, checkWorkersAt=batches[checkWorkersAt])

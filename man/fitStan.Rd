@@ -4,7 +4,7 @@
 \alias{fitStan}
 \title{Fit STAN Model}
 \usage{
-fitStan(data, chains = 3, iter = 2500, seed = 1234, n.core = 3)
+fitStan(data, chains = 3, iter = 2500, seed = 1234, n.cores = 3)
 }
 \arguments{
 \item{data}{A csv file or a vector of batch numbers}
@@ -15,7 +15,7 @@ fitStan(data, chains = 3, iter = 2500, seed = 1234, n.core = 3)
 
 \item{seed}{Set seed (defalt is 1234)}
 
-\item{n.core}{Number of cores to be used in stan fit (default is 3)}
+\item{n.cores}{Number of cores to be used in stan fit (default is 3)}
 }
 \value{
 STAN output

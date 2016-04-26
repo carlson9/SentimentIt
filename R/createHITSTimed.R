@@ -19,7 +19,7 @@
 #' @param chains The number of chains (defalt is 3)
 #' @param iter The number of iteration (defalt is 2500)
 #' @param seed Set seed (defalt is 1234)
-#' @param n.core Number of cores to be used in stan fit (default is 3)
+#' @param n.cores Number of cores to be used in stan fit (default is 3)
 #'
 #' @return out IDs for batches of comparisons
 #' @author Jacob M. Montgomery
@@ -32,7 +32,7 @@
 createHITStimed <- function(batches, time_per, mintime,
                             maxtime, certone, certtwo, checkWorkersAt=NULL,hierarchy_data=NULL,
                             hierarchy_var=NULL, returnFit=FALSE, plot=FALSE, file=NULL,
-                            chains=3, iter=2500, seed=1234, n.core=3){
+                            chains=3, iter=2500, seed=1234, n.cores=3){
   out <- vector()
   banned_workers <- vector()
   for(i in batches){
@@ -43,7 +43,7 @@ createHITStimed <- function(batches, time_per, mintime,
     if(i %in% batches[checkWorkersAt]) {
        givetakeCert(certone, certtwo, stanWrapper(data=batches[1:length(out)],hierarchy_data=hierarchy_data,
                     hierarchy_var=hierarchy_var, returnFit=returnFit, plot=plot, file=false,
-                    chains=chains, iter=iter, seed=seed, n.core=3)[[1]])
+                    chains=chains, iter=iter, seed=seed, n.cores=n.cores)[[1]])
     }
   }
   return(out)
