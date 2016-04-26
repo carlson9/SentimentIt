@@ -1,34 +1,10 @@
-# Creating Unit Tests - givetakeCert
-library("testthat")
+test_that("revokeCert throws an error for non-character inputs, blank inputs, and the same certifications",{
 
-# Checks for proper inputs of certifications
-context("Correct Certifications")
-# Inputs a radnom worker ID as the constant.
-test_that("Proper Certifications", {
-  w1 <- function(x){
-    return("abcd")
-  }
-  # Ensures no blank certification
-  expect_error(createCert(certone = "", certtwo = "", workers = w1),
-               "You must input a non-blank certification to be created for the workers")
-  # Ensures a numeric input for the certification
-  expect_error(createCert(certone = "ab", certtwo = "ab", workers = w1),
-               "You must input a numeric certification for the workers")
-  # Ensures a positive, whole number certification
-  expect_error(createCert(certone = -3.1, certtwo  = -3.1, workers = w1),
-               "You must input a whole, positive number to represent the ceritification input.")
-  # Ensures one certification must be added at a time.
-  expect_error(createCert(certone = c(2,3,4), certtwo = c(2,3,4), workers = w1),
-               "You can only grant one certification at a time.")
-  expect_error(createCert(certone = 2, certtwo = 2, workers = w1),
-               "You cannot revoke and grant the same certification.")
-})
-
-test_that("Proper Workers",{
-  c1 <- function(x){
-    return("22")
-  }
-  # Ensures a non-blank worker ID.
-  expect_error(createCert(cert = c1, workers = ""),
-               "You must input a non-blank worker ID.")
+  expect_error(revokeCert(3, "abd", "abc"), "certification must be a set of characters, not just a number")
+  expect_error(revokeCert("abd", 3, "abc"), "certification must be a set of characters, not just a number")
+  expect_error(revokeCert(3, "", "abd"), "you must input something for the certification")
+  expect_error(revokeCert("", 3, "abd"), "you must input something for the certification")
+  expect_error(revokeCert("abd", "abd", "abc"), "the two certifications must be different")
+  expect_error(revokeCert("abc", "abd", 3), "the worker id must be a set of characters, not just a number")
+  expect_error(revokeCert("abc", "abd", ""), "you must input something for the worker id")
 })
