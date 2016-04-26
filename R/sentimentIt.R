@@ -1,16 +1,12 @@
 #' sentimentIt
 #'
 #' A wrapper function of batchesWrapper and repostExpired
-#'
-#' @param timed HITS are replaced by time, not batch status
-#' @param task_setting_id ID of HIT setting to use
-#' @param num_batches number of batches to create using the HIT setting
-#' @param pathFrom Where the text will be drawn from
-#' @param pathTo Where to send the text to be reviewed to
-#' @param timed Tasks are replaced by time, not batch status
-#' @param task_setting_id ID of Task setting to use
-#' @param num_batches number of batches to create using the Task setting
+
 #' @param readDocumentsFrom Where the text will be drawn from
+#' @param task_setting_id ID of HIT setting to use
+#' @param question 
+#' @param waitToRepost Default is 2 hours
+#' @param timed Tasks are replaced by time, not batch status
 #' @param writeDocumentsTo Where to send the text to be reviewed to
 #' @param what The text to be sent and used in the data frame
 #' @param sep Where to separate text by line
@@ -18,17 +14,15 @@
 #' @param index The index number
 #' @param which_source What type of file is the text being drawn from
 #' @param number_per How many documents per batch to be compared
-#' @param batches The number of batches to be made
-#' @param question Where to separate text by line
 #' @param per_batch If true, this does not print the amount of items read prior
 #' @param path File path
 #' @param name File name
-#' @param time_per Defalt is 1
-#' @param mintime Defalt is 8
-#' @param maxtime Defalt is 22
-#' @param certone Defalt is NULL
-#' @param certtwo Defalt isNULL
-#' @param checkWorkersAt Defalt is NULL
+#' @param time_per Default is 1
+#' @param mintime Default is 8
+#' @param maxtime Default is 22
+#' @param certone Default is NULL
+#' @param certtwo Default is NULL
+#' @param checkWorkersAt Default is NULL
 #' @param rest_time Default is 60
 #' @param rate Default is 1/3
 #' @param threshold Default is 5
@@ -41,6 +35,10 @@
 #' @param iter The number of iteration (default is 2500)
 #' @param seed Set seed (default is 1234)
 #' @param n.cores Number of cores to be used in stan fit (default is 3)
+#' @param returnStan Default is TRUE
+#' @param stanFile Default is NULL
+#' @param returnData Default is TRUE
+#' @param dataFile Default is NULL
 #'
 #' @return
 #'
@@ -51,10 +49,10 @@
 #' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
 #' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}}
 #'
-#' @rdname timedWrapper
+#' @rdname sentimentIt
 #' @export
-sentimentIt <- function(timed, task_setting_id, num_batches=1,
-                         readDocumentsFrom, writeDocumentsTo=NULL, what='character', sep='\n', quiet=TRUE,
+sentimentIt <- function(readDocumentsFrom, task_setting_id, question, waitToRepost = 2, timed, writeDocumentsTo=NULL, 
+                         what='character', sep='\n', quiet=TRUE,
                          index=NULL, which_source='apiR',
                          number_per, batches, question, per_batch=1000, path=NULL,
                          name=NULL, idsAsComps=FALSE,
