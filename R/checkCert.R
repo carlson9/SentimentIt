@@ -14,6 +14,12 @@
 #' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
 #' @export
 checkCert <- function(cert, workers){
+if(!is.character(cert) | nchar(cert)<1){
+    stop("You must input a non-blank certification and one made of characters.")
+  }
+  if(!is.character(workers) | nchar(workers)<1){
+    stop("You must input a non-blank certification and one made of characters.")
+  }
   mypost <- GET(paste0("https://sentimentit.herokuapp.com/api/certifications/", as.character(cert),
                        "/turk_workers/", as.character(workers), ".json"))
   return(fromJSON(rawToChar(as.raw(mypost$content)))$allowed)
