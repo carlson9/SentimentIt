@@ -7,6 +7,7 @@
 #' @param chains The number of chains (defalt is 3)
 #' @param iter The number of iteration (defalt is 2500)
 #' @param seed Set seed (defalt is 1234)
+#' @param parallel If TRUE, fit stan in parallel (defalt is FALSE)
 #'
 #' @return STAN output
 #'
@@ -20,10 +21,12 @@
 #' @rdname fitStan
 #'
 #' @export
-fitStan <- function(data, chains=3, iter=2500, seed=1234){
+fitStan <- function(data, chains=3, iter=2500, seed=1234, parallel=FALSE){
 
-  rstan_options(auto_write = TRUE)
-  options(mc.cores = parallel::detectCores())
+  if(parallel){
+    rstan_options(auto_write = TRUE)
+    options(mc.cores = parallel::detectCores())
+  }
 
   if(is.vector(data)){
     data <- readInData(data)

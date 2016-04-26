@@ -12,6 +12,7 @@
 #' @param chains The number of chains (defalt is 3)
 #' @param iter The number of iteration (defalt is 2500)
 #' @param seed Set seed (defalt is 1234)
+#' @param parallel If TRUE, fit stan in parallel (defalt is FALSE)
 #'
 #' @return A list containing
 #'  \item{outlying_workers}{Outlying workers' IDs who have beta coefficients less than 1 and answered more than 100}
@@ -29,7 +30,7 @@
 #' @export
 stanWrapper <- function(data, hierarchy_data=NULL, hierarchy_var=NULL,
                         returnFit=FALSE, plot=FALSE, file=NULL,
-                        chains=3, iter=2500, seed=1234){
+                        chains=3, iter=2500, seed=1234, parallel=FALSE){
 
   if(is.vector(data)){
     data <- readInData(data)

@@ -6,7 +6,7 @@
 \usage{
 stanWrapper(data, hierarchy_data = NULL, hierarchy_var = NULL,
   returnFit = FALSE, plot = FALSE, file = NULL, chains = 3,
-  iter = 2500, seed = 1234)
+  iter = 2500, seed = 1234, parallel = FALSE)
 }
 \arguments{
 \item{data}{A csv file or a vector of batch numbers}
@@ -26,6 +26,8 @@ stanWrapper(data, hierarchy_data = NULL, hierarchy_var = NULL,
 \item{iter}{The number of iteration (defalt is 2500)}
 
 \item{seed}{Set seed (defalt is 1234)}
+
+\item{parallel}{If TRUE, fit stan in parallel (defalt is FALSE)}
 }
 \value{
 A list containing

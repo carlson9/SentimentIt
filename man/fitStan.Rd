@@ -4,7 +4,7 @@
 \alias{fitStan}
 \title{Fit STAN Model}
 \usage{
-fitStan(data, chains = 3, iter = 2500, seed = 1234)
+fitStan(data, chains = 3, iter = 2500, seed = 1234, parallel = FALSE)
 }
 \arguments{
 \item{data}{A csv file or a vector of batch numbers}
@@ -14,6 +14,8 @@ fitStan(data, chains = 3, iter = 2500, seed = 1234)
 \item{iter}{The number of iteration (defalt is 2500)}
 
 \item{seed}{Set seed (defalt is 1234)}
+
+\item{parallel}{If TRUE, fit stan in parallel (defalt is FALSE)}
 }
 \value{
 STAN output
