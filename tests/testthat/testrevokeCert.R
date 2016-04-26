@@ -1,6 +1,6 @@
 context("revokeCert")
 
-test_that("revokeCert throws an error for non-character inputs",{
+test_that("revokeCert throws an error for non-character inputs and blank inputs",{
   expect_error(revokeCert(3, "abc"), "certification must be a set of characters, not just a number")
   expect_error(revokeCert(3, ""), "you must input something for the worker id")
   expect_error(revokeCert("", "abd"), "you must input something for the certification")
