@@ -36,6 +36,18 @@ createHITSBatch <- function(batches, certone, certtwo, min_time=9,
                    hierarchy_data=NULL, hierarchy_var=NULL,
                    returnFit=FALSE, plot=FALSE, file=NULL,
                    chains=3, iter=2500, seed=1234, n.cores=3){
+  if(!is.character(certone) | nchar(certtwo)<1){
+    stop("You must input a non-blank certification and one made of characters.")
+  }
+  if(!is.character(certtwo) | nchar(certtwo)<1){
+    stop("You must input a non-blank certification and one made of characters.")
+  }
+  if(certone == certtwo){
+    stop("The certifications you are giving and taking away cannot be made the same.")
+  }
+  if(!is.numeric(batches) | nchar(batches)<1){
+    stop("The batch numbers must be numerical digits and non-blank.")
+  }
   out <- vector()
   for(i in batches){
     checkTime(min_time, max_time)
