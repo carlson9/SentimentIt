@@ -2,11 +2,11 @@
 #'
 #' A wrapper function of createBatches, readText
 #'
-#' @param pathFrom What file path the data will be drawn form, or actual data
+#' @param readDocumentsFrom What file path the data will be drawn form, or actual data
 #' @param hit_setting_id ID of HIT setting to use
 #' @param question the question the worker will see once the worker selects the HIT
 #' @param timed If True, HITS will be created by time, if not by batch
-#' @param pathTo Where to send the text to be reviewed to.
+#' @param writeDocumentsTo  Where to send the text to be reviewed to.
 #' @param what The text to be sent and used in the data frame.
 #' @param sep Where to separate text by line.
 #' @param quiet If true, this does not print the amount of items read prior.
