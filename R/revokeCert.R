@@ -35,3 +35,4 @@ revokeCert <- function(cert, workers){
                  body = args, content_type_json(),
                  encode='json')
   out <- c(out, unlist(fromJSON(rawToChar(as.raw(mypost$content)))))
+  }
