@@ -6,6 +6,13 @@
 #' @return The number of workers revoked.  
 #'
 #' @author David Carlson
+#' @examples
+#' 
+#' \dontrun{ 
+#' x <- "ab1"
+#' y <- c("a204", "a206", "a208", "a207")
+#' revocation <- revokeCert(x, y)
+#' }
 #'
 #' @rdname revokeCert
 #' @seealso \code{\link{createHITSTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
