@@ -31,19 +31,14 @@
 #'
 #' @author Jacob M. Montgomery
 #'
-#' @examples
-<<<<<<< Updated upstream
-#'
 #' @seealso \code{\link{batchStatus}}, \code{\link{createHITSTimed}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
 #' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
 #' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
 #' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
-=======
+#' @example 
 #' \dontrun{
 #' batchesWrapper(timed=TRUE, hit_setting_id=2,question=,pathfrom="/dropbox/documents/questions")
 #'}
-#' @seealso \code{\link{createBatches}}, \code{\link{readText}}, \code{\link{makeCompsSep}}, \code{\link{createHITSTimed}}
->>>>>>> Stashed changes
 #'
 #' @rdname batchesWrapper
 #'
@@ -52,20 +47,25 @@ batchesWrapper <- function(timed, hit_setting_id, question, pathfrom, num_batche
                             pathto=NULL, what='character', sep='\n', quiet=TRUE,
                            index=NULL, which_source='apiR',
                            number_per=20, per_batch=1000, path=NULL,
-                           name=NULL, idsAsComps=FALSE,
+                           name=NULL,
                            time_per=1, mintime=9, maxtime=22, certone=NULL, certtwo=NULL,
                            checkWorkersAt=NULL,
-                           rest_time=60,rate=20,threshold=1000, ...){
+                           rest_time=60,rate=.33,threshold=5, ...){
   
   batches <- createBatches(hit_setting_id=hit_setting, num_batches=num_batches)
   
   # read text into API 
-  ids <- readText(pathfrom=pathfrom, pathto=pathto, what=what, sep=sep, quiet=quiet,
-                  index=index, which_source=which_source, ...)#this will NOT work! look at the example - this does not return ids
-  
+  if(pathto=NULL){
+  textDoc <- readText(pathfrom=pathfrom, pathto=pathto, what=what, sep=sep, quiet=quiet,
+                  index=index, which_source=which_source, ...)
+  } else {
+    readText(pathfrom=pathfrom, pathto=pathto, what=what, sep=sep, quiet=quiet,
+             index=index, which_source=which_source, ...)
+    textDoc = read.csv(paste(pathto,".csv",sep="")) #I am unsure what file type read Text outputs
+  }
   # creates comparisons attached to the created batches.
-  makeCompsSep(ids=ids, number_per=number_per, batches=batches, question=question,
-               path=path, name=name, idsAsComps=idsAsComps)
+  makeCompsSep(ids=textDoc$ids, number_per=number_per, batches=batches, question=question,
+               path=path, name=name)
   Sys.sleep(rest_time)
   
   # Create HITS for each of the created batches
