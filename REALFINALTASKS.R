@@ -7,3 +7,8 @@ Final Project Goals:  TO BE DONE BY THE END
 - Fix all parameter names to be more specific (path name) (JOE)
 - Make sure function parameters and defaults match throughout.  (TOGETHER NOW)
 - Fix check workers function. (TAISHI)
+
+
+
+#'  pathFrom = readDocumentsFrom
+#' pathTo = writeDocumentsTo
