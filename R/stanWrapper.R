@@ -1,34 +1,23 @@
-#' Fit STAN Model and Detect Outlying Workers
-#'
-#' Fit STAN model or detect outlying workers
-#'
-#'
-#' @param data A csv file or a vector of batch numbers
-#' @param hierarchy_data A file that contains the variable that is used as a hierarchy (defalt is NULL)
-#' @param hierarchy_var A name of the variable in \code{hierarchy_data} that is used as a hierarchy (defalt is NULL)
-#' @param returnFit Return a fit object if TRUE (degfalt is FALSE)
-#' @param plot If TRUE, create a histogram with a rug plot (defalt is FALSE)
-#' @param file Save the histogram to path and file name specified (defalt is NULL)
-#' @param chains The number of chains (defalt is 3)
-#' @param iter The number of iteration (defalt is 2500)
-#' @param seed Set seed (defalt is 1234)
-#' @param n.cores Number of cores to be used in stan fit (default is 3)
-#'
-#' @return A list containing
-#'  \item{outlying_workers}{Outlying workers' IDs who have beta coefficients less than 1 and answered more than 100}
-#'  \item{stan_fit}{STAN output}
-#'
-#' @author David Carlson
-#'
-#' @seealso \code{\link{batchStatus}}, \code{\link{batchesWrapper}}, \code{\link{createTasksTimed}},\code{\link{checkWorkers}},\code{\link{createBatches}},
-#' \code{\link{createCert}},\code{\link{createTasks}}, \code{\link{createTasksBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
-#' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
-#' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}}
-#'
-#' @rdname stanWrapper
-#'
-#' @export
-stanWrapper <- function(data, hierarchy_data=NULL, hierarchy_var=NULL,
+# Fit STAN Model and Detect Outlying Workers
+#
+# Fit STAN model or detect outlying workers
+#
+#
+# @param data A csv file or a vector of batch numbers
+# @param hierarchy_data A file that contains the variable that is used as a hierarchy (defalt is NULL)
+# @param hierarchy_var A name of the variable in \code{hierarchy_data} that is used as a hierarchy (defalt is NULL)
+# @param returnFit Return a fit object if TRUE (degfalt is FALSE)
+# @param plot If TRUE, create a histogram with a rug plot (defalt is FALSE)
+# @param file Save the histogram to path and file name specified (defalt is NULL)
+# @param chains The number of chains (defalt is 3)
+# @param iter The number of iteration (defalt is 2500)
+# @param seed Set seed (defalt is 1234)
+# @param n.cores Number of cores to be used in stan fit (default is 3)
+#
+# @return A list containing
+#  \item{outlying_workers}{Outlying workers' IDs who have beta coefficients less than 1 and answered more than 100}
+#  \item{stan_fit}{STAN output}
+.stanWrapper <- function(data, hierarchy_data=NULL, hierarchy_var=NULL,
                         returnFit=FALSE, plot=FALSE, file=NULL,
                         chains=3, iter=2500, seed=1234, n.cores=3){
 

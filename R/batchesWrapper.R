@@ -3,17 +3,10 @@
 #' A wrapper function of createBatches, readText
 #'
 #' @param readDocumentsFrom What file path the data will be drawn form, or actual data
-<<<<<<< Updated upstream
-#' @param task_setting_id ID of HIT setting to use
-#' @param question the question the worker will see once the worker selects the HIT
-#' @param timed If True, HITS will be created by time, if not by batch
-#' @param writeDocumentsTo  Where to send the text to be reviewed to.
-=======
 #' @param task_setting_id ID of Task setting to use
 #' @param question the question the worker will see once the worker selects the Task
 #' @param timed If True, Tasks will be created by time, if not by batch
 #' @param writeDocumentsTo Where to send the text to be reviewed to.
->>>>>>> Stashed changes
 #' @param what The text to be sent and used in the data frame.
 #' @param sep Where to separate text by line.
 #' @param quiet If true, this does not print the amount of items read prior.

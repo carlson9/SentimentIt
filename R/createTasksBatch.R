@@ -1,37 +1,36 @@
-#' Create Tasks timed by batch progress.
-#'
-#' Creates batches, and waits a certain time based on the progress of batch.
-#'
-#' @param batches Vector of Batch numbers to check.
-#' @param certone The name of the certification wanted for the workers.
-#' @param certtwo The name of the certification wanted to be removed from the workers.
-#' @param min_time Earliest that tasks can be created (default = 9:00).
-#' @param max_time Latest time that tasks can be created (default = 22:00).
-#' @param threshold Point at which a batch is considered done (default = 5).
-#' @param rate The rate by which the progress of a batch will be checked (default = 1/3 an hour).
-#' @param hierarchy_data A file that contains the variable that is used as a hierarchy (defalt is NULL)
-#' @param hierarchy_var A name of the variable in \code{hierarchy_data} that is used as a hierarchy (defalt is NULL)
-#' @param returnFit Return a fit object if TRUE (degfalt is FALSE)
-#' @param plot If TRUE, create a histogram with a rug plot (defalt is FALSE)
-#' @param file Save the histogram to path and file name specified (defalt is NULL)
-#' @param chains The number of chains (defalt is 3)
-#' @param iter The number of iteration (defalt is 2500)
-#' @param seed Set seed (defalt is 1234)
-#' @param n.cores Number of cores to be used in stan fit (default is 3)
-#'
-#' @return out ID for batch of comparisons
-#' @author Jacob M. Montgomery
-#' @note
-#' @examples
-#'
-#' @rdname createTasksBatch
-#' @seealso \code{\link{createTasksTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
-#' \code{\link{createCert}},\code{\link{createTasks}}, \code{\link{createTasksTimed}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
-#' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
-#' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
-#' }
-#' @export
-createTasksBatch <- function(batches, certone, certtwo, min_time=9,
+# Create Tasks timed by batch progress.
+#
+# Creates batches, and waits a certain time based on the progress of batch.
+#
+# @param batches Vector of Batch numbers to check.
+# @param certone The name of the certification wanted for the workers.
+# @param certtwo The name of the certification wanted to be removed from the workers.
+# @param min_time Earliest that tasks can be created (default = 9:00).
+# @param max_time Latest time that tasks can be created (default = 22:00).
+# @param threshold Point at which a batch is considered done (default = 5).
+# @param rate The rate by which the progress of a batch will be checked (default = 1/3 an hour).
+# @param hierarchy_data A file that contains the variable that is used as a hierarchy (defalt is NULL)
+# @param hierarchy_var A name of the variable in \code{hierarchy_data} that is used as a hierarchy (defalt is NULL)
+# @param returnFit Return a fit object if TRUE (degfalt is FALSE)
+# @param plot If TRUE, create a histogram with a rug plot (defalt is FALSE)
+# @param file Save the histogram to path and file name specified (defalt is NULL)
+# @param chains The number of chains (defalt is 3)
+# @param iter The number of iteration (defalt is 2500)
+# @param seed Set seed (defalt is 1234)
+# @param n.cores Number of cores to be used in stan fit (default is 3)
+#
+# @return out ID for batch of comparisons
+# @author Jacob M. Montgomery
+# @note
+# @examples
+#
+# @rdname createTasksBatch
+# @seealso \code{\link{createTasksTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
+# \code{\link{createCert}},\code{\link{createTasks}}, \code{\link{createTasksTimed}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+# \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
+# \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
+# }
+.createTasksBatch <- function(batches, certone, certtwo, min_time=9,
                    max_time=22, rate=1/3, threshold=5, checkWorkersAt=NULL,
                    hierarchy_data=NULL, hierarchy_var=NULL,
                    returnFit=FALSE, plot=FALSE, file=NULL,
