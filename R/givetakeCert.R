@@ -7,6 +7,14 @@
 #' @return Changes the workers' certifications.  
 #'
 #' @author David Carlson
+#' @examples
+#' 
+#' \dontrun{ 
+#' x <- "ab1"
+#' y <- "ab2" 
+#' z <- c("a204", "a206", "a208", "a207")
+#' givetake <- givetakeCert(x, y, z)
+#' }
 #'
 #' @rdname givetakeCert
 #' @seealso \code{\link{createHITSTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
