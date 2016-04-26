@@ -9,7 +9,11 @@
 #' @author David Carlson
 #'
 #' @rdname givetakeCert
-#' 
+#' @seealso \code{\link{createHITSTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
+#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{createHITSTimed}},\code{\link{makeCompsSep}},
+#' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
+#' }
 #' @export
 givetakeCert <- function(certone, certtwo, workers){
   if(!is.character(certone) | nchar(certtwo)<1){
