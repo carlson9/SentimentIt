@@ -2,6 +2,18 @@
 #'
 #' A wrapper function of batchesWrapper and repostExpired
 #'
+#' @param pathFrom Where the text will be drawn from
+#' @param task_setting_id ID of task setting to use
+#' @param question Where to separate text by line
+#' @param waitToRepost Time before reposting expired tasks
+#' @param pathTo Where to send the text to be reviewed to
+#' @param what The text to be sent and used in the data frame
+#' @param sep Where to separate text by line
+#' @param quiet If true, this does not print the amount of items read prior
+#' @param index The index number
+#' @param which_source What type of file is the text being drawn from
+#' @param number_per How many documents per batch to be compared
+
 #' @param timed HITS are replaced by time, not batch status
 #' @param hit_setting_id ID of HIT setting to use
 #' @param num_batches number of batches to create using the HIT setting
