@@ -4,12 +4,12 @@
 #'
 #' @param readDocumentsFrom What file path the data will be drawn form, or actual data
 <<<<<<< Updated upstream
-#' @param hit_setting_id ID of HIT setting to use
+#' @param task_setting_id ID of HIT setting to use
 #' @param question the question the worker will see once the worker selects the HIT
 #' @param timed If True, HITS will be created by time, if not by batch
 #' @param writeDocumentsTo  Where to send the text to be reviewed to.
 =======
-#' @param hit_setting_id ID of Task setting to use
+#' @param task_setting_id ID of Task setting to use
 #' @param question the question the worker will see once the worker selects the Task
 #' @param timed If True, Tasks will be created by time, if not by batch
 #' @param writeDocumentsTo Where to send the text to be reviewed to.
@@ -49,13 +49,13 @@
 #' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}}
 #' @example
 #' \dontrun{
-#' batchesWrapper(timed=TRUE, hit_setting_id=2,question=,readDocumentsFrom="/dropbox/documents/questions")
+#' batchesWrapper(timed=TRUE, task_setting_id=2,question=,readDocumentsFrom="/dropbox/documents/questions")
 #'}
 #'
 #' @rdname batchesWrapper
 #'
 #' @export
-batchesWrapper <- function(readDocumentsFrom, hit_setting_id, question,
+batchesWrapper <- function(readDocumentsFrom, task_setting_id, question,
                            timed=TRUE, writeDocumentsTo=NULL, what="character",
                            sep="\n", quiet=TRUE,
                            index=NULL, which_source="apiR",
@@ -80,8 +80,8 @@ batchesWrapper <- function(readDocumentsFrom, hit_setting_id, question,
     textDoc <- read.csv(paste(writeDocumentsTo,".csv",sep="")) #I am unsure what file type read Text outputs
   }
   # num batches is created from length of ids * number of comparisons / number per batch
-  num_batches <- length(textdoc$ids) * number_per / per_batch
-  batches <- createBatches(hit_setting_id=hit_setting, num_batches=num_batches)
+  num_batches <- ceiling(length(unique(textdoc$ids)) * number_per / per_batch / 2)
+  batches <- createBatches(task_setting_id=task_setting, num_batches=num_batches)
   # creates comparisons attached to the created batches.
   makeCompsSep(ids=textDoc$ids, number_per=number_per, batches=batches, question=question,
                path=path, name=name)

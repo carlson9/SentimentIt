@@ -3,7 +3,7 @@
 #' A wrapper function of batchesWrapper and repostExpired
 #'
 #' @param readDocumentsFrom What file path the data will be drawn form, or actual data
-#' @param hit_setting_id ID of Task setting to use
+#' @param task_setting_id ID of Task setting to use
 #' @param question the question the worker will see once the worker selects the Task
 #' @param timed If True, Tasks will be created by time, if not by batch
 #' @param writeDocumentsTo Where to send the text to be reviewed to.
@@ -44,7 +44,7 @@
 #' @rdname timedWrapper
 #'
 #' @export
-timedWrapper <- function(readDocumentsFrom, hit_setting_id, question,
+timedWrapper <- function(readDocumentsFrom, task_setting_id, question,
                          timed=TRUE, writeDocumentsTo=NULL, what="character",
                          sep="\n", quiet=TRUE,
                          index=NULL, which_source="apiR",
@@ -60,7 +60,7 @@ timedWrapper <- function(readDocumentsFrom, hit_setting_id, question,
                          seed=1234, n.cores=3, ...){
 
   # use batchesWrapper function
-  batches <- batchesWrapper(readDocumentsFrom=readDocumentsFrom, hit_setting_id=hit_setting_id,
+  batches <- batchesWrapper(readDocumentsFrom=readDocumentsFrom, task_setting_id=task_setting_id,
                             question=question, timed=timed, writeDocumentsTo=writeDocumentsTo,
                             what=what, sep=sep, quiet=quiet, index=index,
                             which_source=which_source, number_per=number_per,

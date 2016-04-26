@@ -12,7 +12,7 @@ License: 0.0.1
 LazyData: TRUE
 RoxygenNote: 5.0.1
 Collate:
-    'createHITS.R'
+    'createTasks.R'
     'batchStatus.R'
     'createPairwise.R'
     'readInData.R'
@@ -23,8 +23,8 @@ Collate:
     'fitStanHier.R'
     'stanWrapper.R'
     'makeCompsSep.R'
-    'createHITSTimed.R'
-    'createHITSBatch.R'
+    'createTasksTimed.R'
+    'createTasksBatch.R'
     'batchesWrapper.R'
     'timedWrapper.R'
     'extractCoef.R'

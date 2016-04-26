@@ -5,8 +5,8 @@
 #' @param batches Vector of Batch numbers to check.
 #' @param certone The name of the certification wanted for the workers.
 #' @param certtwo The name of the certification wanted to be removed from the workers.
-#' @param min_time Earliest that hits can be created (default = 9:00).
-#' @param max_time Latest time that hits can be created (default = 22:00).
+#' @param min_time Earliest that tasks can be created (default = 9:00).
+#' @param max_time Latest time that tasks can be created (default = 22:00).
 #' @param threshold Point at which a batch is considered done (default = 5).
 #' @param rate The rate by which the progress of a batch will be checked (default = 1/3 an hour).
 #' @param hierarchy_data A file that contains the variable that is used as a hierarchy (defalt is NULL)

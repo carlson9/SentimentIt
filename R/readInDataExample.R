@@ -8,7 +8,7 @@
 #'   \item{comparison_id}{id number of the comparison being made}
 #'   \item{document_id}{id number of the document}
 #'   \item{result}{result of document comparison}
-#'   \item{hit_id}{id of the hit}
+#'   \item{task_id}{id of the task}
 #'   \item{worker_id}{id of the worker who did the comparison}
 #'   \item{completed_at}{time comaparison was completed}
 #' }

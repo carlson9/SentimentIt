@@ -2,7 +2,7 @@
 #' 
 #' This function posts batches to Mechanical Turk as Tasks
 #' 
-#' @param ids Comma-separated list of comparison ids for which to create hits
+#' @param ids Comma-separated list of comparison ids for which to create tasks
 #' @param Tasksetting id of the Task Setting to use for the created Tasks
 #' @param batch_id id of the Batch of comparisons
 #'
@@ -28,9 +28,9 @@ createTasks <- function(ids=NULL, Tasksetting=NULL, batch_id){
   if(is.null(ids)){
     args <- paste('batch_id=', batch_id,"" ,sep='')
   }else{
-    args <- paste('hit_setting=', Tasksetting, '&ids=', paste(ids,collapse=','), sep='')
+    args <- paste('task_setting=', Tasksetting, '&ids=', paste(ids,collapse=','), sep='')
   }
-  myget <- GET(paste('http://sentimentit.herokuapp.com/api/comparisons/create_hits?',
+  myget <- GET(paste('http://sentimentit.herokuapp.com/api/comparisons/create_tasks?',
                      args, sep=''))
   mytry <- try(out<-fromJSON(rawToChar(as.raw(myget$content))))
   if(class(mytry) == "try-error"){
