@@ -24,9 +24,11 @@ Collate:
     'stanWrapper.R'
     'makeCompsSep.R'
     'createHITSTimed.R'
+    'createHITSBatch.R'
     'batchesWrapper.R'
     'timedWrapper.R'
     'extractCoef.R'
+    'sentimentIt.R
 Imports:
     plyr,
     jsonlite,

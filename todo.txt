@@ -59,15 +59,14 @@ batchesWrapper and timedWrapper
 
 David 
 !batchstatus
-batchesWrapper (unsure about readText ids, and num_batches)
+!batchesWrapper (unsure about readText ids, and num_batches)
 !createBatches
 !createHITS
-createHITSTimed
+!createHITSTimed
 !makeCompsSep (unsure how to test)
 !readInData
 !repostExpired
 !movieReviewData
-#read text within workflow
 
 Taishi
 timedWrapper
