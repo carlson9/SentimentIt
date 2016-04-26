@@ -16,6 +16,9 @@
 #' @rdname readText
 #' @export
 readText <- function(pathfrom, pathto=NULL, what='character', sep='\n', quiet=TRUE, index=NULL, which_source='apiR', ...){
+  if(is.null(pathfrom)){
+    stop("You must input a path from which the data will be taken.")
+  }
   if(!is.null(index)){
     if(!is.character(pathfrom)){
       hold.table = pathfrom
