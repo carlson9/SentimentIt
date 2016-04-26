@@ -14,7 +14,7 @@
 #' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}} 
 #' @export
 checkCert <- function(cert, workers){
-if(!is.character(cert) | nchar(cert)<1){
+  if(!is.character(cert) | nchar(cert)<1){
     stop("You must input a non-blank certification and one made of characters.")
   }
   if(!is.character(workers) | nchar(workers)<1){
