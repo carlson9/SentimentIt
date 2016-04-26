@@ -7,6 +7,13 @@
 #'
 #' @author David Carlson
 #'
+#' @examples
+#' 
+#' \dontrun{ 
+#' x <- "ab1"
+#' y <- c("a204", "a206", "a208", "a207")
+#' creation <- createCert(x, y)
+#' }
 #' @rdname createCert
 #' @seealso \code{\link{createHITSTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
 #' \code{\link{createHITSTimed}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
