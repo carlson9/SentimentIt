@@ -4,59 +4,74 @@
 \alias{timedWrapper}
 \title{Timed Wrapper}
 \usage{
-timedWrapper(hit_setting_id, num_batches = 1, pathfrom, pathto = NULL,
-  what = "character", sep = "\\n", quiet = TRUE, index = NULL,
-  which_source = "apiR", number_per, batches, question, per_batch = 1000,
-  path = NULL, name = NULL, idsAsComps = FALSE, time_per = 1,
-  mintime = 8, maxtime = 22, certone = NULL, certtwo = NULL,
-  checkWorkersAt = NULL, rest_time = 60, ...)
+timedWrapper(pathfrom, hit_setting_id, question, timed = TRUE,
+  pathto = NULL, what = "character", sep = "\\n", quiet = TRUE,
+  index = NULL, which_source = "apiR", number_per = 20,
+  per_batch = 1000, path = NULL, name = NULL, time_per = 1,
+  mintime = 9, maxtime = 22, certone = NULL, certtwo = NULL,
+  checkWorkersAt = NULL, rest_time = 60, rate = 1/3, threshold = 5,
+  hierarchy_data = NULL, hierarchy_var = NULL, returnFit = FALSE,
+  plot = FALSE, file = NULL, chains = 3, iter = 2500, seed = 1234,
+  n.cores = 3, ...)
 }
 \arguments{
 \item{hit_setting_id}{ID of HIT setting to use}
 
-\item{num_batches}{number of batches to create using the HIT setting}
+\item{question}{the question the worker will see once the worker selects the HIT}
 
-\item{what}{The text to be sent and used in the data frame}
+\item{timed}{If True, HITS will be created by time, if not by batch}
 
-\item{sep}{Where to separate text by line}
+\item{what}{The text to be sent and used in the data frame.}
 
-\item{quiet}{If true, this does not print the amount of items read prior}
+\item{sep}{Where to separate text by line.}
+
+\item{quiet}{If true, this does not print the amount of items read prior.}
 
 \item{index}{The index number}
 
-\item{which_source}{What type of file is the text being drawn from}
+\item{which_source}{What type of file is the text being drawn from.}
 
-\item{number_per}{How many documents per batch to be compared}
+\item{number_per}{number of comparisons desired}
 
-\item{batches}{The number of batches to be made}
+\item{per_batch}{number of comparisons perbatch desired}
 
-\item{question}{Where to separate text by line}
+\item{path}{File path: if NULL, file will be stored in working direcotry}
 
-\item{per_batch}{If true, this does not print the amount of items read prior}
+\item{name}{File name: If NULL, file will be named pairwise.Rdata}
 
-\item{path}{File path}
+\item{time_per}{Time per batch to post on to Mechanical Turk}
 
-\item{name}{File name}
+\item{mintime}{The earliest time in the morning to post comparisons to workers}
 
-\item{idsAsComps}{IDs as comparison}
+\item{maxtime}{The latest time at night to post comparisons to workers}
 
-\item{time_per}{Defalt is 1}
+\item{certone}{Certification to give}
 
-\item{mintime}{Defalt is 8}
+\item{certtwo}{Certification to revoke}
 
-\item{maxtime}{Defalt is 22}
+\item{checkWorkersAt}{batch positions to check workers(i.e. batches 1, 3, 5)}
 
-\item{certone}{Defalt is NULL}
+\item{hierarchy_data}{A file that contains the variable that is used as a hierarchy (defalt is NULL)}
 
-\item{certtwo}{Defalt isNULL}
+\item{hierarchy_var}{A name of the variable in \code{hierarchy_data} that is used as a hierarchy (defalt is NULL)}
 
-\item{checkWorkersAt}{Defalt is NULL}
+\item{returnFit}{Return a fit object if TRUE (default is FALSE)}
 
-\item{rest_time}{Defalt is 60}
+\item{plot}{If TRUE, create a histogram with a rug plot (default is FALSE)}
 
-\item{pathFrom}{Where the text will be drawn from}
+\item{file}{Save the histogram to path and file name specified (default is NULL)}
 
-\item{pathTo}{Where to send the text to be reviewed to}
+\item{chains}{The number of chains (default is 3)}
+
+\item{iter}{The number of iteration (default is 2500)}
+
+\item{seed}{Set seed (default is 1234)}
+
+\item{n.cores}{Number of cores to be used in stan fit (default is 3)}
+
+\item{pathFrom}{What file path the data will be drawn form, or actual data}
+
+\item{pathTo}{Where to send the text to be reviewed to.}
 }
 \value{
 
