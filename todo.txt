@@ -59,7 +59,7 @@ batchesWrapper and timedWrapper
 
 David 
 !batchstatus
-batchesWrapper
+batchesWrapper (unsure about readText ids, and num_batches)
 !createBatches
 !createHITS
 createHITSTimed

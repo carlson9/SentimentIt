@@ -3,11 +3,20 @@
 #' Creates batches, and waits a certain time based on the progress of batch.
 #'
 #' @param batches Vector of Batch numbers to check.
+#' @param certone The name of the certification wanted for the workers.
+#' @param certtwo The name of the certification wanted to be removed from the workers.
 #' @param min_time Earliest that hits can be created (default = 9:00).
 #' @param max_time Latest time that hits can be created (default = 22:00).
 #' @param threshold Point at which a batch is considered done (default = 5).
 #' @param rate The rate by which the progress of a batch will be checked (default = 1/3 an hour).
-#' 
+#' @param hierarchy_data A file that contains the variable that is used as a hierarchy (defalt is NULL)
+#' @param hierarchy_var A name of the variable in \code{hierarchy_data} that is used as a hierarchy (defalt is NULL)
+#' @param returnFit Return a fit object if TRUE (degfalt is FALSE)
+#' @param plot If TRUE, create a histogram with a rug plot (defalt is FALSE)
+#' @param file Save the histogram to path and file name specified (defalt is NULL)
+#' @param chains The number of chains (defalt is 3)
+#' @param iter The number of iteration (defalt is 2500)
+#' @param seed Set seed (defalt is 1234)
 #' 
 #' @return out ID for batch of comparisons
 #' @author Jacob M. Montgomery
@@ -16,8 +25,11 @@
 #'
 #' @rdname createHITSBatch
 #' @export
-createHITSBatch <- function(batches, min_time=9, 
-                   max_time=22, rate=1/3, threshold=5, checkWorkersAt=NULL){
+createHITSBatch <- function(batches, certone, certtwo min_time=9, 
+                   max_time=22, rate=1/3, threshold=5, checkWorkersAt=NULL,
+                   hierarchy_data=NULL, hierarchy_var=NULL,
+                   returnFit=FALSE, plot=FALSE, file=NULL,
+                   chains=3, iter=2500, seed=1234)){
   out <- vector()
   for(i in batches){
     checkTime(min_time, max_time)
@@ -31,7 +43,10 @@ createHITSBatch <- function(batches, min_time=9,
         done <- (((status$submitted_count - status$completed_count) <= threshold) | (as.numeric(format(Sys.time(), "M%")) - current > 240))
       }
     if(i %in% batches[checkWorkersAt]) {
-      givetakeCert(certone, certtwo, stanWrapper(data=batches[1:length(out)])[[1]])    
+      givetakeCert(certone, certtwo, stanWrapper(data=batches[1:length(out)])[[1]],
+                   hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
+                   returnFit=returnFit, plot=plot, file=file,
+                   chains=chains, iter=iter, seed=seed))    
     }
   }
   return(out)

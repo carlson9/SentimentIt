@@ -3,7 +3,7 @@
 #' This function creates new batches with the desired HIT setting 
 #' and the desired number of batches.
 #' 
-#' @param ids ID of HIT setting to use
+#' @param hit_setting_id ID of HIT setting to use
 #' @param num_batches number of separate batches to create
 #'
 #' @return batch_ids ID of batches created
