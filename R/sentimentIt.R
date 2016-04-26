@@ -13,6 +13,8 @@
 #' @param index The index number
 #' @param which_source What type of file is the text being drawn from
 #' @param number_per How many documents per batch to be compared
+#' @param per_batch If true, this does not print the amount of items read prior
+
 
 #' @param timed HITS are replaced by time, not batch status
 #' @param hit_setting_id ID of HIT setting to use
