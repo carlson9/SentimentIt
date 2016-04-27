@@ -3,20 +3,20 @@
 #' Fit STAN hierarchical model
 #'
 #'
-#' @param data A csv file or a vector of batch numbers
-#' @param hierarchy_data A file that contains the variable that is used as a hierarchy
-#' @param hierarchy_var A name of the variable in \code{hierarchy_data} that is used as a hierarchy
-#' @param chains The number of chains (defalt is 3)
-#' @param iter The number of iteration (defalt is 2500)
-#' @param seed Set seed (defalt is 1234)
-#' @param n.cores Number of cores to be used in stan fit (default is 3)
+#' @param data A csv file or a vector of batch numbers.
+#' @param hierarchy_data A file that contains the variable that is used as a hierarchy.
+#' @param hierarchy_var A name of the variable in \code{hierarchy_data} that is used as a hierarchy.
+#' @param chains The number of chains. (Default is 3)
+#' @param iter The number of iteration. (Default is 2500)
+#' @param seed Set seed. (Default is 1234)
+#' @param n.cores Number of cores to be used in stan fit. (Default is 3)
 #'
 #' @return fitStanHier
 #'
 #' @author David Carlson
 #'
-#' @seealso \code{\link{batchStatus}}, \code{\link{batchesWrapper}}, \code{\link{createTasksTimed}},\code{\link{checkWorkers}},\code{\link{createBatches}},
-#' \code{\link{createCert}},\code{\link{createTasks}}, \code{\link{createTasksBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
+#' @seealso \code{\link{batchStatus}}, \code{\link{batchesWrapper}}, \code{\link{createHITSTimed}},\code{\link{checkWorkers}},\code{\link{createBatches}},
+#' \code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
 #' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
 #' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}}
 #'
@@ -26,10 +26,8 @@
 fitStanHier <- function(data, hierarchy_data, hierarchy_var,
                         chains=3, iter=2500, seed=1234, n.cores=3){
 
-  if(!is.null(n.core)){
-    rstan_options(auto_write = TRUE)
+  rstan_options(auto_write = TRUE)
     options(mc.cores = n.cores)
-  }
 
   if(is.vector(data)){
     data <- readInData(data)

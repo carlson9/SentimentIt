@@ -12,4 +12,6 @@ test_that("Proper inputs for checkWorkers", {
   expect_error(checkWorkers(wrong_fit, correct_data), "fit should be a stan object")
   expect_error(checkWorkers(fit, wrong_data1), "data dimension mismatches")
   expect_error(checkWorkers(fit, wrong_data2), "worker_id is not in data")
+  expect_error(checkWorkers(fit, correct_data, cut_point="c"), "cut_point should be numeric")
+  expect_error(checkWorkers(fit, correct_data, cut_point=1, cut_proportion=1.2), "cut_proportion should be in the range between 0 to 1")
 })

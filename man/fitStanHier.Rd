@@ -8,19 +8,19 @@ fitStanHier(data, hierarchy_data, hierarchy_var, chains = 3, iter = 2500,
   seed = 1234, n.cores = 3)
 }
 \arguments{
-\item{data}{A csv file or a vector of batch numbers}
+\item{data}{A csv file or a vector of batch numbers.}
 
-\item{hierarchy_data}{A file that contains the variable that is used as a hierarchy}
+\item{hierarchy_data}{A file that contains the variable that is used as a hierarchy.}
 
-\item{hierarchy_var}{A name of the variable in \code{hierarchy_data} that is used as a hierarchy}
+\item{hierarchy_var}{A name of the variable in \code{hierarchy_data} that is used as a hierarchy.}
 
-\item{chains}{The number of chains (defalt is 3)}
+\item{chains}{The number of chains. (Default is 3)}
 
-\item{iter}{The number of iteration (defalt is 2500)}
+\item{iter}{The number of iteration. (Default is 2500)}
 
-\item{seed}{Set seed (defalt is 1234)}
+\item{seed}{Set seed. (Default is 1234)}
 
-\item{n.cores}{Number of cores to be used in stan fit (default is 3)}
+\item{n.cores}{Number of cores to be used in stan fit. (Default is 3)}
 }
 \value{
 fitStanHier
