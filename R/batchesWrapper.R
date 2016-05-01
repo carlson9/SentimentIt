@@ -22,15 +22,17 @@
 #' @param certone Certification to give
 #' @param certtwo Certification to revoke
 #' @param checkWorkersAt batch positions to check workers(i.e. batches 1, 3, 5)
-#' @param hierarchy_data A file that contains the variable that is used as a hierarchy (defalt is NULL)
-#' @param hierarchy_var A name of the variable in \code{hierarchy_data} that is used as a hierarchy (defalt is NULL)
-#' @param returnFit Return a fit object if TRUE (default is FALSE)
-#' @param plot If TRUE, create a histogram with a rug plot (default is FALSE)
-#' @param file Save the histogram to path and file name specified (default is NULL)
-#' @param chains The number of chains (default is 3)
-#' @param iter The number of iteration (default is 2500)
-#' @param seed Set seed (default is 1234)
-#' @param n.cores Number of cores to be used in stan fit (default is 3)
+#' @param hierarchy_data A file that contains the variable that is used as a hierarchy. (Default is NULL)
+#' @param hierarchy_var A name of the variable in \code{hierarchy_data} that is used as a hierarchy. (Default is NULL)
+#' @param returnFit Return a fit object if TRUE. (Default is FALSE)
+#' @param cut_point A cutoff point to classify posterior coefficients. The proportion of posterior coefficients below \code{cut_point} is used to determine outliers. (Default is 1)
+#' @param cut_proportion A cutoff proportion of posterior coefficients below \code{cut_point}. If the proportion of posterior coefficients below \code{cut_points} is higher than \code{cut_proportion}, a worker will be considered as an outlier provided that she answers more than 50 questions. (Default is 0.9)
+#' @param plot_hist If TRUE, plot the histogram of workers with a rug plot. (Default is FALSE)
+#' @param file_path Save the histogram to path and file name specified. (Default is NULL)
+#' @param chains The number of chains. (Default is 3)
+#' @param iter The number of iteration. (Default is 2500)
+#' @param seed Set seed. (Default is 1234)
+#' @param n.cores Number of cores to be used in stan fit. (Default is 3)
 #'
 #' @return batches A vector of batch numbers that have been created
 #'
@@ -59,9 +61,9 @@ batchesWrapper <- function(readDocumentsFrom, task_setting_id, question,
                            checkWorkersAt=NULL,
                            rest_time=60, rate=1/3, threshold=5,
                            hierarchy_data=NULL, hierarchy_var=NULL,
-                           returnFit=FALSE, plot=FALSE, file=NULL,
-                           chains=3, iter=2500,
-                           seed=1234, n.cores=3, ...){
+                           returnFit=FALSE, cut_point=1, cut_proportion=0.9,
+                           plot_hist=FALSE, file_path=NULL,
+                           chains=3, iter=2500, seed=1234, n.cores=3, ...){
 
   # read text into API
   if(is.null(writeDocumentsTo)){
@@ -84,8 +86,10 @@ batchesWrapper <- function(readDocumentsFrom, task_setting_id, question,
   if(timed){
    createTasksTimed(batches=batches, time_per=time_per, mintime=mintime, maxtime=maxtime,
                     checkWorkersAt=batches[checkWorkersAt], certone=certone, certtwo=certtwo,
-                   hierarchy_data=hierarchy_data,  hierarchy_var=hierarchy_var, returnFit=returnFit,
-                   plot=plot, file=file, chains=chains, iter=iter, seed=seed, n.cores=n.cores)
+                    hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
+                    returnFit=returnFit, cut_point=cut_point, cut_proportion=cut_proportion,
+                    plot_hist=plot_hist, file_path=file_path,
+                    chains=chains, iter=iter, seed=seed, n.cores=n.cores)
   } else{
     createTasksBatch(batches=batches, min_time=min_time, max_time=max_time,
                            rate=rate, threshold=threshold, checkWorkersAt=batches[checkWorkersAt])
