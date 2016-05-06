@@ -38,10 +38,10 @@
 #' @param iter The number of iteration. (Default is 2500)
 #' @param seed Set seed. (Default is 1234)
 #' @param n.cores Number of cores to be used in stan fit. (Default is 3)
-#' @param returnStan Default is TRUE
-#' @param stanFile Default is NULL
-#' @param returnData Default is TRUE
-#' @param dataFile Default is NULL
+#' @param returnStan A logical indicator of whether or not the fitted model should be returned. (Default is TRUE)
+#' @param stanFile The name of the file to save the Stan fitted model. (Default is NULL)
+#' @param returnData A logical indicating if the data from the HITs should be returned. (Default is TRUE)
+#' @param dataFile The directory and name of the file to save the HIT data. (Default is NULL)
 #'
 #' @return
 #'
@@ -85,4 +85,18 @@ sentimentIt <- function(readDocumentsFrom, task_setting_id, question, waitToRepo
                             chains=chains, iter=iter, seed=seed, n.cores=n.cores, ...)
 
   repostExpired(batches)
+  
+  if(returnStan){
+    stanfit <- stanWrapper(data=batches,
+                           hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
+                           returnFit=TRUE, cut_point=cut_point, cut_proportion=cut_proportion,
+                           n.questions=n.questions, plot_hist=plot_hist, file_path=file_path,
+                           chains=chains, iter=iter, seed=seed, n.cores=n.cores)[[2]]
+    if(!is.null(stanFile)){
+      save(stanfit, file=stanFile)
+    }
+    else{
+      return(stanfit)
+    }
+  }
 }
