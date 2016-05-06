@@ -6,8 +6,8 @@
 \usage{
 .stanWrapper(data, hierarchy_data = NULL, hierarchy_var = NULL,
   returnFit = FALSE, cut_point = 1, cut_proportion = 0.9,
-  plot_hist = FALSE, file_path = NULL, chains = 3, iter = 2500,
-  seed = 1234, n.cores = 3)
+  n.questions = 50, plot_hist = FALSE, file_path = NULL, chains = 3,
+  iter = 2500, seed = 1234, n.cores = 3)
 }
 \arguments{
 \item{data}{A csv file or a vector of batch numbers.}
@@ -20,7 +20,9 @@
 
 \item{cut_point}{A cutoff point to classify posterior coefficients. The proportion of posterior coefficients below \code{cut_point} is used to determine outliers. (Default is 1)}
 
-\item{cut_proportion}{A cutoff proportion of posterior coefficients below \code{cut_point}. If the proportion of posterior coefficients below \code{cut_points} is higher than \code{cut_proportion}, a worker will be considered as an outlier provided that she answers more than 50 questions. (Default is 0.9)}
+\item{cut_proportion}{A cutoff proportion of posterior coefficients below \code{cut_point}. If the proportion of posterior coefficients below \code{cut_points} is higher than \code{cut_proportion}, a worker will be considered as an outlier provided that she answers more than the number of questions in \code{n.questions}. (Default is 0.9)}
+
+\item{n.questions}{The number of questions to consider in order to determine banned workers. (Default is 50)}
 
 \item{plot_hist}{If TRUE, plot the histogram of workers with a rug plot. (Default is FALSE)}
 

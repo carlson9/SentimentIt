@@ -8,7 +8,8 @@
 #' @param hierarchy_var A name of the variable in \code{hierarchy_data} that is used as a hierarchy. (Default is NULL)
 #' @param returnFit Return a fit object if TRUE. (Default is FALSE)
 #' @param cut_point A cutoff point to classify posterior coefficients. The proportion of posterior coefficients below \code{cut_point} is used to determine outliers. (Default is 1)
-#' @param cut_proportion A cutoff proportion of posterior coefficients below \code{cut_point}. If the proportion of posterior coefficients below \code{cut_points} is higher than \code{cut_proportion}, a worker will be considered as an outlier provided that she answers more than 50 questions. (Default is 0.9)
+#' @param cut_proportion A cutoff proportion of posterior coefficients below \code{cut_point}. If the proportion of posterior coefficients below \code{cut_points} is higher than \code{cut_proportion}, a worker will be considered as an outlier provided that she answers more than the number of questions in \code{n.questions}. (Default is 0.9)
+#' @param n.questions The number of questions to consider in order to determine banned workers. (Default is 50)
 #' @param plot_hist If TRUE, plot the histogram of workers with a rug plot. (Default is FALSE)
 #' @param file_path Save the histogram to path and file name specified. (Default is NULL)
 #' @param chains The number of chains. (Default is 3)
@@ -32,7 +33,7 @@
 #' @export
 .stanWrapper <- function(data, hierarchy_data=NULL, hierarchy_var=NULL,
                         returnFit=FALSE, cut_point=1, cut_proportion=0.9,
-                        plot_hist=FALSE, file_path=NULL,
+                        n.questions=50, plot_hist=FALSE, file_path=NULL,
                         chains=3, iter=2500, seed=1234, n.cores=3){
 
   if(is.vector(data)){
@@ -56,7 +57,7 @@
   }
 
   outlying <- checkWorkers(stan_fit=fit, data=data1, cut_point=cut_point,
-                           cut_proportion=cut_proportion,
+                           cut_proportion=cut_proportion, n.questions=n.questions,
                            plot_hist=plot_hist, file_path=file_path)
 
   if(!returnFit){

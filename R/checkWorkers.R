@@ -6,11 +6,12 @@
 #' @param stan_fit A stan fit.
 #' @param data The data used to fit stan.
 #' @param cut_point A cutoff point to classify posterior coefficients. The proportion of posterior coefficients below \code{cut_point} is used to determine outliers. (Default is 1)
-#' @param cut_proportion A cutoff proportion of posterior coefficients below \code{cut_point}. If the proportion of posterior coefficients below \code{cut_points} is higher than \code{cut_proportion}, a worker will be considered as an outlier provided that she answers more than 50 questions. (Default is 0.9)
+#' @param cut_proportion A cutoff proportion of posterior coefficients below \code{cut_point}. If the proportion of posterior coefficients below \code{cut_points} is higher than \code{cut_proportion}, a worker will be considered as an outlier provided that she answers more than the number of questions in \code{n.questions}. (Default is 0.9)
+#' @param n.questions The number of questions to consider in order to determine banned workers. (Default is 50)
 #' @param plot_hist If TRUE, plot the histogram of workers with a rug plot. (Default is FALSE)
 #' @param file_path Save the histogram to path and file name specified. (Default is NULL)
 #'
-#' @return A vector of outlying workers' IDs whose proportion of posterior coefficients below \code{cut_point} is greater than \code{cut_proportion} and who answered more than 50 questions
+#' @return A vector of outlying workers' IDs whose proportion of posterior coefficients below \code{cut_point} is greater than \code{cut_proportion} and who answered more than the number of questions in \code{n.questions}
 #'
 #' @author David Carlson
 #'
@@ -23,7 +24,7 @@
 #'
 #' @export
 checkWorkers <- function(stan_fit, data, cut_point=1, cut_proportion=0.9,
-                         plot_hist=FALSE, file_path=NULL){
+                         n.questions=50, plot_hist=FALSE, file_path=NULL){
 
   if(class(stan_fit) != "stanfit"){
     stop("fit should be class stanfit")
@@ -51,7 +52,7 @@ checkWorkers <- function(stan_fit, data, cut_point=1, cut_proportion=0.9,
 
   workers <- levels(data$worker_id[seq(1, dim(data)[1], by=2)])
   j <- as.numeric(data$worker_id[seq(1, dim(data)[1], by=2)])
-  ban_workers <- workers[which(bs_proportion > cut_proportion & table(j) > 50)]
+  ban_workers <- workers[which(bs_proportion > cut_proportion & table(j) > n.questions)]
 
   if(plot_hist){
     plot(hist(bs, main='Histogram of Worker Estimates'))

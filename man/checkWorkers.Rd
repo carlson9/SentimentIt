@@ -19,7 +19,9 @@ checkWorkers(stan_fit, data, plot_hist = FALSE, file_path = NULL)
 
 \item{cut_point}{A cutoff point to classify posterior coefficients. The proportion of posterior coefficients below \code{cut_point} is used to determine outliers. (Default is 1)}
 
-\item{cut_proportion}{A cutoff proportion of posterior coefficients below \code{cut_point}. If the proportion of posterior coefficients below \code{cut_points} is higher than \code{cut_proportion}, a worker will be considered as an outlier provided that she answers more than 50 questions. (Default is 0.9)}
+\item{cut_proportion}{A cutoff proportion of posterior coefficients below \code{cut_point}. If the proportion of posterior coefficients below \code{cut_points} is higher than \code{cut_proportion}, a worker will be considered as an outlier provided that she answers more than the number of questions in \code{n.questions}. (Default is 0.9)}
+
+\item{n.questions}{The number of questions to consider in order to determine banned workers. (Default is 50)}
 
 \item{stan_fit}{A stan fit}
 
@@ -30,7 +32,7 @@ checkWorkers(stan_fit, data, plot_hist = FALSE, file_path = NULL)
 \item{file_path}{Save the histogram to path and file name specified (default is NULL)}
 }
 \value{
-A vector of outlying workers' IDs whose proportion of posterior coefficients below \code{cut_point} is greater than \code{cut_proportion} and who answered more than 50 questions
+A vector of outlying workers' IDs whose proportion of posterior coefficients below \code{cut_point} is greater than \code{cut_proportion} and who answered more than the number of questions in \code{n.questions}
 
 Outlying workers' IDs who have beta coefficients less than 1 and answered more than 100
 }
