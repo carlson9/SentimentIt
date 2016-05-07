@@ -88,13 +88,14 @@ batchesWrapper <- function(readDocumentsFrom, task_setting_id, question,
 
   # Create Tasks for each of the created batches
   if(timed){
-   createTasksTimed(batches=batches, time_per=time_per, mintime=mintime, maxtime=maxtime,
+   .createTasksTimed(batches=batches, time_per=time_per, mintime=mintime, maxtime=maxtime,
                     checkWorkersAt=batches[checkWorkersAt], certone=certone, certtwo=certtwo,
                     hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
                     returnFit=returnFit, cut_point=cut_point, cut_proportion=cut_proportion,
                     n.questions=n.questions, plot_hist=plot_hist, file_path=file_path,
                     chains=chains, iter=iter, seed=seed, n.cores=n.cores)
   } else{
+<<<<<<< Updated upstream
     createTasksBatch(batches=batches, min_time=min_time, max_time=max_time,
                      rate=rate, threshold=threshold, 
                      checkWorkersAt=batches[checkWorkersAt],
@@ -102,6 +103,10 @@ batchesWrapper <- function(readDocumentsFrom, task_setting_id, question,
                      returnFit=FALSE, cut_point=1, cut_proportion=0.9,
                      n.questions=50, plot_hist=FALSE, file_path=NULL,
                      chains=3, iter=2500, seed=1234, n.cores=3)
+=======
+    .createTasksBatch(batches=batches, min_time=min_time, max_time=max_time,
+                           rate=rate, threshold=threshold, checkWorkersAt=batches[checkWorkersAt])
+>>>>>>> Stashed changes
   }
   return(batches)
 }

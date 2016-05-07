@@ -66,11 +66,18 @@
         done <- (((status$submitted_count - status$completed_count) <= threshold) | (as.numeric(format(Sys.time(), "M%")) - current > 240))
       }
     if(i %in% batches[checkWorkersAt]) {
+<<<<<<< Updated upstream
       givetakeCert(certone, certtwo, stanWrapper(data=batches[1:length(out)],
                                                  hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
                                                  returnFit=returnFit, cut_point=cut_point, cut_proportion=cut_proportion,
                                                  n.questions=n.questions, plot_hist=plot_hist, file_path=file_path,
                                                  chains=chains, iter=iter, seed=seed, n.cores=n.cores)[[1]])
+=======
+      givetakeCert(certone, certtwo, .stanWrapper(data=batches[1:length(out)],
+                   hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
+                   returnFit=returnFit, plot=plot, file=file,
+                   chains=chains, iter=iter, seed=seed, n.cores=n.cores)[[1]])
+>>>>>>> Stashed changes
     }
   }
   return(out)
