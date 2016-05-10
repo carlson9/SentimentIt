@@ -7,5 +7,11 @@
 #'   \item{stars}{rating on scale from 1-5 by Mechanical Turk worker}
 #'   \item{Review}{The movie review looked over by worker}
 #' }
+#' @seealso \code{\link{createTasksTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},
+#' \code{\link{checkWorkers}},\code{\link{createBatches}},\code{\link{createCert}},\code{\link{createTasks}}, 
+#' \code{\link{createPairwise}}, \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},
+#' \code{\link{givetakeCert}},\code{\link{makeCompsSep}},\code{\link{readInData}}, \code{\link{readText}},
+#' \code{\link{repostExpired}},\code{\link{revokeCert}}
+#' }
 #' @author David Carlson
 #' @rdname reviews
