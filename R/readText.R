@@ -12,6 +12,12 @@
 #' 
 #' @return List of ids corresponding to documents sent
 #'
+#' @seealso \code{\link{createTasksTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},
+#' \code{\link{checkWorkers}},\code{\link{createBatches}},\code{\link{createCert}},\code{\link{createTasks}}, 
+#' \code{\link{createPairwise}}, \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},
+#' \code{\link{givetakeCert}},\code{\link{makeCompsSep}},\code{\link{readInData}}, \code{\link{readText}},
+#' \code{\link{repostExpired}},\code{\link{revokeCert}}
+#' }
 #' @author David Carlson
 #' @rdname readText
 #' @export
