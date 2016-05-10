@@ -41,11 +41,11 @@
 #' @return batches A vector of batch numbers that have been created
 #'
 #' @author Jacob M. Montgomery
-#'
-#' @seealso \code{\link{batchStatus}}, \code{\link{createTasksTimed}}, \code{\link{checkCert}},\code{\link{checkWorkers}},\code{\link{createBatches}},
-#' \code{\link{createCert}},\code{\link{createTasks}}, \code{\link{createTasksBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
-#' \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
-#' \code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}}
+#' @seealso \code{\link{createTasksTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},
+#' \code{\link{checkWorkers}},\code{\link{createBatches}},\code{\link{createCert}},\code{\link{createTasks}}, 
+#' \code{\link{createPairwise}}, \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},
+#' \code{\link{givetakeCert}},\code{\link{makeCompsSep}},\code{\link{readInData}}, \code{\link{readText}},
+#' \code{\link{repostExpired}},\code{\link{revokeCert}}
 #' @example
 #' \dontrun{
 #' batchesWrapper(timed=TRUE, task_setting_id=2,question=,readDocumentsFrom="/dropbox/documents/questions")
@@ -95,18 +95,14 @@ batchesWrapper <- function(readDocumentsFrom, task_setting_id, question,
                     n.questions=n.questions, plot_hist=plot_hist, file_path=file_path,
                     chains=chains, iter=iter, seed=seed, n.cores=n.cores)
   } else{
-<<<<<<< Updated upstream
-    createTasksBatch(batches=batches, min_time=min_time, max_time=max_time,
+
+    .createTasksBatch(batches=batches, min_time=min_time, max_time=max_time,
                      rate=rate, threshold=threshold, 
                      checkWorkersAt=batches[checkWorkersAt],
                      hierarchy_data=NULL, hierarchy_var=NULL,
                      returnFit=FALSE, cut_point=1, cut_proportion=0.9,
                      n.questions=50, plot_hist=FALSE, file_path=NULL,
                      chains=3, iter=2500, seed=1234, n.cores=3)
-=======
-    .createTasksBatch(batches=batches, min_time=min_time, max_time=max_time,
-                           rate=rate, threshold=threshold, checkWorkersAt=batches[checkWorkersAt])
->>>>>>> Stashed changes
   }
   return(batches)
 }
