@@ -69,22 +69,46 @@ sentimentIt <- function(readDocumentsFrom, task_setting_id, question, waitToRepo
                         chains=3, iter=2500, seed=1234, n.cores=3, 
                         returnStan=TRUE, stanFile=NULL, returnData=TRUE, 
                         dataFile=NULL, ...){
+  if(is.null(writeDocumentsTo)){
+  textDoc <- readText(readDocumentsFrom=readDocumentsFrom, writeDocumentsTo=writeDocumentsTo, what=what, sep=sep, quiet=quiet,
+                  index=index, which_source=which_source, ...)
+  } else {
+    readText(readDocumentsFrom=readDocumentsFrom, writeDocumentsTo=writeDocumentsTo, what=what, sep=sep, quiet=quiet,
+             index=index, which_source=which_source, ...)
+    textDoc <- read.csv(paste(writeDocumentsTo,".csv",sep="")) 
+  }
+  
+  # num batches is created from length of ids * number of comparisons / number per batch
+  num_batches <- ceiling(length(unique(textdoc$ids)) * number_per / per_batch / 2)
+  batches <- createBatches(task_setting_id=task_setting, num_batches=num_batches)
+  # creates comparisons attached to the created batches.
+  makeCompsSep(ids=textDoc$ids, number_per=number_per, batches=batches, question=question,
+               path=path, name=name)
+  Sys.sleep(rest_time)
 
-  batches <- batchesWrapper(readDocumentsFrom=readDocumentsFrom, task_setting_id=task_setting_id,
-                            question=question, timed=timed, writeDocumentsTo=writeDocumentsTo,
-                            what=what, sep=sep, quiet=quiet, index=index,
-                            which_source=which_source, number_per=number_per,
-                            per_batch=per_batch, path=path, name=name,
-                            time_per=time_per, mintime=mintime, maxtime=maxtime,
-                            certone=certone, certtwo=certtwo,
-                            checkWorkersAt=checkWorkersAt, rest_time=rest_time,
-                            rate=rate, threshold=threshold,
-                            hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
-                            returnFit=returnFit, cut_point=cut_point,
-                            cut_proportion=cut_proportion, n.questions=n.questions,
-                            plot_hist=plot_hist, file_path=file_path,
-                            chains=chains, iter=iter, seed=seed, n.cores=n.cores, ...)
+  # Create Tasks for each of the created batches
+  if(timed){
+   .createTasksTimed(batches=batches, time_per=time_per, mintime=mintime, maxtime=maxtime,
+                    checkWorkersAt=batches[checkWorkersAt], certone=certone, certtwo=certtwo,
+                    hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
+                    returnFit=returnFit, cut_point=cut_point, cut_proportion=cut_proportion,
+                    n.questions=n.questions, plot_hist=plot_hist, file_path=file_path,
+                    chains=chains, iter=iter, seed=seed, n.cores=n.cores)
+  } else{
 
+    .createTasksBatch(batches=batches, min_time=min_time, max_time=max_time,
+                     rate=rate, threshold=threshold, 
+                     checkWorkersAt=batches[checkWorkersAt],
+                     hierarchy_data=NULL, hierarchy_var=NULL,
+                     returnFit=FALSE, cut_point=1, cut_proportion=0.9,
+                     n.questions=50, plot_hist=FALSE, file_path=NULL,
+                     chains=3, iter=2500, seed=1234, n.cores=3)
+  }
+  return(batches)
+}
+  
+  Sys.sleep(waitToRepost)
+  
   repostExpired(batches)
   
   if(returnStan){
