@@ -39,7 +39,7 @@ batch_status <- function(batch_id){
   batch_id <- batch_id[sort.list(batch_id)]
   output<-data.frame()
   for(i in batch_id){
-    myurl<- GET(paste0('http://sentimentit.com/api/batches/',i,'/status.json'))
+    myurl<- GET(paste0('https://sentimentit.herokuapp.com/api/batches/',i,'/status.json'))
     data <- fromJSON(rawToChar(as.raw(myurl$content)))
     status <- data.frame(data$id, data$comparisons)
     output <- rbind(output, status)
@@ -47,4 +47,6 @@ batch_status <- function(batch_id){
   colnames(output) <- c("id", "total_count", "submitted_count", "completed_count", "expired_count" )
   return(output)
 }
+
+
 

@@ -31,7 +31,7 @@ createTasks <- function(ids=NULL, Tasksetting=NULL, batch_id){
   }else{
     args <- paste('task_setting=', Tasksetting, '&ids=', paste(ids,collapse=','), sep='')
   }
-  myget <- GET(paste('http://sentimentit.herokuapp.com/api/comparisons/create_hits?',
+  myget <- GET(paste('http://sentimentit.herokuapp.com/api/comparisons/create_tasks?',
                      args, sep=''))
   mytry <- try(out<-fromJSON(rawToChar(as.raw(myget$content))))
   if(class(mytry) == "try-error"){

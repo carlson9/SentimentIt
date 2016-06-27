@@ -3,7 +3,7 @@
 #' @param cert The name of the certification given to the workers.
 #' @param worker The MTurk worker ID you want to check for certification.
 #'
-#' @return Status of the worker's certification.  
+#' @return Status of the worker's certifications.  
 #'
 #' @author David Carlson
 #'
