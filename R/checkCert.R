@@ -1,9 +1,9 @@
-#' Checks certifications for workers.
+#' Checks certification for a worker.
 #'
 #' @param cert The name of the certification given to the workers.
 #' @param worker The MTurk worker ID you want to check for certification.
 #'
-#' @return Status of the worker's certification.  
+#' @return TRUE or FALSE indicating if the worker has the certification.  
 #'
 #' @author David Carlson
 #'

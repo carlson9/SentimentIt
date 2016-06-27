@@ -1,10 +1,10 @@
-#' Creates a matrix of random pairs for comparison.
+#' Creates a .
 #'
 #' @param ids The id numbers of the texts you want to use.
 #' @param number_per How many documents per batch to be compared.
-#' @param pairwise_path Path to save the created pairwise matrix.
+#' @param pairwise_path
 #'
-#' @return A matrix of random pairwise comparisons without repitition.
+#' @return Creates a document with the texts to be compared.
 #'
 #' @author David Carlson
 #'

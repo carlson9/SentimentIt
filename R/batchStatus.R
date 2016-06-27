@@ -1,12 +1,11 @@
 #' Check batch status
 #' 
 #' This function checks the indicated batch_id numbers and returns 
-#' their status.This returns the number of comparisons submitted and 
-#' the number completed.
+#' their status. This returns a data frame with the batch ID and the number of comparisons submitted and the number completed.
 #' 
-#' @param batch_id ID of batch to check
+#' @param batch_id Vector of batch IDs to check
 #'
-#' @return output dataframe with the variables:
+#' @return output Dataframe with the variables:
 #' \itemize{
 #'   \item id
 #'   \item total_count
@@ -31,7 +30,7 @@
 #' \code{\link{extractCoef}}
 #' @rdname batchStatus
 #' @export
-batch_status <- function(batch_id){
+batchStatus <- function(batch_id){
   if (!is.vector(batch_id) | !is.numeric(batch_id)) {
     stop("batch_id needs to be a vector of numerics")
   }

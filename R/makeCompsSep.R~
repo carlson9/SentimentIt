@@ -37,8 +37,7 @@ makeCompsSep <- function(ids, number_per, batches, question, per_batch=1000,
                          path=NULL, name=NULL, idsAsComps=FALSE){
   if(!idsAsComps){
     pairwise <- createPairwise(ids, number_per)
-    ########
-#######save(pairwise, file=paste0(path, 'pairwise', name, '.Rdata'))
+    save(pairwise, file=paste0(path, 'pairwise', name, '.Rdata'))
   }else{
     pairwise <- ids
   }
