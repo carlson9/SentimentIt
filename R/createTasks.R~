@@ -1,17 +1,17 @@
-#' Create New tasks for comparisons
+#' Create new tasks for comparisons
 #' 
-#' This function posts batches to Mechanical Turk as Tasks
+#' This function posts batches or comparisons to Mechanical Turk as tasks
 #' 
-#' @param ids Comma-separated list of comparison ids for which to create tasks
-#' @param Tasksetting id of the Task Setting to use for the created Tasks
-#' @param batch_id id of the Batch of comparisons
+#' @param comp_ids Comma-separated list of comparison ids for which to create tasks, if comparisons were not created under a batch. Default is NULL. Leave as NULL if batch_id is provided.
+#' @param task_setting Task Setting to use for the created tasks, if comparisons were not created under a batch. Default is NULL. Leave as NULL if batch_id is provided.
+#' @param batch_id Batch ID to be used if comparisons created under a batch.
 #'
 #' @return out ID for batch of comparisons
 #' @author David Carlson
 #' @examples
 #' 
 #' \dontrun{
-#' createTasks(ids=10,Tasksetting=2)
+#' createTasks(ids=10,task_setting=2)
 #' createTasks(batch_id=204)
 #' }
 #' @rdname createTasks
@@ -22,16 +22,13 @@
 #' \code{\link{repostExpired}},\code{\link{revokeCert}}, \code{\link{sentimentIt}}, \code{\link{batchStatus}},
 #' \code{\link{extractCoef}}
 #' @export
-createTasks <- function(ids=NULL, Tasksetting=NULL, batch_id){
-  if(!is.numeric(ids) | !is.numeric(Tasksetting) | !is.numeric(batch_id)){
-    stop("All arguments need to be numeric.")
-  }
-  if(is.null(ids)){
+createTasks <- function(comp_ids=NULL, task_setting=NULL, batch_id){
+  if(is.null(comp_ids)){
     args <- paste('batch_id=', batch_id,"" ,sep='')
   }else{
-    args <- paste('task_setting=', Tasksetting, '&ids=', paste(ids,collapse=','), sep='')
+    args <- paste('hit_setting=', task_setting, '&ids=', paste(comp_ids,collapse=','), sep='')
   }
-  myget <- GET(paste('http://sentimentit.herokuapp.com/api/comparisons/create_tasks?',
+  myget <- GET(paste('http://sentimentit.com/api/comparisons/create_hits?',
                      args, sep=''))
   mytry <- try(out<-fromJSON(rawToChar(as.raw(myget$content))))
   if(class(mytry) == "try-error"){
