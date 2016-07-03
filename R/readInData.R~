@@ -4,7 +4,7 @@
 #'
 #' @param email The researcher's email used for SentimentIt registration
 #' @param password The researcher's password used for SentimentIt
-#' @param batch_id A vector of batch numbers to download data from.
+#' @param batch_numbers A vector of batch numbers to download data from.
 #'
 #' @return output a dataframe with the data from the specified batches with columns
 #' \describe{
@@ -30,16 +30,16 @@
 #' \code{\link{repostExpired}},\code{\link{revokeCert}}, \code{\link{sentimentIt}}, \code{\link{batchStatus}},
 #' \code{\link{extractCoef}}
 #' @export
-readInData <- function(email, password, batch_id) {
-  if (!is.vector(batch_id) | !is.numeric(batch_id)) {
-    stop("batch_id needs to be a vector of numerics")
+readInData <- function(email, password, batch_numbers) {
+  if (!is.vector(batch_numbers) | !is.numeric(batch_numbers)) {
+    stop("batch_numbers needs to be a vector of numerics")
   }
   auth_token <- authenticate(email, password)
-  # Put the batch_id in numerical order and remove duplicates
-  batch_id <- unique(batch_id)
-  batch_id <- batch_id[sort.list(batch_id)]
+  # Put the batch_numbers in numerical order and remove duplicates
+  batch_numbers <- unique(batch_numbers)
+  batch_numbers <- batch_numbers[sort.list(batch_numbers)]
   output<-data.frame()
-  for(i in batch_id){
+  for(i in batch_numbers){
     myurl<- GET(paste0('https://www.sentimentit.com/api/batches/',i,'/download.json?auth_token=', auth_token))
     myurl <- rawToChar(as.raw(myurl$content))
     myurl <- strsplit(myurl,'\"')[[1]][4]

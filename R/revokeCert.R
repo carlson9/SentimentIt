@@ -1,6 +1,8 @@
 
 #' Revokes certifications for workers.
 #'
+#' @param email The researcher's email used for SentimentIt registration
+#' @param password The researcher's password used for SentimentIt 
 #' @param cert The name of the certification given to the workers.
 #' @param workers The workers you want to grant certification.
 #'
@@ -23,7 +25,8 @@
 #' \code{\link{repostExpired}},\code{\link{revokeCert}}, \code{\link{sentimentIt}}, \code{\link{batchStatus}},
 #' \code{\link{extractCoef}}
 #' @export
-revokeCert <- function(cert, workers){
+revokeCert <- function(email, password, cert, workers){
+ auth_token <- authenticate(email, password)
  if(!is.character(cert) | nchar(cert)<1){
     stop("You must input a non-blank certification and one made of characters.")
   }
@@ -31,7 +34,7 @@ revokeCert <- function(cert, workers){
     stop("You must input a non-blank certification and one made of characters.")
   }
   out <- vector()
-  args <- list(certification = cert, workers = workers)
+  args <- list(certification = cert, workers = workers, auth_token = auth_token)
   args <- toJSON(args, auto_unbox=TRUE)
   mypost <- POST('http://sentimentit.herokuapp.com/api/certifications/revoke.json',
                  body = args, content_type_json(),

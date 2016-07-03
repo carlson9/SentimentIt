@@ -3,6 +3,8 @@
 #' This function creates new batches with the desired Task setting 
 #' and the desired number of batches.
 #' 
+#' @param email The researcher's email used for SentimentIt registration
+#' @param password The researcher's password used for SentimentIt 
 #' @param task_setting_id ID of Task setting to use
 #' @param num_batches number of separate batches to create
 #'
@@ -27,7 +29,7 @@ createBatches <- function(task_setting_id, num_batches=1){
   }
   batch_ids <- vector()
   for(i in 1:num_batches){
-    args <- paste("task_setting_id=", task_setting_id, sep="")
+    args <- paste("hit_setting_id=", task_setting_id, sep="")
     myget <- POST(paste('http://sentimentit.com/api/batches.json?',
                        args, sep=''))
     batch_ids[i] <- fromJSON(rawToChar(as.raw(myget$content)))$id

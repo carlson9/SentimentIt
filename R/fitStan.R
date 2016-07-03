@@ -3,6 +3,8 @@
 #' Fit STAN model
 #'
 #'
+#' @param email The researcher's email used for SentimentIt registration. Default is NULL and only needs to be provided if batch numbers are used instead of data.
+#' @param password The researcher's password used for SentimentIt. Default is NULL and only needs to be provided if batch numbers are used instead of data.
 #' @param data A csv file or a vector of batch numbers.
 #' @param chains The number of chains. (Default is 3)
 #' @param iter The number of iteration. (Default is 2500)
@@ -22,13 +24,13 @@
 #' @rdname fitStan
 #'
 #' @export
-fitStan <- function(data, chains=3, iter=2500, seed=1234, n.cores=3){
+fitStan <- function(email=NULL, password=NULL, data, chains=3, iter=2500, seed=1234, n.cores=3){
 
   rstan_options(auto_write = TRUE)
   options(mc.cores = n.cores)
 
   if(is.vector(data)){
-    data <- readInData(data)
+    data <- readInData(email, password, data)
   }
 
   data1 <- data

@@ -1,5 +1,7 @@
-#' Creates certifications for workers.
+#' Grants certifications to workers.
 #'
+#' @param email The researcher's email used for SentimentIt registration
+#' @param password The researcher's password used for SentimentIt 
 #' @param cert The name of the certification given to the workers.
 #' @param workers The workers you want to grant certification.
 #'
@@ -12,7 +14,7 @@
 #' \dontrun{ 
 #' x <- "ab1"
 #' y <- c("a204", "a206", "a208", "a207")
-#' creation <- createCert(x, y)
+#' creation <- createCert(email, password, x, y)
 #' }
 #' @rdname createCert
 #' @seealso \code{\link{createTasksTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},
@@ -22,12 +24,13 @@
 #' \code{\link{repostExpired}},\code{\link{revokeCert}}, \code{\link{sentimentIt}}, \code{\link{batchStatus}},
 #' \code{\link{extractCoef}}
 #' @export
-createCert <- function(cert, workers){
+createCert <- function(email, password, cert, workers){
+  auth_token <- authenticate(email, password)
   if(!is.character(cert) | nchar(cert)<1){
     stop("You must input a non-blank certification and one made of characters.")
   }
   out <- vector()
-  args <- list(certification = cert, workers = workers)
+  args <- list(certification = cert, workers = workers, auth_token = auth_token)
   args <- toJSON(args, auto_unbox=TRUE)
   mypost <- POST('http://www.sentimentit.com/api/certifications/create.json',
                  body = args, content_type_json(),

@@ -2,7 +2,9 @@
 #' 
 #' This function posts a batch or comparisons to Mechanical Turk as tasks
 #' 
-#' @param comp_ids Comma-separated list of comparison ids for which to create tasks, if comparisons were not created under a batch. Default is NULL. Leave as NULL if batch_id is provided.
+#' @param email The researcher's email used for SentimentIt registration
+#' @param password The researcher's password used for SentimentIt 
+#' @param comp_ids Vector of comparison ids for which to create tasks, if comparisons were not created under a batch. Default is NULL. Leave as NULL if batch_id is provided.
 #' @param task_setting Task Setting to use for the created tasks, if comparisons were not created under a batch. Default is NULL. Leave as NULL if batch_id is provided.
 #' @param batch_id Batch ID to be used if comparisons created under a batch.
 #'
@@ -11,8 +13,8 @@
 #' @examples
 #' 
 #' \dontrun{
-#' createTasks(ids=10,task_setting=2)
-#' createTasks(batch_id=204)
+#' createTasks(email, password, ids=10,task_setting=2)
+#' createTasks(email, password, batch_id=204)
 #' }
 #' @rdname createTasks
 #' @seealso \code{\link{createTasksTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},
@@ -22,13 +24,14 @@
 #' \code{\link{repostExpired}},\code{\link{revokeCert}}, \code{\link{sentimentIt}}, \code{\link{batchStatus}},
 #' \code{\link{extractCoef}}
 #' @export
-createTasks <- function(comp_ids=NULL, task_setting=NULL, batch_id){
+createTasks <- function(email, password, comp_ids=NULL, task_setting=NULL, batch_id){
+  auth_token <- authenticate(email, password)
   if(is.null(comp_ids)){
-    args <- paste('batch_id=', batch_id,"" ,sep='')
+    args <- paste('batch_id=', batch_id,"&auth_token=", auth_token, sep='')
   }else{
-    args <- paste('hit_setting=', task_setting, '&ids=', paste(comp_ids,collapse=','), sep='')
+    args <- paste('hit_setting=', task_setting, '&ids=', paste(comp_ids,collapse=','), '&auth_token=', auth_token, sep='')
   }
-  myget <- GET(paste('http://sentimentit.com/api/comparisons/create_hits?',
+  myget <- GET(paste('https://www.sentimentit.com/api/comparisons/create_hits?',
                      args, sep=''))
   mytry <- try(out<-fromJSON(rawToChar(as.raw(myget$content))))
   if(class(mytry) == "try-error"){

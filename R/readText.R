@@ -27,7 +27,7 @@ readText <- function(email, password, read_documents_from, write_documents_to=NU
   if(!is.null(index)){
     if(!is.character(read_documents_from)){
       hold.table = read_documents_from
-    } else {
+    }else{
       hold.table <- read.table(file=read_documents_from, sep=sep)
     }
     textToSend <- hold.table[,index]

@@ -30,7 +30,7 @@
 #' \code{\link{extractCoef}}
 #' @rdname batchStatus
 #' @export
-batch_status <- function(batch_id){
+batchStatus <- function(batch_id){
   if (!is.vector(batch_id) | !is.numeric(batch_id)) {
     stop("batch_id needs to be a vector of numerics")
   }

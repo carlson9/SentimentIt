@@ -1,65 +1,63 @@
 #' Create Comparisons
 #'
-#' Creates separate comparisons using document IDs. This outputs a file with a table of text
-#' and corresponding ids for Mechanical Turk comparisons.
+#' Creates separate comparisons using document IDs. This outputs a file with a table of text and corresponding ids for Mechanical Turk comparisons.
 #'
-#' @param ids numerical IDs for the documents
-#' @param number_per number of comparisons desired
-#' @param batches batch IDs to be used for the Tasks
-#' @param question the question the worker will see once the worker selects the Task
-#' @param per_batch number of comparisons perbatch desired
-#' @param path File path: if NULL, file will be stored in working direcotry
-#' @param name File name: If NULL, file will be named pairwise.Rdata
-#' @param idsAsComps an indicator as to whether or not the IDs provided refer 
-#'                   to comparison IDs rather than document IDs
+#' @param email The researcher's email used for SentimentIt registration
+#' @param password The researcher's password used for SentimentIt registration
+#' @param ids Numerical vector of IDs for the documents
+#' @param number_per Number of comparisons desired
+#' @param batch_id Batch IDs to be used for the tasks
+#' @param question A character of the question the worker will see once the worker selects the task
+#' @param per_batch Number of comparisons per batch desired
+#' @param pairwise_path File path to store matrix of document IDs used for comparisons. Default is pairwise.Rdata
+#' @param ids_as_comps an indicator as to whether or not the IDs provided refer to comparison IDs rather than document IDs. Default is FALSE.
 #'
-#' @return out a table with the text and correspondings ID's that have been sent.
+#' @return out A table with the text and correspondings ID's that have been sent.
 #'
 #' @author David Carlson
 #' @example 
 #' 
 #' \dontrun {
-#' docInfo <- read.table("ReviewsWithIds",header=TRUE)
-#' makeCompsSep(ids=docInfo[,'ids'], number_per=10, batches=batch_ids,
+#' docInfo <- read.table(email, password, "ReviewsWithIds",header=TRUE)
+#' makeCompsSep(ids=docInfo[,'ids'], number_per=10, batch_id=batch_ids,
 #'              question=’Below is text taken from two movie reviews.Please 
 #'              choose the text that you think comesfrom the most positive review’,
-#'              path='Comparisons/', name='first10')
+#'              pairwise_path='Comparisons/pairwise.Rdata')
 #' }
-#' @seealso \code{\link{createTasksTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},
-#' \code{\link{checkWorkers}},\code{\link{createBatches}},\code{\link{createCert}},\code{\link{createTasks}}, 
+#' @seealso \code{\link{createTasksTimed}}, \code{\link{batch_idWrapper}}, \code{\link{checkCert}},
+#' \code{\link{checkWorkers}},\code{\link{createbatch_id}},\code{\link{createCert}},\code{\link{createTasks}}, 
 #' \code{\link{createPairwise}}, \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},
 #' \code{\link{givetakeCert}},\code{\link{makeCompsSep}},\code{\link{readInData}}, \code{\link{readText}},
 #' \code{\link{repostExpired}},\code{\link{revokeCert}}, \code{\link{sentimentIt}}, \code{\link{batchStatus}},
 #' \code{\link{extractCoef}}
 #' @rdname makeCompsSep
 #' @export
-makeCompsSep <- function(ids, number_per, batches, question, per_batch=1000, 
-                         path=NULL, name=NULL, idsAsComps=FALSE){
-  if(!idsAsComps){
-    pairwise <- createPairwise(ids, number_per)
-    ########
-#######save(pairwise, file=paste0(path, 'pairwise', name, '.Rdata'))
+makeCompsSep <- function(email, password, ids, number_per, batch_id, question, per_batch=1000, 
+                         pairwise_path='pairwise.Rdata', ids_as_comps=FALSE){
+  if(!ids_as_comps){
+    pairwise <- createPairwise(ids, number_per, pairwise_path)
   }else{
     pairwise <- ids
   }
   num_comps <- dim(pairwise)[1]
-  if(length(batches)*per_batch<num_comps){
-    print('Not enough batches supplied')
+  if(length(batch_id)*per_batch<num_comps){
+    print('Not enough batch_id supplied')
     return(NULL)
   }
   out <- vector()
+  auth_token <- authenticate(email, password)
   for(i in 1:(num_comps%/%per_batch)){
-    args <- list(question=question, ids=pairwise[((i-1)*per_batch+1):(i*per_batch),], batch_id=batches[i])
+    args <- list(question=question, ids=pairwise[((i-1)*per_batch+1):(i*per_batch),], batch_id=batch_id[i], auth_token=auth_token)
     args <- toJSON(args, auto_unbox=TRUE)
-    mypost <- POST('http://sentimentit.herokuapp.com/api/comparisons/create.json',
+    mypost <- POST('https://www.sentimentit.com/api/comparisons/create.json',
                    body = args, content_type_json(),
                    encode='json')
     out <- c(out, unlist(fromJSON(rawToChar(as.raw(mypost$content)))))
   }
   if(num_comps%%per_batch!=0){
-    args <- list(question=question, ids=pairwise[((num_comps%/%per_batch)*per_batch+1):num_comps,], batch_id=batches[i+1])
+    args <- list(question=question, ids=pairwise[((num_comps%/%per_batch)*per_batch+1):num_comps,], batch_id=batch_id[i+1], auth_token=auth_token)
     args <- toJSON(args, auto_unbox=TRUE)
-    mypost <- POST('http://sentimentit.herokuapp.com/api/comparisons/create.json',
+    mypost <- POST('https://www.sentimentit.com/api/comparisons/create.json',
                    body = args, content_type_json(),
                    encode='json')
     out <- c(out, unlist(fromJSON(rawToChar(as.raw(mypost$content)))))
