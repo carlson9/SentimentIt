@@ -4,7 +4,7 @@
 #'
 #' @param email The researcher's email used for SentimentIt registration
 #' @param password The researcher's password used for SentimentIt
-#' @param batch_numbers A vector of batch numbers to download data from.
+#' @param batch_id A vector of batch numbers to download data from.
 #'
 #' @return output a dataframe with the data from the specified batches with columns
 #' \describe{
@@ -30,28 +30,28 @@
 #' \code{\link{repostExpired}},\code{\link{revokeCert}}, \code{\link{sentimentIt}}, \code{\link{batchStatus}},
 #' \code{\link{extractCoef}}
 #' @export
-readInData <- function(email, password, batch_numbers) {
-  if (!is.vector(batch_numbers) | !is.numeric(batch_numbers)) {
-    stop("batch_numbers needs to be a vector of numerics")
+readInData <- function(email, password, batch_id) {
+  if (!is.vector(batch_id) | !is.numeric(batch_id)) {
+    stop("batch_id needs to be numeric")
   }
   auth_token <- authenticate(email, password)
-  # Put the batch_numbers in numerical order and remove duplicates
-  batch_numbers <- unique(batch_numbers)
-  batch_numbers <- batch_numbers[sort.list(batch_numbers)]
+  # Put the batch_id in numerical order and remove duplicates
+  batch_id <- unique(batch_id)
+  batch_id <- batch_id[sort.list(batch_id)]
   output<-data.frame()
-  for(i in batch_numbers){
-    myurl<- GET(paste0('https://www.sentimentit.com/api/batches/',i,'/download.json?auth_token=', auth_token))
+  for(i in batch_id){
+    myurl<- GET(paste0('https://www.sentimentit.com/api/batches/',i,'/download.json?email=', email, '&auth_token=', auth_token))
     myurl <- rawToChar(as.raw(myurl$content))
     myurl <- strsplit(myurl,'\"')[[1]][4]
     x <- getURL(myurl)
     # attempt to connect to server until data is downloaded
     try_count <- 0
-    while(nchar(x) < 1000 & try_count < 50){
+    while(nchar(x) < 1000 & try_count < 15){
       Sys.sleep(20)
       x <- getURL(myurl)
       try_count = try_count + 1
     }
-    if(nchar(x) < 1000 & try_count == 50){
+    if(nchar(x) < 1000 & try_count == 15){
       message <- paste("Failed to download batch", i,
                        "try again later and check that the batch number exists.")
       warning(message)
@@ -63,9 +63,6 @@ readInData <- function(email, password, batch_numbers) {
       output <- rbind(output,hold)
     }
   }
- return(output)
+  return(output)
 }
-
-
-
 

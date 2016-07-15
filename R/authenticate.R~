@@ -1,20 +1,13 @@
 #' Authenticates researcher 
 #'
-#' @param cert The name of the certification given to the workers.
-#' @param workers The workers you want to grant certification.
+#' @param email The email used by the researcher to register with SentimentIt.
+#' @param password The password associated with the account.
 #'
-#' @return Character indicating number of workers certified.  
+#' @return auth_token Character for the authorization token, which expires after two hours.  
 #'
 #' @author David Carlson
 #'
-#' @examples
-#' 
-#' \dontrun{ 
-#' x <- "ab1"
-#' y <- c("a204", "a206", "a208", "a207")
-#' creation <- createCert(x, y)
-#' }
-#' @rdname createCert
+#' @rdname authenticate
 #' @seealso \code{\link{createTasksTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},
 #' \code{\link{checkWorkers}},\code{\link{createBatches}},\code{\link{createCert}},\code{\link{createTasks}}, 
 #' \code{\link{createPairwise}}, \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},
@@ -22,17 +15,18 @@
 #' \code{\link{repostExpired}},\code{\link{revokeCert}}, \code{\link{sentimentIt}}, \code{\link{batchStatus}},
 #' \code{\link{extractCoef}}
 #' @export
-createCert <- function(cert, workers){
-  if(!is.character(cert) | nchar(cert)<1){
-    stop("You must input a non-blank certification and one made of characters.")
-  }
-  out <- vector()
-  args <- list(certification = cert, workers = workers)
+authenticate <- function(email, password){
+  args <- list(email = email, password = password)
   args <- toJSON(args, auto_unbox=TRUE)
-  mypost <- POST('http://www.sentimentit.com/api/certifications/create.json',
+  mypost <- POST('https://www.sentimentit.com/api/sessions.json',
                  body = args, content_type_json(),
                  encode='json')
-  out <- c(out, rawToChar(as.raw(mypost$content)))
-  return(out)
+  out <- fromJSON(rawToChar(as.raw(mypost$content)))
+  if(!out$success){
+    email <- readline('Invalid email or password. Re-enter email: ')
+    password <- readline('Re-enter password: ')
+    return(authenticate(email, password))
+  }
+  return(out$auth_token)
 }
 

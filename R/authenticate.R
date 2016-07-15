@@ -1,4 +1,4 @@
-#' Authenticates researcher 
+#' Authenticates researcher and returns authorization token. Primarily used internally but can be used if the researcher wishes to use the API directly.
 #'
 #' @param email The email used by the researcher to register with SentimentIt.
 #' @param password The password associated with the account.

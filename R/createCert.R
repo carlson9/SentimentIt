@@ -30,9 +30,13 @@ createCert <- function(email, password, cert, workers){
     stop("You must input a non-blank certification and one made of characters.")
   }
   out <- vector()
-  args <- list(certification = cert, workers = workers, auth_token = auth_token)
+  if(length(workers)==1){
+      args <- list(email = email, auth_token = auth_token, certification = cert, workers = list(workers))
+  }else{
+      args <- list(email = email, auth_token = auth_token, certification = cert, workers = workers)
+  }
   args <- toJSON(args, auto_unbox=TRUE)
-  mypost <- POST('http://www.sentimentit.com/api/certifications/create.json',
+  mypost <- POST('https://www.sentimentit.com/api/certifications/create.json',
                  body = args, content_type_json(),
                  encode='json')
   out <- c(out, rawToChar(as.raw(mypost$content)))

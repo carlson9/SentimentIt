@@ -34,8 +34,8 @@ checkCert <- function(email, password, cert, worker){
   if(!is.character(worker) | nchar(worker)<1){
     stop("You must input a non-blank certification and one made of characters.")
   }
-  mypost <- GET(paste0("http://sentimentit.com/api/certifications/", as.character(cert),
-                       "/turk_workers/", as.character(worker), ".json?auth_token=", auth_token))
+  mypost <- GET(paste0("https://www.sentimentit.com/api/certifications/", as.character(cert),
+                       "/turk_workers/", as.character(worker), ".json?email=", email, "&auth_token=", auth_token))
   if(is.null(fromJSON(rawToChar(as.raw(mypost$content)))$allowed)){
     return(FALSE)
   }

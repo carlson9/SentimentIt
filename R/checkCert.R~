@@ -1,5 +1,7 @@
 #' Checks certification for a worker.
 #'
+#' @param email The researcher's email used for SentimentIt registration
+#' @param password The researcher's password used for SentimentIt 
 #' @param cert The name of the certification given to the workers.
 #' @param worker The MTurk worker ID you want to check for certification.
 #'
@@ -12,7 +14,7 @@
 #' \dontrun{ 
 #' x <- "ab1"
 #' y <- c("a204")
-#' check <- checkCert(x, y)
+#' check <- checkCert(email, password, x, y)
 #' }
 #'
 #' @rdname checkCert
@@ -24,7 +26,8 @@
 #' \code{\link{extractCoef}}
 #' @export
 
-checkCert <- function(cert, worker){
+checkCert <- function(email, password, cert, worker){
+  auth_token <- authenticate(email, password)
   if(!is.character(cert) | nchar(cert)<1){
     stop("You must input a non-blank certification and one made of characters.")
   }
@@ -32,7 +35,7 @@ checkCert <- function(cert, worker){
     stop("You must input a non-blank certification and one made of characters.")
   }
   mypost <- GET(paste0("http://sentimentit.com/api/certifications/", as.character(cert),
-                       "/turk_workers/", as.character(worker), ".json"))
+                       "/turk_workers/", as.character(worker), ".json?auth_token=", auth_token))
   if(is.null(fromJSON(rawToChar(as.raw(mypost$content)))$allowed)){
     return(FALSE)
   }

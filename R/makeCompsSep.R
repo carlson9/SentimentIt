@@ -47,7 +47,7 @@ makeCompsSep <- function(email, password, ids, number_per, batch_id, question, p
   out <- vector()
   auth_token <- authenticate(email, password)
   for(i in 1:(num_comps%/%per_batch)){
-    args <- list(question=question, ids=pairwise[((i-1)*per_batch+1):(i*per_batch),], batch_id=batch_id[i], auth_token=auth_token)
+    args <- list(email=email, auth_token=auth_token, question=question, ids=pairwise[((i-1)*per_batch+1):(i*per_batch),], batch_id=batch_id[i])
     args <- toJSON(args, auto_unbox=TRUE)
     mypost <- POST('https://www.sentimentit.com/api/comparisons/create.json',
                    body = args, content_type_json(),
@@ -55,7 +55,7 @@ makeCompsSep <- function(email, password, ids, number_per, batch_id, question, p
     out <- c(out, unlist(fromJSON(rawToChar(as.raw(mypost$content)))))
   }
   if(num_comps%%per_batch!=0){
-    args <- list(question=question, ids=pairwise[((num_comps%/%per_batch)*per_batch+1):num_comps,], batch_id=batch_id[i+1], auth_token=auth_token)
+    args <- list(email=email, auth_token=auth_token, question=question, ids=pairwise[((i-1)*per_batch+1):(i*per_batch),], batch_id=batch_id[i+1])
     args <- toJSON(args, auto_unbox=TRUE)
     mypost <- POST('https://www.sentimentit.com/api/comparisons/create.json',
                    body = args, content_type_json(),
@@ -64,3 +64,4 @@ makeCompsSep <- function(email, password, ids, number_per, batch_id, question, p
   }
   return(out)
 }
+

@@ -1,6 +1,6 @@
 #' Read in Data
 #'
-#' Reads in data for specified batch numbers from the website
+#' Reads in data for specified batch numbers from the server
 #'
 #' @param email The researcher's email used for SentimentIt registration
 #' @param password The researcher's password used for SentimentIt
@@ -32,7 +32,7 @@
 #' @export
 readInData <- function(email, password, batch_id) {
   if (!is.vector(batch_id) | !is.numeric(batch_id)) {
-    stop("batch_id needs to be a vector of numerics")
+    stop("batch_id needs to be numeric")
   }
   auth_token <- authenticate(email, password)
   # Put the batch_id in numerical order and remove duplicates
@@ -40,18 +40,18 @@ readInData <- function(email, password, batch_id) {
   batch_id <- batch_id[sort.list(batch_id)]
   output<-data.frame()
   for(i in batch_id){
-    myurl<- GET(paste0('https://www.sentimentit.com/api/batches/',i,'/download.json?auth_token=', auth_token))
+    myurl<- GET(paste0('https://www.sentimentit.com/api/batches/',i,'/download.json?email=', email, '&auth_token=', auth_token))
     myurl <- rawToChar(as.raw(myurl$content))
     myurl <- strsplit(myurl,'\"')[[1]][4]
     x <- getURL(myurl)
     # attempt to connect to server until data is downloaded
     try_count <- 0
-    while(nchar(x) < 1000 & try_count < 50){
+    while(nchar(x) < 100 & try_count < 15){
       Sys.sleep(20)
       x <- getURL(myurl)
       try_count = try_count + 1
     }
-    if(nchar(x) < 1000 & try_count == 50){
+    if(nchar(x) < 100 & try_count == 15){
       message <- paste("Failed to download batch", i,
                        "try again later and check that the batch number exists.")
       warning(message)
@@ -63,9 +63,6 @@ readInData <- function(email, password, batch_id) {
       output <- rbind(output,hold)
     }
   }
- return(output)
+  return(output)
 }
-
-
-
 
