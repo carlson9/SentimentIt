@@ -1,9 +1,9 @@
-#' Authenticates researcher 
+#' Authenticates researcher and returns authorization token. Primarily used internally but can be used if the researcher wishes to use the API directly.
 #'
 #' @param email The email used by the researcher to register with SentimentIt.
 #' @param password The password associated with the account.
 #'
-#' @return auth_token Character for the authorization token, which expires after two hours.  
+#' @return auth_token Character for the authorization token, which expires after the researcher signs out.  
 #'
 #' @author David Carlson
 #'

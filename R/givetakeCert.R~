@@ -15,4 +15,3 @@
   createCert(certone, workers)
   revokeCert(certtwo, workers)
 }
-

@@ -8,7 +8,7 @@
 #' @param number_per Number of comparisons desired
 #' @param batch_id Batch IDs to be used for the tasks
 #' @param question A character of the question the worker will see once the worker selects the task
-#' @param per_batch Number of comparisons per batch desired
+#' @param per_batch Number of comparisons per batch desired. Defaulted to 1000.
 #' @param pairwise_path File path to store matrix of document IDs used for comparisons. Default is pairwise.Rdata
 #' @param ids_as_comps an indicator as to whether or not the IDs provided refer to comparison IDs rather than document IDs. Default is FALSE.
 #'
@@ -24,12 +24,7 @@
 #'              choose the text that you think comesfrom the most positive review’,
 #'              pairwise_path='Comparisons/pairwise.Rdata')
 #' }
-#' @seealso \code{\link{createTasksTimed}}, \code{\link{batch_idWrapper}}, \code{\link{checkCert}},
-#' \code{\link{checkWorkers}},\code{\link{createbatch_id}},\code{\link{createCert}},\code{\link{createTasks}}, 
-#' \code{\link{createPairwise}}, \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},
-#' \code{\link{givetakeCert}},\code{\link{makeCompsSep}},\code{\link{readInData}}, \code{\link{readText}},
-#' \code{\link{repostExpired}},\code{\link{revokeCert}}, \code{\link{sentimentIt}}, \code{\link{batchStatus}},
-#' \code{\link{extractCoef}}
+#' @seealso \code{\link{sentimentIt}} \code{\link{\authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
 #' @rdname makeCompsSep
 #' @export
 makeCompsSep <- function(email, password, ids, number_per, batch_id, question, per_batch=1000, 

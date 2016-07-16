@@ -31,7 +31,7 @@ createBatches <- function(email, password, task_setting_id, num_batches=1){
   batch_ids <- vector()
   for(i in 1:num_batches){
     args <- paste("hit_setting_id=", task_setting_id, '&email=', email, '&auth_token=', auth_token, sep="")
-    myget <- POST(paste('http://sentimentit.com/api/batches.json?',
+    myget <- POST(paste('https://www.sentimentit.com/api/batches.json?',
                        args, sep=''))
     batch_ids[i] <- fromJSON(rawToChar(as.raw(myget$content)))$id
   }

@@ -21,7 +21,7 @@
 #' \code{\link{repostExpired}},\code{\link{revokeCert}}, \code{\link{sentimentIt}}, \code{\link{batchStatus}},
 #' \code{\link{extractCoef}}
 #' @export
-repostExpired <- function(email, password, batch_id){
+epostExpired <- function(email, password, batch_id){
   if (!is.vector(batch_id) | !is.numeric(batch_id)) {
     stop("batch_id needs to be a vector of numerics")
   }
@@ -31,10 +31,8 @@ repostExpired <- function(email, password, batch_id){
   batch_id <- unique(batch_id)
   batch_id <- batch_id[sort.list(batch_id)]
   for(i in batch_id){
-    PUT('https://www.sentimentit.com/api/batches/',i,'/repost_expired.json',
+    myput<-PUT(paste0('https://www.sentimentit.com/api/batches/',i,'/repost_expired'),
         body = args, content_type_json(),
-                 encode='json')
+        encode='json')
   }
-  #TODO need to get a return value from the api.
 }
-

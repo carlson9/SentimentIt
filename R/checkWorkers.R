@@ -1,26 +1,18 @@
-#' Detect Outlying Workers
-#'
 #' Detect outlying workers
-#'
 #'
 #' @param stan_fit A stan fit.
 #' @param data The data used to fit stan.
 #' @param cut_point A cutoff point to classify posterior coefficients. The proportion of posterior coefficients below \code{cut_point} is used to determine outliers. (Default is 1)
 #' @param cut_proportion A cutoff proportion of posterior coefficients below \code{cut_point}. If the proportion of posterior coefficients below \code{cut_points} is higher than \code{cut_proportion}, a worker will be considered as an outlier provided that she answers more than the number of questions in \code{n.questions}. (Default is 0.9)
 #' @param n.questions The number of questions to consider in order to determine suggested banned workers. (Default is 50)
-#' @param plot_hist If TRUE, plot the histogram of workers with a rug plot. (Default is FALSE)
-#' @param hist_path Save the histogram to path and file name specified. (Default is NULL and no plot is saved).
+#' @param plot_hist If TRUE, plot the histogram of workers with a rug plot. Default is FALSE
+#' @param hist_path Save the histogram to path and file name specified. Default is NULL and no plot is saved.
 #'
-#' @return A vector of outlying workers' IDs whose proportion of posterior coefficients below \code{cut_point} is greater than \code{cut_proportion} and who answered more than the number of questions in \code{n.questions}
+#' @return ban_workers A vector of outlying workers' IDs whose proportion of posterior coefficients below \code{cut_point} is greater than \code{cut_proportion} and who answered more than the number of questions in \code{n.questions}
 #'
 #' @author David Carlson
 #'
-#' @seealso \code{\link{createTasksTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},
-#' \code{\link{checkWorkers}},\code{\link{createBatches}},\code{\link{createCert}},\code{\link{createTasks}}, 
-#' \code{\link{createPairwise}}, \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},
-#' \code{\link{givetakeCert}},\code{\link{makeCompsSep}},\code{\link{readInData}}, \code{\link{readText}},
-#' \code{\link{repostExpired}},\code{\link{revokeCert}}, \code{\link{sentimentIt}}, \code{\link{batchStatus}},
-#' \code{\link{extractCoef}}
+#' @seealso \code{\link{sentimentIt}} \code{\link{\authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
 #' @rdname checkWorkers
 #'
 #' @export

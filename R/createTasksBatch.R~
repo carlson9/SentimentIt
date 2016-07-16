@@ -18,7 +18,6 @@
     stop("The batch numbers must be numerical digits and non-blank.")
   }
   out <- vector()
-  q <- 1
   for(i in batches){
     .checkTime(min_time, max_time)
     x <- createTasks(batch_id=i)
@@ -31,12 +30,10 @@
         done <- (((status$submitted_count - status$completed_count) <= threshold) | (as.numeric(format(Sys.time(), "M%")) - current > 240))
       }
     if(i %in% batches[check_workers_at]) {
-      q <- ifelse(length(hist_path)>q, q+1, q)
-      hist_pathi <- hist_path[q]
       .givetakeCert(certone, certtwo, .stanWrapper(data=batches[1:length(out)],
                                                  hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
                                                  return_fit=return_fit, cut_point=cut_point, cut_proportion=cut_proportion,
-                                                 n.questions=n.questions, plot_hist=plot_hist, hist_path=hist_pathi,
+                                                 n.questions=n.questions, plot_hist=plot_hist, file_path=file_path,
                                                  chains=chains, iter=iter, seed=seed, n.cores=n.cores)[[1]])
   }
   return(out)

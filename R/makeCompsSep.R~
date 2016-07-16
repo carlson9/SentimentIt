@@ -24,12 +24,7 @@
 #'              choose the text that you think comesfrom the most positive review’,
 #'              pairwise_path='Comparisons/pairwise.Rdata')
 #' }
-#' @seealso \code{\link{createTasksTimed}}, \code{\link{batch_idWrapper}}, \code{\link{checkCert}},
-#' \code{\link{checkWorkers}},\code{\link{createbatch_id}},\code{\link{createCert}},\code{\link{createTasks}}, 
-#' \code{\link{createPairwise}}, \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},
-#' \code{\link{givetakeCert}},\code{\link{makeCompsSep}},\code{\link{readInData}}, \code{\link{readText}},
-#' \code{\link{repostExpired}},\code{\link{revokeCert}}, \code{\link{sentimentIt}}, \code{\link{batchStatus}},
-#' \code{\link{extractCoef}}
+#' @seealso \code{\link{sentimentIt}} \code{\link{\authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
 #' @rdname makeCompsSep
 #' @export
 makeCompsSep <- function(email, password, ids, number_per, batch_id, question, per_batch=1000, 
@@ -55,7 +50,7 @@ makeCompsSep <- function(email, password, ids, number_per, batch_id, question, p
     out <- c(out, unlist(fromJSON(rawToChar(as.raw(mypost$content)))))
   }
   if(num_comps%%per_batch!=0){
-   args <- list(email=email, auth_token=auth_token, question=question, ids=pairwise[((i-1)*per_batch+1):(i*per_batch),], batch_id=batch_id[i])
+    args <- list(email=email, auth_token=auth_token, question=question, ids=pairwise[((i-1)*per_batch+1):(i*per_batch),], batch_id=batch_id[i+1])
     args <- toJSON(args, auto_unbox=TRUE)
     mypost <- POST('https://www.sentimentit.com/api/comparisons/create.json',
                    body = args, content_type_json(),
@@ -64,3 +59,4 @@ makeCompsSep <- function(email, password, ids, number_per, batch_id, question, p
   }
   return(out)
 }
+

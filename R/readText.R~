@@ -34,12 +34,7 @@ readText <- function(email, password, read_documents_from, write_documents_to=NU
   }else textToSend <- scan(file=read_documents_from, what=what, sep=sep, quiet=quiet)
   auth_token <- authenticate(email, password)
   args <- mapply(function(x,y) list(text=x, source=y), textToSend, which_source, SIMPLIFY=FALSE, USE.NAMES=FALSE)
-  args$auth_token=auth_token
-  #auth_token <- as.name(auth_token)
   args <- toJSON(list("email"=email, "auth_token"=auth_token, "documents"=args), auto_unbox=TRUE)
-  #position <- c(regexec('"auth_token":".*"', args)[[1]][1] + 14, regexec('"auth_token":".*"', args)[[1]][1] + attr(regexec('"auth_token":".*"', args)[[1]], 'match.length')-2)
-  #substr(args, position[1]-1, position[2]+1) <- paste0(" ",substr(args, position[1], position[2])," ")
-  #args <- sub(paste0("^(.{",position[2],"})(.)(.*$)"), "\\1\\3", args)
   mypost <- POST('https://www.sentimentit.com/api/documents/find_or_create.json',
                  body = args, content_type_json(),
                  encode='json')

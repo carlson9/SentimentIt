@@ -47,7 +47,7 @@
 #' @param iter The number of iteration. (Default is 2500)
 #' @param seed Set seed. (Default is 1234)
 #' @param n.cores Number of cores to be used in stan fit. (Default is 3)
-
+#' @param returnStan A logical indicator of whether or not the fitted model should be returned. (Default is TRUE)
 #' @param stanFile The name of the file to save the Stan fitted model. (Default is NULL)
 #' @param returnData A logical indicating if the data from the HITs should be returned. (Default is TRUE)
 #' @param dataFile The directory and name of the file to save the HIT data. (Default is NULL)

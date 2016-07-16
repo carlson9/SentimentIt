@@ -6,7 +6,7 @@
 #' @param password The researcher's password used for SentimentIt 
 #' @param comp_ids Vector of comparison ids for which to create tasks, if comparisons were not created under a batch. Default is NULL. Leave as NULL if batch_id is provided.
 #' @param task_setting_id Task setting to use for the created tasks, if comparisons were not created under a batch. Default is NULL. Leave as NULL if batch_id is provided.
-#' @param batch_id Batch ID to be used if comparisons created under a batch.
+#' @param batch_id Batch ID to be used if comparisons created under a batch. Default is NULL.
 #'
 #' @return out ID for batch of comparisons
 #' @author David Carlson
@@ -24,7 +24,7 @@
 #' \code{\link{repostExpired}},\code{\link{revokeCert}}, \code{\link{sentimentIt}}, \code{\link{batchStatus}},
 #' \code{\link{extractCoef}}
 #' @export
-createTasks <- function(email, password, comp_ids=NULL, task_setting_id=NULL, batch_id){
+createTasks <- function(email, password, comp_ids=NULL, task_setting_id=NULL, batch_id=NULL){
   auth_token <- authenticate(email, password)
   if(is.null(comp_ids)){
     args <- paste('batch_id=', batch_id, '&email=', email, "&auth_token=", auth_token, sep='')

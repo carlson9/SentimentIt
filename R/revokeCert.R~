@@ -34,9 +34,9 @@ revokeCert <- function(email, password, cert, workers){
     stop("You must input a non-blank certification and one made of characters.")
   }
   out <- vector()
-  args <- list(certification = cert, workers = workers, auth_token = auth_token)
+  args <- list(email = email, auth_token = auth_token, certification = cert, workers = workers)
   args <- toJSON(args, auto_unbox=TRUE)
-  mypost <- POST('http://sentimentit.herokuapp.com/api/certifications/revoke.json',
+  mypost <- POST('https://www.sentimentit.com/api/certifications/revoke.json',
                  body = args, content_type_json(),
                  encode='json')
   out <- c(out, unlist(fromJSON(rawToChar(as.raw(mypost$content)))))
