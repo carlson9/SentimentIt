@@ -28,10 +28,9 @@
                            cut_proportion=cut_proportion, n.questions=n.questions,
                            plot_hist=plot_hist, hist_path=hist_path)
 
-  if(!returnFit){
+  if(!return_fit){
     return(list(outlying_workers=outlying, stan_fit=NULL))
-  }
-  else{
+  }else{
     return(list(outlying_workers=outlying, stan_fit=fit))
   }
 }

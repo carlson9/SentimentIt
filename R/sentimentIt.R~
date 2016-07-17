@@ -41,10 +41,10 @@
 #' @param iter The number of iterations for all Stan runs. Default is 2500
 #' @param seed The seed to use for Stan runs. Default is 1234
 #' @param n.cores Number of cores to be used in Stan runs. Default is 3. Note that, because this wrapper will generally run for extended periods of time, the researcher may want to leave some cores free for other processes
-#' @param wait_to_repost Amount of time in hours to wait to repost expired tasks after all batches have been posted. Default is 2 hours. This this should be at least as long as the duration of the tasks set in the GUI, as only those tasks that have not been completed by this time are considered expired
+#' @param wait_to_repost Amount of time in hours to wait to repost expired tasks after all batches have been posted. Default is 2 hours. This this should be at least as long as the duration of the tasks set in the GUI, as only those tasks that have not been completed by this time are considered expired. This is also the time that the system will wait after reposting to download the complete data if any are expired.
 #' @param ... Additional arguments passed to either scan() or read.table() depending on type of data used
 #'
-#' @return sentimentItOut A list with the requested information returned
+#' @return sentimentItOut A list with the requested information returned. The data with document IDs will always be returned, regardless if saved elsewhere.
 #'
 #' @author David Carlson
 #'
@@ -78,40 +78,55 @@ sentimentIt <- function(email, password, read_documents_from,
 
   # Create Tasks for each of the created batches
   if(timed){
-   .createTasksTimed(batches=batches, time_per=time_per, mintime=mintime, maxtime=maxtime,
+   .createTasksTimed(email, password, batches=batches, time_per=time_per, mintime=mintime, maxtime=maxtime,
                     check_workers_at=check_workers_at, certone=certone, certtwo=certtwo,
-                    hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
-                    return_fit=FALSE, cut_point=cut_point, cut_proportion=cut_proportion,
+                    hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var, cut_point=cut_point, cut_proportion=cut_proportion,
                     n.questions=n.questions, plot_hist=plot_hist, file_path=file_path,
                     chains=chains, iter=iter, seed=seed, n.cores=n.cores)
   }else{
 
-    .createTasksBatch(batches=batches, min_time=min_time, max_time=max_time,
+    .createTasksBatch(email, password, batches=batches, min_time=min_time, max_time=max_time,
                      rate=rate, threshold=threshold, 
-                     checkWorkersAt=batches[checkWorkersAt],
-                     hierarchy_data=NULL, hierarchy_var=NULL,
-                     returnFit=FALSE, cut_point=1, cut_proportion=0.9,
+                     check_workers_at=check_workers_at,
+                     hierarchy_data=NULL, hierarchy_var=NULL, cut_point=1, cut_proportion=0.9,
                      n.questions=50, plot_hist=FALSE, file_path=NULL,
                      chains=3, iter=2500, seed=1234, n.cores=3)
   }
-  return(batches)
-}
-  
-  Sys.sleep(waitToRepost)
-  
-  repostExpired(batches)
-  
-  if(returnStan){
-    stanfit <- stanWrapper(data=batches,
-                           hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
-                           returnFit=TRUE, cut_point=cut_point, cut_proportion=cut_proportion,
-                           n.questions=n.questions, plot_hist=plot_hist, file_path=file_path,
-                           chains=chains, iter=iter, seed=seed, n.cores=n.cores)[[2]]
-    if(!is.null(stanFile)){
-      save(stanfit, file=stanFile)
-    }
-    else{
-      return(stanfit)
+  torepost <- NULL  
+  for(i in batches){
+    status <- batchStatus(email, password, i)
+    if(status$submitted_count - status$completed_count > 0){
+      torepost <- c(torepost, i)
     }
   }
+  if(!is.null(torepost){
+    Sys.sleep(wait_to_repost*3600)
+    for(i in torepost){
+      repostExpired(email, password, i)
+    }
+    Sys.sleep(wait_to_repost*3600)
+  }
+  
+  sentimentItOut <- list()
+  if(return_stan | !is.null(stan_file)){
+    stanfit <- .stanWrapper(email, password, data=batches,
+                           hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
+                           return_fit=TRUE, cut_point=cut_point, cut_proportion=cut_proportion,
+                           n.questions=n.questions, plot_hist=plot_hist, file_path=file_path,
+                           chains=chains, iter=iter, seed=seed, n.cores=n.cores)[[2]]
+    if(!is.null(stan_file)){
+      save(stanfit, file=stan_file)
+    }
+    if(return_stan){
+      sentimentItOut$stanfit <- stanfit
+    }
+  }
+  if(return_data | !is.null(data_file)){
+    data <- readInData(email, password, batches)
+    if(return_data) sentimentItOut$data <- data
+    if(!is.null(data_file)) save(data, file=data_file)
+  }
+  sentimentItOut$textDoc <- textDoc
+  signout(email, password)
+  return(sentimentItOut)
 }

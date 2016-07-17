@@ -1,41 +1,28 @@
 #' @export
-.createTasksBatch <- function(batches, certone, certtwo, min_time=9,
+.createTasksBatch <- function(email, password, batches, certone, certtwo, min_time=9,
                    max_time=22, rate=1/3, threshold=5, check_workers_at=NULL,
-                   hierarchy_data=NULL, hierarchy_var=NULL,
-                   return_fit=FALSE, cut_point=1, cut_proportion=0.9,
+                   hierarchy_data=NULL, hierarchy_var=NULL, cut_point=1, cut_proportion=0.9,
                    n.questions=50, plot_hist=FALSE, file_path=NULL,
                    chains=3, iter=2500, seed=1234, n.cores=3){
-  if(!is.character(certone) | nchar(certtwo)<1){
-    stop("You must input a non-blank certification and one made of characters.")
-  }
-  if(!is.character(certtwo) | nchar(certtwo)<1){
-    stop("You must input a non-blank certification and one made of characters.")
-  }
-  if(certone == certtwo){
-    stop("The certifications you are giving and taking away cannot be made the same.")
-  }
-  if(!is.numeric(batches) | nchar(batches)<1){
-    stop("The batch numbers must be numerical digits and non-blank.")
-  }
   out <- vector()
   q <- 1
   for(i in batches){
     .checkTime(min_time, max_time)
-    x <- createTasks(batch_id=i)
+    x <- createTasks(email, password, batch_id=i)
     out[i] <- x
     done <- FALSE
     current <- as.numeric(format(Sys.time(), "%M"))
       while(!done){
         Sys.sleep(rate*3600)
-        status <- batchStatus(batches[i])
+        status <- batchStatus(email, password, batches[i])
         done <- (((status$submitted_count - status$completed_count) <= threshold) | (as.numeric(format(Sys.time(), "M%")) - current > 240))
       }
-    if(i %in% batches[check_workers_at]) {
-      q <- ifelse(length(hist_path)>q, q+1, q)
+      if(i %in% batches[check_workers_at]) {
+        q <- ifelse(length(hist_path)>q, q+1, q)
       hist_pathi <- hist_path[q]
-      .givetakeCert(certone, certtwo, .stanWrapper(data=batches[1:length(out)],
+      .givetakeCert(email, password, certone, certtwo, .stanWrapper(email, password, data=batches[1:length(out)],
                                                  hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
-                                                 return_fit=return_fit, cut_point=cut_point, cut_proportion=cut_proportion,
+                                                 return_fit=FALSE, cut_point=cut_point, cut_proportion=cut_proportion,
                                                  n.questions=n.questions, plot_hist=plot_hist, hist_path=hist_pathi,
                                                  chains=chains, iter=iter, seed=seed, n.cores=n.cores)[[1]])
   }
