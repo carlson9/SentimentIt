@@ -5,12 +5,13 @@
 #' @param email The researcher's email associated with the SentimentIt account.
 #' @param passwork The researcher's password associated with the SentimentIt account.
 #' @param read_documents_from The file path the data will be drawn form, or a vector of text.
-#' @param write_documents_to The file path to write the original data, merged with the document IDs. Default is NULL and the results will not be saved, but only returned.
-#' @param what Argument passed to scan() function. Default is text. Only needed when index is NULL.
+#' @param write_documents_to The file path to write the original data, merged with the document IDs. Default is NULL and the results will not be saved, but only returned. For best functionality specify a csv.
+#' @param what Argument passed to scan() function. Default is character. Only needed when index is NULL.
 #' @param sep Argument passed to read.table() function. Default is line break. Only needed when index is not NULL.
 #' @param quiet Argument passed to scan(). Default is TRUE. Only needed when index is NULL.
 #' @param index The index number of the table to extract the text from, or the name of the column. Default is NULL, indicating the text was not sent in a table.
 #' @param which_source Source used within SentimentIt server assoicated with document uploads. Only used for later reference. Default is apiR.
+#' @param ... Additional arguments passed to either scan() or read.table() depending on type of data used
 #' 
 #' @return List of ids corresponding to documents sent.
 #'
@@ -23,10 +24,10 @@ readText <- function(email, password, read_documents_from, write_documents_to=NU
     if(!is.character(read_documents_from)){
       hold.table = read_documents_from
     }else{
-      hold.table <- read.table(file=read_documents_from, sep=sep)
+      hold.table <- read.table(file=read_documents_from, sep=sep, ...)
     }
     textToSend <- hold.table[,index]
-  }else textToSend <- scan(file=read_documents_from, what=what, sep=sep, quiet=quiet)
+  }else textToSend <- scan(file=read_documents_from, what=what, sep=sep, quiet=quiet, ...)
   auth_token <- authenticate(email, password)
   args <- mapply(function(x,y) list(text=x, source=y), textToSend, which_source, SIMPLIFY=FALSE, USE.NAMES=FALSE)
   args <- toJSON(list("email"=email, "auth_token"=auth_token, "documents"=args), auto_unbox=TRUE)

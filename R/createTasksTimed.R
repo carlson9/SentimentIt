@@ -2,8 +2,8 @@
 .createTasksTimed <- function(batches, time_per, mintime,
                             maxtime, certone, certtwo, check_workers_at=NULL,
                             hierarchy_data=NULL, hierarchy_var=NULL,
-                            return_fit=FALSE, cut_point=1, cut_proportion=0.9,
-                            n.questions=50, plot_hist=FALSE, file_path=NULL,
+                       cut_point=1, cut_proportion=0.9,
+                            n.questions=50, plot_hist=FALSE, hist_path=NULL,
                             chains=3, iter=2500, seed=1234, n.cores=3){
   out <- vector()
   q <- 1
@@ -17,7 +17,7 @@
         hist_pathi <- hist_path[q]
        .givetakeCert(certone, certtwo, .stanWrapper(data=batches[1:length(out)],
                                                   hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
-                                                  return_fit=return_fit, cut_point=cut_point, cut_proportion=cut_proportion,
+                                                  return_fit=FALSE, cut_point=cut_point, cut_proportion=cut_proportion,
                                                   n.questions=n.questions, plot_hist=plot_hist, hist_path=hist_pathi,
                                                   chains=chains, iter=iter, seed=seed, n.cores=n.cores)[[1]])
     }

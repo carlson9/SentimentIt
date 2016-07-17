@@ -1,7 +1,7 @@
 #' @export
 .stanWrapper <- function(data, hierarchy_data=NULL, hierarchy_var=NULL,
-                        returnFit=FALSE, cut_point=1, cut_proportion=0.9,
-                        n.questions=50, plot_hist=FALSE, file_path=NULL,
+                        return_fit=FALSE, cut_point=1, cut_proportion=0.9,
+                        n.questions=50, plot_hist=FALSE, hist_path=NULL,
                         chains=3, iter=2500, seed=1234, n.cores=3){
 
   if(is.vector(data)){
@@ -26,12 +26,11 @@
 
   outlying <- checkWorkers(stan_fit=fit, data=data1, cut_point=cut_point,
                            cut_proportion=cut_proportion, n.questions=n.questions,
-                           plot_hist=plot_hist, file_path=file_path)
+                           plot_hist=plot_hist, hist_path=hist_path)
 
-  if(!returnFit){
+  if(!return_fit){
     return(list(outlying_workers=outlying, stan_fit=NULL))
-  }
-  else{
+  }else{
     return(list(outlying_workers=outlying, stan_fit=fit))
   }
 }

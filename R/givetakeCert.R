@@ -12,7 +12,7 @@
   if(!is.character(workers) | nchar(workers)<1){
     stop("You must input a non-blank worker id and one made of characters.")
   }
-  createCert(certone, workers)
-  revokeCert(certtwo, workers)
+  createCert(certtwo, workers)
+  revokeCert(certone, workers)
 }
 
