@@ -14,7 +14,7 @@
 #' We begin by reading in the data using the \code{\link{readText}} function. If we want to use the movie review data in the package, we could run the following code:
 #'
 #' \code{data(reviews)}
-#'  \code{readText(email = 'researcher@school.edu',
+#' \code{readText(email = 'researcher@school.edu',
 #'    password = 'uniquePassword',
 #'    read_documents_from = reviews,
 #'    write_documents_to = "ReviewsWithIds.csv",

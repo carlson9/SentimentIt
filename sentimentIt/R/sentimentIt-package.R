@@ -14,9 +14,12 @@
 #' We begin by reading in the data using the \code{\link{readText}} function. If we want to use the movie review data in the package, we could run the following code:
 #'
 #' \code{data(reviews)}
+#'
 #' \code{readText(email = 'researcher@school.edu',
 #'    password = 'uniquePassword',
 #'    read_documents_from = reviews,
 #'    write_documents_to = "ReviewsWithIds.csv",
 #'    index = 'Review')}
+#'
+#' This would load the \code{\link{reviews}} data, read the text from the column specified by \code{index} (which can alternatively be a numeric for the column), put the text on the SentimentIt server, which will return unique ID numbers for the documents, and the function \code{\link{readText}} will both return a dataframe with the inputted data with the IDs appended, and write this data frame to "ReviewsWithIds.csv". View the function documentation for all possible arguments, which, again, have the same names as the higher level wrapper function.
 NULL
