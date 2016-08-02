@@ -5,5 +5,13 @@
 #' @docType package
 #' @author  David Carlson \email{carlson.david@@wustl.edu} and Jacob M. Montgomery \email{jacob.montgomery@@wustl.edu}
 #' @details
-#' More later
+#' Work flow:
+#' create SentimentIt account
+#' create AWS account and add AWS key and token to SentimentIt - docs at...
+#' create a Qualtrics survey, generate a link, docs at...
+#' create AWS qualification
+#' create certification with GUI, linking to AWS key
+#' add JS to survey, docs at...
+#' use GUI to create HIT setting
+#' use R package
 NULL
