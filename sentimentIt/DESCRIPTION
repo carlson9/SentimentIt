@@ -1,0 +1,18 @@
+Package: sentimentIt
+Title: SentimentIt Text Analysis
+Version: 0.1
+Author: David Carlson and Jacob M. Montgomery
+Maintainer: David Carlson <carlson.david@wustl.edu>
+Description: This package interacts with the SentimentIt API for sentiment
+    analysis of text through crowdsourcing.
+Depends:
+    plyr,
+    jsonlite,
+    httr,
+    RCurl,
+    rstan
+Suggests:
+    testthat
+LazyData: true
+License: GPL (>= 2)
+RoxygenNote: 5.0.1

@@ -27,7 +27,7 @@ setwd("~/SentimentIt")
 
 
 ## This can be run many times as the code is updates
-current.code <- as.package("SentimentIt")
+current.code <- as.package("sentimentIt")
 load_all(current.code)
 document(current.code)
 check(current.code)
