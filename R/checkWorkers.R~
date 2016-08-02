@@ -46,14 +46,14 @@ checkWorkers <- function(stan_fit, data, cut_point=1, cut_proportion=0.9,
   workers <- levels(data$worker_id[seq(1, dim(data)[1], by=2)])
   j <- as.numeric(data$worker_id[seq(1, dim(data)[1], by=2)])
   ban_workers <- workers[which(bs_proportion > cut_proportion & table(j) > n.questions)]
+  if(!is.null(hist_path)){
+    pdf(hist_path)
+    hist(bs, main='Histogram of Worker Estimates')
+    rug(bs)
+    dev.off()
+  }
 
   if(plot_hist){
-    if(!is.null(hist_path)){
-      pdf(hist_path)
-      hist(bs, main='Histogram of Worker Estimates')
-      rug(bs)
-      dev.off()
-    }
     plot(hist(bs, main='Histogram of Worker Estimates'))
     rug(bs)
   }

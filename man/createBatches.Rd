@@ -4,25 +4,34 @@
 \alias{createBatches}
 \title{Create new batches}
 \usage{
-createBatches(hit_setting_id, num_batches = 1)
+createBatches(email, password, task_setting_id, num_batches = 1)
 }
 \arguments{
-\item{num_batches}{number of batches to create using the HIT setting}
+\item{email}{The researcher's email used for SentimentIt registration}
 
-\item{ids}{ID of HIT setting to use}
+\item{password}{The researcher's password used for SentimentIt}
+
+\item{task_setting_id}{ID of Task setting to use}
+
+\item{num_batches}{Number of separate batches to create. Default is 1.}
 }
 \value{
-out ID of batches created
+batch_ids Vector of batch IDs created
 }
 \description{
-This function creates new batches with a HIT setting.
+This function creates new batches with the desired Task setting 
+and the desired number of batches.
 }
 \examples{
-
-createHITS(ids=10,HITsetting=2)
-createHITS(batch_id=204)
+\dontrun{
+createBatches(email, password, task_setting_id=2, num_batches=4)
+createBatches(email, password, task_setting_id=2)
+}
 }
 \author{
 David Carlson
+}
+\seealso{
+\code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
 }
 

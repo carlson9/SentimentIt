@@ -3,7 +3,7 @@
 #' Find/create documents and retrieve ids.
 #'
 #' @param email The researcher's email associated with the SentimentIt account.
-#' @param passwork The researcher's password associated with the SentimentIt account.
+#' @param password The researcher's password associated with the SentimentIt account.
 #' @param read_documents_from The file path the data will be drawn form, or a vector of text.
 #' @param write_documents_to The file path to write the original data, merged with the document IDs. Default is NULL and the results will not be saved, but only returned. For best functionality specify a csv.
 #' @param what Argument passed to scan() function. Default is character. Only needed when index is NULL.
@@ -15,7 +15,7 @@
 #' 
 #' @return List of ids corresponding to documents sent.
 #'
-#' @seealso \code{\link{sentimentIt}} \code{\link{\authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
+#' @seealso \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
 #' @author David Carlson
 #' @rdname readText
 #' @export

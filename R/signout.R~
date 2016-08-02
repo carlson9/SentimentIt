@@ -3,7 +3,7 @@
 #' @param email The email used by the researcher to register with SentimentIt.
 #' @param password The password associated with the account.
 #'
-#' @return success TRUE if sign out succeeded.
+#' @return success TRUE if sign out succeeded. Function will be called recursively until success.
 #'
 #' @author David Carlson
 #'

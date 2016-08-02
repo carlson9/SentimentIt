@@ -3,9 +3,9 @@
 #' Find/create documents and retrieve ids.
 #'
 #' @param email The researcher's email associated with the SentimentIt account.
-#' @param passwork The researcher's password associated with the SentimentIt account.
+#' @param password The researcher's password associated with the SentimentIt account.
 #' @param read_documents_from The file path the data will be drawn form, or a vector of text.
-#' @param write_documents_to The file path to write the original data, merged with the document IDs. Default is NULL and the results will not be saved, but only returned.
+#' @param write_documents_to The file path to write the original data, merged with the document IDs. Default is NULL and the results will not be saved, but only returned. For best functionality specify a csv.
 #' @param what Argument passed to scan() function. Default is character. Only needed when index is NULL.
 #' @param sep Argument passed to read.table() function. Default is line break. Only needed when index is not NULL.
 #' @param quiet Argument passed to scan(). Default is TRUE. Only needed when index is NULL.

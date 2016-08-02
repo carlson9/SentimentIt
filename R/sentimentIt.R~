@@ -99,7 +99,7 @@ sentimentIt <- function(email, password, read_documents_from,
       torepost <- c(torepost, i)
     }
   }
-  if(!is.null(torepost){
+  if(!is.null(torepost)){
     Sys.sleep(wait_to_repost*3600)
     for(i in torepost){
       repostExpired(email, password, i)
@@ -112,7 +112,7 @@ sentimentIt <- function(email, password, read_documents_from,
     stanfit <- .stanWrapper(email, password, data=batches,
                            hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
                            return_fit=TRUE, cut_point=cut_point, cut_proportion=cut_proportion,
-                           n.questions=n.questions, plot_hist=plot_hist, file_path=file_path,
+                           n.questions=n.questions, plot_hist=plot_hist, hist_path=hist_path[length(hist_path)],
                            chains=chains, iter=iter, seed=seed, n.cores=n.cores)[[2]]
     if(!is.null(stan_file)){
       save(stanfit, file=stan_file)

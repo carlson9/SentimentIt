@@ -1,0 +1,19 @@
+Collate:
+    'createTasks.R'
+    'batchStatus.R'
+    'createPairwise.R'
+    'readInData.R'
+    'readText.R'
+    'repostExpired.R'
+    'checkWorkers.R'
+    'fitStan.R'
+    'fitStanHier.R'
+    'stanWrapper.R'
+    'makeCompsSep.R'
+    'createTasksTimed.R'
+    'createTasksBatch.R'
+    'batchesWrapper.R'
+    'timedWrapper.R'
+    'extractCoef.R'
+    'sentimentIt.R
+

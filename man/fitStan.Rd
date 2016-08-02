@@ -4,9 +4,14 @@
 \alias{fitStan}
 \title{Fit STAN Model}
 \usage{
-fitStan(data, chains = 3, iter = 2500, seed = 1234, n.cores = 3)
+fitStan(email = NULL, password = NULL, data, chains = 3, iter = 2500,
+  seed = 1234, n.cores = 3)
 }
 \arguments{
+\item{email}{The researcher's email used for SentimentIt registration. Default is NULL and only needs to be provided if batch numbers are used instead of data.}
+
+\item{password}{The researcher's password used for SentimentIt. Default is NULL and only needs to be provided if batch numbers are used instead of data.}
+
 \item{data}{A csv file or a vector of batch numbers.}
 
 \item{chains}{The number of chains. (Default is 3)}
@@ -18,18 +23,15 @@ fitStan(data, chains = 3, iter = 2500, seed = 1234, n.cores = 3)
 \item{n.cores}{Number of cores to be used in stan fit. (Default is 3)}
 }
 \value{
-STAN output
+fit Stan fit object
 }
 \description{
-Fit STAN model
+Fit a Stan model with data retrieved from the SentimentIt platform.
 }
 \author{
 David Carlson
 }
 \seealso{
-\code{\link{batchStatus}}, \code{\link{batchesWrapper}}, \code{\link{createHITSTimed}},\code{\link{checkWorkers}},\code{\link{createBatches}},
-\code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
-\code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
-\code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}}
+\code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
 }
 

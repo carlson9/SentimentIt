@@ -19,12 +19,13 @@
       }
       if(i %in% batches[check_workers_at]) {
         q <- ifelse(length(hist_path)>q, q+1, q)
-      hist_pathi <- hist_path[q]
-      .givetakeCert(email, password, certone, certtwo, .stanWrapper(email, password, data=batches[1:length(out)],
+        hist_pathi <- hist_path[q]
+        .givetakeCert(email, password, certone, certtwo, .stanWrapper(email, password, data=batches[1:length(out)],
                                                  hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
                                                  return_fit=FALSE, cut_point=cut_point, cut_proportion=cut_proportion,
                                                  n.questions=n.questions, plot_hist=plot_hist, hist_path=hist_pathi,
                                                  chains=chains, iter=iter, seed=seed, n.cores=n.cores)[[1]])
+      }
   }
   return(out)
 }

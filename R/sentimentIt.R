@@ -48,7 +48,7 @@
 #'
 #' @author David Carlson
 #'
-#' @seealso \code{\link{\authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
+#' @seealso \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
 #' @rdname sentimentIt
 #' @export
 sentimentIt <- function(email, password, read_documents_from,
@@ -99,7 +99,7 @@ sentimentIt <- function(email, password, read_documents_from,
       torepost <- c(torepost, i)
     }
   }
-  if(!is.null(torepost){
+  if(!is.null(torepost)){
     Sys.sleep(wait_to_repost*3600)
     for(i in torepost){
       repostExpired(email, password, i)

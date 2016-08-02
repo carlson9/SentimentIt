@@ -10,7 +10,7 @@
 #' @param seed Set seed. (Defalt is 1234)
 #' @param n.cores Number of cores to be used in stan fit. (Default is 3)
 #'
-#' @return STAN output
+#' @return fit Stan fit object
 #'
 #' @author David Carlson
 #' @seealso \code{\link{sentimentIt}} \code{\link{\authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}

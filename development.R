@@ -7,7 +7,7 @@ library(plyr)
 library(testthat)
 
 # Davidflasterstein path
-setwd("/Users/davidflast/Documents")
+setwd("~/SentimentIt")
 # This will need to be changed to match your directory of where the package is.
 ## This is run once when the package strcuture is first created
 
@@ -27,10 +27,10 @@ setwd("/Users/davidflast/Documents")
 
 
 ## This can be run many times as the code is updates
-current.code <- as.package("sentimentIt")
+current.code <- as.package("SentimentIt")
 load_all(current.code)
 document(current.code)
 check(current.code)
-
+build(current.code)
 
 

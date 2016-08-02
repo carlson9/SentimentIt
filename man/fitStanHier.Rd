@@ -2,12 +2,16 @@
 % Please edit documentation in R/fitStanHier.R
 \name{fitStanHier}
 \alias{fitStanHier}
-\title{Fit STAN Hierarchical Model}
+\title{Fit Stan Hierarchical Model}
 \usage{
-fitStanHier(data, hierarchy_data, hierarchy_var, chains = 3, iter = 2500,
-  seed = 1234, n.cores = 3)
+fitStanHier(email = NULL, password = NULL, data, hierarchy_data,
+  hierarchy_var, chains = 3, iter = 2500, seed = 1234, n.cores = 3)
 }
 \arguments{
+\item{email}{The researcher's email used for SentimentIt registration. Default is NULL and only needs to be provided if batch numbers are used instead of data.}
+
+\item{password}{The researcher's password used for SentimentIt. Default is NULL and only needs to be provided if batch numbers are used instead of data.}
+
 \item{data}{A csv file or a vector of batch numbers.}
 
 \item{hierarchy_data}{A file that contains the variable that is used as a hierarchy.}
@@ -23,18 +27,15 @@ fitStanHier(data, hierarchy_data, hierarchy_var, chains = 3, iter = 2500,
 \item{n.cores}{Number of cores to be used in stan fit. (Default is 3)}
 }
 \value{
-fitStanHier
+fit_heir The heirarchical Stan fit object
 }
 \description{
-Fit STAN hierarchical model
+Fit a Stan heirarchical model with data retrieved from the SentimentIt platform.
 }
 \author{
 David Carlson
 }
 \seealso{
-\code{\link{batchStatus}}, \code{\link{batchesWrapper}}, \code{\link{createHITSTimed}},\code{\link{checkWorkers}},\code{\link{createBatches}},
-\code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
-\code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
-\code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}}
+\code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
 }
 

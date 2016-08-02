@@ -18,7 +18,7 @@
 #' @export
 epostExpired <- function(email, password, batch_id){
   if (!is.vector(batch_id) | !is.numeric(batch_id)) {
-    stop("batch_id needs to be a vector of numerics")
+    stop("batch_id needs to be numeric")
   }
   auth_token <- authenticate(email, password)
   args <- list(email = email, auth_token = auth_token)

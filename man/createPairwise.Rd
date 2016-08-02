@@ -2,31 +2,27 @@
 % Please edit documentation in R/createPairwise.R
 \name{createPairwise}
 \alias{createPairwise}
-\title{Creates documents with two texts to be compared.}
+\title{Creates a matrix of random pairs for comparison.}
 \usage{
-createPairwise(ids, number_per)
+createPairwise(ids, number_per, pairwise_path = "pairwise.Rdata")
 }
 \arguments{
 \item{ids}{The id numbers of the texts you want to use.}
 
 \item{number_per}{How many documents per batch to be compared.}
+
+\item{pairwise_path}{Path to save the created pairwise matrix. Default is pairwise.Rdata}
 }
 \value{
-Creates a document with the texts to be compared.
+A matrix of random pairwise comparisons without repitition.
 }
 \description{
-Creates documents with two texts to be compared.
-}
-\note{
-This function requires the usage of the plyr package.
+Creates a matrix of random pairs for comparison.
 }
 \author{
 David Carlson
 }
 \seealso{
-\code{\link{batchStatus}}, \code{\link{batchesWrapper}}, \code{\link{createHITSTimed}},\code{\link{checkWorkers}},\code{\link{createBatches}},
-\code{\link{createCert}},\code{\link{createHITS}}, \code{\link{createHITSBatch}},\code{\link{createPairwise}}, \code{\link{timedWrapper}},
-\code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},\code{\link{givetakeCert}},\code{\link{makeCompsSep}},
-\code{\link{readInData}}, \code{\link{readText}},\code{\link{repostExpired}},\code{\link{revokeCert}},\code{\link{stanWrapper}}
+\code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
 }
 

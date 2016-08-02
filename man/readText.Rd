@@ -2,33 +2,43 @@
 % Please edit documentation in R/readText.R
 \name{readText}
 \alias{readText}
-\title{Reads in text.}
+\title{Reads in text, posts the text to the server, and returns the document IDs after saving the result to a new table.}
 \usage{
-readText(pathfrom, pathto = NULL, what = "character", sep = "\\n",
-  quiet = TRUE, index = NULL, which_source = "apiR", ...)
+readText(email, password, read_documents_from, write_documents_to = NULL,
+  what = "character", sep = "\\n", quiet = TRUE, index = NULL,
+  which_source = "apiR", ...)
 }
 \arguments{
-\item{what}{The text to be sent and used in the data frame.}
+\item{email}{The researcher's email associated with the SentimentIt account.}
 
-\item{sep}{Where to separate text by line.}
+\item{password}{The researcher's password associated with the SentimentIt account.}
 
-\item{quiet}{If true, this does not print the amount of items read prior.}
+\item{read_documents_from}{The file path the data will be drawn form, or a vector of text.}
 
-\item{index}{The index number}
+\item{write_documents_to}{The file path to write the original data, merged with the document IDs. Default is NULL and the results will not be saved, but only returned. For best functionality specify a csv.}
 
-\item{which_source}{What type of file is the text being drawn from.}
+\item{what}{Argument passed to scan() function. Default is character. Only needed when index is NULL.}
 
-\item{pathFrom}{Where the text will be drawn from.}
+\item{sep}{Argument passed to read.table() function. Default is line break. Only needed when index is not NULL.}
 
-\item{pathTo}{Where to send the text to be reviewed to.}
+\item{quiet}{Argument passed to scan(). Default is TRUE. Only needed when index is NULL.}
+
+\item{index}{The index number of the table to extract the text from, or the name of the column. Default is NULL, indicating the text was not sent in a table.}
+
+\item{which_source}{Source used within SentimentIt server assoicated with document uploads. Only used for later reference. Default is apiR.}
+
+\item{...}{Additional arguments passed to either scan() or read.table() depending on type of data used}
 }
 \value{
-A table with the text and correspondings ID's that can be sent.
+List of ids corresponding to documents sent.
 }
 \description{
-Reads in text from website to be reviewed.
+Find/create documents and retrieve ids.
 }
 \author{
 David Carlson
+}
+\seealso{
+\code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
 }
 

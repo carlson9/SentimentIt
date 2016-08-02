@@ -15,16 +15,16 @@
 #' @return out A table with the text and correspondings ID's that have been sent.
 #'
 #' @author David Carlson
-#' @example 
+#' @examples 
 #' 
-#' \dontrun {
+#' \dontrun{
 #' docInfo <- read.table(email, password, "ReviewsWithIds",header=TRUE)
 #' makeCompsSep(ids=docInfo[,'ids'], number_per=10, batch_id=batch_ids,
-#'              question=’Below is text taken from two movie reviews.Please 
-#'              choose the text that you think comesfrom the most positive review’,
+#'              question='Below is text taken from two movie reviews.Please 
+#'              choose the text that you think comesfrom the most positive review',
 #'              pairwise_path='Comparisons/pairwise.Rdata')
 #' }
-#' @seealso \code{\link{sentimentIt}} \code{\link{\authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
+#' @seealso \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
 #' @rdname makeCompsSep
 #' @export
 makeCompsSep <- function(email, password, ids, number_per, batch_id, question, per_batch=1000, 

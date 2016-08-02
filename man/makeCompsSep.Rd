@@ -4,36 +4,49 @@
 \alias{makeCompsSep}
 \title{Create Comparisons}
 \usage{
-makeCompsSep(ids, number_per, batches, question, per_batch = 1000,
-  path = NULL, name = NULL, idsAsComps = FALSE)
+makeCompsSep(email, password, ids, number_per, batch_id, question,
+  per_batch = 1000, pairwise_path = "pairwise.Rdata",
+  ids_as_comps = FALSE)
 }
 \arguments{
-\item{ids}{The id numbers of the texts you want to use.}
+\item{email}{The researcher's email used for SentimentIt registration}
 
-\item{number_per}{How many documents per batch to be compared.}
+\item{password}{The researcher's password used for SentimentIt registration}
 
-\item{batches}{The number of batches to be made.}
+\item{ids}{Numerical vector of IDs for the documents}
 
-\item{question}{Where to separate text by line.}
+\item{number_per}{Number of comparisons desired}
 
-\item{per_batch}{If true, this does not print the amount of items read prior.}
+\item{batch_id}{Batch IDs to be used for the tasks}
 
-\item{path}{File path}
+\item{question}{A character of the question the worker will see once the worker selects the task}
 
-\item{name}{File name}
+\item{per_batch}{Number of comparisons per batch desired. Defaulted to 1000.}
 
-\item{idsAsComps}{IDs as comparison}
+\item{pairwise_path}{File path to store matrix of document IDs used for comparisons. Default is pairwise.Rdata}
+
+\item{ids_as_comps}{an indicator as to whether or not the IDs provided refer to comparison IDs rather than document IDs. Default is FALSE.}
 }
 \value{
-out a table with the text and correspondings ID's that have been sent.
+out A table with the text and correspondings ID's that have been sent.
 }
 \description{
-Create comparisons using multiple batch numbers.
+Creates separate comparisons using document IDs. This outputs a file with a table of text and corresponding ids for Mechanical Turk comparisons.
 }
-\note{
-Makes use of the createPairwise function. Also requires the jsonlite and httr packages.
+\examples{
+
+\dontrun{
+docInfo <- read.table(email, password, "ReviewsWithIds",header=TRUE)
+makeCompsSep(ids=docInfo[,'ids'], number_per=10, batch_id=batch_ids,
+             question='Below is text taken from two movie reviews.Please 
+             choose the text that you think comesfrom the most positive review',
+             pairwise_path='Comparisons/pairwise.Rdata')
+}
 }
 \author{
 David Carlson
+}
+\seealso{
+\code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
 }
 

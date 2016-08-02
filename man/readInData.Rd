@@ -4,10 +4,14 @@
 \alias{readInData}
 \title{Read in Data}
 \usage{
-readInData(batchNumbers)
+readInData(email, password, batch_id)
 }
 \arguments{
-\item{batchNumbers}{a vector of batch numbers to download data for.}
+\item{email}{The researcher's email used for SentimentIt registration}
+
+\item{password}{The researcher's password used for SentimentIt}
+
+\item{batch_id}{A vector of batch numbers to download data from.}
 }
 \value{
 output a dataframe with the data from the specified batches with columns
@@ -16,26 +20,25 @@ output a dataframe with the data from the specified batches with columns
   \item{comparison_id}{id number of the comparison being made}
   \item{document_id}{id number of the document}
   \item{result}{result of document comparison}
-  \item{hit_id}{id of the hit}
+  \item{task_id}{id of the task}
   \item{worker_id}{id of the worker who did the comparison}
   \item{completed_at}{time comaparison was completed}
 }
 }
 \description{
-Reads in data for specified batch numbers from the website
-}
-\note{
-Sometimes the server will fail to send the data to your computer,
-     so this function will try again 5 times until it successfully connects to the server.
+Reads in data for specified batch numbers from the server
 }
 \examples{
 
+\dontrun{
 x <- 204:208
-myData <- readInData(x)
-y <- c(204, 206, 208, 207)
-myData2 <- readInData(y)
+myData <- readInData(email, password, x)
+}
 }
 \author{
 Jacob M. Montgomery
+}
+\seealso{
+\code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
 }
 
