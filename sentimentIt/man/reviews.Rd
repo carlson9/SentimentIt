@@ -3,7 +3,7 @@
 \docType{data}
 \name{reviews}
 \alias{reviews}
-\title{Movie Reviews Example Data set}
+\title{Movie reviews example data set}
 \format{A data frame with 500 rows and 2 columns:
 \describe{
   \item{Stars}{rating on scale from 1-5 by Mechanical Turk worker}

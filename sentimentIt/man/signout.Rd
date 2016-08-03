@@ -2,7 +2,7 @@
 % Please edit documentation in R/signout.R
 \name{signout}
 \alias{signout}
-\title{Signs the researcher out of the session.}
+\title{Signs the researcher out of the session}
 \usage{
 signout(email, password)
 }
@@ -15,7 +15,7 @@ signout(email, password)
 success TRUE if sign out succeeded. Function will be called recursively until success.
 }
 \description{
-Signs the researcher out of the session.
+This function will revoke the authorization token and sign the researcher out of the session. However, if the certification surveys remain active, if someone takes the survey the researcher will be signed back in.
 }
 \author{
 David Carlson

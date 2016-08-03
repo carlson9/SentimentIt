@@ -46,6 +46,27 @@
 #'
 #' @return sentimentItOut A list with the requested information returned. The data with document IDs will always be returned, regardless if saved elsewhere.
 #'
+#' @examples
+#'
+#' \dontrun{
+#' data(reviews)
+#' movies <- sentimentIt(email = 'researcher@school.edu',
+#'    password = 'uniquePassword',
+#'    read_documents_from = reviews,
+#'    write_documents_to = 'ReviewsWithIds.csv',
+#'    index = 'Review', task_setting_id = 8,
+#'    number_per = 10,
+#'    question = 'Below is text taken from
+#'        two movie reviews. Please
+#'        choose the text that you
+#'        think comes from the most
+#'        positive review',
+#'    pairwise_path = 'Comparisons.Rdata',
+#'    certone = 'snippets', certtwo = 'bannedmovie_reviews',
+#'    timed = FALSE, check_workers_at = c(1,2),
+#'    rest_time = 60, rate = 1/3, threshold = 5,
+#'    return_stan = TRUE, return_data = TRUE)
+#' }
 #' @seealso \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}
 #' @rdname sentimentIt
 #' @export

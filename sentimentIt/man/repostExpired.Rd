@@ -2,7 +2,7 @@
 % Please edit documentation in R/repostExpired.R
 \name{repostExpired}
 \alias{repostExpired}
-\title{Repost expired Tasks from a batch}
+\title{Repost expired tasks from a batch}
 \usage{
 repostExpired(email, password, batch_id)
 }
@@ -17,12 +17,11 @@ repostExpired(email, password, batch_id)
 out reposted count
 }
 \description{
-This will repost all of the expired Tasks from the vector of batch IDs, because once all
-batches are complete it is common that a few Tasks remain incomplete.
+This will repost all of the expired tasks from the vector of batch IDs. It is common for a few tasks in a batch to be overlooked and remain incomplete.
 }
 \examples{
 \dontrun{
-repostExpired(email, password, batch_id=2)
+repostExpired(email = 'researcher@school.edu', password = 'uniquePassword', batch_id = batch_ids)
 }
 }
 \author{

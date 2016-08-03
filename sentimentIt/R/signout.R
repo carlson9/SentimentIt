@@ -1,4 +1,6 @@
-#' Signs the researcher out of the session.
+#' Signs the researcher out of the session
+#'
+#' This function will revoke the authorization token and sign the researcher out of the session. However, if the certification surveys remain active, if someone takes the survey the researcher will be signed back in.
 #'
 #' @param email The email used by the researcher to register with SentimentIt.
 #' @param password The password associated with the account.

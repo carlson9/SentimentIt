@@ -1,6 +1,6 @@
-#' Create Comparisons
+#' Create comparisons and post to SentimentIt
 #'
-#' Creates separate comparisons using document IDs. This outputs a file with a table of text and corresponding ids for Mechanical Turk comparisons.
+#' Creates random comparisons of document IDs using \code{\link{createPairwise}}. These comparisons are posted on the SentimentIt server and receive unique IDs from the system.
 #'
 #' @param email The researcher's email used for SentimentIt registration
 #' @param password The researcher's password used for SentimentIt registration
@@ -19,10 +19,7 @@
 #' 
 #' \dontrun{
 #' docInfo <- read.table(email, password, "ReviewsWithIds",header=TRUE)
-#' makeCompsSep(ids=docInfo[,'ids'], number_per=10, batch_id=batch_ids,
-#'              question='Below is text taken from two movie reviews.Please 
-#'              choose the text that you think comesfrom the most positive review',
-#'              pairwise_path='Comparisons/pairwise.Rdata')
+#' makeCompsSep(email = 'researcher@school.edu', password = 'uniquePassword', ids = docInfo[,'ids'], number_per = 10, batch_id = batch_ids, question = 'Below is text taken from two movie reviews. Please choose the text that you think comes from the most positive review', pairwise_path = 'Comparisons/first10.Rdata')
 #' }
 #' @seealso \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}
 #' @rdname makeCompsSep

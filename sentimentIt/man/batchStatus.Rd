@@ -2,7 +2,7 @@
 % Please edit documentation in R/batchStatus.R
 \name{batchStatus}
 \alias{batchStatus}
-\title{Check batch status}
+\title{Check the status of batch(es)}
 \usage{
 batchStatus(email, password, batch_id)
 }
@@ -24,13 +24,12 @@ output Dataframe with the variables:
 }
 }
 \description{
-This function checks the indicated batch_id numbers and returns their status. This returns a data frame with the batch ID and the number of comparisons submitted and the number completed.
+This function checks the status of the batch_id number(s). This returns a data frame with the batch ID and the number of comparisons submitted and the number completed.
 }
 \examples{
 
 \dontrun{ 
-batch_id <- 204:208
-status <- batchStatus(email, password, batch_id)
+batchStatus(email = 'researcher@school.edu', password = 'uniquePassword', batch_id = batch_ids[1])
 }
 }
 \author{

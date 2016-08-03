@@ -1,4 +1,6 @@
-#' Creates a matrix of random pairs for comparison.
+#' Creates a matrix of random pairs for comparison
+#'
+#' This function randomly samples from all possible pairings of IDs. In other words, no comparison will be duplicated.
 #'
 #' @param ids The id numbers of the texts you want to use.
 #' @param number_per How many documents per batch to be compared.

@@ -1,6 +1,7 @@
-#' Reads in text, posts the text to the server, and returns the document IDs after saving the result to a new table.
+#' Find/create documents and retrieve IDs
 #'
-#' Find/create documents and retrieve ids.
+#' Reads in text, posts the text to the server, and returns the document IDs after saving the result to a new table. If text already exists on the server, the associated ID is returned (there will never be duplicated text).
+#'
 #'
 #' @param email The researcher's email associated with the SentimentIt account.
 #' @param password The researcher's password associated with the SentimentIt account.
@@ -13,9 +14,9 @@
 #' @param which_source Source used within SentimentIt server assoicated with document uploads. Only used for later reference. Default is apiR.
 #' @param ... Additional arguments passed to either scan() or read.table() depending on type of data used
 #' 
-#' @return List of ids corresponding to documents sent.
+#' @return A data frame with the provided data and the IDs appended
 #'
-#' @seealso \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
+#' @seealso \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}
 #' @author David Carlson
 #' @rdname readText
 #' @export

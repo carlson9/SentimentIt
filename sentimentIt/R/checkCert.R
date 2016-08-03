@@ -1,4 +1,4 @@
-#' Checks certification for a worker.
+#' Checks if a worker has a certification
 #'
 #' @param email The researcher's email used for SentimentIt registration
 #' @param password The researcher's password used for SentimentIt 

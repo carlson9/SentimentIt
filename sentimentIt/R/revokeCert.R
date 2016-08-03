@@ -1,5 +1,6 @@
-
-#' Revokes certifications for workers.
+#' Revoke a certification for workers
+#'
+#' This function simply removes workers from the list of approved workers and they will no longer be able to perform the tasks requiring the certification.
 #'
 #' @param email The researcher's email used for SentimentIt registration
 #' @param password The researcher's password used for SentimentIt 
@@ -12,9 +13,7 @@
 #' @examples
 #' 
 #' \dontrun{ 
-#' x <- "ab1"
-#' y <- c("a204", "a206", "a208", "a207")
-#' revocation <- revokeCert(x, y)
+#' revokeCert(email = 'researcher@school.edu', password = 'uniquePassword', cert = 'snippets', workers = ban_workers)
 #' }
 #'
 #' @rdname revokeCert

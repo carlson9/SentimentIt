@@ -2,7 +2,7 @@
 % Please edit documentation in R/authenticate.R
 \name{authenticate}
 \alias{authenticate}
-\title{Authenticates researcher and returns authorization token. Primarily used internally but can be used if the researcher wishes to use the API directly.}
+\title{Authenticate researcher and retrieve token}
 \usage{
 authenticate(email, password)
 }

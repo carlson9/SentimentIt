@@ -1,6 +1,6 @@
-#' Check batch status
+#' Check the status of batch(es)
 #' 
-#' This function checks the indicated batch_id numbers and returns their status. This returns a data frame with the batch ID and the number of comparisons submitted and the number completed.
+#' This function checks the status of the batch_id number(s). This returns a data frame with the batch ID and the number of comparisons submitted and the number completed.
 #' 
 #' @param email The researcher's email used for SentimentIt registration
 #' @param password The researcher's password used for SentimentIt 
@@ -21,7 +21,7 @@
 #' batch_id <- 204:208
 #' status <- batchStatus(email, password, batch_id)
 #' }
-#' @seealso \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{revokeCert}} \code{\link{signout}}
+#' @seealso \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}
 #' @rdname batchStatus
 #' @export
 batchStatus <- function(email, password, batch_id){

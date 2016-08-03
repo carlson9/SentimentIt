@@ -2,7 +2,7 @@
 % Please edit documentation in R/readInData.R
 \name{readInData}
 \alias{readInData}
-\title{Read in Data}
+\title{Read in data provided by the workers}
 \usage{
 readInData(email, password, batch_id)
 }
@@ -26,13 +26,12 @@ output a dataframe with the data from the specified batches with columns
 }
 }
 \description{
-Reads in data for specified batch numbers from the server
+Reads in the complete data for specified batch numbers from the server. This data contains the selection made for every completed comparison in the batch.
 }
 \examples{
 
 \dontrun{
-x <- 204:208
-myData <- readInData(email, password, x)
+output <- readInData(email = 'researcher@school.edu', password = 'uniquePassword', batch_id = batch_ids[1])
 }
 }
 \author{

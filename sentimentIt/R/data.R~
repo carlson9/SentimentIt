@@ -1,4 +1,4 @@
-#' Movie reviews example data set
+#' Movie Reviews Example Data set
 #'
 #' An example dataset of Rotten Tomato movie reviews with the number of stars given by the user. This is the first application in the associated paper introducing SentimentIt.
 #'

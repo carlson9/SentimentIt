@@ -2,7 +2,7 @@
 % Please edit documentation in R/fitStan.R
 \name{fitStan}
 \alias{fitStan}
-\title{Fit STAN Model}
+\title{Fit a Stan model with results from SentimentIt}
 \usage{
 fitStan(email = NULL, password = NULL, data, chains = 3, iter = 2500,
   seed = 1234, n.cores = 3)
@@ -26,7 +26,15 @@ fitStan(email = NULL, password = NULL, data, chains = 3, iter = 2500,
 fit Stan fit object
 }
 \description{
-Fit a Stan model with data retrieved from the SentimentIt platform.
+Fit a random utility model using Hamiltonian MCMC in Stan with data retrieved from the SentimentIt platform.
+}
+\examples{
+
+\dontrun{
+fit <- fitStan(data = batch_ids)
+fit <- fitStan(data = output)
+}
+
 }
 \author{
 David Carlson

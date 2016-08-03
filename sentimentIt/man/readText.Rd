@@ -2,7 +2,7 @@
 % Please edit documentation in R/readText.R
 \name{readText}
 \alias{readText}
-\title{Reads in text, posts the text to the server, and returns the document IDs after saving the result to a new table.}
+\title{Find/create documents and retrieve IDs}
 \usage{
 readText(email, password, read_documents_from, write_documents_to = NULL,
   what = "character", sep = "\\n", quiet = TRUE, index = NULL,
@@ -30,10 +30,19 @@ readText(email, password, read_documents_from, write_documents_to = NULL,
 \item{...}{Additional arguments passed to either scan() or read.table() depending on type of data used}
 }
 \value{
-List of ids corresponding to documents sent.
+A data frame with the provided data and the IDs appended
 }
 \description{
-Find/create documents and retrieve ids.
+Reads in text, posts the text to the server, and returns the document IDs after saving the result to a new table. If text already exists on the server, the associated ID is returned (there will never be duplicated text).
+}
+\examples{
+
+\dontrun{
+data(reviews)
+
+docInfo <- readText(email = 'researcher@school.edu', password = 'uniquePassword', read_documents_from = reviews, write_documents_to = "ReviewsWithIds.csv", index = 'Review')
+}
+
 }
 \author{
 David Carlson

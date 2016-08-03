@@ -28,6 +28,13 @@ ban_workers A vector of outlying workers' IDs whose proportion of posterior coef
 \description{
 Detect outlying workers
 }
+\examples{
+
+\dontrun{
+ban_workers <- checkWorkers(stan_fit = fit, data = output)
+}
+
+}
 \author{
 David Carlson
 }

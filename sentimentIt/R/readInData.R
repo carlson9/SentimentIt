@@ -1,6 +1,6 @@
-#' Read in Data
+#' Read in data provided by the workers
 #'
-#' Reads in data for specified batch numbers from the server
+#' Reads in the complete data for specified batch numbers from the server. This data contains the selection made for every completed comparison in the batch.
 #'
 #' @param email The researcher's email used for SentimentIt registration
 #' @param password The researcher's password used for SentimentIt
@@ -20,8 +20,7 @@
 #' @examples
 #' 
 #' \dontrun{
-#' x <- 204:208
-#' myData <- readInData(email, password, x)
+#' output <- readInData(email = 'researcher@school.edu', password = 'uniquePassword', batch_id = batch_ids[1])
 #' }
 #' @rdname readInData
 #' @seealso \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}

@@ -2,7 +2,7 @@
 % Please edit documentation in R/makeCompsSep.R
 \name{makeCompsSep}
 \alias{makeCompsSep}
-\title{Create Comparisons}
+\title{Create comparisons and post to SentimentIt}
 \usage{
 makeCompsSep(email, password, ids, number_per, batch_id, question,
   per_batch = 1000, pairwise_path = "pairwise.Rdata",
@@ -31,16 +31,13 @@ makeCompsSep(email, password, ids, number_per, batch_id, question,
 out A table with the text and correspondings ID's that have been sent.
 }
 \description{
-Creates separate comparisons using document IDs. This outputs a file with a table of text and corresponding ids for Mechanical Turk comparisons.
+Creates random comparisons of document IDs using \code{\link{createPairwise}}. These comparisons are posted on the SentimentIt server and receive unique IDs from the system.
 }
 \examples{
 
 \dontrun{
 docInfo <- read.table(email, password, "ReviewsWithIds",header=TRUE)
-makeCompsSep(ids=docInfo[,'ids'], number_per=10, batch_id=batch_ids,
-             question='Below is text taken from two movie reviews.Please 
-             choose the text that you think comesfrom the most positive review',
-             pairwise_path='Comparisons/pairwise.Rdata')
+makeCompsSep(email = 'researcher@school.edu', password = 'uniquePassword', ids = docInfo[,'ids'], number_per = 10, batch_id = batch_ids, question = 'Below is text taken from two movie reviews. Please choose the text that you think comes from the most positive review', pairwise_path = 'Comparisons/first10.Rdata')
 }
 }
 \author{

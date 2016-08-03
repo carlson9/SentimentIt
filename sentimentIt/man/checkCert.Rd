@@ -2,7 +2,7 @@
 % Please edit documentation in R/checkCert.R
 \name{checkCert}
 \alias{checkCert}
-\title{Checks certification for a worker.}
+\title{Checks if a worker has a certification}
 \usage{
 checkCert(email, password, cert, worker)
 }
@@ -19,7 +19,7 @@ checkCert(email, password, cert, worker)
 TRUE or FALSE indicating if the worker has the certification.
 }
 \description{
-Checks certification for a worker.
+Checks if a worker has a certification
 }
 \examples{
 

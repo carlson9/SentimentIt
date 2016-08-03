@@ -2,7 +2,7 @@
 % Please edit documentation in R/fitStanHier.R
 \name{fitStanHier}
 \alias{fitStanHier}
-\title{Fit Stan Hierarchical Model}
+\title{Fit a Stan hierarchical model with results from SentimentIt}
 \usage{
 fitStanHier(email = NULL, password = NULL, data, hierarchy_data,
   hierarchy_var, chains = 3, iter = 2500, seed = 1234, n.cores = 3)
@@ -30,7 +30,7 @@ fitStanHier(email = NULL, password = NULL, data, hierarchy_data,
 fit_heir The heirarchical Stan fit object
 }
 \description{
-Fit a Stan heirarchical model with data retrieved from the SentimentIt platform.
+Fit a multilevel random utility model using Hamiltonian MCMC in Stan with data retrieved from the SentimentIt platform.
 }
 \author{
 David Carlson

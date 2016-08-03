@@ -1,7 +1,6 @@
-#' Repost expired Tasks from a batch
+#' Repost expired tasks from a batch
 #' 
-#' This will repost all of the expired Tasks from the vector of batch IDs, because once all
-#' batches are complete it is common that a few Tasks remain incomplete.
+#' This will repost all of the expired tasks from the vector of batch IDs. It is common for a few tasks in a batch to be overlooked and remain incomplete.
 #' 
 #' @param email The researcher's email used for SentimentIt registration
 #' @param password The researcher's password used for SentimentIt 
@@ -11,7 +10,7 @@
 #' @author David Carlson
 #' @examples
 #' \dontrun{
-#' repostExpired(email, password, batch_id=2)
+#' repostExpired(email = 'researcher@school.edu', password = 'uniquePassword', batch_id = batch_ids)
 #' }
 #' @rdname repostExpired
 #' @seealso \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}

@@ -1,6 +1,6 @@
-#' Fit STAN Model
+#' Fit a Stan model with results from SentimentIt
 #'
-#' Fit a Stan model with data retrieved from the SentimentIt platform.
+#' Fit a random utility model using Hamiltonian MCMC in Stan with data retrieved from the SentimentIt platform.
 #'
 #' @param email The researcher's email used for SentimentIt registration. Default is NULL and only needs to be provided if batch numbers are used instead of data.
 #' @param password The researcher's password used for SentimentIt. Default is NULL and only needs to be provided if batch numbers are used instead of data.
@@ -13,6 +13,14 @@
 #' @return fit Stan fit object
 #'
 #' @author David Carlson
+#'
+#' @examples
+#'
+#' \dontrun{
+#' fit <- fitStan(data = batch_ids)
+#' fit <- fitStan(data = output)
+#' }
+#'
 #' @seealso \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}
 #' @rdname fitStan
 #' @export

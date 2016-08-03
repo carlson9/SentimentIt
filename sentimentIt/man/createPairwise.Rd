@@ -2,7 +2,7 @@
 % Please edit documentation in R/createPairwise.R
 \name{createPairwise}
 \alias{createPairwise}
-\title{Creates a matrix of random pairs for comparison.}
+\title{Creates a matrix of random pairs for comparison}
 \usage{
 createPairwise(ids, number_per, pairwise_path = "pairwise.Rdata")
 }
@@ -17,7 +17,7 @@ createPairwise(ids, number_per, pairwise_path = "pairwise.Rdata")
 A matrix of random pairwise comparisons without repitition.
 }
 \description{
-Creates a matrix of random pairs for comparison.
+This function randomly samples from all possible pairings of IDs. In other words, no comparison will be duplicated.
 }
 \author{
 David Carlson

@@ -2,7 +2,7 @@
 % Please edit documentation in R/revokeCert.R
 \name{revokeCert}
 \alias{revokeCert}
-\title{Revokes certifications for workers.}
+\title{Revoke a certification for workers}
 \usage{
 revokeCert(email, password, cert, workers)
 }
@@ -19,14 +19,12 @@ revokeCert(email, password, cert, workers)
 The number of workers revoked.
 }
 \description{
-Revokes certifications for workers.
+This function simply removes workers from the list of approved workers and they will no longer be able to perform the tasks requiring the certification.
 }
 \examples{
 
 \dontrun{ 
-x <- "ab1"
-y <- c("a204", "a206", "a208", "a207")
-revocation <- revokeCert(x, y)
+revokeCert(email = 'researcher@school.edu', password = 'uniquePassword', cert = 'snippets', workers = ban_workers)
 }
 
 }

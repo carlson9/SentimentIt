@@ -1,6 +1,6 @@
-#' Fit Stan Hierarchical Model
+#' Fit a Stan hierarchical model with results from SentimentIt
 #'
-#' Fit a Stan heirarchical model with data retrieved from the SentimentIt platform.
+#' Fit a multilevel random utility model using Hamiltonian MCMC in Stan with data retrieved from the SentimentIt platform.
 #'
 #' @param email The researcher's email used for SentimentIt registration. Default is NULL and only needs to be provided if batch numbers are used instead of data.
 #' @param password The researcher's password used for SentimentIt. Default is NULL and only needs to be provided if batch numbers are used instead of data.

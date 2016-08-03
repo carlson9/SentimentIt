@@ -27,8 +27,7 @@ This function posts a batch or comparisons to Mechanical Turk as tasks
 \examples{
 
 \dontrun{
-createTasks(email, password, ids=10,task_setting_id=2)
-createTasks(email, password, batch_id=204)
+createTasks(email = 'researcher@school.edu', password = 'uniquePassword', batch_id = batch_ids[1])
 }
 }
 \author{

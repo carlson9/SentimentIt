@@ -10,6 +10,12 @@
 #'
 #' @return ban_workers A vector of outlying workers' IDs whose proportion of posterior coefficients below \code{cut_point} is greater than \code{cut_proportion} and who answered more than the number of questions in \code{n.questions}
 #'
+#' @examples
+#' 
+#' \dontrun{
+#' ban_workers <- checkWorkers(stan_fit = fit, data = output)
+#' }
+#'
 #' @author David Carlson
 #'
 #' @seealso \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}

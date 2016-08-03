@@ -2,7 +2,7 @@
 % Please edit documentation in R/createCert.R
 \name{createCert}
 \alias{createCert}
-\title{Grants certifications to workers.}
+\title{Grants certifications to workers}
 \usage{
 createCert(email, password, cert, workers)
 }
@@ -19,14 +19,12 @@ createCert(email, password, cert, workers)
 Character indicating number of workers certified.
 }
 \description{
-Grants certifications to workers.
+This function will grant a certification to a worker, and if the certification does not exist it will be created.
 }
 \examples{
 
 \dontrun{ 
-x <- "ab1"
-y <- c("a204", "a206", "a208", "a207")
-creation <- createCert(email, password, x, y)
+createCert(email = 'researcher@school.edu', password = 'uniquePassword', cert= 'bannedmovie_reviews', workers = ban_workers)
 }
 }
 \author{
