@@ -41,12 +41,12 @@ readInData <- function(email, password, batch_id) {
     x <- getURL(myurl)
     # attempt to connect to server until data is downloaded
     try_count <- 0
-    while(nchar(x) < 100 & try_count < 15){
+    while(grepl('Access Denied', x) & try_count < 15){
       Sys.sleep(20)
       x <- getURL(myurl)
       try_count = try_count + 1
     }
-    if(nchar(x) < 100 & try_count == 15){
+    if(grepl('Access Denied', x) & try_count == 15){
       message <- paste("Failed to download batch", i,
                        "try again later and check that the batch number exists.")
       warning(message)

@@ -49,6 +49,7 @@
 #' @examples
 #'
 #' \dontrun{
+#' data(reviews)
 #' movies <- sentimentIt(email = 'researcher@school.edu',
 #'    password = 'uniquePassword',
 #'    read_documents_from = reviews,
@@ -103,13 +104,14 @@ sentimentIt <- function(email, password, read_documents_from,
                     chains=chains, iter=iter, seed=seed, n.cores=n.cores)
   }else{
 
-    .createTasksBatch(email, password, batches=batches, min_time=min_time, max_time=max_time,
-                     rate=rate, threshold=threshold, 
-                     check_workers_at=check_workers_at,
-                     hierarchy_data=NULL, hierarchy_var=NULL, cut_point=1, cut_proportion=0.9,
-                     n.questions=50, plot_hist=FALSE, file_path=NULL,
-                     chains=3, iter=2500, seed=1234, n.cores=3)
+    .createTasksBatch(email, password, batches=batches, certone=certone, certtwo=certtwo, mintime=mintime, maxtime=maxtime,
+rate=rate, threshold=threshold, check_workers_at=check_workers_at,
+cut_point=cut_point, cut_proportion=cut_proportion,
+n.questions=n.questions, plot_hist=plot_hist, hist_path=hist_path,
+                   hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,  
+                   chains=chains, iter=iter, seed=seed, n.cores=n.cores, wait_to_repost=wait_to_repost)
   }
+  Sys.sleep(wait_to_repost*3600)
   torepost <- NULL  
   for(i in batches){
     status <- batchStatus(email, password, i)
@@ -118,7 +120,6 @@ sentimentIt <- function(email, password, read_documents_from,
     }
   }
   if(!is.null(torepost)){
-    Sys.sleep(wait_to_repost*3600)
     for(i in torepost){
       repostExpired(email, password, i)
     }
