@@ -21,7 +21,7 @@
 #' @export
 fitStanHier <- function(email=NULL, password=NULL, data, hierarchy_data, hierarchy_var,
                         chains=3, iter=2500, seed=1234, n.cores=3){
-
+  library(rstan) #bug in rstan - needs explicit call
   rstan_options(auto_write = TRUE)
     options(mc.cores = n.cores)
 
@@ -44,7 +44,7 @@ fitStanHier <- function(email=NULL, password=NULL, data, hierarchy_data, hierarc
   data1$document_id <- as.numeric(as.factor(data1$document_id))
   g <- data1$document_id[seq(1, dim(data1)[1], by=2)]
   h <- data1$document_id[seq(1, dim(data1)[1], by=2) + 1]
-  j <- as.numeric(data1$worker_id[seq(1, dim(data1)[1], by=2)])
+  j <- as.numeric(as.factor(data1$worker_id[seq(1, dim(data1)[1], by=2)]))
   k <- as.numeric(as.factor(as.character(hierarchy_data[,hierarchy_var])))
   M <- length(unique(c(g, h)))
   N <- length(y)

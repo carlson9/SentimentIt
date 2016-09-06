@@ -1,4 +1,4 @@
-#' Fit a Stan hierarchical model with data retrieved from SentimentIt
+#' Fit a Stan hierarchical model with results from SentimentIt
 #'
 #' Fit a multilevel random utility model using Hamiltonian MCMC in Stan with data retrieved from the SentimentIt platform.
 #'
@@ -44,7 +44,7 @@ fitStanHier <- function(email=NULL, password=NULL, data, hierarchy_data, hierarc
   data1$document_id <- as.numeric(as.factor(data1$document_id))
   g <- data1$document_id[seq(1, dim(data1)[1], by=2)]
   h <- data1$document_id[seq(1, dim(data1)[1], by=2) + 1]
-  j <- as.numeric(data1$worker_id[seq(1, dim(data1)[1], by=2)])
+  j <- as.numeric(as.factor(data1$worker_id[seq(1, dim(data1)[1], by=2)]))
   k <- as.numeric(as.factor(as.character(hierarchy_data[,hierarchy_var])))
   M <- length(unique(c(g, h)))
   N <- length(y)

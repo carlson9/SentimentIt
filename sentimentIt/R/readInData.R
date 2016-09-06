@@ -29,21 +29,22 @@ readInData <- function(email, password, batch_id) {
   if (!is.vector(batch_id) | !is.numeric(batch_id)) {
     stop("batch_id needs to be numeric")
   }
-  auth_token <- authenticate(email, password)
+  auth_token <- sentimentIt::authenticate(email, password)
   # Put the batch_id in numerical order and remove duplicates
   batch_id <- unique(batch_id)
   batch_id <- batch_id[sort.list(batch_id)]
   output<-data.frame()
   for(i in batch_id){
-    myurl<- GET(paste0('https://www.sentimentit.com/api/batches/',i,'/download.json?email=', email, '&auth_token=', auth_token))
+    myurl<- GET(paste0('http://www.sentimentit.com/api/batches/',i,'/download.json?email=', email, '&auth_token=', auth_token))
     myurl <- rawToChar(as.raw(myurl$content))
     myurl <- strsplit(myurl,'\"')[[1]][4]
-    x <- getURL(myurl)
+    Sys.sleep(60)
+    x <- getURL(myurl,async=FALSE)
     # attempt to connect to server until data is downloaded
     try_count <- 0
     while(grepl('Access Denied', x) & try_count < 15){
       Sys.sleep(20)
-      x <- getURL(myurl)
+      x <- getURL(myurl,async=FALSE)
       try_count = try_count + 1
     }
     if(grepl('Access Denied', x) & try_count == 15){

@@ -18,6 +18,7 @@
 #'
 #' \dontrun{
 #' fit <- fitStan(data = batch_ids)
+#' fit <- fitStan(data = output)
 #' }
 #'
 #' @seealso \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}
@@ -45,7 +46,7 @@ fitStan <- function(email=NULL, password=NULL, data, chains=3, iter=2500, seed=1
   data1$document_id <- as.numeric(as.factor(data1$document_id))
   g <- data1$document_id[seq(1, dim(data1)[1], by=2)]
   h <- data1$document_id[seq(1, dim(data1)[1], by=2) + 1]
-  j <- as.numeric(data1$worker_id[seq(1, dim(data1)[1], by=2)])
+  j <- as.numeric(as.factor(data1$worker_id[seq(1, dim(data1)[1], by=2)]))
   M <- length(unique(c(g, h)))
   N <- length(y)
   P <- length(unique(j))

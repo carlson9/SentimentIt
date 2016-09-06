@@ -45,12 +45,12 @@ checkWorkers <- function(stan_fit, data, cut_point=1, cut_proportion=0.9,
     stop("cut_proportion should be in the range between 0 to 1")
   }
 
-  bs <- extract(fit)[["b"]]
+  bs <- extract(stan_fit)[["b"]]
   bs_proportion <- vapply(1:dim(bs)[2],
                           function(p){length(which(bs[,p] < cut_point))}, 1)/dim(bs)[1]
 
-  workers <- levels(data$worker_id[seq(1, dim(data)[1], by=2)])
-  j <- as.numeric(data$worker_id[seq(1, dim(data)[1], by=2)])
+  workers <- levels(as.factor(data$worker_id[seq(1, dim(data)[1], by=2)]))
+  j <- as.numeric(as.factor(data$worker_id[seq(1, dim(data)[1], by=2)]))
   ban_workers <- workers[which(bs_proportion > cut_proportion & table(j) > n.questions)]
   if(!is.null(hist_path)){
     pdf(hist_path)
