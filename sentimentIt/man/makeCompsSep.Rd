@@ -40,10 +40,9 @@ docInfo <- read.table(email, password, "ReviewsWithIds",header=TRUE)
 makeCompsSep(email = 'researcher@school.edu', password = 'uniquePassword', ids = docInfo[,'ids'], number_per = 10, batch_id = batch_ids, question = 'Below is text taken from two movie reviews. Please choose the text that you think comes from the most positive review', pairwise_path = 'Comparisons/first10.Rdata')
 }
 }
-\author{
-David Carlson
-}
 \seealso{
 \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}
 }
-
+\author{
+David Carlson
+}

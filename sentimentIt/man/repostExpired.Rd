@@ -24,10 +24,9 @@ This will repost all of the expired tasks from the vector of batch IDs. It is co
 repostExpired(email = 'researcher@school.edu', password = 'uniquePassword', batch_id = batch_ids)
 }
 }
-\author{
-David Carlson
-}
 \seealso{
 \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}
 }
-
+\author{
+David Carlson
+}

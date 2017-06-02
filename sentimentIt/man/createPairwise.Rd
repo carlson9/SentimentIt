@@ -19,10 +19,9 @@ A matrix of random pairwise comparisons without repitition.
 \description{
 This function randomly samples from all possible pairings of IDs. In other words, no comparison will be duplicated.
 }
-\author{
-David Carlson
-}
 \seealso{
 \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}
 }
-
+\author{
+David Carlson
+}

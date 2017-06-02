@@ -4,6 +4,7 @@
 \name{sentimentIt}
 \alias{sentimentIt}
 \alias{sentimentIt-package}
+\alias{sentimentIt}
 \title{sentimentIt}
 \usage{
 sentimentIt(email, password, read_documents_from, write_documents_to = NULL,
@@ -259,10 +260,9 @@ movies <- sentimentIt(email = 'researcher@school.edu',
    return_stan = TRUE, return_data = TRUE)
 }
 }
-\author{
-David Carlson \email{carlson.david@wustl.edu} and Jacob M. Montgomery \email{jacob.montgomery@wustl.edu}
-}
 \seealso{
 \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}
 }
-
+\author{
+David Carlson \email{carlson.david@wustl.edu} and Jacob M. Montgomery \email{jacob.montgomery@wustl.edu}
+}
