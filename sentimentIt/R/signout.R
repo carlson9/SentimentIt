@@ -13,7 +13,7 @@
 #' @seealso \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}}
 #' @export
 signout <- function(email, password){
-  auth_token <- authenticate(email, password)
+  auth_token <- sentimentIt::authenticate(email, password)
   args <- list(email = email, auth_token = auth_token)
   args <- toJSON(args, auto_unbox=TRUE)
   mydelete <- DELETE(paste0('https://www.sentimentit.com/api/sessions/sign_out.json?email=', email, '&auth_token=',

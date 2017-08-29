@@ -24,7 +24,7 @@
 #' @rdname batchStatus
 #' @export
 batchStatus <- function(email, password, batch_id){
-  auth_token <- authenticate(email, password)
+  auth_token <- sentimentIt::authenticate(email, password)
   if (!is.vector(batch_id) | !is.numeric(batch_id)) {
     stop("batch_id needs to be a vector of numerics")
   }

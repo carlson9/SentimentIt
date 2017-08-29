@@ -20,7 +20,7 @@
 #' @seealso \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{signout}}
 #' @export
 revokeCert <- function(email, password, cert, workers){
- auth_token <- authenticate(email, password)
+ auth_token <- sentimentIt::authenticate(email, password)
  if(!is.character(cert) | nchar(cert)<1){
     stop("You must input a non-blank certification and one made of characters.")
   }
