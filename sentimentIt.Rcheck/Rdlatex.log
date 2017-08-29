@@ -1,0 +1,1576 @@
+Hmm ... looks like a package
+
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+(./Rd2.tex
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/R/share/texmf/tex/latex/Rd.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/zi4.sty
+`inconsolata-zi4' v1.10, 2016/02/22 Text macros for Inconsolata (msharpe)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def))
+Writing index file Rd2.idx
+No file Rd2.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [1{/var/lib/texmf/fonts
+/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (16.18103pt too wide) in paragraph at lines 61--62
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]batchStatus[][][] [][]checkCert[][][
+] [][]checkWorkers[][][] [][]createBatches[][][] [][]createCert[][][] [][]creat
+ePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 61--62
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd) [2]
+Overfull \hbox (21.18103pt too wide) in paragraph at lines 105--106
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]checkCert[][]
+[] [][]checkWorkers[][][] [][]createBatches[][][] [][]createCert[][][] [][]crea
+tePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 105--106
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+Overfull \hbox (38.58093pt too wide) in paragraph at lines 112--112
+ []\T1/zi4/m/n/9 batchStatus(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@s
+chool.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/n
+/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , batch_id = batch_ids[1])[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (31.18103pt too wide) in paragraph at lines 151--152
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkWorkers[][][] [][]createBatches[][][] [][]createCert[][][] [][]cr
+eatePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 151--152
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+[3] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (16.18103pt too wide) in paragraph at lines 207--208
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]createBatches[][][] [][]createCert[][][] [][]creat
+ePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 207--208
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+[4] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (11.18103pt too wide) in paragraph at lines 255--256
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createCert[][][] [][]create
+Pairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 255--256
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+
+Overfull \hbox (160.08096pt too wide) in paragraph at lines 261--261
+ []\T1/zi4/m/n/9 batch_ids <- createBatches(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n
+/9 researcher@school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n
+/9 '\T1/zi4/m/n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , task_setting_id
+ = 8, num_batches = 3)[] 
+[5] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (26.18103pt too wide) in paragraph at lines 300--301
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+atePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 300--301
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+
+Overfull \hbox (153.78094pt too wide) in paragraph at lines 307--307
+ []\T1/zi4/m/n/9 createCert(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@sc
+hool.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/n/
+9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , cert= \TS1/zi4/m/n/9 '\T1/zi4/m
+/n/9 bannedmovie_reviews\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , workers = ban_workers)[
+] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [6]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 344--345
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 344--345
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [7]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 383--384
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (38.58093pt too wide) in paragraph at lines 390--390
+ []\T1/zi4/m/n/9 createTasks(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@s
+chool.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/n
+/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , batch_id = batch_ids[1])[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [8]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 436--437
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (11.18103pt too wide) in paragraph at lines 436--437
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStanHier[]
+[][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostE
+xpired[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [9]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 495--496
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [10]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 543--544
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (977.28113pt too wide) in paragraph at lines 551--551
+ []\T1/zi4/m/n/9 makeCompsSep(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@
+school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/
+n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , ids = docInfo[,\TS1/zi4/m/n/9
+ '\T1/zi4/m/n/9 ids\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 ], number_per = 10, batch_id =
+ batch_ids, question = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 Below is text taken from t
+wo movie reviews. Please choose the text that you think comes from the most pos
+itive review\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , pairwise_path = \TS1/zi4/m/n/9 '\T1
+/zi4/m/n/9 Comparisons/first10.Rdata\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 )[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [11]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 600--601
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (77.28094pt too wide) in paragraph at lines 607--607
+ []\T1/zi4/m/n/9 output <- readInData(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 res
+earcher@school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T
+1/zi4/m/n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , batch_id = batch_ids[
+1])[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [12]
+Overfull \hbox (0.23866pt too wide) in paragraph at lines 641--642
+[]\T1/ptm/m/n/10 Argument passed to scan(). De-fault is TRUE. Only needed when 
+in-dex is NULL. 
+
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 660--661
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 660--661
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]repostEx
+pired[][][]
+[13]
+Overfull \hbox (368.88098pt too wide) in paragraph at lines 669--669
+ []\T1/zi4/m/n/9 docInfo <- readText(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 rese
+archer@school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1
+/zi4/m/n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , read_documents_from = 
+reviews, write_documents_to = "ReviewsWithIds.csv", index = \TS1/zi4/m/n/9 '\T1
+/zi4/m/n/9 Review\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 )[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 707--708
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (18.08105pt too wide) in paragraph at lines 707--708
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText
+[][][] [][]reviews[][][]
+[14]
+Overfull \hbox (34.08093pt too wide) in paragraph at lines 713--713
+ []\T1/zi4/m/n/9 repostExpired(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher
+@school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m
+/n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , batch_id = batch_ids)[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 747--748
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (48.08105pt too wide) in paragraph at lines 747--748
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText
+[][][] [][]repostExpired[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [15]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 783--784
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (48.08105pt too wide) in paragraph at lines 783--784
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText
+[][][] [][]repostExpired[][][]
+
+Overfull \hbox (107.88095pt too wide) in paragraph at lines 790--790
+ []\T1/zi4/m/n/9 revokeCert(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@sc
+hool.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/n/
+9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , cert = \TS1/zi4/m/n/9 '\T1/zi4/
+m/n/9 snippets\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , workers = ban_workers)[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [16] [17] [18] [19]
+Overfull \hbox (485.78088pt too wide) in paragraph at lines 923--924
+[]\T1/zi4/m/n/10 docInfo <- [][]readText[][][](email = \TS1/zi4/m/n/10 '\T1/zi4
+/m/n/10 researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS
+1/zi4/m/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   
+read_documents_from = reviews,   write_documents_to = "ReviewsWithIds.csv",   i
+ndex = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 Review\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ) 
+
+
+Overfull \hbox (245.78088pt too wide) in paragraph at lines 932--933
+[]\T1/zi4/m/n/10 batch_ids <- [][]createBatches[][][](email = \TS1/zi4/m/n/10 '
+\T1/zi4/m/n/10 researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   passwor
+d = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/
+10 ,   task_setting_id = 8,   num_batches = 3) 
+
+Overfull \hbox (580.78088pt too wide) in paragraph at lines 946--947
+[][][]\T1/zi4/m/n/10 makeCompsSep[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10
+ researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m
+/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   ids = d
+ocInfo[,\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ids\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ],  
+ number_per = 10,   batch_id = batch_ids,   question = \TS1/zi4/m/n/10 '\T1/zi4
+/m/n/10 Below is text taken from two movie reviews.
+
+Overfull \hbox (241.78088pt too wide) in paragraph at lines 946--947
+\T1/zi4/m/n/10 Please choose the text that you think comes            from the 
+most positive review\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   pairwise_path = \TS1/zi
+4/m/n/10 '\T1/zi4/m/n/10 Comparisons/first10.Rdata\TS1/zi4/m/n/10 '\T1/zi4/m/n/
+10 ) 
+[20]
+Overfull \hbox (102.78088pt too wide) in paragraph at lines 954--955
+[][][]\T1/zi4/m/n/10 createTasks[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 
+researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m/
+n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   batch_id
+ = batch_ids[1]) 
+
+Overfull \hbox (102.78088pt too wide) in paragraph at lines 962--963
+[][][]\T1/zi4/m/n/10 batchStatus[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 
+researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m/
+n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   batch_id
+ = batch_ids[1]) 
+
+Overfull \hbox (145.78088pt too wide) in paragraph at lines 970--971
+[]\T1/zi4/m/n/10 output <- [][]readInData[][][](email = \TS1/zi4/m/n/10 '\T1/zi
+4/m/n/10 researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \T
+S1/zi4/m/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,  
+ batch_id = batch_ids[1]) 
+[21]
+Overfull \hbox (179.78088pt too wide) in paragraph at lines 992--993
+[][][]\T1/zi4/m/n/10 revokeCert[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 r
+esearcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m/n
+/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   cert = \T
+S1/zi4/m/n/10 '\T1/zi4/m/n/10 snippets\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 , workers
+ = ban_workers) 
+
+Overfull \hbox (230.78088pt too wide) in paragraph at lines 998--999
+[][][]\T1/zi4/m/n/10 createCert[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 r
+esearcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m/n
+/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   cert= \TS
+1/zi4/m/n/10 '\T1/zi4/m/n/10 bannedmovie_reviews\TS1/zi4/m/n/10 '\T1/zi4/m/n/10
+ , workers = ban_workers) 
+
+Overfull \hbox (97.78088pt too wide) in paragraph at lines 1006--1007
+[][][]\T1/zi4/m/n/10 repostExpired[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/1
+0 researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/
+m/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   batch_
+id = batch_ids) 
+
+Overfull \hbox (1.30795pt too wide) in paragraph at lines 1008--1009
+[]\T1/ptm/m/n/10 This will re-post all of the ex-pired HITs from the vec-tor of
+ batch IDs. Fi-nally, we can run [][]\T1/zi4/m/n/10 readInData[][][]
+[22]
+Overfull \hbox (39.2497pt too wide) in paragraph at lines 1048--1049
+[]\T1/ptm/m/n/10 David Carl-son \T1/zi4/m/n/10 <carlson.david@wustl.edu> \T1/pt
+m/m/n/10 and Ja-cob M. Mont-gomery \T1/zi4/m/n/10 <jacob.montgomery@wustl.edu> 
+
+
+Overfull \hbox (21.18103pt too wide) in paragraph at lines 1052--1053
+[][][]\T1/zi4/m/n/10 authenticate[][][] [][]batchStatus[][][] [][]checkCert[][]
+[] [][]checkWorkers[][][] [][]createBatches[][][] [][]createCert[][][] [][]crea
+tePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 1052--1053
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+[23] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 1110--1111
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (48.08105pt too wide) in paragraph at lines 1110--1111
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText
+[][][] [][]repostExpired[][][]
+No file Rd2.ind.
+[24] [25] (/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.aux)
+
+Package rerunfilecheck Warning: File `Rd2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information)pdfTeX warning (dest): name
+{Rfn.rstan} has been referenced but does not exist, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}{/usr/sha
+re/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dis
+t/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/share/texlive/texmf-dist/fonts/
+type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (25 pages, 142377 bytes).
+Transcript written on Rd2.log.
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+(./Rd2.tex
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/R/share/texmf/tex/latex/Rd.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/zi4.sty
+`inconsolata-zi4' v1.10, 2016/02/22 Text macros for Inconsolata (msharpe)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def))
+Writing index file Rd2.idx
+(/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.out)
+(/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.out)
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd)
+(/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.toc [1{/var/lib/texmf/fonts/map/pdftex/
+updmap/pdftex.map}]) (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (16.18103pt too wide) in paragraph at lines 61--62
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]batchStatus[][][] [][]checkCert[][][
+] [][]checkWorkers[][][] [][]createBatches[][][] [][]createCert[][][] [][]creat
+ePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 61--62
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [2]
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
+Overfull \hbox (21.18103pt too wide) in paragraph at lines 105--106
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]checkCert[][]
+[] [][]checkWorkers[][][] [][]createBatches[][][] [][]createCert[][][] [][]crea
+tePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 105--106
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+Overfull \hbox (38.58093pt too wide) in paragraph at lines 112--112
+ []\T1/zi4/m/n/9 batchStatus(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@s
+chool.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/n
+/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , batch_id = batch_ids[1])[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [3]
+Overfull \hbox (31.18103pt too wide) in paragraph at lines 151--152
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkWorkers[][][] [][]createBatches[][][] [][]createCert[][][] [][]cr
+eatePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 151--152
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [4]
+Overfull \hbox (16.18103pt too wide) in paragraph at lines 207--208
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]createBatches[][][] [][]createCert[][][] [][]creat
+ePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 207--208
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+[5] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (11.18103pt too wide) in paragraph at lines 255--256
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createCert[][][] [][]create
+Pairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 255--256
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+
+Overfull \hbox (160.08096pt too wide) in paragraph at lines 261--261
+ []\T1/zi4/m/n/9 batch_ids <- createBatches(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n
+/9 researcher@school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n
+/9 '\T1/zi4/m/n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , task_setting_id
+ = 8, num_batches = 3)[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [6]
+Overfull \hbox (26.18103pt too wide) in paragraph at lines 300--301
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+atePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 300--301
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+
+Overfull \hbox (153.78094pt too wide) in paragraph at lines 307--307
+ []\T1/zi4/m/n/9 createCert(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@sc
+hool.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/n/
+9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , cert= \TS1/zi4/m/n/9 '\T1/zi4/m
+/n/9 bannedmovie_reviews\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , workers = ban_workers)[
+] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [7]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 344--345
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 344--345
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [8]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 383--384
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (38.58093pt too wide) in paragraph at lines 390--390
+ []\T1/zi4/m/n/9 createTasks(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@s
+chool.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/n
+/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , batch_id = batch_ids[1])[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [9]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 436--437
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (11.18103pt too wide) in paragraph at lines 436--437
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStanHier[]
+[][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostE
+xpired[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [10]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 495--496
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [11]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 543--544
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (977.28113pt too wide) in paragraph at lines 551--551
+ []\T1/zi4/m/n/9 makeCompsSep(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@
+school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/
+n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , ids = docInfo[,\TS1/zi4/m/n/9
+ '\T1/zi4/m/n/9 ids\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 ], number_per = 10, batch_id =
+ batch_ids, question = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 Below is text taken from t
+wo movie reviews. Please choose the text that you think comes from the most pos
+itive review\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , pairwise_path = \TS1/zi4/m/n/9 '\T1
+/zi4/m/n/9 Comparisons/first10.Rdata\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 )[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [12]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 600--601
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (77.28094pt too wide) in paragraph at lines 607--607
+ []\T1/zi4/m/n/9 output <- readInData(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 res
+earcher@school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T
+1/zi4/m/n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , batch_id = batch_ids[
+1])[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [13]
+Overfull \hbox (0.23866pt too wide) in paragraph at lines 641--642
+[]\T1/ptm/m/n/10 Argument passed to scan(). De-fault is TRUE. Only needed when 
+in-dex is NULL. 
+
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 660--661
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 660--661
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]repostEx
+pired[][][]
+[14]
+Overfull \hbox (368.88098pt too wide) in paragraph at lines 669--669
+ []\T1/zi4/m/n/9 docInfo <- readText(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 rese
+archer@school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1
+/zi4/m/n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , read_documents_from = 
+reviews, write_documents_to = "ReviewsWithIds.csv", index = \TS1/zi4/m/n/9 '\T1
+/zi4/m/n/9 Review\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 )[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 707--708
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (18.08105pt too wide) in paragraph at lines 707--708
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText
+[][][] [][]reviews[][][]
+[15]
+Overfull \hbox (34.08093pt too wide) in paragraph at lines 713--713
+ []\T1/zi4/m/n/9 repostExpired(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher
+@school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m
+/n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , batch_id = batch_ids)[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 747--748
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (48.08105pt too wide) in paragraph at lines 747--748
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText
+[][][] [][]repostExpired[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [16]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 783--784
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (48.08105pt too wide) in paragraph at lines 783--784
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText
+[][][] [][]repostExpired[][][]
+
+Overfull \hbox (107.88095pt too wide) in paragraph at lines 790--790
+ []\T1/zi4/m/n/9 revokeCert(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@sc
+hool.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/n/
+9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , cert = \TS1/zi4/m/n/9 '\T1/zi4/
+m/n/9 snippets\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , workers = ban_workers)[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [17] [18] [19] [20]
+Overfull \hbox (485.78088pt too wide) in paragraph at lines 923--924
+[]\T1/zi4/m/n/10 docInfo <- [][]readText[][][](email = \TS1/zi4/m/n/10 '\T1/zi4
+/m/n/10 researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS
+1/zi4/m/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   
+read_documents_from = reviews,   write_documents_to = "ReviewsWithIds.csv",   i
+ndex = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 Review\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ) 
+
+
+Overfull \hbox (245.78088pt too wide) in paragraph at lines 932--933
+[]\T1/zi4/m/n/10 batch_ids <- [][]createBatches[][][](email = \TS1/zi4/m/n/10 '
+\T1/zi4/m/n/10 researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   passwor
+d = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/
+10 ,   task_setting_id = 8,   num_batches = 3) 
+
+Overfull \hbox (580.78088pt too wide) in paragraph at lines 946--947
+[][][]\T1/zi4/m/n/10 makeCompsSep[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10
+ researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m
+/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   ids = d
+ocInfo[,\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ids\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ],  
+ number_per = 10,   batch_id = batch_ids,   question = \TS1/zi4/m/n/10 '\T1/zi4
+/m/n/10 Below is text taken from two movie reviews.
+
+Overfull \hbox (241.78088pt too wide) in paragraph at lines 946--947
+\T1/zi4/m/n/10 Please choose the text that you think comes            from the 
+most positive review\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   pairwise_path = \TS1/zi
+4/m/n/10 '\T1/zi4/m/n/10 Comparisons/first10.Rdata\TS1/zi4/m/n/10 '\T1/zi4/m/n/
+10 ) 
+[21]
+Overfull \hbox (102.78088pt too wide) in paragraph at lines 954--955
+[][][]\T1/zi4/m/n/10 createTasks[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 
+researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m/
+n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   batch_id
+ = batch_ids[1]) 
+
+Overfull \hbox (102.78088pt too wide) in paragraph at lines 962--963
+[][][]\T1/zi4/m/n/10 batchStatus[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 
+researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m/
+n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   batch_id
+ = batch_ids[1]) 
+
+Overfull \hbox (145.78088pt too wide) in paragraph at lines 970--971
+[]\T1/zi4/m/n/10 output <- [][]readInData[][][](email = \TS1/zi4/m/n/10 '\T1/zi
+4/m/n/10 researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \T
+S1/zi4/m/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,  
+ batch_id = batch_ids[1]) 
+[22]
+Overfull \hbox (179.78088pt too wide) in paragraph at lines 992--993
+[][][]\T1/zi4/m/n/10 revokeCert[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 r
+esearcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m/n
+/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   cert = \T
+S1/zi4/m/n/10 '\T1/zi4/m/n/10 snippets\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 , workers
+ = ban_workers) 
+
+Overfull \hbox (230.78088pt too wide) in paragraph at lines 998--999
+[][][]\T1/zi4/m/n/10 createCert[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 r
+esearcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m/n
+/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   cert= \TS
+1/zi4/m/n/10 '\T1/zi4/m/n/10 bannedmovie_reviews\TS1/zi4/m/n/10 '\T1/zi4/m/n/10
+ , workers = ban_workers) 
+
+Overfull \hbox (97.78088pt too wide) in paragraph at lines 1006--1007
+[][][]\T1/zi4/m/n/10 repostExpired[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/1
+0 researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/
+m/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   batch_
+id = batch_ids) 
+
+Overfull \hbox (1.30795pt too wide) in paragraph at lines 1008--1009
+[]\T1/ptm/m/n/10 This will re-post all of the ex-pired HITs from the vec-tor of
+ batch IDs. Fi-nally, we can run [][]\T1/zi4/m/n/10 readInData[][][]
+[23]
+Overfull \hbox (39.2497pt too wide) in paragraph at lines 1048--1049
+[]\T1/ptm/m/n/10 David Carl-son \T1/zi4/m/n/10 <carlson.david@wustl.edu> \T1/pt
+m/m/n/10 and Ja-cob M. Mont-gomery \T1/zi4/m/n/10 <jacob.montgomery@wustl.edu> 
+
+
+Overfull \hbox (21.18103pt too wide) in paragraph at lines 1052--1053
+[][][]\T1/zi4/m/n/10 authenticate[][][] [][]batchStatus[][][] [][]checkCert[][]
+[] [][]checkWorkers[][][] [][]createBatches[][][] [][]createCert[][][] [][]crea
+tePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 1052--1053
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+[24] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 1110--1111
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (48.08105pt too wide) in paragraph at lines 1110--1111
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText
+[][][] [][]repostExpired[][][]
+No file Rd2.ind.
+[25] [26] (/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.aux) )
+(see the transcript file for additional information)pdfTeX warning (dest): name
+{Rfn.rstan} has been referenced but does not exist, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}{/usr/sha
+re/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dis
+t/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/share/texlive/texmf-dist/fonts/
+type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (26 pages, 145129 bytes).
+Transcript written on Rd2.log.
+This is makeindex, version 2.15 [TeX Live 2015] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (357 entries accepted, 0 rejected).
+Sorting entries......done (3386 comparisons).
+Generating output file Rd2.ind....done (121 lines written, 6 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+(./Rd2.tex
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/R/share/texmf/tex/latex/Rd.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/zi4.sty
+`inconsolata-zi4' v1.10, 2016/02/22 Text macros for Inconsolata (msharpe)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def))
+Writing index file Rd2.idx
+(/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.out)
+(/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.out)
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd)
+(/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.toc [1{/var/lib/texmf/fonts/map/pdftex/
+updmap/pdftex.map}]) (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (16.18103pt too wide) in paragraph at lines 61--62
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]batchStatus[][][] [][]checkCert[][][
+] [][]checkWorkers[][][] [][]createBatches[][][] [][]createCert[][][] [][]creat
+ePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 61--62
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [2]
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
+Overfull \hbox (21.18103pt too wide) in paragraph at lines 105--106
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]checkCert[][]
+[] [][]checkWorkers[][][] [][]createBatches[][][] [][]createCert[][][] [][]crea
+tePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 105--106
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+Overfull \hbox (38.58093pt too wide) in paragraph at lines 112--112
+ []\T1/zi4/m/n/9 batchStatus(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@s
+chool.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/n
+/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , batch_id = batch_ids[1])[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [3]
+Overfull \hbox (31.18103pt too wide) in paragraph at lines 151--152
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkWorkers[][][] [][]createBatches[][][] [][]createCert[][][] [][]cr
+eatePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 151--152
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [4]
+Overfull \hbox (16.18103pt too wide) in paragraph at lines 207--208
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]createBatches[][][] [][]createCert[][][] [][]creat
+ePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 207--208
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+[5] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (11.18103pt too wide) in paragraph at lines 255--256
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createCert[][][] [][]create
+Pairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 255--256
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+
+Overfull \hbox (160.08096pt too wide) in paragraph at lines 261--261
+ []\T1/zi4/m/n/9 batch_ids <- createBatches(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n
+/9 researcher@school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n
+/9 '\T1/zi4/m/n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , task_setting_id
+ = 8, num_batches = 3)[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [6]
+Overfull \hbox (26.18103pt too wide) in paragraph at lines 300--301
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+atePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 300--301
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+
+Overfull \hbox (153.78094pt too wide) in paragraph at lines 307--307
+ []\T1/zi4/m/n/9 createCert(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@sc
+hool.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/n/
+9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , cert= \TS1/zi4/m/n/9 '\T1/zi4/m
+/n/9 bannedmovie_reviews\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , workers = ban_workers)[
+] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [7]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 344--345
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 344--345
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [8]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 383--384
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (38.58093pt too wide) in paragraph at lines 390--390
+ []\T1/zi4/m/n/9 createTasks(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@s
+chool.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/n
+/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , batch_id = batch_ids[1])[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [9]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 436--437
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (11.18103pt too wide) in paragraph at lines 436--437
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStanHier[]
+[][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostE
+xpired[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [10]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 495--496
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [11]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 543--544
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (977.28113pt too wide) in paragraph at lines 551--551
+ []\T1/zi4/m/n/9 makeCompsSep(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@
+school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/
+n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , ids = docInfo[,\TS1/zi4/m/n/9
+ '\T1/zi4/m/n/9 ids\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 ], number_per = 10, batch_id =
+ batch_ids, question = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 Below is text taken from t
+wo movie reviews. Please choose the text that you think comes from the most pos
+itive review\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , pairwise_path = \TS1/zi4/m/n/9 '\T1
+/zi4/m/n/9 Comparisons/first10.Rdata\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 )[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [12]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 600--601
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (77.28094pt too wide) in paragraph at lines 607--607
+ []\T1/zi4/m/n/9 output <- readInData(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 res
+earcher@school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T
+1/zi4/m/n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , batch_id = batch_ids[
+1])[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [13]
+Overfull \hbox (0.23866pt too wide) in paragraph at lines 641--642
+[]\T1/ptm/m/n/10 Argument passed to scan(). De-fault is TRUE. Only needed when 
+in-dex is NULL. 
+
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 660--661
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 660--661
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]repostEx
+pired[][][]
+[14]
+Overfull \hbox (368.88098pt too wide) in paragraph at lines 669--669
+ []\T1/zi4/m/n/9 docInfo <- readText(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 rese
+archer@school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1
+/zi4/m/n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , read_documents_from = 
+reviews, write_documents_to = "ReviewsWithIds.csv", index = \TS1/zi4/m/n/9 '\T1
+/zi4/m/n/9 Review\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 )[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 707--708
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (18.08105pt too wide) in paragraph at lines 707--708
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText
+[][][] [][]reviews[][][]
+[15]
+Overfull \hbox (34.08093pt too wide) in paragraph at lines 713--713
+ []\T1/zi4/m/n/9 repostExpired(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher
+@school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m
+/n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , batch_id = batch_ids)[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 747--748
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (48.08105pt too wide) in paragraph at lines 747--748
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText
+[][][] [][]repostExpired[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [16]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 783--784
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (48.08105pt too wide) in paragraph at lines 783--784
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText
+[][][] [][]repostExpired[][][]
+
+Overfull \hbox (107.88095pt too wide) in paragraph at lines 790--790
+ []\T1/zi4/m/n/9 revokeCert(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@sc
+hool.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/n/
+9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , cert = \TS1/zi4/m/n/9 '\T1/zi4/
+m/n/9 snippets\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , workers = ban_workers)[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [17] [18] [19] [20]
+Overfull \hbox (485.78088pt too wide) in paragraph at lines 923--924
+[]\T1/zi4/m/n/10 docInfo <- [][]readText[][][](email = \TS1/zi4/m/n/10 '\T1/zi4
+/m/n/10 researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS
+1/zi4/m/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   
+read_documents_from = reviews,   write_documents_to = "ReviewsWithIds.csv",   i
+ndex = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 Review\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ) 
+
+
+Overfull \hbox (245.78088pt too wide) in paragraph at lines 932--933
+[]\T1/zi4/m/n/10 batch_ids <- [][]createBatches[][][](email = \TS1/zi4/m/n/10 '
+\T1/zi4/m/n/10 researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   passwor
+d = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/
+10 ,   task_setting_id = 8,   num_batches = 3) 
+
+Overfull \hbox (580.78088pt too wide) in paragraph at lines 946--947
+[][][]\T1/zi4/m/n/10 makeCompsSep[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10
+ researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m
+/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   ids = d
+ocInfo[,\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ids\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ],  
+ number_per = 10,   batch_id = batch_ids,   question = \TS1/zi4/m/n/10 '\T1/zi4
+/m/n/10 Below is text taken from two movie reviews.
+
+Overfull \hbox (241.78088pt too wide) in paragraph at lines 946--947
+\T1/zi4/m/n/10 Please choose the text that you think comes            from the 
+most positive review\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   pairwise_path = \TS1/zi
+4/m/n/10 '\T1/zi4/m/n/10 Comparisons/first10.Rdata\TS1/zi4/m/n/10 '\T1/zi4/m/n/
+10 ) 
+[21]
+Overfull \hbox (102.78088pt too wide) in paragraph at lines 954--955
+[][][]\T1/zi4/m/n/10 createTasks[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 
+researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m/
+n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   batch_id
+ = batch_ids[1]) 
+
+Overfull \hbox (102.78088pt too wide) in paragraph at lines 962--963
+[][][]\T1/zi4/m/n/10 batchStatus[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 
+researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m/
+n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   batch_id
+ = batch_ids[1]) 
+
+Overfull \hbox (145.78088pt too wide) in paragraph at lines 970--971
+[]\T1/zi4/m/n/10 output <- [][]readInData[][][](email = \TS1/zi4/m/n/10 '\T1/zi
+4/m/n/10 researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \T
+S1/zi4/m/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,  
+ batch_id = batch_ids[1]) 
+[22]
+Overfull \hbox (179.78088pt too wide) in paragraph at lines 992--993
+[][][]\T1/zi4/m/n/10 revokeCert[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 r
+esearcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m/n
+/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   cert = \T
+S1/zi4/m/n/10 '\T1/zi4/m/n/10 snippets\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 , workers
+ = ban_workers) 
+
+Overfull \hbox (230.78088pt too wide) in paragraph at lines 998--999
+[][][]\T1/zi4/m/n/10 createCert[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 r
+esearcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m/n
+/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   cert= \TS
+1/zi4/m/n/10 '\T1/zi4/m/n/10 bannedmovie_reviews\TS1/zi4/m/n/10 '\T1/zi4/m/n/10
+ , workers = ban_workers) 
+
+Overfull \hbox (97.78088pt too wide) in paragraph at lines 1006--1007
+[][][]\T1/zi4/m/n/10 repostExpired[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/1
+0 researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/
+m/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   batch_
+id = batch_ids) 
+
+Overfull \hbox (1.30795pt too wide) in paragraph at lines 1008--1009
+[]\T1/ptm/m/n/10 This will re-post all of the ex-pired HITs from the vec-tor of
+ batch IDs. Fi-nally, we can run [][]\T1/zi4/m/n/10 readInData[][][]
+[23]
+Overfull \hbox (39.2497pt too wide) in paragraph at lines 1048--1049
+[]\T1/ptm/m/n/10 David Carl-son \T1/zi4/m/n/10 <carlson.david@wustl.edu> \T1/pt
+m/m/n/10 and Ja-cob M. Mont-gomery \T1/zi4/m/n/10 <jacob.montgomery@wustl.edu> 
+
+
+Overfull \hbox (21.18103pt too wide) in paragraph at lines 1052--1053
+[][][]\T1/zi4/m/n/10 authenticate[][][] [][]batchStatus[][][] [][]checkCert[][]
+[] [][]checkWorkers[][][] [][]createBatches[][][] [][]createCert[][][] [][]crea
+tePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 1052--1053
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+[24] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 1110--1111
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (48.08105pt too wide) in paragraph at lines 1110--1111
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText
+[][][] [][]repostExpired[][][]
+(/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.ind [25] [26]
+
+LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
+(Font)              using `T1/zi4/m/n' instead on input line 115.
+
+[27]) (/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.aux)
+
+Package rerunfilecheck Warning: File `Rd2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ )
+(see the transcript file for additional information)pdfTeX warning (dest): name
+{Rfn.rstan} has been referenced but does not exist, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}{/usr/sha
+re/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dis
+t/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/share/texlive/texmf-dist/fonts/
+type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
+s/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (27 pages, 159345 bytes).
+Transcript written on Rd2.log.
+This is makeindex, version 2.15 [TeX Live 2015] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (357 entries accepted, 0 rejected).
+Sorting entries......done (3386 comparisons).
+Generating output file Rd2.ind....done (121 lines written, 6 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+(./Rd2.tex
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/R/share/texmf/tex/latex/Rd.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/zi4.sty
+`inconsolata-zi4' v1.10, 2016/02/22 Text macros for Inconsolata (msharpe)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def))
+Writing index file Rd2.idx
+(/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.out)
+(/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.out)
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd)
+(/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.toc [1{/var/lib/texmf/fonts/map/pdftex/
+updmap/pdftex.map}]) (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (16.18103pt too wide) in paragraph at lines 61--62
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]batchStatus[][][] [][]checkCert[][][
+] [][]checkWorkers[][][] [][]createBatches[][][] [][]createCert[][][] [][]creat
+ePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 61--62
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [2]
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
+Overfull \hbox (21.18103pt too wide) in paragraph at lines 105--106
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]checkCert[][]
+[] [][]checkWorkers[][][] [][]createBatches[][][] [][]createCert[][][] [][]crea
+tePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 105--106
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+Overfull \hbox (38.58093pt too wide) in paragraph at lines 112--112
+ []\T1/zi4/m/n/9 batchStatus(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@s
+chool.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/n
+/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , batch_id = batch_ids[1])[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [3]
+Overfull \hbox (31.18103pt too wide) in paragraph at lines 151--152
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkWorkers[][][] [][]createBatches[][][] [][]createCert[][][] [][]cr
+eatePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 151--152
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [4]
+Overfull \hbox (16.18103pt too wide) in paragraph at lines 207--208
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]createBatches[][][] [][]createCert[][][] [][]creat
+ePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 207--208
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+[5] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (11.18103pt too wide) in paragraph at lines 255--256
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createCert[][][] [][]create
+Pairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 255--256
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+
+Overfull \hbox (160.08096pt too wide) in paragraph at lines 261--261
+ []\T1/zi4/m/n/9 batch_ids <- createBatches(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n
+/9 researcher@school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n
+/9 '\T1/zi4/m/n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , task_setting_id
+ = 8, num_batches = 3)[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [6]
+Overfull \hbox (26.18103pt too wide) in paragraph at lines 300--301
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+atePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 300--301
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+
+Overfull \hbox (153.78094pt too wide) in paragraph at lines 307--307
+ []\T1/zi4/m/n/9 createCert(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@sc
+hool.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/n/
+9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , cert= \TS1/zi4/m/n/9 '\T1/zi4/m
+/n/9 bannedmovie_reviews\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , workers = ban_workers)[
+] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [7]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 344--345
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 344--345
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [8]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 383--384
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (38.58093pt too wide) in paragraph at lines 390--390
+ []\T1/zi4/m/n/9 createTasks(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@s
+chool.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/n
+/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , batch_id = batch_ids[1])[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [9]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 436--437
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (11.18103pt too wide) in paragraph at lines 436--437
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStanHier[]
+[][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostE
+xpired[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [10]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 495--496
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [11]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 543--544
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (977.28113pt too wide) in paragraph at lines 551--551
+ []\T1/zi4/m/n/9 makeCompsSep(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@
+school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/
+n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , ids = docInfo[,\TS1/zi4/m/n/9
+ '\T1/zi4/m/n/9 ids\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 ], number_per = 10, batch_id =
+ batch_ids, question = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 Below is text taken from t
+wo movie reviews. Please choose the text that you think comes from the most pos
+itive review\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , pairwise_path = \TS1/zi4/m/n/9 '\T1
+/zi4/m/n/9 Comparisons/first10.Rdata\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 )[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [12]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 600--601
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (77.28094pt too wide) in paragraph at lines 607--607
+ []\T1/zi4/m/n/9 output <- readInData(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 res
+earcher@school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T
+1/zi4/m/n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , batch_id = batch_ids[
+1])[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [13]
+Overfull \hbox (0.23866pt too wide) in paragraph at lines 641--642
+[]\T1/ptm/m/n/10 Argument passed to scan(). De-fault is TRUE. Only needed when 
+in-dex is NULL. 
+
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 660--661
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 660--661
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]repostEx
+pired[][][]
+[14]
+Overfull \hbox (368.88098pt too wide) in paragraph at lines 669--669
+ []\T1/zi4/m/n/9 docInfo <- readText(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 rese
+archer@school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1
+/zi4/m/n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , read_documents_from = 
+reviews, write_documents_to = "ReviewsWithIds.csv", index = \TS1/zi4/m/n/9 '\T1
+/zi4/m/n/9 Review\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 )[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 707--708
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (18.08105pt too wide) in paragraph at lines 707--708
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText
+[][][] [][]reviews[][][]
+[15]
+Overfull \hbox (34.08093pt too wide) in paragraph at lines 713--713
+ []\T1/zi4/m/n/9 repostExpired(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher
+@school.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m
+/n/9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , batch_id = batch_ids)[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 747--748
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (48.08105pt too wide) in paragraph at lines 747--748
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText
+[][][] [][]repostExpired[][][]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [16]
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 783--784
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (48.08105pt too wide) in paragraph at lines 783--784
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText
+[][][] [][]repostExpired[][][]
+
+Overfull \hbox (107.88095pt too wide) in paragraph at lines 790--790
+ []\T1/zi4/m/n/9 revokeCert(email = \TS1/zi4/m/n/9 '\T1/zi4/m/n/9 researcher@sc
+hool.edu\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , password = \TS1/zi4/m/n/9 '\T1/zi4/m/n/
+9 uniquePassword\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , cert = \TS1/zi4/m/n/9 '\T1/zi4/
+m/n/9 snippets\TS1/zi4/m/n/9 '\T1/zi4/m/n/9 , workers = ban_workers)[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [17] [18] [19] [20]
+Overfull \hbox (485.78088pt too wide) in paragraph at lines 923--924
+[]\T1/zi4/m/n/10 docInfo <- [][]readText[][][](email = \TS1/zi4/m/n/10 '\T1/zi4
+/m/n/10 researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS
+1/zi4/m/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   
+read_documents_from = reviews,   write_documents_to = "ReviewsWithIds.csv",   i
+ndex = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 Review\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ) 
+
+
+Overfull \hbox (245.78088pt too wide) in paragraph at lines 932--933
+[]\T1/zi4/m/n/10 batch_ids <- [][]createBatches[][][](email = \TS1/zi4/m/n/10 '
+\T1/zi4/m/n/10 researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   passwor
+d = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/
+10 ,   task_setting_id = 8,   num_batches = 3) 
+
+Overfull \hbox (580.78088pt too wide) in paragraph at lines 946--947
+[][][]\T1/zi4/m/n/10 makeCompsSep[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10
+ researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m
+/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   ids = d
+ocInfo[,\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ids\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ],  
+ number_per = 10,   batch_id = batch_ids,   question = \TS1/zi4/m/n/10 '\T1/zi4
+/m/n/10 Below is text taken from two movie reviews.
+
+Overfull \hbox (241.78088pt too wide) in paragraph at lines 946--947
+\T1/zi4/m/n/10 Please choose the text that you think comes            from the 
+most positive review\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   pairwise_path = \TS1/zi
+4/m/n/10 '\T1/zi4/m/n/10 Comparisons/first10.Rdata\TS1/zi4/m/n/10 '\T1/zi4/m/n/
+10 ) 
+[21]
+Overfull \hbox (102.78088pt too wide) in paragraph at lines 954--955
+[][][]\T1/zi4/m/n/10 createTasks[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 
+researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m/
+n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   batch_id
+ = batch_ids[1]) 
+
+Overfull \hbox (102.78088pt too wide) in paragraph at lines 962--963
+[][][]\T1/zi4/m/n/10 batchStatus[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 
+researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m/
+n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   batch_id
+ = batch_ids[1]) 
+
+Overfull \hbox (145.78088pt too wide) in paragraph at lines 970--971
+[]\T1/zi4/m/n/10 output <- [][]readInData[][][](email = \TS1/zi4/m/n/10 '\T1/zi
+4/m/n/10 researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \T
+S1/zi4/m/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,  
+ batch_id = batch_ids[1]) 
+[22]
+Overfull \hbox (179.78088pt too wide) in paragraph at lines 992--993
+[][][]\T1/zi4/m/n/10 revokeCert[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 r
+esearcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m/n
+/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   cert = \T
+S1/zi4/m/n/10 '\T1/zi4/m/n/10 snippets\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 , workers
+ = ban_workers) 
+
+Overfull \hbox (230.78088pt too wide) in paragraph at lines 998--999
+[][][]\T1/zi4/m/n/10 createCert[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/10 r
+esearcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/m/n
+/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   cert= \TS
+1/zi4/m/n/10 '\T1/zi4/m/n/10 bannedmovie_reviews\TS1/zi4/m/n/10 '\T1/zi4/m/n/10
+ , workers = ban_workers) 
+
+Overfull \hbox (97.78088pt too wide) in paragraph at lines 1006--1007
+[][][]\T1/zi4/m/n/10 repostExpired[][][](email = \TS1/zi4/m/n/10 '\T1/zi4/m/n/1
+0 researcher@school.edu\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   password = \TS1/zi4/
+m/n/10 '\T1/zi4/m/n/10 uniquePassword\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 ,   batch_
+id = batch_ids) 
+
+Overfull \hbox (1.30795pt too wide) in paragraph at lines 1008--1009
+[]\T1/ptm/m/n/10 This will re-post all of the ex-pired HITs from the vec-tor of
+ batch IDs. Fi-nally, we can run [][]\T1/zi4/m/n/10 readInData[][][]
+[23]
+Overfull \hbox (39.2497pt too wide) in paragraph at lines 1048--1049
+[]\T1/ptm/m/n/10 David Carl-son \T1/zi4/m/n/10 <carlson.david@wustl.edu> \T1/pt
+m/m/n/10 and Ja-cob M. Mont-gomery \T1/zi4/m/n/10 <jacob.montgomery@wustl.edu> 
+
+
+Overfull \hbox (21.18103pt too wide) in paragraph at lines 1052--1053
+[][][]\T1/zi4/m/n/10 authenticate[][][] [][]batchStatus[][][] [][]checkCert[][]
+[] [][]checkWorkers[][][] [][]createBatches[][][] [][]createCert[][][] [][]crea
+tePairwise[][][]
+
+Overfull \hbox (13.08105pt too wide) in paragraph at lines 1052--1053
+[][]\T1/zi4/m/n/10 createTasks[][][] [][]fitStan[][][] [][]fitStanHier[][][] []
+[]makeCompsSep[][][] [][]readInData[][][] [][]readText[][][] [][]repostExpired[
+][][] [][]reviews[][][]
+[24] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (6.18103pt too wide) in paragraph at lines 1110--1111
+[][][]\T1/zi4/m/n/10 sentimentIt[][][] [][]authenticate[][][] [][]batchStatus[]
+[][] [][]checkCert[][][] [][]checkWorkers[][][] [][]createBatches[][][] [][]cre
+ateCert[][][]
+
+Overfull \hbox (48.08105pt too wide) in paragraph at lines 1110--1111
+[][]\T1/zi4/m/n/10 createPairwise[][][] [][]createTasks[][][] [][]fitStan[][][]
+ [][]fitStanHier[][][] [][]makeCompsSep[][][] [][]readInData[][][] [][]readText
+[][][] [][]repostExpired[][][]
+(/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.ind [25] [26]
+
+LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
+(Font)              using `T1/zi4/m/n' instead on input line 115.
+
+[27]) (/tmp/RtmpCmtGYx/Rd2pdf7b052badc600/Rd2.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ )
+(see the transcript file for additional information)pdfTeX warning (dest): name
+{Rfn.rstan} has been referenced but does not exist, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}{/usr/sha
+re/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dis
+t/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/share/texlive/texmf-dist/fonts/
+type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
+s/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (27 pages, 159795 bytes).
+Transcript written on Rd2.log.
+Saving output to 'sentimentIt-manual.pdf' ...
+Done
+You may want to clean up by 'rm -rf /tmp/RtmpCmtGYx/Rd2pdf7b052badc600'

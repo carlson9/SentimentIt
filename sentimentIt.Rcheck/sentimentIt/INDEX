@@ -1,0 +1,19 @@
+authenticate            Authenticate researcher and retrieve token
+batchStatus             Check the status of batch(es)
+checkCert               Checks if a worker has a certification
+checkWorkers            Detect outlying workers
+createBatches           Create new batches
+createCert              Grants certifications to workers
+createPairwise          Creates a matrix of random pairs for comparison
+createTasks             Create new tasks for comparisons
+fitStan                 Fit a Stan model with results from SentimentIt
+fitStanHier             Fit a Stan hierarchical model with results from
+                        SentimentIt
+makeCompsSep            Create comparisons and post to SentimentIt
+readInData              Read in data provided by the workers
+readText                Find/create documents and retrieve IDs
+repostExpired           Repost expired tasks from a batch
+reviews                 Movie reviews example data set
+revokeCert              Revoke a certification for workers
+sentimentIt             sentimentIt
+signout                 Signs the researcher out of the session
