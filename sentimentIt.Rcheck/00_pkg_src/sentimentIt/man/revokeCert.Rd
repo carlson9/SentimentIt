@@ -24,7 +24,9 @@ This function simply removes workers from the list of approved workers and they 
 \examples{
 
 \dontrun{ 
-revokeCert(email = 'researcher@school.edu', password = 'uniquePassword', cert = 'snippets', workers = ban_workers)
+revokeCert(email = 'researcher@school.edu',
+    password = 'uniquePassword',
+    cert = 'snippets', workers = ban_workers)
 }
 
 }

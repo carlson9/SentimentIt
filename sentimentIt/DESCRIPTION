@@ -1,5 +1,5 @@
 Package: sentimentIt
-Title: Crowdsourced Pairwise SentimentIt Text Analysis
+Title: Crowdsourced Pairwise Sentiment Text Analysis
 Version: 0.1
 Authors@R: c(
     person("David", "Carlson", email = "carlson.david@wustl.edu", role = c("aut", "cre")),

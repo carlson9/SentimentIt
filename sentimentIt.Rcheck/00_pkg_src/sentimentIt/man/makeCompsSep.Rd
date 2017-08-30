@@ -37,7 +37,15 @@ Creates random comparisons of document IDs using \code{\link{createPairwise}}. T
 
 \dontrun{
 docInfo <- read.table(email, password, "ReviewsWithIds",header=TRUE)
-makeCompsSep(email = 'researcher@school.edu', password = 'uniquePassword', ids = docInfo[,'ids'], number_per = 10, batch_id = batch_ids, question = 'Below is text taken from two movie reviews. Please choose the text that you think comes from the most positive review', pairwise_path = 'Comparisons/first10.Rdata')
+makeCompsSep(email = 'researcher@school.edu',
+    password = 'uniquePassword',
+    ids = docInfo[,'ids'], number_per = 10,
+    batch_id = batch_ids,
+    question = 'Below is text taken from
+        two movie reviews. Please choose
+        the text that you think comes from
+        the most positive review',
+    pairwise_path = 'Comparisons/first10.Rdata')
 }
 }
 \seealso{

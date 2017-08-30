@@ -9,12 +9,11 @@
 Maintainer: ‘David Carlson <carlson.david@wustl.edu>’
 New submission
 
-The Title field starts with the package name.
-
 The Description field should not start with the package name,
   'This package' or similar.
 * checking package namespace information ... OK
-* checking package dependencies ... OK
+* checking package dependencies ... NOTE
+  No repository set, so cyclic dependency check skipped
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
@@ -38,53 +37,14 @@ The Description field should not start with the package name,
 * checking whether the namespace can be unloaded cleanly ... OK
 * checking loading without being on the library search path ... OK
 * checking use of S3 registration ... OK
-* checking dependencies in R code ... WARNING
-'library' or 'require' call not declared from: ‘rstan’
-'library' or 'require' call to ‘rstan’ in package code.
-  Please use :: or requireNamespace() instead.
-  See section 'Suggested packages' in the 'Writing R Extensions' manual.
+* checking dependencies in R code ... OK
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... NOTE
-.checkTime: no visible binding for global variable ‘min_time’
-sentimentIt: possible error in .createTasksTimed(email, password,
-  batches = batches, time_per = time_per, mintime = mintime, maxtime =
-  maxtime, check_workers_at = check_workers_at, certone = certone,
-  certtwo = certtwo, hierarchy_data = hierarchy_data, hierarchy_var =
-  hierarchy_var, cut_point = cut_point, cut_proportion =
-  cut_proportion, n.questions = n.questions, plot_hist = plot_hist,
-  file_path = file_path, chains = chains, iter = iter, seed = seed,
-  n.cores = n.cores): unused argument (file_path = file_path)
-sentimentIt: no visible binding for global variable ‘file_path’
+* checking R code for possible problems ... OK
 * checking Rd files ... OK
 * checking Rd metadata ... OK
-* checking Rd line widths ... NOTE
-Rd file 'createBatches.Rd':
-  \examples lines wider than 100 characters:
-     batch_ids <- createBatches(email = 'researcher@school.edu', password = 'uniquePassword', task_setting_id = 8, num_batches = 3)
-
-Rd file 'createCert.Rd':
-  \examples lines wider than 100 characters:
-     createCert(email = 'researcher@school.edu', password = 'uniquePassword', cert= 'bannedmovie_reviews', workers = ban_workers)
-
-Rd file 'makeCompsSep.Rd':
-  \examples lines wider than 100 characters:
-     makeCompsSep(email = 'researcher@school.edu', password = 'uniquePassword', ids = docInfo[,'ids'], number_per = 10, batch_id = batch_ids ... [TRUNCATED]
-
-Rd file 'readInData.Rd':
-  \examples lines wider than 100 characters:
-     output <- readInData(email = 'researcher@school.edu', password = 'uniquePassword', batch_id = batch_ids[1])
-
-Rd file 'readText.Rd':
-  \examples lines wider than 100 characters:
-     docInfo <- readText(email = 'researcher@school.edu', password = 'uniquePassword', read_documents_from = reviews, write_documents_to = " ... [TRUNCATED]
-
-Rd file 'revokeCert.Rd':
-  \examples lines wider than 100 characters:
-     revokeCert(email = 'researcher@school.edu', password = 'uniquePassword', cert = 'snippets', workers = ban_workers)
-
-These lines will be truncated in the PDF manual.
+* checking Rd line widths ... OK
 * checking Rd cross-references ... OK
 * checking for missing documentation entries ... OK
 * checking for code/documentation mismatches ... OK
@@ -92,37 +52,9 @@ These lines will be truncated in the PDF manual.
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
 * checking contents of ‘data’ directory ... OK
-* checking data for non-ASCII characters ... WARNING
-  Warning: found non-ASCII strings
-  '2015 has been a terrific year for strong female characters and feminist stories. However, even with the competition, Carol manages to stand out. Terrific performances from Cate Blanchett and Rooney Mara are heightened by excellent direction from Todd Haynes, who focuses more on visual storytelling here), and a wonderful screenplay that expresses the burden of ordinary lives for women. Women, even today, have been tied down by the fate of their male lovers and societal norms, and the movie expresses this with subtlety and class. Furthermore, it expresses that this is not a story about two lesbians falling in love; it's a story about two good people falling in love. That is the mindset that society needs to get to. That is what this movie is pushing for.<e5><ca>What a message, and what a movie. Easily one of the best of 2015.' in object 'reviews'
-  'A 1966 colourful, quirky and funny action yakuza film, TOKYO DRIFTER is about a yakuza clan gone straight and the lead henchman Tetsue's efforts to keep them so when a rival gang try to turn them to the dark side again. It's got a black and white start, realistic streetscenes cutting to luridly mono-coloured stage sets, a muddling set of secondary characters, a 60's daytime discoteque and a catchy theme tune (called Tokyo Drifter of course) that keeps popping up whenenever our hero is looking suitably enigmatic or pensive. Directed by Seijun Suziuki, a Japanese director who made a number of B movies in Japan before his masterpiece BRANDED TO KILL got him banded from the studio for being too surreal. Not much known outside Japan either until equally maverick directors like Tarantino, Jarmusch and Takesh Kitano got him noticed in the 90's. If its good enough for them...<e5><ca>' in object 'reviews'
-  'And on the topic of "horror movies that don't contribute much in any sense"...<e5><ca>I really cannot think of anything constructive or interesting to say about Rest Stop. It's dull and the ending is infuriating. My friends and I had more fun discussing the heroine's big chin instead of anything the movie itself had to offer. No scares, no tension, not even any horror movie schadenfreude. This is a total waste of time.' in object 'reviews'
-  'Another disappointment! I seem to be on a run recently of overrated films. The film of course isn?t all bad, I like the actual storyline and it?s bravery of using a child killer in it?s time, the beginning was good and so was the end, but slumped far too much in the middle.<e5><ca>I can see why it?s a popular choice with people, but found parts far too boring.' in object 'reviews'
-  'Benigni's follow up to the Oscar winner La Vita <cc><a9> Bella is a disastrously expansive flick where everything is not measured well, everything is overwhelming and sometimes even laughable. Furthermore, Benigni as the young living marionette may have semed the right kind of bizarre casting a few years before the film was produced, but in 2002 it was already too late for him to play such a part.' in object 'reviews'
-  'Can't believe I sat through this, nearly gave up on it very early on.<e5><ca>Melissa George is especially horrid in this one. Lost half a star for the scene of her with her breast pump. Character is also crude, vulgar and repellant.<e5><ca>Mandy Moore fares a little better, but she and the husband have zero chemistry. He looks like her father in the flashbacks of them dating.<e5><ca>And wouldn't you know it, my all time "favourite" happy ending in the movie. That one never gets old.' in object 'reviews'
-  'Ed is not a bad family movie. If you have little kids or are just really bored and are looking for a quick laugh this movie may do it for you.<e5><ca>The lines are cheesy, the plot is even cheesier, and it's more then unrealistic. But it does deliver some funny parts as a man embraces a Chimpanzee as not only a teammate but as a new best friend.' in object 'reviews'
-  'Forgeting the low quality of the animation, since it's a low budget movie, what is left it<e5><ab>s no very good. The characters have barely any personality or development and the story it's unnecessary complicated' in object 'reviews'
-  'Francois Ozon's 'See The Sea' may only be 52 minutes long, but my does it hit you!<e5><ca>The conclusion may be predictable, but it's no less shocking. From the moment the backpacker turns up it's obvious she's not quite right, though Sasha, through her loneliness is oblivious to it. Whilst Sasha may be lonely I find it hard to believe that any mother would not only leave their baby with a stranger, but also leave them alone on a beach whilst they go off looking for casual sex.<e5><ca>Overall a very disturbing film but no doubt effective, fans of Ozon should defiantly try and see it.' in object 'reviews'
-  'i can sum it all up in 5 letters... -> sucks from top to bottom<89><db>_' in object 'reviews'
-  'I do like this movie. I thought the ending was a bit clich<cc><a9>. It was predictable but overall, it was a cute movie. The problem I had with it mostly, was the character of Jessica Alba. I found her to be a bit hypocritical. She came off as cold and unfeeling. Her character was came off as a b*tch. Pierce Brosnan's character seemed a bit na<cc><f8>ve about a few things as well. His chemistry with Salma Hayek was certainly a plus. They seem natural together. I liked it but I didn't love it.' in object 'reviews'
-  'I was curious when I saw the trailer for this movie. When I saw it, the only thing that got interesting, was the last 20 minutes. Apartment 143 is a boring horror film that didn't get me scared. The acting is dull, I just didn't care for the characters until we learn more about them when the last 20 minutes start, and there was a lot of plotholes which really bug me a lot. It's a movie filled with clich<cc><a9>s that I seen before, and it's very forgettable.' in object 'reviews'
-  'It's basically Dr. Strangelove if it was a drama. And a very fine drama it is. A Col. discovers a plot to overthrow the government by a 4 star general. The bulk of the film is the gathering of evidence against the general and they have less than a week to pull it off. Meanwhile the USSR do what they do best.<e5><ca>While this film is basically a bunch of people talking for 2 hours, the tension is real and kept firm throughout. The resolution is quite clever and somewhat surprising.<e5><ca>Stellar performances by all, but the real star is the writing. Check it out.' in object 'reviews'
-  'It's not as bad as you may think. It's just utterly pointless. Essentially what the filmmakers have done is tell almost an identical story to Donnie Darko, just with Donnie's sister as the main character. If you understand Richard Kelly's time travel talk, then the big twist in this movie is that Samantha is not the Living Receiver, like Donnie was. She plays the role of the Manipulated Dead, or the role of Frank the bunny from the first film.<e5><ca>It's a well made film. And Ed Westwick pretty much plays his Gossip Girl character here, which is always entertaining. But the film takes no risks. The filmmakers seem too concerned with making their film feel like Donnie Darko, that they don't explore the mythology in any way. The film is too safe, and as a result, is as forgettable as a bad meal.' in object 'reviews'
-  'Loving the unpredictable effects, and is action-packed. The story line is great and it teaches us a lesson about judging a person's worth.<e5><ca>' in object 'reviews'
-  'Ok hear we go people say in there reviews if you watch this your an idiot but i gather the people who said it watched it there for you are idiots. Now people say this is vile and bad but i think diffirent Renne Taylor played in the nanny what can be described as a sex crazed old woman and in this film she is the same only thing is you see rather than hear talking about it. like ib the nanny she will talk about having sex in this you see it althought most people hate this film i think it is ok but could of been better a lot better.<e5><ca>Best and Funny Scean at the end were she is dancing for the priest and pops the bloon<e5><ca>Worst Scean at the start were he pull the girls prostic arm off' in object 'reviews'
-  'OK, let me just begin by saying I love the gorgeous, adorable, sexy Alice Eve and the charming, handsome Chris Evans (Hey, he's Captain America. Growing up, I WAS Captain America, or at least I thought so). But that's where the accolades end.<e5><ca>This one appeared to be of a contract-obligation nature for the duo, or maybe because it's an actor's movie, the stars felt it was a go. But I guess if you like ninety minutes of conversation between two people, (ENDLESS conversation) then this movie is for you.<e5><ca>Let me sum it up for you, and you tell me if you've seen this one before. Guy randomly meets trouble gal. She's wary of him. He slowly but surely endears himself to her (in Hollywood-script-only fashion) as he ends up spending an entire day with someone he just met. They both have relationship problems, realize they aren't going to have the dream they imagined, fall in love and find that dream fulfilled, maybe, for we only see the first day, so who knows?<e5><ca>There's a lot of cliche relationship-falling-apart dialogue, shrugging of shoulders, heartfelt smiles and honest moments. Yes, it's the romantic movie you've seen dozens of times before but only SO much better. Hey, and I was puling for the kids. But little under an hour in, I was fast-forwarding. And guess what? when I stopped I hadn't missed anything. You get the picture.' in object 'reviews'
-  'Panahi dodges his 20-year ban in secrecy with this revealing and highly provocative piece of cinema verit<cc><a9> that says a lot about Iranian society in general and even finds the most perfect moment to comment on the absurd censorship rules imposed on artistic freedom in Iran.' in object 'reviews'
-  'The first Leprechaun was a bizarre affair of pure cheese that was bad, but mildly amusing. This sequel on the other hand was bad, purely bad. Trying to build on the previous film, to yet more mediocre results, Leprechaun 2 fails to deliver on good bits of comedy horror. The script is poorly written, the comedic delivery is lazy, and overall this is just a rehash of old ideas. Leprechaun is a prime example of a sequel that doesn't work, not to mention that like its predecessor, it's almost as bad. There's nothing satisfactory about this sequel. If you enjoy good, cheesy horror comedies, there are far better films than this one. The problem with the Leprechaun films is that it goes so over board, and a lot of it repeats itself it becomes almost a clich<cc><a9>. The idea is amusing, but the execution is poor. I don't understand why they would make a sequel to a bad comedy horror flick. This sequel doesn't try anything new and it's tiresome, lazy and ridiculous like all the other films. Leprechaun 2 is at least not as bad as so many others in the series, but it still is pretty bad. Oh well, the filmmakers knew what they were doing in delivering a film series that would make them tons of money by constantly delivering garbage. The sequels were simply a way to make a quick buck, with no real script substance, character development or good directing. This is the first awful sequel to a terrible film. Don't expect anything good watching this.' in object 'reviews'
-  'The highlight with this film for me were the two lead actors. Both Luke Gss and Dolph Lundgren were superb. Unfortunately they were et down by some of the supporting cast who were almost unbearable. It was great to see a WW2 film released again and the props were awesome but the story line was very clich<cc><a9>d and predictable. I thought this was Dolph Lundgren at his best so I do hope this foreshadows a comeback and as for Luke Goss, I think he is one of the most exciting newcomers to films in recent years. Really looking forward to seeing what he does next.' in object 'reviews'
-  'There are a few interesting ideas sprinkled throughout The Vanishing; it is a soundly-crafted and even film. Thus, the problem with it isn't a weak link, but merely a lack of power. The movie doesn't have enough for you to get behind, with its threadbare plot and simple characters.<e5><ca>The ending, which is what launched The Vanishing into such prestigious quarters twenty years ago, is still a neat way to bring the movie to a close - but it doesn't salvage the affair completely. The movie simply doesn't accomplish enough to weather the test of time. It is competent, but not outstanding.' in object 'reviews'
-  'There are more worries in the life of a gangster besides money. There's love, loyalty, friendship, and the most implacable killer of all: time itself, the way it undermines and vanishes every human being no matter how strong or resolute he/she used to be. Jean Gabin plays the elegant and charismatic Max, an aging criminal mentor who finds his way to retirement full of bumps.<e5><ca>After pulling out the heist that Max thought would end up his occupation for good, Max's best friend Riton tells his girlfriend (a very young Jeanne Moreau) about their last job. Unfortunately, this leak of information given by the incompetent Riton leads to his kidnapping by Max's competitor Angelo (Lino Ventura) who will demand their last job's loot for ransom. It will all be decided in a tense and masterfully shot gun battle. An engrossing masterpiece with phenomenal direction, acting and cinematography.' in object 'reviews'
-  'This movie infused comedy with drama and didn't overdue on either. I do not usually go for the dramatic, but am a big Tina Fey fan and she definitely delivered.<e5><ca>It got me to care about what happened to the characters, and even made my eyes tear up a bit.<e5><ca>The music fit the movie well and kept my restless feet tapping. The scenery was authentic and breathless at times, even amid the chaos of a war torn country.' in object 'reviews'
-  'This was really quite atrocious. It seemed to start off okay for a bad follow on to a movie that was probably ill advised to start with. But the minute the kids grew up and became Milla Jovovich and Brian Krause, it was all over. (Admittedly Brian Krause is not that bad, and may even be a slight improvement on the original star, but that's not saying a whole lot).<e5><ca>The story totally lost the suspense the original had about who was on the other side of the island, the story is jumbled and unconvincing and don't even get me started on the "bad guys" who may or may not have been intended to be Australian. (As the film was shot here and i could clearly hear the accents, though they were trying not to sound it... I think) Big mess of a film. Milla can't act at all. If you really have to, watch the original instead.' in object 'reviews'
-  'Well...um...I thought the score was great and they used a Cocteau Twins song so that was a plus but otherwise....<e5><ca>Let me put it this way, I'm the first to admit that I didn't understand everything about Donnie Darko but the makers of this didnt know ANYthing about it.<e5><ca>It's like they cobbled together the most memorable moments and ideas from the first and then threw in half-assed storylines about meteors with weird side effects, a bitchy friend and disappearing children (which is never even resolved!)<e5><ca>Now just in case this all sounds like disappointment it's not because I went into this with an open mind but lower than low expectations and it still didnt come close to matching.' in object 'reviews'
-  'What to say about a movie where story is about a marriage counsellor who cannot manage to save a marriage...???? A movie that starts off with a wedding is usually going to see things go bad before they get better. Defying this common wisdom, "Love Wedding Marriage" never gets better! Ava (Mandy Moore) is a marriage counsellor whose life as a newlywed married to Charlie (Kellan Lutz) is turned upside down when she discovers her parents' happy marriage is unexpectedly headed for divorce. Determined to reconcile her parents for their 30th anniversary surprise party she stops at nothing plunging from one compromising situation to another. In that process she destroys her own marriage...<e5><ca>Dermot Mulroney's directorial debut is a real flop and he made a chemistry-free romantic comedy with no power behind it... Mandy Moore and Kellan Lutz were good "tools" for that!' in object 'reviews'
-  'You would think with the cast, this film would have some potential. WRONG.<e5><ca>This movie just doesn't know what it wants to tell it's audience.<e5><ca>Lights, Camera, ....What?' in object 'reviews'
+* checking data for non-ASCII characters ... OK
 * checking data for ASCII and uncompressed saves ... OK
 * checking examples ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 2 WARNINGs, 3 NOTEs
+Status: 2 NOTEs

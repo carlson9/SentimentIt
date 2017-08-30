@@ -24,7 +24,9 @@ and the desired number of batches.
 }
 \examples{
 \dontrun{
-batch_ids <- createBatches(email = 'researcher@school.edu', password = 'uniquePassword', task_setting_id = 8, num_batches = 3)
+batch_ids <- createBatches(email = 'researcher@school.edu',
+    password = 'uniquePassword',
+    task_setting_id = 8, num_batches = 3)
 }
 }
 \seealso{

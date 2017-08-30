@@ -19,7 +19,7 @@ repostExpired <- function(email, password, batch_id){
   if (!is.vector(batch_id) | !is.numeric(batch_id)) {
     stop("batch_id needs to be numeric")
   }
-  auth_token <- authenticate(email, password)
+  auth_token <- sentimentIt::authenticate(email, password)
   args <- list(email = email, auth_token = auth_token)
   args <- toJSON(args, auto_unbox=TRUE)
   batch_id <- unique(batch_id)

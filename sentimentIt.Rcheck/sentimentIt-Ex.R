@@ -102,7 +102,9 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### ** Examples
 
 ## Not run: 
-##D batch_ids <- createBatches(email = 'researcher@school.edu', password = 'uniquePassword', task_setting_id = 8, num_batches = 3)
+##D batch_ids <- createBatches(email = 'researcher@school.edu',
+##D     password = 'uniquePassword',
+##D     task_setting_id = 8, num_batches = 3)
 ## End(Not run)
 
 
@@ -125,7 +127,10 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ## Not run: 
 ##D  
-##D createCert(email = 'researcher@school.edu', password = 'uniquePassword', cert= 'bannedmovie_reviews', workers = ban_workers)
+##D createCert(email = 'researcher@school.edu',
+##D     password = 'uniquePassword',
+##D     cert= 'bannedmovie_reviews',
+##D     workers = ban_workers)
 ## End(Not run)
 
 
@@ -194,7 +199,15 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ## Not run: 
 ##D docInfo <- read.table(email, password, "ReviewsWithIds",header=TRUE)
-##D makeCompsSep(email = 'researcher@school.edu', password = 'uniquePassword', ids = docInfo[,'ids'], number_per = 10, batch_id = batch_ids, question = 'Below is text taken from two movie reviews. Please choose the text that you think comes from the most positive review', pairwise_path = 'Comparisons/first10.Rdata')
+##D makeCompsSep(email = 'researcher@school.edu',
+##D     password = 'uniquePassword',
+##D     ids = docInfo[,'ids'], number_per = 10,
+##D     batch_id = batch_ids,
+##D     question = 'Below is text taken from
+##D         two movie reviews. Please choose
+##D         the text that you think comes from
+##D         the most positive review',
+##D     pairwise_path = 'Comparisons/first10.Rdata')
 ## End(Not run)
 
 
@@ -216,7 +229,8 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 
 ## Not run: 
-##D output <- readInData(email = 'researcher@school.edu', password = 'uniquePassword', batch_id = batch_ids[1])
+##D output <- readInData(email = 'researcher@school.edu',
+##D     password = 'uniquePassword', batch_id = batch_ids[1])
 ## End(Not run)
 
 
@@ -240,7 +254,9 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ## Not run: 
 ##D data(reviews)
 ##D 
-##D docInfo <- readText(email = 'researcher@school.edu', password = 'uniquePassword', read_documents_from = reviews, write_documents_to = "ReviewsWithIds.csv", index = 'Review')
+##D docInfo <- readText(email = 'researcher@school.edu',
+##D     password = 'uniquePassword', read_documents_from = reviews,
+##D     write_documents_to = "ReviewsWithIds.csv", index = 'Review')
 ## End(Not run)
 
 
@@ -285,7 +301,9 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ## Not run: 
 ##D  
-##D revokeCert(email = 'researcher@school.edu', password = 'uniquePassword', cert = 'snippets', workers = ban_workers)
+##D revokeCert(email = 'researcher@school.edu',
+##D     password = 'uniquePassword',
+##D     cert = 'snippets', workers = ban_workers)
 ## End(Not run)
 
 

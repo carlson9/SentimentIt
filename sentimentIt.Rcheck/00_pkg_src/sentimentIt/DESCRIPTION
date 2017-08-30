@@ -1,5 +1,5 @@
 Package: sentimentIt
-Title: SentimentIt Text Analysis
+Title: Crowdsourced Pairwise Sentiment Text Analysis
 Version: 0.1
 Authors@R: c(
     person("David", "Carlson", email = "carlson.david@wustl.edu", role = c("aut", "cre")),
@@ -12,7 +12,7 @@ LazyData: true
 License: GPL (>= 2)
 RoxygenNote: 5.0.1
 NeedsCompilation: no
-Packaged: 2017-06-02 16:30:26 UTC; david
+Packaged: 2017-08-30 21:58:42 UTC; david
 Author: David Carlson [aut, cre],
   Jacob M. Montgomery [aut]
 Maintainer: David Carlson <carlson.david@wustl.edu>

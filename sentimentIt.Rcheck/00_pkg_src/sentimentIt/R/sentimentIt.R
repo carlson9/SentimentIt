@@ -100,7 +100,7 @@ sentimentIt <- function(email, password, read_documents_from,
    .createTasksTimed(email, password, batches=batches, time_per=time_per, mintime=mintime, maxtime=maxtime,
                     check_workers_at=check_workers_at, certone=certone, certtwo=certtwo,
                     hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var, cut_point=cut_point, cut_proportion=cut_proportion,
-                    n.questions=n.questions, plot_hist=plot_hist, file_path=file_path,
+                    n.questions=n.questions, plot_hist=plot_hist, hist_path=hist_path,
                     chains=chains, iter=iter, seed=seed, n.cores=n.cores)
   }else{
 

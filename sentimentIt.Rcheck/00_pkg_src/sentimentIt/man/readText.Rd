@@ -40,7 +40,9 @@ Reads in text, posts the text to the server, and returns the document IDs after 
 \dontrun{
 data(reviews)
 
-docInfo <- readText(email = 'researcher@school.edu', password = 'uniquePassword', read_documents_from = reviews, write_documents_to = "ReviewsWithIds.csv", index = 'Review')
+docInfo <- readText(email = 'researcher@school.edu',
+    password = 'uniquePassword', read_documents_from = reviews,
+    write_documents_to = "ReviewsWithIds.csv", index = 'Review')
 }
 
 }

@@ -22,7 +22,7 @@
 #' @export
 
 checkCert <- function(email, password, cert, worker){
-  auth_token <- authenticate(email, password)
+  auth_token <- sentimentIt::authenticate(email, password)
   if(!is.character(cert) | nchar(cert)<1){
     stop("You must input a non-blank certification and one made of characters.")
   }

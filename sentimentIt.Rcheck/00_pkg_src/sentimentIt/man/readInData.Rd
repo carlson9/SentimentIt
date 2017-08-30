@@ -31,7 +31,8 @@ Reads in the complete data for specified batch numbers from the server. This dat
 \examples{
 
 \dontrun{
-output <- readInData(email = 'researcher@school.edu', password = 'uniquePassword', batch_id = batch_ids[1])
+output <- readInData(email = 'researcher@school.edu',
+    password = 'uniquePassword', batch_id = batch_ids[1])
 }
 }
 \seealso{

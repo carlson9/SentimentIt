@@ -37,7 +37,7 @@ readText <- function(email, password, read_documents_from, write_documents_to=NU
     }
     textToSend <- hold.table[,index]
   }else textToSend <- scan(file=read_documents_from, what=what, sep=sep, quiet=quiet, ...)
-  auth_token <- authenticate(email, password)
+  auth_token <- sentimentIt::authenticate(email, password)
   args <- mapply(function(x,y) list(text=x, source=y), textToSend, which_source, SIMPLIFY=FALSE, USE.NAMES=FALSE)
   args <- toJSON(list("email"=email, "auth_token"=auth_token, "documents"=args), auto_unbox=TRUE)
   mypost <- POST('https://www.sentimentit.com/api/documents/find_or_create.json',

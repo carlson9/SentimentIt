@@ -37,7 +37,7 @@ makeCompsSep <- function(email, password, ids, number_per, batch_id, question, p
     return(NULL)
   }
   out <- vector()
-  auth_token <- authenticate(email, password)
+  auth_token <- sentimentIt::authenticate(email, password)
   if(per_batch > num_comps){
     args <- list(email=email, auth_token=auth_token, question=question, ids=pairwise, batch_id=batch_id[1])
     args <- toJSON(args, auto_unbox=TRUE)
