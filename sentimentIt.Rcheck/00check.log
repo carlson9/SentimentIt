@@ -12,8 +12,7 @@ New submission
 The Description field should not start with the package name,
   'This package' or similar.
 * checking package namespace information ... OK
-* checking package dependencies ... NOTE
-  No repository set, so cyclic dependency check skipped
+* checking package dependencies ... OK
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
@@ -57,4 +56,4 @@ The Description field should not start with the package name,
 * checking examples ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 2 NOTEs
+Status: 1 NOTE

@@ -12,7 +12,7 @@ LazyData: true
 License: GPL (>= 2)
 RoxygenNote: 5.0.1
 NeedsCompilation: no
-Packaged: 2017-08-30 21:58:42 UTC; david
+Packaged: 2017-08-31 19:05:26 UTC; david
 Author: David Carlson [aut, cre],
   Jacob M. Montgomery [aut]
 Maintainer: David Carlson <carlson.david@wustl.edu>
