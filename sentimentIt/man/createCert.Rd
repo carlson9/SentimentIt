@@ -24,10 +24,7 @@ This function will grant a certification to a worker, and if the certification d
 \examples{
 
 \dontrun{ 
-createCert(email = 'researcher@school.edu',
-    password = 'uniquePassword',
-    cert= 'bannedmovie_reviews',
-    workers = ban_workers)
+createCert(email = 'researcher@school.edu', password = 'uniquePassword', cert= 'bannedmovie_reviews', workers = ban_workers)
 }
 }
 \seealso{
