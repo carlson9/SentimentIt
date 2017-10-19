@@ -11,7 +11,7 @@
 #' @param sep Argument passed to read.table() function. Default is line break. Only needed when index is not NULL.
 #' @param quiet Argument passed to scan(). Default is TRUE. Only needed when index is NULL.
 #' @param index The index number of the table to extract the text from, or the name of the column. Default is NULL, indicating the text was not sent in a table.
-#' @param which_source Source used within SentimentIt server assoicated with document uploads. Only used for later reference. Default is apiR.
+#' @param which_source Depricated
 #' @param ... Additional arguments passed to either scan() or read.table() depending on type of data used
 #' 
 #' @return A data frame with the provided data and the IDs appended
