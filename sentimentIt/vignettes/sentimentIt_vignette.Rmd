@@ -1,0 +1,36 @@
+---
+title: "SentimentIt"
+author: ""
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{sentimentIt_vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+This is a tutorial on how to use the SentimentIt R package. SentimentIt provides a pairwise comparison framework for fast, flexible, and reliable human coding of political texts.
+
+###Probably want to include some background on SentimentIt here###
+
+1. Before interacting with the package in R, go to the following link: https://www.sentimentit.com/documentation/getting_started. The manual attached to the link explains how to create the necessary accounts with Amazon and SentimentIt so you can interact with Mechanical Turk. A SentimentIt account MUST be created before the R functionality can be used. 
+
+2. Once the five steps of the SentimentIt manual are completed, install the SentimentIt package in R using the following command:
+
+```{r, eval = FALSE}
+install.packages("SentimentIt")
+
+#or if the package is already installed
+
+library("SentimentIt")
+```
+
+3. Once the package is installed, identify yourself to the SentimentIt API from R using the `authenticate()` function. Input as character vectors the email and password used to create your SentimentIt account.
+
+```{r, eval = FALSE}
+authenticate(email = "johndoe@school.edu", password = "12345")
+```
+
+After running this function, the R console will return a character vector containing the authentication token for your session.
+
+4. 

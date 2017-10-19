@@ -12,8 +12,10 @@ Imports:
     httr,
     RCurl,
     rstan
-Suggests:
+Suggests: knitr,
+    rmarkdown
     testthat
 LazyData: true
 License: GPL (>= 2)
 RoxygenNote: 5.0.1
+VignetteBuilder: knitr
