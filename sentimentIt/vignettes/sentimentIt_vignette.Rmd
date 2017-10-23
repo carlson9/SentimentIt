@@ -19,9 +19,7 @@ This is a tutorial on how to use the SentimentIt R package. SentimentIt provides
 
 ```{r, eval = FALSE}
 install.packages("SentimentIt")
-
 #or if the package is already installed
-
 library("SentimentIt")
 ```
 
@@ -31,6 +29,24 @@ library("SentimentIt")
 authenticate(email = "johndoe@school.edu", password = "12345")
 ```
 
-After running this function, the R console will return a character vector containing the authentication token for your session.
+`authenticate()` accepts the following arguments:
 
-4. 
+-   `email`: Character vector, the email address for the registered SentimentIt account.
+
+-   `password`: Character vector, the password associated with `email`.
+
+After running `authenticate()` with correctly specified `email` and `password`, the R console will return a character vector containing the authentication token for your session.
+
+4. After receiving the authentication token from R, use the `readtext()` function to assign unique ID numbers to each 
+
+
+
+
+
+
+
+
+
+
+
+
