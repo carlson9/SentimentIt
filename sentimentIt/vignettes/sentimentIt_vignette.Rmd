@@ -23,6 +23,16 @@ install.packages("SentimentIt")
 library("SentimentIt")
 ```
 
+3. Once the package is installed, you will need to assign unique ID numbers to each object in the data you would like to compare. Your data file containing the objects for comparison should be stored locally. The `readtext()` function will take the data as an input, import it into the SentimentIt repository, and assign unique values to each object in the data. If any objects already exist in the repository, the ID number for the existing object will be used instead of importing a duplicate.
+
+```{r, eval = FALSE}
+readtext(email = "johndoe@school.edu", password = "12345", 
+         read_documents_from = "/Users/johndoe/Desktop/reviews.csv",
+         write_documents_to = "/Users/johndoe/Desktop/reviews_ids.csv")
+```
+
+`readtext` accepts the following arguments: 
+
 3. Once the package is installed, identify yourself to the SentimentIt API from R using the `authenticate()` function. Input as character vectors the email and password used to create your SentimentIt account.
 
 ```{r, eval = FALSE}
