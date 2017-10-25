@@ -25,15 +25,24 @@ readText(email, password, read_documents_from, write_documents_to = NULL,
 
 \item{index}{The index number of the table to extract the text from, or the name of the column. Default is NULL, indicating the text was not sent in a table.}
 
-\item{which_source}{Source used within SentimentIt server assoicated with document uploads. Only used for later reference. Default is apiR.}
+\item{which_source}{Depricated}
 
 \item{...}{Additional arguments passed to either scan() or read.table() depending on type of data used}
 }
-\value{
-A data frame with the provided data and the IDs appended
-}
 \description{
-Reads in text, posts the text to the server, and returns the document IDs after saving the result to a new table. If text already exists on the server, the associated ID is returned (there will never be duplicated text).
+Find/create documents and retrieve IDs
+}
+\details{
+The readText() function imports the data to be used in comparisons and assigns unique ID 
+numbers to each object in the data. The function call takes the data as an input, imports it into the 
+SentimentIt repository, and assigns unique ID values to each object in the data. The function will then 
+export the data, complete with ID numbers, to a specified file path. If any objects already exist in the 
+repository, the ID number for the existing object will be used instead of importing a duplicate. 
+
+Your data should contain the set of objects you want to perform pairwise comparisons on. It may contain 
+other data as well, but you will need to specify which column contains the data to be used in the pairwise 
+comparisons. The best practice for running this function is to first import your data into your R workspace 
+before running the function.
 }
 \examples{
 
