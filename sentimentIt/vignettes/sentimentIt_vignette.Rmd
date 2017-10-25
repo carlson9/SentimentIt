@@ -37,14 +37,14 @@ Once the package is installed, you need to prepare your data for the pairwise co
 
 The `readText()` function will take the data as an input, import it into the SentimentIt repository, and assign unique ID values to each object in the data. The function will then export the data to a specified file path, complete with ID numbers. If any objects already exist in the repository, the ID number for the existing object will be used instead of importing a duplicate.
 
-Your data should contain the set of objects you want to perform pairwise comparisons on. It may contain other data as well, but you will need to specify which column of data contains the data of interest. The best practice for running this function is to first import your data into your R workspace before running the function.
+Your data should contain the set of objects you want to perform pairwise comparisons on. It may contain other data as well, but you will need to specify which column contains the data to be used in the pairwise comparisons. The best practice for running this function is to first import your data into your R workspace before running the function.
 
 The following example uses a sample dataset, "reviews.rda", to show how to use the `readText()` function to assign unique ID numbers
 
 ```{r, eval = FALSE}
 load("/Users/johndoe/Desktop/reviews.rda") #data is stored in R workspace as "reviews"
 
-#assign a name to the function so the data with IDs will be stored in your R workspace in addition to being exported to your desired filepath.
+#assign an object name to the function so the data with IDs will be stored in your R workspace in addition to being exported to your desired filepath. In this case, I have assigned the output the name "reviews_with_ids"
 reviews_with_ids <- readText(email = "johndoe@school.edu", password = "12345",
          read_documents_from = reviews,
          write_documents_to = "/Users/johndoe/Desktop/reviews_with_ids.csv",
@@ -71,14 +71,27 @@ reviews_with_ids <- readText(email = "johndoe@school.edu", password = "12345",
 
 -   `...`: Additional arguments passed to either `scan()` or `read.table()` depending on type of data used.
 
-Generate random comparisons between objects
+Generate random pairs of IDs for comparisons
 ------
 
-At this point, the data with unique ID numbers should be stored both in your R workspace and in the filepath specified in `readText()`. The next step is to 
+At this point, the data with unique ID numbers should be stored both in your R workspace and in the filepath specified in `readText()`. The next step is to randomly select pairs of ID numbers for objects to be compared. This is done using the `createPairwise()` function. This function will return a matrix
 
+The following example executes the `createPairwise()` function using the output from the `readText()` function that was stored in the object `reviews_with_ids`. In this case, the data had two columns before the ID numbers were added, so `reviews_with_ids` contains three columns. The third column contains the ID numbers, so this must be specified in the `ids` input.
 
+```{r, eval = FALSE}
 
+review_ids_pairwise <- createPairwise(ids = reviews_with_ids[,3],
+                                      number_per = 10,
+                                      pairwise_path = "/Users/johndoe/Desktop/review_ids_pairwise.Rdata")
+```
 
+`createPairwise()` accepts the following arguments:
+
+-   `ids`: Integer vector, the ID numbers of the texts you want to use.
+
+-   `number_per`: Integer, how many documents per batch to be compared.
+
+-   `pairwise_path`: Character vector, the filepath to save the created pairwise matrix. Default is "pairwise.Rdata""
 
 
 
