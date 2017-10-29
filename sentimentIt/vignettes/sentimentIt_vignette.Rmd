@@ -13,12 +13,14 @@ This is a tutorial on how to use the SentimentIt R package. SentimentIt provides
 
 ###Probably want to include some background on SentimentIt here###
 
+
 Create the necessary accounts
 ------
 
 Before interacting with the package in R, go to the following link: https://www.sentimentit.com/documentation/getting_started. The manual attached to the link explains how to create the necessary accounts with Amazon and SentimentIt so you can interact with Mechanical Turk. A SentimentIt account MUST be created before the SentimentIt R package can be used. 
 
-Install/Load the SentimentIt R package
+
+Install/load the SentimentIt R package
 ------
 
 Once the five steps of the SentimentIt manual are completed, install the SentimentIt package in R using the following command:
@@ -29,6 +31,7 @@ install.packages("SentimentIt")
 #or if the package is already installed
 library("SentimentIt")
 ```
+
 
 Assign ID numbers to data objects
 ------
@@ -71,10 +74,11 @@ reviews_with_ids <- readText(email = "johndoe@school.edu", password = "12345",
 
 -   `...`: Additional arguments passed to either `scan()` or `read.table()` depending on type of data used.
 
+
 Generate random pairs of IDs for comparisons
 ------
 
-At this point, the data with unique IDs should be stored both in your R workspace and in the filepath specified in `readText()`. The next step is to create unique batch ID numbers. Each batch ID number will be associated with a "batch",
+At this point, the data with unique IDs should be stored both in your R workspace and in the filepath you specified in `readText()`. The next step is to create unique batch ID numbers. Each batch ID number will be associated with a "batch",
 which contains a portion of all comparisons to be sent to Mechanical Turk. Instead of sending all comparisons to Mechanical Turk at once, you can decide to release each batch at your discretion. 
 
 To create unique batch ID numbers, use the `createBatches()` function. Before using this function, you should have set up HIT settings on the SentimentIt website. You will need to provide the ID number of the specific HIT settings you would like to use for the comparisons.
@@ -92,18 +96,42 @@ batch_ids <- createBatches(email = "johndoe@school.edu", password = "12345",
 
 -   `password`: Character vector, the password associated with `email`.
 
--   `task_setting_id`: The ID number of the HIT settings you would like to use for these batches of comparisons.
+-   `task_setting_id`: Integer vector, the ID number of the HIT settings you would like to use for these batches of comparisons.
 
--   `num_batches`: The number of separate batches in which you would like to send the comparisons to Mechanical Turk. Default to 1. 
-
-
+-   `num_batches`: Integer vector, the number of separate batches in which you would like to send the comparisons to Mechanical Turk. Default to 1. 
 
 
+Fill batches with comparisons
+------
 
+At this point, you should have run both the `readText()` and `createBatches()` functions and you should have data with unique IDs. You should also have as many unique batch IDs as the number of batches you would like to send out the comparisons in. The next step is to fill these batches with random pairings of your data objects. Each batch you send to Mechanical Turk will contain these random pairings and MTurk workers will compare some latent trait between the paired objects.
 
+To generate these random pairings, run the `makeComps()` function, which will generate random pairings of your data objects and distribute them evenly among the number of batches you specify. Before running this function, you should have your unique batch ID numbers stored in your R workspace and you should have decided what quality you want to compare between the paired objects, which should be specified in the `question` input.
 
+```{r, eval = FALSE}
 
+makeComps(email = "johndoe@school.edu", password = "12345",
+             ids = reviews_ids[,3], number_per = 10,
+             batch_id = batch_ids,
+             question = "Below are two movie reviews. Identify which review you think is more positive.",
+             pairwise_path = "comparisons.Rdata")
+```
 
+`makeComps()` accepts the following arguments:
+
+-   `email`: Character vector, the email address for the registered SentimentIt account.
+
+-   `password`: Character vector, the password associated with `email`.
+
+-   `ids`: Integer vector, the ID numbers of the texts you want to use.
+
+-   `number_per`: Integer vector, how many documents per batch to be compared.
+
+-   `batch_id`: 
+
+-   `question`: Character vector, the question the worker will see when comparing the texts.
+
+-   `pairwise_path`: Character vector, the filepath to save the created pairwise matrix. Default is "pairwise.Rdata".
 
 
 
