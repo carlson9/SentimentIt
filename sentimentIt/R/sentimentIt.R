@@ -67,7 +67,7 @@
 #'    rest_time = 60, rate = 1/3, threshold = 5,
 #'    return_stan = TRUE, return_data = TRUE)
 #' }
-#' @seealso \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeCompsSep}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}
+#' @seealso \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{fitStanHier}} \code{\link{makeComps}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}
 #' @rdname sentimentIt
 #' @export
 sentimentIt <- function(email, password, read_documents_from,
@@ -91,7 +91,7 @@ sentimentIt <- function(email, password, read_documents_from,
   batches <- createBatches(email, password, task_setting_id, num_batches)
 
   # creates comparisons attached to the created batches.
-  makeCompsSep(email, password, ids=unique(textDoc$ids), number_per, batch_id=batches, question, per_batch, 
+  makeComps(email, password, ids=unique(textDoc$ids), number_per, batch_id=batches, question, per_batch, 
                          pairwise_path)
   Sys.sleep(rest_time)
 

@@ -74,25 +74,27 @@ reviews_with_ids <- readText(email = "johndoe@school.edu", password = "12345",
 Generate random pairs of IDs for comparisons
 ------
 
-At this point, the data with unique ID numbers should be stored both in your R workspace and in the filepath specified in `readText()`. The next step is to randomly select pairs of ID numbers for objects to be compared. This is done using the `createPairwise()` function. This function will return a matrix
+At this point, the data with unique IDs should be stored both in your R workspace and in the filepath specified in `readText()`. The next step is to create unique batch ID numbers. Each batch ID number will be associated with a "batch",
+which contains a portion of all comparisons to be sent to Mechanical Turk. Instead of sending all comparisons to Mechanical Turk at once, you can decide to release each batch at your discretion. 
 
-The following example executes the `createPairwise()` function using the output from the `readText()` function that was stored in the object `reviews_with_ids`. In this case, the data had two columns before the ID numbers were added, so `reviews_with_ids` contains three columns. The third column contains the ID numbers, so this must be specified in the `ids` input.
+To create unique batch ID numbers, use the `createBatches()` function. Before using this function, you should have set up HIT settings on the SentimentIt website. You will need to provide the ID number of the specific HIT settings you would like to use for the comparisons.
 
 ```{r, eval = FALSE}
 
-review_ids_pairwise <- createPairwise(ids = reviews_with_ids[,3],
-                                      number_per = 10,
-                                      pairwise_path = "/Users/johndoe/Desktop/review_ids_pairwise.Rdata")
+
+batch_ids <- createBatches(email = "johndoe@school.edu", password = "12345",
+              task_setting_id = 28, num_batches = 3)
 ```
 
-`createPairwise()` accepts the following arguments:
+`createBatches()` accepts the following arguments:
 
--   `ids`: Integer vector, the ID numbers of the texts you want to use.
+-   `email`: Character vector, the email address for the registered SentimentIt account.
 
--   `number_per`: Integer, how many documents per batch to be compared.
+-   `password`: Character vector, the password associated with `email`.
 
--   `pairwise_path`: Character vector, the filepath to save the created pairwise matrix. Default is "pairwise.Rdata""
+-   `task_setting_id`: The ID number of the HIT settings you would like to use for these batches of comparisons.
 
+-   `num_batches`: The number of separate batches in which you would like to send the comparisons to Mechanical Turk. Default to 1. 
 
 
 

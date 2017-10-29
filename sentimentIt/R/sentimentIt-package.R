@@ -34,7 +34,7 @@
 #'
 #' Now that the batch settings are specified, we can create 10 random pairwise comparisons. We first need to retrieve the document IDs created earlier, written to the file specified, then create the comparisons using these IDs. The following code will set up the comparisons:
 #'
-#' \code{\link{makeCompsSep}(email = 'researcher@school.edu',
+#' \code{\link{makeComps}(email = 'researcher@school.edu',
 #'    password = 'uniquePassword',
 #'    ids = docInfo[,'ids'],
 #'    number_per = 10,
@@ -44,7 +44,7 @@
 #'            from the most positive review',
 #'    pairwise_path = 'Comparisons/first10.Rdata')}
 #'
-#' The first argument, \code{ids}, indicates the numerical IDs for the documents. The argument \code{number_per} is the number of comparisons desired (in this case 10). The \code{batch_id} argument indicates the batch IDs to be used for the HITs. The \code{question} argument specifies the question the worker will see once the worker selects the HIT. There is an argument \code{per_batch} indicating the number of comparisons per batch desired, defaulted to 1,000. If the number of comparisons is not a multiple of this number, the final batch will have fewer comparisons. We have 2,500 comparisons, so the final batch only has 500 comparisons. The number of comparisons per batch could have been automatically determined, but forcing this number to be provided ensures no mistakes are made, such as providing too few batches. The \code{pairwise_path} argument is used to save the comparisons that were created to a specified path and file name where the comparisons should be stored. The function returns the batch IDs as returned by the server (which we already have stored). This serves as an assurance that the function has been correctly called. Full argument documentation is available under \code{\link{makeCompsSep}}, and all arguments have the same name as the wrapper.
+#' The first argument, \code{ids}, indicates the numerical IDs for the documents. The argument \code{number_per} is the number of comparisons desired (in this case 10). The \code{batch_id} argument indicates the batch IDs to be used for the HITs. The \code{question} argument specifies the question the worker will see once the worker selects the HIT. There is an argument \code{per_batch} indicating the number of comparisons per batch desired, defaulted to 1,000. If the number of comparisons is not a multiple of this number, the final batch will have fewer comparisons. We have 2,500 comparisons, so the final batch only has 500 comparisons. The number of comparisons per batch could have been automatically determined, but forcing this number to be provided ensures no mistakes are made, such as providing too few batches. The \code{pairwise_path} argument is used to save the comparisons that were created to a specified path and file name where the comparisons should be stored. The function returns the batch IDs as returned by the server (which we already have stored). This serves as an assurance that the function has been correctly called. Full argument documentation is available under \code{\link{makeComps}}, and all arguments have the same name as the wrapper.
 #'
 #' Now that the comparisons are set up and on the server, we can post them as HITs to AMT. If we wish to send our first batch, we run:
 #'

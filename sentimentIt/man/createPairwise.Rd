@@ -17,6 +17,12 @@ createPairwise(ids, number_per, pairwise_path = "pairwise.Rdata")
 A matrix of random pairwise comparisons without repitition.
 }
 \description{
+Creates a matrix of random pairs for comparison
+}
+\details{
+The createPairwise() function randomly selects pairs of ID numbers for objects to be compared. 
+This function will return a matrix with two columns, each containing the 
+
 This function randomly samples from all possible pairings of IDs. In other words, no comparison will be duplicated.
 }
 \seealso{
