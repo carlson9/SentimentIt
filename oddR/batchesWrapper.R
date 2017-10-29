@@ -44,7 +44,7 @@
 #' @seealso \code{\link{createTasksTimed}}, \code{\link{batchesWrapper}}, \code{\link{checkCert}},
 #' \code{\link{checkWorkers}},\code{\link{createBatches}},\code{\link{createCert}},\code{\link{createTasks}}, 
 #' \code{\link{createPairwise}}, \code{\link{extractCoef}},\code{\link{fitStan}},\code{\link{fitStanHier}},
-#' \code{\link{givetakeCert}},\code{\link{makeCompsSep}},\code{\link{readInData}}, \code{\link{readText}},
+#' \code{\link{givetakeCert}},\code{\link{makeComps}},\code{\link{readInData}}, \code{\link{readText}},
 #' \code{\link{repostExpired}},\code{\link{revokeCert}}, \code{\link{sentimentIt}}, \code{\link{batchStatus}},
 #' \code{\link{extractCoef}}
 #' @example
@@ -83,7 +83,7 @@ batchesWrapper <- function(readDocumentsFrom, task_setting_id, question,
   num_batches <- ceiling(length(unique(textdoc$ids)) * number_per / per_batch / 2)
   batches <- createBatches(task_setting_id=task_setting, num_batches=num_batches)
   # creates comparisons attached to the created batches.
-  makeCompsSep(ids=textDoc$ids, number_per=number_per, batches=batches, question=question,
+  makeComps(ids=textDoc$ids, number_per=number_per, batches=batches, question=question,
                path=path, name=name)
   Sys.sleep(rest_time)
 
