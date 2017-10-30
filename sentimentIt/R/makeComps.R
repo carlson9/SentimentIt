@@ -1,6 +1,25 @@
 #' Create comparisons and post to SentimentIt
+#' 
+#' @details
+#' 
+#' Before using this function, you must have created an Amazon Web Service and Mechanical Turk account. You
+#' also must have created an account at SentimentIt.com. This function will not work otherwise. You also should
+#' have run the readText() function to upload your data objects to the SentimentIt server. You should have also
+#' run the createBatches() function and saved the batch ID numbers in your R workspace.
+#' 
+#' To generate random pairings of your data objects, run the `makeComps()` function, which will generate random 
+#' pairings of your data objects and distribute them evenly among the number of batches you specify. Before 
+#' running this function, you should have your unique batch ID numbers stored in your R workspace and you should 
+#' have decided what quality you want to compare between the paired objects, which should be specified in the 
+#' `question` input.
+#' 
+#' Once the comparisons have been generated, they will be stored in the SentimentIt server and sent to Mechanical 
+#' Turk when you direct them to. The function should return a vector of the batch IDs you provided. If not, the 
+#' function did not correctly set up your batches. 
+#' 
+#' Reference Paper: Carlson, David and Jacob M. Montgomery. Forthcoming. “A Pairwise Comparison Framework for 
+#' Fast, Flexible, and Reliable Human Coding of Political Texts.” American Political Science Review.
 #'
-#' Creates random comparisons of document IDs using \code{\link{createPairwise}}. These comparisons are posted on the SentimentIt server and receive unique IDs from the system.
 #'
 #' @param email The researcher's email used for SentimentIt registration
 #' @param password The researcher's password used for SentimentIt registration

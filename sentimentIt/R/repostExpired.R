@@ -1,6 +1,22 @@
 #' Repost expired tasks from a batch
 #' 
-#' This will repost all of the expired tasks from the vector of batch IDs. It is common for a few tasks in a batch to be overlooked and remain incomplete.
+#' @details 
+#' 
+#' Before using this function, you must have created an Amazon Web Service and Mechanical Turk account. You
+#' also must have created an account at SentimentIt.com. This function will not work otherwise. You also should
+#' have run the readText() function to upload your data objects to the SentimentIt server. You should have also
+#' run the createBatches() function and saved the batch ID numbers in your R workspace. You should have also
+#' run the makeComps() function to save a portion of your total comparisons under each batch. You should have
+#' also run the createTasks() function to send batches of paired data objects to Mechanical Turk for comparison.
+#' It is advisable to use the batchStatus() function to see how many tasks are incomplete before reposting
+#' the incomplete tasks to Mechanical Turk.
+#' 
+#' When batches of comparisons are submitted to Mechanical Turk, some comparisons may not be completed before the 
+#' batch expires. These incomplete tasks can be reposted to Mechanical Turk using the `repostExpired()` function.
+#' 
+#' Reference Paper: Carlson, David and Jacob M. Montgomery. Forthcoming. “A Pairwise Comparison Framework for 
+#' Fast, Flexible, and Reliable Human Coding of Political Texts.” American Political Science Review.
+#' 
 #' 
 #' @param email The researcher's email used for SentimentIt registration
 #' @param password The researcher's password used for SentimentIt 

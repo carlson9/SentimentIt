@@ -90,7 +90,6 @@ To create unique batch ID numbers, use the `createBatches()` function. Before us
 
 ```{r, eval = FALSE}
 
-
 batch_ids <- createBatches(email = "johndoe@school.edu", password = "12345",
               task_setting_id = 28, num_batches = 3)
 ```
@@ -146,7 +145,7 @@ Send batches to Mechanical Turk
 
 At this point, you should have run the `readText()`, `createBatches()`, and `makeComps()` functions and should therefore have pairwise comparisons set up under batches in the SentimentIt server. You are now prepared to send your batches to Mechanical Turk to have workers complete the pairwise comparisons of the data. 
 
-To send batches to Mechanical Turk, use the `createTasks()` function. As you can see in the below example, you can determine which batches you would like to send to Mechanical Turk by only speficying those specific batch IDs. You do not need to send them all at once.
+To send batches to Mechanical Turk, use the `createTasks()` function. As you can see in the below example, you can determine which batches you would like to send to Mechanical Turk by only specifying those specific batch IDs. You do not need to send them all at once.
 
 Note that when you run this function, workers will automatically be paid for the work they do in that batch, regardless of the quality of their work. In the SentimentIt system, any worker who completes a task is automatically paid every 24 hours.
 
@@ -264,11 +263,11 @@ Use Stan model to assess worker reliability
 
 Once you have estimated a Stan model, you can use this to identify workers who are unreliable. You can use the output from the Stan model, as well as the output from the completed comparisons, to identify unreliable workers.
 
-Use the `checkWorkers()` function to detect these outlying workers.
+Use the `checkWorkers()` function to detect these outlying workers. This function returns a vector of IDs identifying workers who are unreliable. 
 
 ```{r, eval = FALSE}
 
-ban_workers <- checkWorkers(stan_fit = stan_model, data = output) #the output object comes from the readInData() function
+ban_workers <- checkWorkers(stan_fit = stan_model, data = output) 
 ```
 
 `fitStan()` accepts the following arguments:

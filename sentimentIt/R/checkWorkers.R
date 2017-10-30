@@ -1,4 +1,24 @@
 #' Detect outlying workers
+#' 
+#' @details 
+#' 
+#' Before using this function, you must have created an Amazon Web Service and Mechanical Turk account. You
+#' also must have created an account at SentimentIt.com. This function will not work otherwise. You also should
+#' have run the readText() function to upload your data objects to the SentimentIt server. You should have also
+#' run the createBatches() function and saved the batch ID numbers in your R workspace. You should have also
+#' run the makeComps() function to save a portion of your total comparisons under each batch. You should have
+#' also run the createTasks() function to send batches of paired data objects to Mechanical Turk for comparison.
+#' You should have also run the readInData() function because this will give you the necessary data for the Stan
+#' model. You should have also run either the fitStan() or fitStanHier() function to estimate the Stan model.
+#' 
+#' Once you have estimated a Stan model, you can use this to identify workers who are unreliable. You can use the 
+#' output from the Stan model, as well as the output from the completed comparisons, to identify unreliable workers.
+#' Use the `checkWorkers()` function to detect these outlying workers. This function returns a vector of IDs 
+#' identifying workers who are unreliable. 
+#' 
+#' Reference Paper: Carlson, David and Jacob M. Montgomery. Forthcoming. “A Pairwise Comparison Framework for 
+#' Fast, Flexible, and Reliable Human Coding of Political Texts.” American Political Science Review.
+#'
 #'
 #' @param stan_fit A stan fit.
 #' @param data The data used to fit stan.

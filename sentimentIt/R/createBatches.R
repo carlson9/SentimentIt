@@ -1,7 +1,19 @@
 #' Create new batches
 #' 
-#' This function creates new batches with the desired Task setting 
-#' and the desired number of batches.
+#' @details 
+#' 
+#' Before using this function, you must have created an Amazon Web Service and Mechanical Turk account. You
+#' also must have created an account at SentimentIt.com. This function will not work otherwise. You also should
+#' have run the readText() function to upload your data objects to the SentimentIt server.
+#' 
+#' The createBatches() function creates unique ID numbers for the batches you will use to submit comparisons
+#' to Mechanical Turk. You must specify how many batches you would like to release your comparisons in. The
+#' function will return a vector of the unique batch IDs you created. This vector should be saved in your
+#' R workspace.
+#' 
+#' Reference Paper: Carlson, David and Jacob M. Montgomery. Forthcoming. “A Pairwise Comparison Framework for 
+#' Fast, Flexible, and Reliable Human Coding of Political Texts.” American Political Science Review.
+#' 
 #' 
 #' @param email The researcher's email used for SentimentIt registration
 #' @param password The researcher's password used for SentimentIt 
