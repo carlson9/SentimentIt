@@ -9,9 +9,14 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+Background
+------
+
 This is a tutorial on how to use the SentimentIt R package. SentimentIt provides a pairwise comparison framework for fast, flexible, and reliable human coding of political texts.
 
-###Probably want to include some background on SentimentIt here###
+The system we designed, which we label SentimentIt, is based on the following principles. First, it leverages human ability to understand language and socially constructed political concepts. Thus, our focus is measuring researcher-defined characteristics embedded within text (e.g., positivity). However, we exclude explicitly subjective characteristics (e.g., persuasiveness).
+
+Second, we designed the task structure to be cognitively appropriate for non-experts. Specifically, we ask workers to conduct pairwise comparisons of texts, simply indicating which text is more extreme along a single dimension of interest (e.g., “Which text is more positive?”). A significant body of research indicates that pairwise comparisons can reduce the cognitive burden for respondents, improve the reliability of responses, and eliminate problems such as differential item functioning and reference group effects that plague alternative question formats such as Likert scales or sliders (e.g., King et al. 2004; Oishi et al. 2005).
 
 
 Create the necessary accounts
@@ -253,9 +258,9 @@ stan_model2 <- fitStan(data = comp_output)
 
 -   `n.cores`: Integer vector, the number of cores to be used in Stan fit (Default is 3).
 
+
 Use Stan model to assess worker reliability
 ------
-
 
 Once you have estimated a Stan model, you can use this to identify workers who are unreliable. You can use the output from the Stan model, as well as the output from the completed comparisons, to identify unreliable workers.
 
@@ -281,3 +286,10 @@ ban_workers <- checkWorkers(stan_fit = stan_model, data = output) #the output ob
 -   `plot_hist`: If TRUE, plot the histogram of workers with a rug plot. Default is FALSE.
 
 -   `hist_path`: Save the histogram to path and file name specified. Default is NULL and no plot is saved.
+
+
+Reference Paper
+------
+
+Carlson, David and Jacob M. Montgomery. Forthcoming. “A Pairwise Comparison Framework for Fast, Flexible, and Reliable Human Coding of Political Texts.” American Political Science Review.
+
