@@ -143,6 +143,8 @@ At this point, you should have run the `readText()`, `createBatches()`, and `mak
 
 To send batches to Mechanical Turk, use the `createTasks()` function. As you can see in the below example, you can determine which batches you would like to send to Mechanical Turk by only speficying those specific batch IDs. You do not need to send them all at once.
 
+Note that when you run this function, workers will automatically be paid for the work they do in that batch, regardless of the quality of their work. In the SentimentIt system, any worker who completes a task is automatically paid every 24 hours.
+
 ```{r, eval = FALSE}
 
 createTasks(email = "johndoe@school.edu", password = "12345",
@@ -158,10 +160,10 @@ createTasks(email = "johndoe@school.edu", password = "12345",
 -   `batch_id`: Numeric vector, the unique batch ID numbers you generated in `createBatches()`. Only specify the ID numbers for the batches you want to submit to Mechanical Turk now. Batches can be released at separate times.
 
 
-Check the status of batches in Mechanical Turk
+Check the status of a batch in Mechanical Turk
 ------
 
-Once you have submitted batches of comparisons to Mechanical Turk, you can check thier status to see how many comparisons in the batch have been completed. This can be done using the `checkBatches()` function. To check the status of a batch, all you need is the batch ID number.
+Once you have submitted batches of comparisons to Mechanical Turk, you can check their status to see how many comparisons in the batch have been completed. This can be done using the `checkBatches()` function. To check the status of a batch, all you need is the batch ID number.
 
 ```{r, eval = FALSE}
 
@@ -178,19 +180,104 @@ batchStatus(email = "johndoe@school.edu", password = "12345",
 -   `batch_id`: Numeric vector, the ID number associated with a batch of comparisons you have already sent to Mechanical Turk.
 
 
+Read in data for completed comparisons from SentimentIt
+------
+
+Once you have sent the batches to Mechanical Turk using `createTasks()` and allowed some time for comparisons to be completed, you can retrieve data on the batches you sent. To retrieve this data, use the `readInData()` function. 
+
+You must specify a batch ID to the function, and the function will return a data frame containing the batch ID, comparison ID, document ID, result of the comparison, ID of the task, ID of the worker who completed the task, and the time when the task was completed.
+
+```{r, eval = FALSE}
+
+comp_output <- readInData(email = "johndoe@school.edu", password = "12345",
+              batch_id = batch_ids[1])
+```
+
+`readInData()` accepts the following arguments:
+
+-   `email`: Character vector, the email address for the registered SentimentIt account.
+
+-   `password`: Character vector, the password associated with `email`.
+
+-   `batch_id`: Numeric vector, the ID number associated with a batch of comparisons you have already sent to Mechanical Turk and would like to retrieve data on.
 
 
+Repost expired tasks from a batch to Mechanical Turk
+------
+
+When batches of comparisons are submitted to Mechanical Turk, some comparisons may not be completed before the batch expires. These incomplete tasks can be reposted to Mechanical Turk using the `repostExpired()` function.
+
+```{r, eval = FALSE}
+
+repostExpired(email = "johndoe@school.edu", password = "12345",
+              batch_id = batch_ids[1])
+```
+
+`batchStatus()` accepts the following arguments:
+
+-   `email`: Character vector, the email address for the registered SentimentIt account.
+
+-   `password`: Character vector, the password associated with `email`.
+
+-   `batch_id`: Numeric vector, the ID number associated with the expired batch containing the incomplete comparisons you would like to repost.
 
 
+Estimate Stan model for worker reliability
+------
+
+Once you have sent batches of comparisons to Mechanical Turk and retrieved the results, you can estimate the reliability of the workers completing each task using a Stan model. For more information on Stan models, refer to page 7 of the following paper: https://www.sentimentit.com/SentimentIt.pdf (Carlson + Montgomery).
+
+You can fit either a non-hierarchical or a hierarchical Stan model. To estimate a non-hierarchical Stan model, use the `fitStan()` function. To estimate a hierarchical Stan model, use the `fitStanHier()` function.
+
+```{r, eval = FALSE}
+
+#fitting a non-hierarchical Stan model
+stan_model <- fitStan(data = batch_ids)
+#you can use either the batch ID numbers or the output from readInData()
+stan_model2 <- fitStan(data = comp_output)
+```
+
+`fitStan()` accepts the following arguments:
+
+-   `email`: Character vector, the email address for the registered SentimentIt account.
+
+-   `password`: Character vector, the password associated with `email`.
+
+-   `data`: Numeric vector containing the batch IDs for the comparisons to be used in the model. Can also be a data frame containing the output from the `readInData()` function.
+
+-   `chains`: Integer, the number of chains. (Default is 3).
+
+-   `iter`: Numeric vector, the number of iteration. (Default is 2500).
+
+-   `seed`: Set seed. (Defalt is 1234).
+
+-   `n.cores`: Integer vector, the number of cores to be used in Stan fit (Default is 3).
+
+Use Stan model to assess worker reliability
+------
 
 
+Once you have estimated a Stan model, you can use this to identify workers who are unreliable. You can use the output from the Stan model, as well as the output from the completed comparisons, to identify unreliable workers.
 
+Use the `checkWorkers()` function to detect these outlying workers.
 
+```{r, eval = FALSE}
 
+ban_workers <- checkWorkers(stan_fit = stan_model, data = output) #the output object comes from the readInData() function
+```
 
+`fitStan()` accepts the following arguments:
 
+-   `stan_fit`: A Stan model fit.
 
+-   `data`: The data used to fit the Stan model.
 
+-   `cut_point`: A cutoff point to classify posterior coefficients. The proportion of posterior coefficients below `cut_point` is used to determine outliers (Default is 1).
 
+-   `cut_proportion`: A cutoff proportion of posterior coefficients below `cut_point`. If the proportion of posterior coefficients below `cut_points` is higher than `cut_proportion`, a worker will be considered as an outlier provided that she answers more than the number of questions in `n.questions` (Default is 0.9).
 
+-   `n.questions`: The number of questions to consider in order to determine suggested banned workers (Default is 50).
 
+-   `plot_hist`: If TRUE, plot the histogram of workers with a rug plot. Default is FALSE.
+
+-   `hist_path`: Save the histogram to path and file name specified. Default is NULL and no plot is saved.
