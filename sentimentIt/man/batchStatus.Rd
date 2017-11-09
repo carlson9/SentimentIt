@@ -24,7 +24,22 @@ output Dataframe with the variables:
 }
 }
 \description{
-This function checks the status of the batch_id number(s). This returns a data frame with the batch ID and the number of comparisons submitted and the number completed.
+Check the status of batch(es)
+}
+\details{
+Before using this function, you must have created an Amazon Web Service and Mechanical Turk account. You
+also must have created an account at SentimentIt.com. This function will not work otherwise. You also should
+have run the readText() function to upload your data objects to the SentimentIt server. You should have also
+run the createBatches() function and saved the batch ID numbers in your R workspace. You should have also
+run the makeComps() function to save a portion of your total comparisons under each batch. You should have
+also run the createTasks() function to send batches of paired data objects to Mechanical Turk for comparison.
+
+Once you have submitted batches of comparisons to Mechanical Turk, you can check their status to see how many 
+comparisons in the batch have been completed. This can be done using the `checkBatches()` function. To check 
+the status of a batch, all you need is the batch ID number.
+
+Reference Paper: Carlson, David and Jacob M. Montgomery. Forthcoming. “A Pairwise Comparison Framework for 
+Fast, Flexible, and Reliable Human Coding of Political Texts.” American Political Science Review.
 }
 \examples{
 

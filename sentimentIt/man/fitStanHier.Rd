@@ -30,7 +30,29 @@ fitStanHier(email = NULL, password = NULL, data, hierarchy_data,
 fit_heir The heirarchical Stan fit object
 }
 \description{
+Fit a Stan hierarchical model with results from SentimentIt
+}
+\details{
+Before using this function, you must have created an Amazon Web Service and Mechanical Turk account. You
+also must have created an account at SentimentIt.com. This function will not work otherwise. You also should
+have run the readText() function to upload your data objects to the SentimentIt server. You should have also
+run the createBatches() function and saved the batch ID numbers in your R workspace. You should have also
+run the makeComps() function to save a portion of your total comparisons under each batch. You should have
+also run the createTasks() function to send batches of paired data objects to Mechanical Turk for comparison.
+You should have also run the readInData() function because this will give you the necessary data for the Stan
+model.
+
+Once you have sent batches of comparisons to Mechanical Turk and retrieved the results, you can estimate the 
+reliability of the workers completing each task using a Stan model. For more information on Stan models, refer 
+to page 7 of the following paper: https://www.sentimentit.com/SentimentIt.pdf (Carlson + Montgomery). 
+
+You can fit either a non-hierarchical or a hierarchical Stan model. To estimate a non-hierarchical Stan model, 
+use the `fitStan()` function. To estimate a hierarchical Stan model, use the `fitStanHier()` function.
+
 Fit a multilevel random utility model using Hamiltonian MCMC in Stan with data retrieved from the SentimentIt platform.
+
+Reference Paper: Carlson, David and Jacob M. Montgomery. Forthcoming. “A Pairwise Comparison Framework for 
+Fast, Flexible, and Reliable Human Coding of Political Texts.” American Political Science Review.
 }
 \seealso{
 \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{makeComps}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}

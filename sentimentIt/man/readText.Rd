@@ -33,6 +33,9 @@ readText(email, password, read_documents_from, write_documents_to = NULL,
 Find/create documents and retrieve IDs
 }
 \details{
+Before using this function, you must have created an Amazon Web Service and Mechanical Turk account. You
+also must have created an account at SentimentIt.com. This function will not work otherwise.
+
 The readText() function imports the data to be used in comparisons and assigns unique ID 
 numbers to each object in the data. The function call takes the data as an input, imports it into the 
 SentimentIt repository, and assigns unique ID values to each object in the data. The function will then 
@@ -43,6 +46,9 @@ Your data should contain the set of objects you want to perform pairwise compari
 other data as well, but you will need to specify which column contains the data to be used in the pairwise 
 comparisons. The best practice for running this function is to first import your data into your R workspace 
 before running the function.
+
+Reference Paper: Carlson, David and Jacob M. Montgomery. Forthcoming. “A Pairwise Comparison Framework for 
+Fast, Flexible, and Reliable Human Coding of Political Texts.” American Political Science Review.
 }
 \examples{
 

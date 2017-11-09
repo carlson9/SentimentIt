@@ -26,7 +26,26 @@ output a dataframe with the data from the specified batches with columns
 }
 }
 \description{
-Reads in the complete data for specified batch numbers from the server. This data contains the selection made for every completed comparison in the batch.
+Read in data provided by the workers
+}
+\details{
+Before using this function, you must have created an Amazon Web Service and Mechanical Turk account. You
+also must have created an account at SentimentIt.com. This function will not work otherwise. You also should
+have run the readText() function to upload your data objects to the SentimentIt server. You should have also
+run the createBatches() function and saved the batch ID numbers in your R workspace. You should have also
+run the makeComps() function to save a portion of your total comparisons under each batch. You should have
+also run the createTasks() function to send batches of paired data objects to Mechanical Turk for comparison.
+
+Once you have sent the batches to Mechanical Turk using `createTasks()` and allowed some time for comparisons 
+to be completed, you can retrieve data on the batches you sent. To retrieve this data, use the `readInData()` 
+function. 
+
+You must specify a batch ID to the function, and the function will return a data frame containing the batch ID, 
+comparison ID, document ID, result of the comparison, ID of the task, ID of the worker who completed the task, 
+and the time when the task was completed.
+
+Reference Paper: Carlson, David and Jacob M. Montgomery. Forthcoming. “A Pairwise Comparison Framework for 
+Fast, Flexible, and Reliable Human Coding of Political Texts.” American Political Science Review.
 }
 \examples{
 

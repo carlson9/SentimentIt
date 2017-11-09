@@ -22,7 +22,25 @@ createTasks(email, password, comp_ids = NULL, task_setting_id = NULL,
 out ID for batch of comparisons
 }
 \description{
-This function posts a batch or comparisons to Mechanical Turk as tasks
+Create new tasks for comparisons
+}
+\details{
+Before using this function, you must have created an Amazon Web Service and Mechanical Turk account. You
+also must have created an account at SentimentIt.com. This function will not work otherwise. You also should
+have run the readText() function to upload your data objects to the SentimentIt server. You should have also
+run the createBatches() function and saved the batch ID numbers in your R workspace. You should have also
+run the makeComps() function to save a portion of your total comparisons under each batch.
+
+To send batches to Mechanical Turk, use the `createTasks()` function. As you can see in the below example, 
+you can determine which batches you would like to send to Mechanical Turk by only specifying those specific 
+batch IDs. You do not need to send them all at once. 
+
+Note that when you run this function, workers will automatically be paid for the work they do in that batch, 
+regardless of the quality of their work. In the SentimentIt system, any worker who completes a task is 
+automatically paid every 24 hours.
+
+Reference Paper: Carlson, David and Jacob M. Montgomery. Forthcoming. “A Pairwise Comparison Framework for 
+Fast, Flexible, and Reliable Human Coding of Political Texts.” American Political Science Review.
 }
 \examples{
 
