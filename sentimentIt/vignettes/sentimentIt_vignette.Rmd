@@ -4,7 +4,7 @@ author: ""
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{sentimentIt_vignette}
+  %\VignetteIndexEntry{sentimentIt vignette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -50,9 +50,12 @@ Your data should contain the set of objects you want to perform pairwise compari
 The following example uses a sample dataset, "reviews.rda", to show how to use the `readText()` function to assign unique ID numbers
 
 ```{r, eval = FALSE}
+#data 
 load("/Users/johndoe/Desktop/reviews.rda") #data is stored in R workspace as "reviews"
 
-#assign an object name to the function so the data with IDs will be stored in your R workspace in addition to being exported to your desired filepath. In this case, I have assigned the output the name "reviews_with_ids"
+#assign an object name to the function so the data with IDs will be stored in your R workspace 
+#in addition to being exported to your desired filepath. In this case, I have assigned the 
+#output the name "reviews_with_ids"
 reviews_with_ids <- readText(email = "johndoe@school.edu", password = "12345",
          read_documents_from = reviews,
          write_documents_to = "/Users/johndoe/Desktop/reviews_with_ids.csv",
@@ -79,14 +82,12 @@ reviews_with_ids <- readText(email = "johndoe@school.edu", password = "12345",
 
 -   `...`: Additional arguments passed to either `scan()` or `read.table()` depending on type of data used.
 
-
-Generate random pairs of IDs for comparisons
+Generate batches to store pairwise comparisons in
 ------
 
-At this point, the data with unique IDs should be stored both in your R workspace and in the filepath you specified in `readText()`. The next step is to create unique batch ID numbers. Each batch ID number will be associated with a "batch",
-which contains a portion of all comparisons to be sent to Mechanical Turk. Instead of sending all comparisons to Mechanical Turk at once, you can decide to release each batch at your discretion. 
+At this point, the data with unique IDs should be stored both in your R workspace and in the filepath you specified in `readText()`. The next step is to create unique batch ID numbers. Each batch ID number will be associated with a "batch", which contains a portion of all comparisons to be sent to Mechanical Turk. Instead of sending all comparisons to Mechanical Turk at once, you can decide to release each batch at your discretion. 
 
-To create unique batch ID numbers, use the `createBatches()` function. Before using this function, you should have set up HIT settings on the SentimentIt website. You will need to provide the ID number of the specific HIT settings you would like to use for the comparisons. If you have not set up any HIT settings by this point, refer to the following documentation: https://www.sentimentit.com/documentation/running_analysis. 
+To create unique batch ID numbers, use the `createBatches()` function. Before using this function, you should have set up HIT settings on the SentimentIt website. You will need to provide the ID number of the specific HIT settings you would like to use for the comparisons. If you have not set up any HIT settings by this point, refer to the following documentation: https://www.sentimentit.com/documentation/running_analysis#step3. 
 
 ```{r, eval = FALSE}
 
@@ -152,7 +153,8 @@ Note that when you run this function, workers will automatically be paid for the
 ```{r, eval = FALSE}
 
 createTasks(email = "johndoe@school.edu", password = "12345",
-            batch_id = batch_ids[1]) #the batch_id object contains three unique batch IDs, but we are only sending the                                          first one to Mechanical Turk
+            batch_id = batch_ids[1]) #the batch_id object contains three unique batch IDs, but we are 
+                                     #only sending the first one to Mechanical Turk
 ```
 
 `createTasks()` accepts the following arguments:
@@ -189,7 +191,7 @@ Read in data for completed comparisons from SentimentIt
 
 Once you have sent the batches to Mechanical Turk using `createTasks()` and allowed some time for comparisons to be completed, you can retrieve data on the batches you sent. To retrieve this data, use the `readInData()` function. 
 
-You must specify a batch ID to the function, and the function will return a data frame containing the batch ID, comparison ID, document ID, result of the comparison, ID of the task, ID of the worker who completed the task, and the time when the task was completed.
+You must specify a batch ID to the function, and the function will return a data frame containing the batch ID, comparison ID, document ID, result of the comparison, ID of the task, ID of the worker who completed the task, and the time when the task was completed. This function may take some time to run because the server has 
 
 ```{r, eval = FALSE}
 
