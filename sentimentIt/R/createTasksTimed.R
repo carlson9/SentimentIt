@@ -18,7 +18,7 @@
                                                   hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
                                                   return_fit=FALSE, cut_point=cut_point, cut_proportion=cut_proportion,
                                                   n.questions=n.questions, plot_hist=plot_hist, hist_path=hist_pathi,
-                                                  chains=chains, iter=iter, seed=seed, n.cores=n.cores)[[1]])
+                                                  chains=chains, iter=iter, seed=seed, n.cores=n.cores)$outlying_workers)
         q <- ifelse(length(hist_path)>q, q+1, q)
     }
   }

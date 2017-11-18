@@ -125,25 +125,28 @@ n.questions=n.questions, plot_hist=plot_hist, hist_path=hist_path,
   }
   
   sentimentItOut <- list()
-  if(return_stan | !is.null(stan_file)){
-    stanfit <- .stanWrapper(email, password, data=batches,
-                           hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
-                           return_fit=TRUE, cut_point=cut_point, cut_proportion=cut_proportion,
-                           n.questions=n.questions, plot_hist=plot_hist, hist_path=hist_path[length(hist_path)],
-                           chains=chains, iter=iter, seed=seed, n.cores=n.cores)[[2]]
-    if(!is.null(stan_file)){
-      save(stanfit, file=stan_file)
-    }
-    if(return_stan){
-      sentimentItOut$stanfit <- stanfit
-    }
-  }
+  
+  stanfit <- .stanWrapper(email, password, data=batches,
+                          hierarchy_data=hierarchy_data, hierarchy_var=hierarchy_var,
+                          return_fit=TRUE, cut_point=cut_point, cut_proportion=cut_proportion,
+                          n.questions=n.questions, plot_hist=plot_hist, hist_path=hist_path[length(hist_path)],
+                          chains=chains, iter=iter, seed=seed, n.cores=n.cores)
+  if(!is.null(stan_file)) save(stanfit, file=stan_file)
+  if(return_stan) sentimentItOut$stanfit <- stanfit
   if(return_data | !is.null(data_file)){
     data <- readInData(email, password, batches)
     if(return_data) sentimentItOut$data <- data
     if(!is.null(data_file)) save(data, file=data_file)
   }
-  sentimentItOut$textDoc <- textDoc
+  alphas = stanfit$alphaPosts[,c('ids','mean')]
+  textDoc = merge(textDoc, alphas, by='ids')
+  if(!is.null(hierarchy_data) & !is.null(hierarchy_var)){
+    hierPosts = stanfit$tPosts
+    for(id in hierPosts[,'hier_ids']){
+      textDoc[textDoc[,hierarchy_var] == id,'hier_est'] = hierPosts[hierPosts[,'hier_ids'] == id, 'mean']
+    }
+  }
+  sentimentItOut$textDoc = textDoc
   signout(email, password)
   return(sentimentItOut)
 }

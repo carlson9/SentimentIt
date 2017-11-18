@@ -27,8 +27,7 @@
   workerCheck <- checkWorkers(stan_fit=fit, data=data1, cut_point=cut_point,
                            cut_proportion=cut_proportion, n.questions=n.questions,
                            plot_hist=plot_hist, hist_path=hist_path)
-  outlying = workerCheck$ban_workers
-  worker_df = workerCheck$worker_posteriors
+
 
   
   if(!is.null(hierarchy_data) & !is.null(hierarchy_var)){
@@ -39,7 +38,7 @@
     }
   }else{
     if(!return_fit){
-      return(list(outlying_workers=workerCheck$ban_workers, worker_posteriors = workerCheck$worker_posteriors, stan_fit=NULL, alphaPosts=NULL, tposts=NULL))
+      return(list(outlying_workers=workerCheck$ban_workers, worker_posteriors = NULL, stan_fit=NULL, alphaPosts=NULL, tposts=NULL))
     }else{
       return(list(outlying_workers=workerCheck$ban_workers, worker_posteriors = workerCheck$worker_posteriors, stan_fit=fit$fit, alphaPosts=fit$alphaPosts, tposts=NULL))
     }
