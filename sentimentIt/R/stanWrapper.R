@@ -30,9 +30,18 @@
   outlying = workerCheck$ban_workers
   worker_df = workerCheck$worker_posteriors
 
-  if(!return_fit){
-    return(list(outlying_workers=workerCheck$ban_workers, worker_posteriors = workerCheck$worker_posteriors, stan_fit=NULL))
+  
+  if(!is.null(hierarchy_data) & !is.null(hierarchy_var)){
+    if(!return_fit){
+      return(list(outlying_workers=workerCheck$ban_workers, worker_posteriors = workerCheck$worker_posteriors, stan_fit=NULL, alphaPosts=NULL, tposts=NULL))
+    }else{
+      return(list(outlying_workers=workerCheck$ban_workers, worker_posteriors = workerCheck$worker_posteriors, stan_fit=fit$fit, alphaPosts=fit$alphaPosts, tposts=fit$tPosts))
+    }
   }else{
-    return(list(outlying_workers=workerCheck$ban_workers, worker_posteriors = workerCheck$worker_posteriors, stan_fit=fit))
+    if(!return_fit){
+      return(list(outlying_workers=workerCheck$ban_workers, worker_posteriors = workerCheck$worker_posteriors, stan_fit=NULL, alphaPosts=NULL, tposts=NULL))
+    }else{
+      return(list(outlying_workers=workerCheck$ban_workers, worker_posteriors = workerCheck$worker_posteriors, stan_fit=fit$fit, alphaPosts=fit$alphaPosts, tposts=NULL))
+    }
   }
 }

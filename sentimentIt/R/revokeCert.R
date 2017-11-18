@@ -21,17 +21,17 @@
 #' @export
 revokeCert <- function(email, password, cert, workers){
  auth_token <- sentimentIt::authenticate(email, password)
- if(!is.character(cert) | nchar(cert)<1){
-    stop("You must input a non-blank certification and one made of characters.")
-  }
-  if(!is.character(workers) | nchar(workers)<1){
-    stop("You must input a non-blank certification and one made of characters.")
-  }
   out <- vector()
-  args <- list(email = email, auth_token = auth_token, certification = cert, workers = list(workers))
+  
+  if(length(workers)==1){
+    args <- list(email = email, auth_token = auth_token, certification = cert, workers = list(workers))
+  }else{
+    args <- list(email = email, auth_token = auth_token, certification = cert, workers = workers)
+  }
   args <- toJSON(args, auto_unbox=TRUE)
   mypost <- POST('https://www.sentimentit.com/api/certifications/revoke.json',
                  body = args, content_type_json(),
                  encode='json')
-  out <- c(out, unlist(fromJSON(rawToChar(as.raw(mypost$content)))))
+  out <- c(out, rawToChar(as.raw(mypost$content)))
+  return(out)
   }

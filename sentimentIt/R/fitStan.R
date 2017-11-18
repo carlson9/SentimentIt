@@ -110,7 +110,7 @@ y[n] ~ bernoulli(inv_logit(b[j[n]]*(a[g[n]]-a[h[n]])));
   if(any(rhats>1.1)) warning('The largest Rhat is ', max(rhats), ', consider increasing the number of iterations.')
   
   
-  alphas = rstan::summary(stan_fit)$summary[grep('a\\[',rownames(rstan::summary(stan_fit)$summary)),]
+  alphas = rstan::summary(fit)$summary[grep('a\\[',rownames(rstan::summary(fit)$summary)),]
   ids = unique(data1$document_id_old[order(data1$document_id_old)])
   alphaPosts = cbind(ids, alphas)
   

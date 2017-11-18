@@ -113,6 +113,20 @@ y[n] ~ bernoulli(inv_logit(b[j[n]]*(a[g[n]]-a[h[n]])));
   fit_hier <- stan(model_code = model_code,
               data=c("y", "g", "h", "N", "M", "P", "j", "D", "k"),
               chains=chains, iter=iter, seed=seed, control=list(max_treedepth=50))
-  return(fit_hier)
+  
+  rhats = rstan::summary(fit_hier)$summary[,'Rhat']
+  if(any(rhats>1.1)) warning('The largest Rhat is ', max(rhats), ', consider increasing the number of iterations.')
+  
+  
+  alphas = rstan::summary(fit_hier)$summary[grep('a\\[',rownames(rstan::summary(fit_hier)$summary)),]
+  ids = unique(data1$document_id_old[order(data1$document_id_old)])
+  alphaPosts = cbind(ids, alphas)
+  
+  ts = rstan::summary(fit_hier)$summary[grep('t\\[',rownames(rstan::summary(fit_hier)$summary)),]
+  hier_ids = unique(hierarchy_data[order(as.numeric(as.factor(as.character(hierarchy_data[,hierarchy_var])))), hierarchy_var])
+  tPosts = cbind(hier_ids, ts)
+  
+  
+  return(list('fit' = fit_hier, 'aplhaPosts' = alphaPosts, 'tPosts' = tPosts))
 }
 
