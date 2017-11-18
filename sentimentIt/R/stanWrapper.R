@@ -24,13 +24,15 @@
     fit <- fitStan(data=data1, chains=chains, iter=iter, seed=seed, n.cores=n.cores)
   }
 
-  outlying <- checkWorkers(stan_fit=fit, data=data1, cut_point=cut_point,
+  workerCheck <- checkWorkers(stan_fit=fit, data=data1, cut_point=cut_point,
                            cut_proportion=cut_proportion, n.questions=n.questions,
                            plot_hist=plot_hist, hist_path=hist_path)
+  outlying = workerCheck$ban_workers
+  worker_df = workerCheck$worker_posteriors
 
   if(!return_fit){
-    return(list(outlying_workers=outlying, stan_fit=NULL))
+    return(list(outlying_workers=workerCheck$ban_workers, worker_posteriors = workerCheck$worker_posteriors, stan_fit=NULL))
   }else{
-    return(list(outlying_workers=outlying, stan_fit=fit))
+    return(list(outlying_workers=workerCheck$ban_workers, worker_posteriors = workerCheck$worker_posteriors, stan_fit=fit))
   }
 }

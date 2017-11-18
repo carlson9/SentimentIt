@@ -50,6 +50,7 @@ fitStan <- function(email=NULL, password=NULL, data, chains=3, iter=2500, seed=1
   requireNamespace('rstan') #bug in rstan - needs explicit call
   rstan_options(auto_write = TRUE)
   options(mc.cores = n.cores)
+  requireNamespace('Rcpp')
 
   if(is.vector(data)){
     data <- readInData(email, password, data)
@@ -104,5 +105,14 @@ y[n] ~ bernoulli(inv_logit(b[j[n]]*(a[g[n]]-a[h[n]])));
 
   fit <- stan(model_code = model_code, data=c("y", "g", "h", "N", "M", "P", "j"),
               chains=chains, iter=iter, seed=seed)
-  return(fit)
+  
+  rhats = rstan::summary(fit)$summary[,'Rhat']
+  if(any(rhats>1.1)) warning('The largest Rhat is ', max(rhats), ', consider increasing the number of iterations.')
+  
+  
+  alphas = rstan::summary(stan_fit)$summary[grep('a\\[',rownames(rstan::summary(stan_fit)$summary)),]
+  ids = unique(data1$document_id_old[order(data1$document_id_old)])
+  alphaPosts = cbind(ids, alphas)
+  
+  return(list('fit'=fit, 'alphaPosts' = alphaPosts))
 }

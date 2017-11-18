@@ -45,7 +45,8 @@ fitStanHier <- function(email=NULL, password=NULL, data, hierarchy_data, hierarc
                         chains=3, iter=2500, seed=1234, n.cores=3){
   requireNamespace('rstan') #bug in rstan - needs explicit call
   rstan_options(auto_write = TRUE)
-    options(mc.cores = n.cores)
+  options(mc.cores = n.cores)
+  requireNamespace('Rcpp')
 
   if(is.vector(data)){
     data <- readInData(email, password, data)
