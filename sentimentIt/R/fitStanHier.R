@@ -39,7 +39,12 @@
 #' @param seed Set seed. (Default is 1234)
 #' @param n.cores Number of cores to be used in stan fit. (Default is 3)
 #'
-#' @return fit_heir The heirarchical Stan fit object
+#' @return fit_hier A list containing the following elements:
+#' \itemize{
+#' \item fit The Stan fit object for the model
+#' \item alphaPosts A matrix with the full posteriors of the lower-level estimates merged with the document IDs from the SentimentIt server
+#' \item tPosts A matrix with the full posteriors of the higher-level estimates merged with the hierarchical identifier
+#' }
 #'
 #' @author David Carlson
 #' 
@@ -51,7 +56,7 @@
 #' fit <- fitStanHier(data = humanRightsOutput, #can alternatively be batch IDs
 #'          hierarchy_data = humanRightsDocs,
 #'          hierarchy_var = 1, # can alternatively be a column name
-#'           iter=7500) # this example requires more iterations
+#'           iter=8500) # this example requires more iterations
 #' }
 #'
 
@@ -139,8 +144,7 @@ y[n] ~ bernoulli(inv_logit(b[j[n]]*(a[g[n]]-a[h[n]])));
   alphaPosts = cbind(ids, alphas)
   
   ts = rstan::summary(fit_hier)$summary[grep('t\\[',rownames(rstan::summary(fit_hier)$summary)),]
-  hier_ids = vector()
-  hier_ids[unique(k)] = unique(hierarchy_data[,hierarchy_var])
+  hier_ids[unique(k)] = as.character(unique(hierarchy_data[,hierarchy_var]))
   tPosts = data.frame(hier_ids, ts, stringsAsFactors=FALSE)
   
   
