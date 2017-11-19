@@ -13,12 +13,17 @@
 #' 
 #' Once you have sent batches of comparisons to Mechanical Turk and retrieved the results, you can estimate the 
 #' reliability of the workers completing each task using a Stan model. For more information on Stan models, refer 
-#' to page 7 of the following paper: https://www.sentimentit.com/SentimentIt.pdf (Carlson + Montgomery). 
+#' to page 7 of the following paper: \url{https://www.sentimentit.com/SentimentIt.pdf} (Carlson + Montgomery). 
 #' 
 #' You can fit either a non-hierarchical or a hierarchical Stan model. To estimate a non-hierarchical Stan model, 
 #' use the `fitStan()` function. To estimate a hierarchical Stan model, use the `fitStanHier()` function.
 #'
 #' Fit a multilevel random utility model using Hamiltonian MCMC in Stan with data retrieved from the SentimentIt platform.
+#' 
+#' The function will remove repeated documents from the hierarchical data, for example paragraphs that are
+#' identical. To deal with repeated documents in order to include them in the hierarchical modeling, see
+#' the replication materials for the Human Rights application found at:
+#' \url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/0ZRGEE}
 #' 
 #' Reference Paper: Carlson, David and Jacob M. Montgomery. Forthcoming. “A Pairwise Comparison Framework for 
 #' Fast, Flexible, and Reliable Human Coding of Political Texts.” American Political Science Review.
@@ -26,8 +31,8 @@
 #'
 #' @param email The researcher's email used for SentimentIt registration. Default is NULL and only needs to be provided if batch numbers are used instead of data.
 #' @param password The researcher's password used for SentimentIt. Default is NULL and only needs to be provided if batch numbers are used instead of data.
-#' @param data A csv file or a vector of batch numbers.
-#' @param hierarchy_data A file that contains the variable that is used as a hierarchy.
+#' @param data A data set or a vector of batch numbers.
+#' @param hierarchy_data A file that contains the variable that is used as a hierarchy, with column ids filled with SentimentIt document IDs (created from \code{readText()}).
 #' @param hierarchy_var A name of the variable in \code{hierarchy_data} that is used as a hierarchy.
 #' @param chains The number of chains. (Default is 3)
 #' @param iter The number of iteration. (Default is 2500)
@@ -37,6 +42,19 @@
 #' @return fit_heir The heirarchical Stan fit object
 #'
 #' @author David Carlson
+#' 
+#' @examples
+#'
+#' \dontrun{
+#' data(humanRightsOutput)
+#' data(humanRightsDocs)
+#' fit <- fitStanHier(data = humanRightsOutput, #can alternatively be batch IDs
+#'          hierarchy_data = humanRightsDocs,
+#'          hierarchy_var = 1, # can alternatively be a column name
+#'           iter=7500) # this example requires more iterations
+#' }
+#'
+
 #'
 #' @seealso \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{makeComps}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}
 #' @rdname fitStanHier
@@ -44,7 +62,7 @@
 fitStanHier <- function(email=NULL, password=NULL, data, hierarchy_data, hierarchy_var,
                         chains=3, iter=2500, seed=1234, n.cores=3){
   requireNamespace('rstan') #bug in rstan - needs explicit call
-  rstan_options(auto_write = TRUE)
+  rstan::rstan_options(auto_write = TRUE)
   options(mc.cores = n.cores)
   requireNamespace('Rcpp')
 
@@ -57,10 +75,8 @@ fitStanHier <- function(email=NULL, password=NULL, data, hierarchy_data, hierarc
   if(dim(data1)[2] != 7){
     stop("data dimension is incorrect")
   }
-
-  if(!(hierarchy_var %in% colnames(hierarchy_data))){
-    stop("hierarchy_var should be a name of a column in hierarchy_data")
-  }
+  
+  hierarchy_data = hierarchy_data[!duplicated(hierarchy_data$ids),]
 
   y <- data1$result[seq(1, dim(data1)[1], by=2)]
   data1$document_id_old <- data1$document_id
@@ -110,7 +126,7 @@ y[n] ~ bernoulli(inv_logit(b[j[n]]*(a[g[n]]-a[h[n]])));
 }
 }'
 
-  fit_hier <- stan(model_code = model_code,
+  fit_hier <- rstan::stan(model_code = model_code,
               data=c("y", "g", "h", "N", "M", "P", "j", "D", "k"),
               chains=chains, iter=iter, seed=seed, control=list(max_treedepth=50))
   
@@ -123,10 +139,11 @@ y[n] ~ bernoulli(inv_logit(b[j[n]]*(a[g[n]]-a[h[n]])));
   alphaPosts = cbind(ids, alphas)
   
   ts = rstan::summary(fit_hier)$summary[grep('t\\[',rownames(rstan::summary(fit_hier)$summary)),]
-  hier_ids = unique(hierarchy_data[order(as.numeric(as.factor(as.character(hierarchy_data[,hierarchy_var])))), hierarchy_var])
-  tPosts = cbind(hier_ids, ts)
+  hier_ids = vector()
+  hier_ids[unique(k)] = unique(hierarchy_data[,hierarchy_var])
+  tPosts = data.frame(hier_ids, ts, stringsAsFactors=FALSE)
   
   
-  return(list('fit' = fit_hier, 'aplhaPosts' = alphaPosts, 'tPosts' = tPosts))
+  return(list('fit' = fit_hier, 'alphaPosts' = alphaPosts, 'tPosts' = tPosts))
 }
 

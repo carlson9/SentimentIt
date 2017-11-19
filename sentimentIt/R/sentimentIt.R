@@ -23,7 +23,7 @@
 #' @param mintime This is the earliest time in the day, in 24 hour time, to post batches. Default is 8. This is based on system time and therefore timezones ought be considered.
 #' @param maxtime This is the latest time in the day, in 24 hour time, to post batches. Default is 22
 #' @param rate Time, in hours, to wait to check if a batch is (near) completed. Only needed if not posting based on time. Default is 1/3.
-#'@param threshold When posting batches based on completion status, this is the number of comparisons remaining at which point the batch can be considered (near) complete. Default is 5. This threshold is ignored after 4 hours, and the next batch is posted.
+#' @param threshold When posting batches based on completion status, this is the number of comparisons remaining at which point the batch can be considered (near) complete. Default is 5. This threshold is ignored after 4 hours, and the next batch is posted.
 #' @param check_workers_at This is a vector of how often to check workers, e.g. \code{c(1,3)} would be after the first and third batch. Default is NULL and workers are not checked.
 #' @param cut_point A cutoff point to classify posterior worker estimates. The proportion of posterior draws below \code{cut_point} is used to determine outliers. (Default is 1)
 #' @param cut_proportion A cutoff proportion of posterior draws of worker estimates below \code{cut_point}. If the proportion of posterior coefficients below \code{cut_points} is higher than \code{cut_proportion}, a worker will be considered an outlier if answering more than the number of questions in \code{n.questions}. (Default is 0.9)

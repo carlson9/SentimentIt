@@ -26,20 +26,25 @@
 #'
 #' @param email The researcher's email used for SentimentIt registration. Default is NULL and only needs to be provided if batch numbers are used instead of data.
 #' @param password The researcher's password used for SentimentIt. Default is NULL and only needs to be provided if batch numbers are used instead of data.
-#' @param data A csv file or a vector of batch numbers.
+#' @param data A data set or a vector of batch numbers.
 #' @param chains The number of chains. (Default is 3)
 #' @param iter The number of iteration. (Default is 2500)
 #' @param seed Set seed. (Defalt is 1234)
 #' @param n.cores Number of cores to be used in stan fit. (Default is 3)
 #'
-#' @return fit Stan fit object
+#' @return fit A list containing the following elements:
+#' \itemize{
+#' \item fit The Stan fit object for the model
+#' \item alphaPosts A matrix with the full posteriors of the document estimates merged with the document IDs (first column) from the SentimentIt server
+#' }
 #'
 #' @author David Carlson
 #'
 #' @examples
 #'
 #' \dontrun{
-#' fit <- fitStan(data = batch_ids)
+#' data(movieReviewOutput)
+#' fit <- fitStan(data = movieReviewOutput) #can alternatively be batch IDs
 #' fit <- fitStan(data = output)
 #' }
 #'
@@ -48,7 +53,7 @@
 #' @export
 fitStan <- function(email=NULL, password=NULL, data, chains=3, iter=2500, seed=1234, n.cores=3){
   requireNamespace('rstan') #bug in rstan - needs explicit call
-  rstan_options(auto_write = TRUE)
+  rstan::rstan_options(auto_write = TRUE)
   options(mc.cores = n.cores)
   requireNamespace('Rcpp')
 
@@ -103,7 +108,7 @@ y[n] ~ bernoulli(inv_logit(b[j[n]]*(a[g[n]]-a[h[n]])));
 }
 }'
 
-  fit <- stan(model_code = model_code, data=c("y", "g", "h", "N", "M", "P", "j"),
+  fit <- rstan::stan(model_code = model_code, data=c("y", "g", "h", "N", "M", "P", "j"),
               chains=chains, iter=iter, seed=seed)
   
   rhats = rstan::summary(fit)$summary[,'Rhat']
