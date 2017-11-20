@@ -12,7 +12,7 @@ fitStan(email = NULL, password = NULL, data, chains = 3, iter = 2500,
 
 \item{password}{The researcher's password used for SentimentIt. Default is NULL and only needs to be provided if batch numbers are used instead of data.}
 
-\item{data}{A csv file or a vector of batch numbers.}
+\item{data}{A data set or a vector of batch numbers.}
 
 \item{chains}{The number of chains. (Default is 3)}
 
@@ -23,7 +23,11 @@ fitStan(email = NULL, password = NULL, data, chains = 3, iter = 2500,
 \item{n.cores}{Number of cores to be used in stan fit. (Default is 3)}
 }
 \value{
-fit Stan fit object
+fit A list containing the following elements:
+\itemize{
+\item fit The Stan fit object for the model
+\item alphaPosts A matrix with the full posteriors of the document estimates merged with the document IDs from the SentimentIt server
+}
 }
 \description{
 Fit a Stan model with results from SentimentIt
@@ -53,7 +57,8 @@ Fast, Flexible, and Reliable Human Coding of Political Texts.” American Politi
 \examples{
 
 \dontrun{
-fit <- fitStan(data = batch_ids)
+data(movieReviewOutput)
+fit <- fitStan(data = movieReviewOutput) #can alternatively be batch IDs
 fit <- fitStan(data = output)
 }
 

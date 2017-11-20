@@ -103,7 +103,7 @@ sentimentIt(email, password, read_documents_from, write_documents_to = NULL,
 \item{...}{Additional arguments passed to either scan() or read.table() depending on type of data used}
 }
 \value{
-sentimentItOut A list with the requested information returned. The data with document IDs will always be returned, regardless if saved elsewhere.
+sentimentItOut A list with the requested information returned. The data with document IDs, merged with document estimates and hierarchical estimates if applicable, will always be returned, regardless if saved elsewhere.
 }
 \description{
 The sentimentIt package interacts with the SentimentIt API to analyze text and capture latent traits of interest.

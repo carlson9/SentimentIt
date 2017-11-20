@@ -35,7 +35,7 @@
 #' @return fit A list containing the following elements:
 #' \itemize{
 #' \item fit The Stan fit object for the model
-#' \item alphaPosts A matrix with the full posteriors of the document estimates merged with the document IDs (first column) from the SentimentIt server
+#' \item alphaPosts A matrix with the full posteriors of the document estimates merged with the document IDs from the SentimentIt server
 #' }
 #'
 #' @author David Carlson

@@ -44,7 +44,7 @@
 #' @param wait_to_repost Amount of time in hours to wait to repost expired tasks after all batches have been posted. Default is 2 hours. This this should be at least as long as the duration of the tasks set in the GUI, as only those tasks that have not been completed by this time are considered expired. This is also the time that the system will wait after reposting to download the complete data if any are expired.
 #' @param ... Additional arguments passed to either scan() or read.table() depending on type of data used
 #'
-#' @return sentimentItOut A list with the requested information returned. The data with document IDs will always be returned, regardless if saved elsewhere.
+#' @return sentimentItOut A list with the requested information returned. The data with document IDs, merged with document estimates and hierarchical estimates if applicable, will always be returned, regardless if saved elsewhere.
 #'
 #' @examples
 #'

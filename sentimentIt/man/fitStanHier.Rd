@@ -12,9 +12,9 @@ fitStanHier(email = NULL, password = NULL, data, hierarchy_data,
 
 \item{password}{The researcher's password used for SentimentIt. Default is NULL and only needs to be provided if batch numbers are used instead of data.}
 
-\item{data}{A csv file or a vector of batch numbers.}
+\item{data}{A data set or a vector of batch numbers.}
 
-\item{hierarchy_data}{A file that contains the variable that is used as a hierarchy.}
+\item{hierarchy_data}{A file that contains the variable that is used as a hierarchy, with column ids filled with SentimentIt document IDs (created from \code{readText()}).}
 
 \item{hierarchy_var}{A name of the variable in \code{hierarchy_data} that is used as a hierarchy.}
 
@@ -27,7 +27,12 @@ fitStanHier(email = NULL, password = NULL, data, hierarchy_data,
 \item{n.cores}{Number of cores to be used in stan fit. (Default is 3)}
 }
 \value{
-fit_heir The heirarchical Stan fit object
+fit_hier A list containing the following elements:
+\itemize{
+\item fit The Stan fit object for the model
+\item alphaPosts A matrix with the full posteriors of the lower-level estimates merged with the document IDs from the SentimentIt server
+\item tPosts A matrix with the full posteriors of the higher-level estimates merged with the hierarchical identifier
+}
 }
 \description{
 Fit a Stan hierarchical model with results from SentimentIt
@@ -44,15 +49,33 @@ model.
 
 Once you have sent batches of comparisons to Mechanical Turk and retrieved the results, you can estimate the 
 reliability of the workers completing each task using a Stan model. For more information on Stan models, refer 
-to page 7 of the following paper: https://www.sentimentit.com/SentimentIt.pdf (Carlson + Montgomery). 
+to page 7 of the following paper: \url{https://www.sentimentit.com/SentimentIt.pdf} (Carlson + Montgomery). 
 
 You can fit either a non-hierarchical or a hierarchical Stan model. To estimate a non-hierarchical Stan model, 
 use the `fitStan()` function. To estimate a hierarchical Stan model, use the `fitStanHier()` function.
 
 Fit a multilevel random utility model using Hamiltonian MCMC in Stan with data retrieved from the SentimentIt platform.
 
+The function will remove repeated documents from the hierarchical data, for example paragraphs that are
+identical. To deal with repeated documents in order to include them in the hierarchical modeling, see
+the replication materials for the Human Rights application found at:
+\url{https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/0ZRGEE}
+
 Reference Paper: Carlson, David and Jacob M. Montgomery. Forthcoming. “A Pairwise Comparison Framework for 
 Fast, Flexible, and Reliable Human Coding of Political Texts.” American Political Science Review.
+}
+\examples{
+
+\dontrun{
+data(humanRightsOutput)
+data(humanRightsDocs)
+fit <- fitStanHier(data = humanRightsOutput, #can alternatively be batch IDs
+         hierarchy_data = humanRightsDocs,
+         hierarchy_var = 1, # can alternatively be a column name
+          iter=8500) # this example requires more iterations
+}
+
+
 }
 \seealso{
 \code{\link{sentimentIt}} \code{\link{authenticate}} \code{\link{batchStatus}} \code{\link{checkCert}} \code{\link{checkWorkers}} \code{\link{createBatches}} \code{\link{createCert}} \code{\link{createPairwise}} \code{\link{createTasks}} \code{\link{fitStan}} \code{\link{makeComps}} \code{\link{readInData}} \code{\link{readText}} \code{\link{repostExpired}} \code{\link{reviews}} \code{\link{revokeCert}} \code{\link{signout}}
