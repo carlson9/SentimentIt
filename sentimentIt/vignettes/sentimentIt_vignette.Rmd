@@ -34,6 +34,7 @@ Once the five steps of the SentimentIt manual are completed, install the Sentime
 install.packages("SentimentIt")
 
 #or if the package is already installed
+
 library("SentimentIt")
 ```
 
@@ -56,6 +57,7 @@ load("/Users/johndoe/Desktop/reviews.rda") #data is stored in R workspace as "re
 #assign an object name to the function so the data with IDs will be stored in your R workspace 
 #in addition to being exported to your desired filepath. In this case, I have assigned the 
 #output the name "reviews_with_ids"
+
 reviews_with_ids <- readText(email = "johndoe@school.edu", password = "12345",
          read_documents_from = reviews,
          write_documents_to = "/Users/johndoe/Desktop/reviews_with_ids.csv",
@@ -85,7 +87,7 @@ reviews_with_ids <- readText(email = "johndoe@school.edu", password = "12345",
 Generate batches to store pairwise comparisons in
 ------
 
-At this point, the data with unique IDs should be stored both in your R workspace and in the filepath you specified in `readText()`. The next step is to create unique batch ID numbers. Each batch ID number will be associated with a "batch", which contains a portion of all comparisons to be sent to Mechanical Turk. Instead of sending all comparisons to Mechanical Turk at once, you can decide to release each batch at your discretion. 
+At this point, the data with unique IDs should be stored both in your R workspace and in the filepath you specified in `readText()`. The next step is to create unique batch ID numbers. Each batch ID number will be associated with a "batch", which contains a portion of all comparisons to be sent to Mechanical Turk. Instead of sending all comparisons to Mechanical Turk at once, you can decide to release each batch at your discretion.
 
 To create unique batch ID numbers, use the `createBatches()` function. Before using this function, you should have set up HIT settings on the SentimentIt website. You will need to provide the ID number of the specific HIT settings you would like to use for the comparisons. If you have not set up any HIT settings by this point, refer to the following documentation: https://www.sentimentit.com/documentation/running_analysis#step3. 
 
@@ -191,7 +193,7 @@ Read in data for completed comparisons from SentimentIt
 
 Once you have sent the batches to Mechanical Turk using `createTasks()` and allowed some time for comparisons to be completed, you can retrieve data on the batches you sent. To retrieve this data, use the `readInData()` function. 
 
-You must specify a batch ID to the function, and the function will return a data frame containing the batch ID, comparison ID, document ID, result of the comparison, ID of the task, ID of the worker who completed the task, and the time when the task was completed. This function may take some time to run because the server has 
+You must specify a batch ID to the function, and the function will return a data frame containing the batch ID, comparison ID, document ID, result of the comparison, ID of the task, ID of the worker who completed the task, and the time when the task was completed. This function may take a long time to run because the server must first pull the data from a generated URL, and then pass it to the user.
 
 ```{r, eval = FALSE}
 
@@ -233,13 +235,19 @@ Estimate Stan model for worker reliability
 
 Once you have sent batches of comparisons to Mechanical Turk and retrieved the results, you can estimate the reliability of the workers completing each task using a Stan model. For more information on Stan models, refer to page 7 of the following paper: https://www.sentimentit.com/SentimentIt.pdf (Carlson + Montgomery).
 
-You can fit either a non-hierarchical or a hierarchical Stan model. To estimate a non-hierarchical Stan model, use the `fitStan()` function. To estimate a hierarchical Stan model, use the `fitStanHier()` function.
+You can fit either a non-hierarchical or a hierarchical Stan model. To estimate a non-hierarchical Stan model, use the `fitStan()` function. To estimate a hierarchical Stan model, use the `fitStanHier()` function. For the `data` parameter, you can input the batch IDs for the batches you would like to include, which requires you to include your SentimentIt email and password. Alternately, if you have already pulled in data from a batch using the `readInData()` function, you can input this data for the `data` parameter, in which case you don't need to include `email` or `password`. Examples are shown below.
+
+To use the `fitStan()` function, you must have a C++ compiler on your machine. If you receive an error in the `fitStan()` function, refer to the following link to ensure you have properly installed RStan on your machine: https://github.com/stan-dev/rstan/wiki/RStan-Mac-OS-X-Prerequisite-Installation-Instructions#step-2--install-c-toolchain. 
 
 ```{r, eval = FALSE}
 
-#fitting a non-hierarchical Stan model
-stan_model <- fitStan(data = batch_ids)
-#you can use either the batch ID numbers or the output from readInData()
+#fitting a non-hierarchical Stan model using batch ID numbers
+
+stan_model <- fitStan(email = "johndoe@school.edu", password = "12345",
+                      data = batch_ids)
+
+#alternately, you can use the output from readInData()
+
 stan_model2 <- fitStan(data = comp_output)
 ```
 
@@ -263,16 +271,16 @@ stan_model2 <- fitStan(data = comp_output)
 Use Stan model to assess worker reliability
 ------
 
-Once you have estimated a Stan model, you can use this to identify workers who are unreliable. You can use the output from the Stan model, as well as the output from the completed comparisons, to identify unreliable workers.
+Once you have used the `fitStan()` function to estimate a Stan model, you can use this model to identify workers who are unreliable. The output from the Stan model, as well as the output from the completed comparisons, is required to identify unreliable workers.
 
 Use the `checkWorkers()` function to detect these outlying workers. This function returns a vector of IDs identifying workers who are unreliable. 
 
 ```{r, eval = FALSE}
 
-ban_workers <- checkWorkers(stan_fit = stan_model, data = output) 
+ban_workers <- checkWorkers(stan_fit = stan_model[[1]], data = comp_output)
 ```
 
-`fitStan()` accepts the following arguments:
+`checkWorkers()` accepts the following arguments:
 
 -   `stan_fit`: A Stan model fit.
 
