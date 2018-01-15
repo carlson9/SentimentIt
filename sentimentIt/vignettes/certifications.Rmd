@@ -23,18 +23,89 @@ Second, we designed the task structure to be cognitively appropriate for non-exp
 
 When running an analysis, certifications can be used to control which workers are allowed to access your tasks. These certifications allow you to ensure that all workers have passed a training module, and no workers that you have determined delivery poor quality work are allowed to continue responding to your task. Additional certification documentation can be found here: https://www.sentimentit.com/documentation/certifications.markdown.
 
+To check if a worker has a particular certification, use the `checkCert()` function. To use this function, you must know the name of the certification you would like to check for as well as the Mechanical Turk ID for the worker of interest.
 
+### Syntax
 
+```{r, eval = FALSE}
 
+checkCert(email = "johndoe@school.edu", password = "12345",
+          cert = "reviews", worker = "A115UFR6VA6OM1")
 
+```
 
+### Inputs
 
+`checkCert()` accepts the following arguments:
 
+-   `email`: Character vector, the email address for the registered SentimentIt account.
 
+-   `password`: Character vector, the password associated with `email`.
 
+-   `cert`: The name of the certification to be checked.
 
+-   `worker`: The Mechanical Turk ID of the worker for whom the certification will be checked.
 
+### Output
 
+The `checkCert()` function outputs a logical vector, with `TRUE` indicating the specified worker does have the certification of interest, and `FALSE` indicating the worker does not have the certification.
+<br>
+<br>
 
+## createCert
 
+The `createCert()` function can be used to assign a certification to workers. If you attempt to assign a non-exist certification to a worker, this function will create the certification before assigning it. You can require workers to possess a particular certification to work on tasks you send to Mechanical Turk.
 
+### Syntax
+
+```{r, eval = FALSE}
+
+createCert(email = "johndoe@school.edu", password = "12345",
+          cert = "reviews", worker = "A115UFR6VA6OM1")
+
+```
+
+### Inputs
+
+`createCert()` accepts the following arguments:
+
+-   `email`: Character vector, the email address for the registered SentimentIt account.
+
+-   `password`: Character vector, the password associated with `email`.
+
+-   `cert`: The name of the certification to be assigned to the worker.
+
+-   `worker`: The Mechanical Turk ID of the worker to whom the certification will be assigned.
+
+### Output
+
+The `createCert()` function outputs a character vector indicating how many workers were successfully certified and how many certifications were unsuccessful.
+
+## revokeCert
+
+The `revokeCert()` function can be used to revoke a certification from workers. By revoking the certification of workers, you can prevent these workers from completing your Mechanical Turk tasks that require these certifications.
+
+### Syntax
+
+```{r, eval = FALSE}
+
+revokeCert(email = "johndoe@school.edu", password = "12345",
+          cert = "reviews", worker = "A115UFR6VA6OM1")
+
+```
+
+### Inputs 
+
+`revokeCert()` accepts the following arguments:
+
+-   `email`: Character vector, the email address for the registered SentimentIt account.
+
+-   `password`: Character vector, the password associated with `email`.
+
+-   `cert`: The name of the certification to be revoked from the workers.
+
+-   `worker`: The Mechanical Turk ID of the workers from whom the certification will be revoked.
+
+### Output
+
+The `revokeCert()` function outputs a character vector indicating how many certifications were successfully revoked from workers and how many revocations were unsuccessful.
