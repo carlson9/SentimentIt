@@ -1,7 +1,18 @@
 #' Grants certifications to workers
 #'
-#' This function will grant a certification to a worker, and if the certification does not exist it will be created.
-#'
+#' @details 
+#' 
+#' When running an analysis, certifications can be used to control which workers are allowed to access your 
+#' tasks. These certifications allow you to ensure that all workers have passed a training module, and no 
+#' workers that you have determined delivery poor quality work are allowed to continue responding to your 
+#' task. Additional certification documentation can be found here: 
+#' https://www.sentimentit.com/documentation/certifications.markdown.
+#' 
+#' The createCert() function can be used to assign a certification to workers. If you attempt to assign a 
+#' non-exist certification to a worker, this function will create the certification before assigning it. 
+#' You can require workers to possess a particular certification to work on tasks you send to Mechanical Turk.
+#' 
+#' 
 #' @param email The researcher's email used for SentimentIt registration
 #' @param password The researcher's password used for SentimentIt 
 #' @param cert The name of the certification given to the workers.

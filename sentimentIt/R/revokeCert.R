@@ -1,7 +1,18 @@
 #' Revoke a certification for workers
+#' 
+#' @details
 #'
-#' This function simply removes workers from the list of approved workers and they will no longer be able to perform the tasks requiring the certification.
-#'
+#' When running an analysis, certifications can be used to control which workers are allowed to access your 
+#' tasks. These certifications allow you to ensure that all workers have passed a training module, and no 
+#' workers that you have determined delivery poor quality work are allowed to continue responding to your 
+#' task. Additional certification documentation can be found here: 
+#' https://www.sentimentit.com/documentation/certifications.markdown.
+#' 
+#' The revokeCert() function can be used to revoke a certification from workers. By revoking the certification 
+#' of workers, you can prevent these workers from completing your Mechanical Turk tasks that require these 
+#' certifications.
+#' 
+#' 
 #' @param email The researcher's email used for SentimentIt registration
 #' @param password The researcher's password used for SentimentIt 
 #' @param cert The name of the certification given to the workers.
