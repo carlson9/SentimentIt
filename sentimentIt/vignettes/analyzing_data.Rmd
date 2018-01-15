@@ -1,0 +1,100 @@
+---
+title: "SentimentIt: Analyzing data from Mechanical Turk"
+author: ""
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{sentimentIt vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Background
+
+This is a tutorial on how to use the SentimentIt R package. SentimentIt provides a pairwise comparison framework for fast, flexible, and reliable human coding of political texts. The tutorial is broken up into three separate vignettes: one explaining how to send comparisons to Mechanical Turk and retrieve data, a second explaining how to perform analysis on retrieved data, and a third explaining how to use this analysis to identify and ban poorly performing workers in Mechanical Turk. This is the second of the three tutorials.
+
+The system we designed, which we label SentimentIt, is based on the following principles. First, it leverages human ability to understand language and socially constructed political concepts. Thus, our focus is measuring researcher-defined characteristics embedded within text (e.g., positivity). However, we exclude explicitly subjective characteristics (e.g., persuasiveness).
+
+Second, we designed the task structure to be cognitively appropriate for non-experts. Specifically, we ask workers to conduct pairwise comparisons of texts, simply indicating which text is more extreme along a single dimension of interest (e.g., “Which text is more positive?”). A significant body of research indicates that pairwise comparisons can reduce the cognitive burden for respondents, improve the reliability of responses, and eliminate problems such as differential item functioning and reference group effects that plague alternative question formats such as Likert scales or sliders (e.g., King et al. 2004; Oishi et al. 2005).
+<br>
+<br>
+
+## fitStan
+
+Once you have sent batches of comparisons to Mechanical Turk and retrieved the results, you can obtain document-level estimates of the dimension of interest and also estimate the reliability of the workers completing each task using a Stan model. For more information on Stan models, refer to page 7 of the following paper: https://www.sentimentit.com/SentimentIt.pdf (Carlson + Montgomery).
+
+You can fit either a non-hierarchical or a hierarchical Stan model. To estimate a non-hierarchical Stan model, use the `fitStan()` function. To estimate a hierarchical Stan model, use the `fitStanHier()` function. For the `data` parameter, you can input the batch IDs for the batches you would like to include, which requires you to include your SentimentIt email and password. Alternately, if you have already pulled in data from a batch using the `readInData()` function, you can input this data for the `data` parameter, in which case you don't need to include `email` or `password`. Examples are shown below.
+
+To use the `fitStan()` function, you must have a C++ compiler on your machine. If you receive an error in the `fitStan()` function, refer to the following link to ensure you have properly installed RStan on your machine: https://github.com/stan-dev/rstan/wiki/RStan-Mac-OS-X-Prerequisite-Installation-Instructions#step-2--install-c-toolchain. 
+
+### Syntax
+
+```{r, eval = FALSE}
+
+#fitting a non-hierarchical Stan model using batch ID numbers
+
+stan_model <- fitStan(email = "johndoe@school.edu", password = "12345",
+                      data = batch_ids)
+
+#alternately, you can use the output from readInData()
+
+stan_model2 <- fitStan(data = comp_output)
+```
+
+### Inputs
+
+`fitStan()` accepts the following arguments:
+
+-   `email`: Character vector, the email address for the registered SentimentIt account.
+
+-   `password`: Character vector, the password associated with `email`.
+
+-   `data`: Numeric vector containing the batch IDs for the comparisons to be used in the model. Can also be a data frame containing the output from the `readInData()` function.
+
+-   `chains`: Integer, the number of chains. (Default is 3).
+
+-   `iter`: Numeric vector, the number of iteration. (Default is 2500).
+
+-   `seed`: Set seed. (Defalt is 1234).
+
+-   `n.cores`: Integer vector, the number of cores to be used in Stan fit (Default is 3).
+
+### Output
+
+The `fitStan()` function outputs a list containing two items: 1) an object of class "stanfit" and 2) a matrix.
+<br>
+<br>
+
+## checkWorkers
+
+Once you have used the `fitStan()` function to estimate a Stan model, you can use this model to identify workers who are unreliable. The output from the Stan model, as well as the output from the completed comparisons, is required to identify unreliable workers.
+
+Use the `checkWorkers()` function to detect these outlying workers. This function returns a vector of IDs identifying workers who are unreliable. 
+
+```{r, eval = FALSE}
+
+ban_workers <- checkWorkers(stan_fit = stan_model[[1]], data = comp_output)
+```
+
+`checkWorkers()` accepts the following arguments:
+
+-   `stan_fit`: A Stan model fit.
+
+-   `data`: The data used to fit the Stan model.
+
+-   `cut_point`: A cutoff point to classify posterior coefficients. The proportion of posterior coefficients below `cut_point` is used to determine outliers (Default is 1).
+
+-   `cut_proportion`: A cutoff proportion of posterior coefficients below `cut_point`. If the proportion of posterior coefficients below `cut_points` is higher than `cut_proportion`, a worker will be considered as an outlier provided that she answers more than the number of questions in `n.questions` (Default is 0.9).
+
+-   `n.questions`: The number of questions to consider in order to determine suggested banned workers (Default is 50).
+
+-   `plot_hist`: If TRUE, plot the histogram of workers with a rug plot. Default is FALSE.
+
+-   `hist_path`: Save the histogram to path and file name specified. Default is NULL and no plot is saved.
+
+The `checkWorkers()` function outputs a list containing two items: 1) a character vector and 2) a matrix.
+
+Reference Paper
+------
+
+Carlson, David and Jacob M. Montgomery. Forthcoming. “A Pairwise Comparison Framework for Fast, Flexible, and Reliable Human Coding of Political Texts.” American Political Science Review.

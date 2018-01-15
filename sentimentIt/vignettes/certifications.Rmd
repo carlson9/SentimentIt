@@ -1,0 +1,40 @@
+---
+title: "SentimentIt: Using Data Analysis to Check Worker Performance"
+author: ""
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{sentimentIt vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Background
+
+This is a tutorial on how to use the SentimentIt R package. SentimentIt provides a pairwise comparison framework for fast, flexible, and reliable human coding of political texts. The tutorial is broken up into three separate vignettes: one explaining how to send comparisons to Mechanical Turk and retrieve data, a second explaining how to perform analysis on retrieved data, and a third explaining how to use this analysis to identify and ban poorly performing workers in Mechanical Turk. This is the third of the three tutorials.
+
+The system we designed, which we label SentimentIt, is based on the following principles. First, it leverages human ability to understand language and socially constructed political concepts. Thus, our focus is measuring researcher-defined characteristics embedded within text (e.g., positivity). However, we exclude explicitly subjective characteristics (e.g., persuasiveness).
+
+Second, we designed the task structure to be cognitively appropriate for non-experts. Specifically, we ask workers to conduct pairwise comparisons of texts, simply indicating which text is more extreme along a single dimension of interest (e.g., “Which text is more positive?”). A significant body of research indicates that pairwise comparisons can reduce the cognitive burden for respondents, improve the reliability of responses, and eliminate problems such as differential item functioning and reference group effects that plague alternative question formats such as Likert scales or sliders (e.g., King et al. 2004; Oishi et al. 2005).
+<br>
+<br>
+
+## checkCert
+
+When running an analysis, certifications can be used to control which workers are allowed to access your tasks. These certifications allow you to ensure that all workers have passed a training module, and no workers that you have determined delivery poor quality work are allowed to continue responding to your task. Additional certification documentation can be found here: https://www.sentimentit.com/documentation/certifications.markdown.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

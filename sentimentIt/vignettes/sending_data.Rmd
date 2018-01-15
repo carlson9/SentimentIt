@@ -1,5 +1,5 @@
 ---
-title: "SentimentIt"
+title: "SentimentIt: Sending data to Mechanical Turk"
 author: ""
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -9,21 +9,23 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-## Background
+# Background
 
-This is a tutorial on how to use the SentimentIt R package. SentimentIt provides a pairwise comparison framework for fast, flexible, and reliable human coding of political texts.
+This is a tutorial on how to use the SentimentIt R package. SentimentIt provides a pairwise comparison framework for fast, flexible, and reliable human coding of political texts. The tutorial is broken up into three separate vignettes: one explaining how to send comparisons to Mechanical Turk and retrieve data, a second explaining how to perform analysis on retrieved data, and a third explaining how to use this analysis to identify and ban poorly performing workers in Mechanical Turk. This is the first of the three tutorials.
 
 The system we designed, which we label SentimentIt, is based on the following principles. First, it leverages human ability to understand language and socially constructed political concepts. Thus, our focus is measuring researcher-defined characteristics embedded within text (e.g., positivity). However, we exclude explicitly subjective characteristics (e.g., persuasiveness).
 
 Second, we designed the task structure to be cognitively appropriate for non-experts. Specifically, we ask workers to conduct pairwise comparisons of texts, simply indicating which text is more extreme along a single dimension of interest (e.g., “Which text is more positive?”). A significant body of research indicates that pairwise comparisons can reduce the cognitive burden for respondents, improve the reliability of responses, and eliminate problems such as differential item functioning and reference group effects that plague alternative question formats such as Likert scales or sliders (e.g., King et al. 2004; Oishi et al. 2005).
+<br>
+<br>
 
-
-## Create the necessary accounts
+# Create the necessary accounts
 
 Before interacting with the package in R, go to the following link: https://www.sentimentit.com/documentation/getting_started. The manual attached to the link explains how to create the necessary accounts with Amazon and SentimentIt so you can interact with Mechanical Turk. A SentimentIt account MUST be created before the SentimentIt R package can be used. 
+<br>
+<br>
 
-
-## Install/load the SentimentIt R package
+# Install/load the SentimentIt R package
 
 Once the five steps of the SentimentIt manual are completed, install the SentimentIt package in R using the following command:
 
@@ -34,9 +36,10 @@ install.packages("SentimentIt")
 
 library("SentimentIt")
 ```
+<br>
+<br>
 
-
-## Assign ID numbers to data objects
+# readText
 
 Once the package is installed, you need to prepare your data for the pairwise comparisons. The first step is to assign unique ID numbers to each object of comparison using the `readText()` function. 
 
@@ -45,6 +48,8 @@ The `readText()` function will take the data as an input, import it into the Sen
 Your data should contain the set of objects on which you want to perform pairwise comparisons. It may contain other data as well, but you will need to specify which column contains the data to be used in the pairwise comparisons. The best practice for running this function is to first import your data into your R workspace before running the function.
 
 The following example uses a sample dataset, "reviews.rda", to show how to use the `readText()` function to assign unique ID numbers
+
+### Syntax
 
 ```{r, eval = FALSE}
 #data 
@@ -59,6 +64,8 @@ reviews_with_ids <- readText(email = "johndoe@school.edu", password = "12345",
          write_documents_to = "/Users/johndoe/Desktop/reviews_with_ids.csv",
          index = "Review") #"Review" is the column name for the data I want to use in the comparison
 ```
+
+### Inputs
 
 `readText()` accepts the following arguments:
 
@@ -80,19 +87,27 @@ reviews_with_ids <- readText(email = "johndoe@school.edu", password = "12345",
 
 -   `...`: Additional arguments passed to either `scan()` (https://stat.ethz.ch/R-manual/R-devel/library/base/html/scan.html) or `read.table()` (https://stat.ethz.ch/R-manual/R-devel/library/utils/html/read.table.html) depending on type of data used.
 
-The `readText()` function outputs a data frame identical to the data frame passed to `read_documents_from`, except the new data frame should include an additional column containing a unique ID number for each comparison item.
+### Output
 
-## Generate batches in which to store pairwise comparisons
+The `readText()` function outputs a data frame identical to the data frame passed to `read_documents_from`, except the new data frame should include an additional column containing a unique ID number for each comparison item.
+<br>
+<br>
+
+# createBatches
 
 At this point, the data with unique IDs should be stored both in your R workspace and in the filepath you specified in `readText()`. The next step is to create unique batch ID numbers. Each batch ID number will be associated with a "batch", which contains a portion of all comparisons to be sent to Mechanical Turk. Instead of sending all comparisons to Mechanical Turk at once, you can decide to release each batch at your discretion.
 
-To create unique batch ID numbers, use the `createBatches()` function. Before using this function, you should have set up HIT settings on the SentimentIt website. You will need to provide the ID number of the specific HIT settings you would like to use for the comparisons. If you have not set up any HIT settings by this point, refer to the following documentation: https://www.sentimentit.com/documentation/running_analysis#step3. 
+To create unique batch ID numbers, use the `createBatches()` function. Before using this function, you should have set up HIT settings on the SentimentIt website. You will need to provide the ID number of the specific HIT settings you would like to use for the comparisons. If you have not set up any HIT settings by this point, refer to the following documentation: https://www.sentimentit.com/documentation/running_analysis#step3.
+
+### Syntax
 
 ```{r, eval = FALSE}
 
 batch_ids <- createBatches(email = "johndoe@school.edu", password = "12345",
               task_setting_id = 28, num_batches = 3)
 ```
+
+### Inputs
 
 `createBatches()` accepts the following arguments:
 
@@ -104,20 +119,27 @@ batch_ids <- createBatches(email = "johndoe@school.edu", password = "12345",
 
 -   `num_batches`: Integer vector, the number of separate batches in which you would like to send the comparisons to Mechanical Turk. Default to 1.
 
+### Output
+
 The `createBatches()` function outputs an integer vector of length equal to `num_batches`. These integers are the unique ID numbers for the batches.
+<br>
+<br>
 
-
-## Fill batches with comparisons
+# makeComps
 
 At this point, you should have run both the `readText()` and `createBatches()` functions and you should have data with unique IDs. You should also have as many unique batch IDs as the number of batches you would like to use to send out the comparisons. The next step is to fill these batches with random pairings of your data objects. Each batch you send to Mechanical Turk will contain these random pairings and MTurk workers will compare some latent trait between the paired objects.
 
 To generate these random pairings, run the `makeComps()` function, which will generate random pairings of your data objects and distribute them evenly among the number of batches you specify. Before running this function, you should have your unique batch ID numbers stored in your R workspace. You should also determine what characteristic you want to measure in the texts. This should be specified as a character vector in the `question` input to the function.
 
 The screenshot below displays an example of the interface Mechanical Turk workers will interact with when completing a task. The title corresponds to the `question` parameter and the two texts underneath come from a pairwise comparison generated in the `makeComps()` function.
-
+<br>
+<br>
 ![**Example of Mechanical Turk HIT**](/users/christianbaehr/desktop/mturk_example.png)
+<br>
+<br>
+Once the comparisons have been generated, they will be stored in the SentimentIt server and sent to Mechanical Turk when you direct them to. The function should return a vector of the batch IDs you provided. If not, the function did not correctly set up your batches.
 
-Once the comparisons have been generated, they will be stored in the SentimentIt server and sent to Mechanical Turk when you direct them to. The function should return a vector of the batch IDs you provided. If not, the function did not correctly set up your batches. 
+### Syntax
 
 ```{r, eval = FALSE}
 
@@ -127,6 +149,8 @@ makeComps(email = "johndoe@school.edu", password = "12345",
              question = "Below is text taken from two movie reviews. Please choose the text that you think comes                 from the most positive review.",
              pairwise_path = "comparisons.Rdata")
 ```
+
+### Inputs
 
 `makeComps()` accepts the following arguments:
 
@@ -144,16 +168,21 @@ makeComps(email = "johndoe@school.edu", password = "12345",
 
 -   `pairwise_path`: Character vector, the filepath to save the created pairwise matrix. Default is "pairwise.Rdata".
 
+### Output
+
 The `makeComps()` function outputs a named integer vector containing `batch_id`.
+<br>
+<br>
 
-
-## Send batches to Mechanical Turk
+# createTasks
 
 At this point, you should have run the `readText()`, `createBatches()`, and `makeComps()` functions and should therefore have pairwise comparisons set up under batches in the SentimentIt server. You are now prepared to send your batches to Mechanical Turk to have workers complete the pairwise comparisons of the data. 
 
 To send batches to Mechanical Turk, use the `createTasks()` function. As you can see in the below example, you can determine which batches you would like to send to Mechanical Turk by only specifying those specific batch IDs. You do not need to send them all at once.
 
 Note that when you run this function, workers will automatically be paid for the work they do in that batch, regardless of the quality of their work. In the SentimentIt system, any worker who completes a task is automatically paid every 24 hours. **Always make sure you have enough money in your Mechanical Turk account before using the `createTasks()` function to send jobs.**
+
+### Syntax
 
 ```{r, eval = FALSE}
 
@@ -162,6 +191,8 @@ createTasks(email = "johndoe@school.edu", password = "12345",
                                      #only sending the first one to Mechanical Turk
 ```
 
+### Inputs 
+
 `createTasks()` accepts the following arguments:
 
 -   `email`: Character vector, the email address for the registered SentimentIt account.
@@ -169,17 +200,22 @@ createTasks(email = "johndoe@school.edu", password = "12345",
 -   `password`: Character vector, the password associated with `email`.
 
 -   `batch_id`: Numeric vector, the unique batch ID numbers you generated in `createBatches()`. Only specify the ID numbers for the batches you want to submit to Mechanical Turk now. Batches can be released at separate times.
+<br>
+<br>
 
-
-## Check the status of a batch in Mechanical Turk
+# batchStatus
 
 Once you have submitted batches of comparisons to Mechanical Turk, you can check their status to see how many comparisons in the batch have been completed. This can be done using the `checkBatches()` function. To check the status of a batch, all you need is the batch ID number.
+
+### Syntax
 
 ```{r, eval = FALSE}
 
 batchStatus(email = "johndoe@school.edu", password = "12345",
               batch_id = batch_ids[1])
 ```
+
+### Inputs
 
 `batchStatus()` accepts the following arguments:
 
@@ -189,21 +225,27 @@ batchStatus(email = "johndoe@school.edu", password = "12345",
 
 -   `batch_id`: Numeric vector, the ID number associated with a batch of comparisons you have already sent to Mechanical Turk.
 
+### Output
+
 The `batchStatus()` function outputs a data frame containing `batch_id`, the total number of comparisons, the number of comparisons submitted, the number of comparisons completed, and the number of comparisons expired in the batch.
+<br>
+<br>
 
-
-## Read in data for completed comparisons from SentimentIt
-
+# readInData
 
 Once you have sent the batches to Mechanical Turk using `createTasks()` and allowed some time for comparisons to be completed, you can retrieve data on the batches you sent. To retrieve this data, use the `readInData()` function. 
 
 You must specify a batch ID to the function, and the function will return a data frame containing the batch ID, comparison ID, document ID, result of the comparison, ID of the task, ID of the worker who completed the task, and the time when the task was completed. This function may take a long time to run because the server must first pull the data from a generated URL, and then pass it to the user.
+
+### Syntax
 
 ```{r, eval = FALSE}
 
 comp_output <- readInData(email = "johndoe@school.edu", password = "12345",
               batch_id = batch_ids[1])
 ```
+
+### Inputs
 
 `readInData()` accepts the following arguments:
 
@@ -213,18 +255,25 @@ comp_output <- readInData(email = "johndoe@school.edu", password = "12345",
 
 -   `batch_id`: Numeric vector, the ID number associated with a batch of comparisons you have already sent to Mechanical Turk for which you would like to retrieve data.
 
+### Output
+
 The `readInData()` function outputs a data frame containing seven columns and two times as many rows as there are comparisons in the batch. The columns contain the batch ID, comparison ID, document ID, result, hit ID, worker ID, and time completed for each hit.
+<br>
+<br>
 
-
-## Repost expired tasks from a batch to Mechanical Turk
+# repostExpired
 
 When batches of comparisons are submitted to Mechanical Turk, some comparisons may not be completed before the batch expires. These incomplete tasks can be reposted to Mechanical Turk using the `repostExpired()` function.
+
+### Syntax
 
 ```{r, eval = FALSE}
 
 repostExpired(email = "johndoe@school.edu", password = "12345",
               batch_id = batch_ids[1])
 ```
+
+### Inputs
 
 `batchStatus()` accepts the following arguments:
 
@@ -234,78 +283,7 @@ repostExpired(email = "johndoe@school.edu", password = "12345",
 
 -   `batch_id`: Numeric vector, the ID number associated with the expired batch containing the incomplete comparisons you would like to repost.
 
-
-## Estimate Stan model for worker reliability
-
-Once you have sent batches of comparisons to Mechanical Turk and retrieved the results, you can estimate the reliability of the workers completing each task using a Stan model. For more information on Stan models, refer to page 7 of the following paper: https://www.sentimentit.com/SentimentIt.pdf (Carlson + Montgomery).
-
-You can fit either a non-hierarchical or a hierarchical Stan model. To estimate a non-hierarchical Stan model, use the `fitStan()` function. To estimate a hierarchical Stan model, use the `fitStanHier()` function. For the `data` parameter, you can input the batch IDs for the batches you would like to include, which requires you to include your SentimentIt email and password. Alternately, if you have already pulled in data from a batch using the `readInData()` function, you can input this data for the `data` parameter, in which case you don't need to include `email` or `password`. Examples are shown below.
-
-To use the `fitStan()` function, you must have a C++ compiler on your machine. If you receive an error in the `fitStan()` function, refer to the following link to ensure you have properly installed RStan on your machine: https://github.com/stan-dev/rstan/wiki/RStan-Mac-OS-X-Prerequisite-Installation-Instructions#step-2--install-c-toolchain. 
-
-```{r, eval = FALSE}
-
-#fitting a non-hierarchical Stan model using batch ID numbers
-
-stan_model <- fitStan(email = "johndoe@school.edu", password = "12345",
-                      data = batch_ids)
-
-#alternately, you can use the output from readInData()
-
-stan_model2 <- fitStan(data = comp_output)
-```
-
-`fitStan()` accepts the following arguments:
-
--   `email`: Character vector, the email address for the registered SentimentIt account.
-
--   `password`: Character vector, the password associated with `email`.
-
--   `data`: Numeric vector containing the batch IDs for the comparisons to be used in the model. Can also be a data frame containing the output from the `readInData()` function.
-
--   `chains`: Integer, the number of chains. (Default is 3).
-
--   `iter`: Numeric vector, the number of iteration. (Default is 2500).
-
--   `seed`: Set seed. (Defalt is 1234).
-
--   `n.cores`: Integer vector, the number of cores to be used in Stan fit (Default is 3).
-
-The `fitStan()` function outputs a list containing two items: 1) an object of class "stanfit" and 2) a matrix.
-
-
-## Use Stan model to assess worker reliability
-
-Once you have used the `fitStan()` function to estimate a Stan model, you can use this model to identify workers who are unreliable. The output from the Stan model, as well as the output from the completed comparisons, is required to identify unreliable workers.
-
-Use the `checkWorkers()` function to detect these outlying workers. This function returns a vector of IDs identifying workers who are unreliable. 
-
-```{r, eval = FALSE}
-
-ban_workers <- checkWorkers(stan_fit = stan_model[[1]], data = comp_output)
-```
-
-`checkWorkers()` accepts the following arguments:
-
--   `stan_fit`: A Stan model fit.
-
--   `data`: The data used to fit the Stan model.
-
--   `cut_point`: A cutoff point to classify posterior coefficients. The proportion of posterior coefficients below `cut_point` is used to determine outliers (Default is 1).
-
--   `cut_proportion`: A cutoff proportion of posterior coefficients below `cut_point`. If the proportion of posterior coefficients below `cut_points` is higher than `cut_proportion`, a worker will be considered as an outlier provided that she answers more than the number of questions in `n.questions` (Default is 0.9).
-
--   `n.questions`: The number of questions to consider in order to determine suggested banned workers (Default is 50).
-
--   `plot_hist`: If TRUE, plot the histogram of workers with a rug plot. Default is FALSE.
-
--   `hist_path`: Save the histogram to path and file name specified. Default is NULL and no plot is saved.
-
-The `checkWorkers()` function outputs a list containing two items: 1) a character vector and 2) a matrix.
-
-
 Reference Paper
 ------
 
 Carlson, David and Jacob M. Montgomery. Forthcoming. “A Pairwise Comparison Framework for Fast, Flexible, and Reliable Human Coding of Political Texts.” American Political Science Review.
-
