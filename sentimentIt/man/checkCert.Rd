@@ -21,6 +21,17 @@ TRUE or FALSE indicating if the worker has the certification.
 \description{
 Checks if a worker has a certification
 }
+\details{
+When running an analysis, certifications can be used to control which workers are allowed to access your 
+tasks. These certifications allow you to ensure that all workers have passed a training module, and no 
+workers that you have determined delivery poor quality work are allowed to continue responding to your 
+task. Additional certification documentation can be found here: 
+https://www.sentimentit.com/documentation/certifications.markdown.
+
+To check if a worker has a particular certification, use the checkCert() function. To use this function, 
+you must know the name of the certification you would like to check for as well as the Mechanical Turk ID 
+for the worker of interest.
+}
 \examples{
 
 \dontrun{ 
