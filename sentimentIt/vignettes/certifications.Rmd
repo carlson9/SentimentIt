@@ -16,8 +16,6 @@ This is a tutorial on how to use the SentimentIt R package. SentimentIt provides
 The system we designed, which we label SentimentIt, is based on the following principles. First, it leverages human ability to understand language and socially constructed political concepts. Thus, our focus is measuring researcher-defined characteristics embedded within text (e.g., positivity). However, we exclude explicitly subjective characteristics (e.g., persuasiveness).
 
 Second, we designed the task structure to be cognitively appropriate for non-experts. Specifically, we ask workers to conduct pairwise comparisons of texts, simply indicating which text is more extreme along a single dimension of interest (e.g., “Which text is more positive?”). A significant body of research indicates that pairwise comparisons can reduce the cognitive burden for respondents, improve the reliability of responses, and eliminate problems such as differential item functioning and reference group effects that plague alternative question formats such as Likert scales or sliders (e.g., King et al. 2004; Oishi et al. 2005).
-<br>
-<br>
 
 ## checkCert
 
@@ -49,8 +47,6 @@ checkCert(email = "johndoe@school.edu", password = "12345",
 ### Output
 
 The `checkCert()` function outputs a logical vector, with `TRUE` indicating the specified worker does have the certification of interest, and `FALSE` indicating the worker does not have the certification.
-<br>
-<br>
 
 ## createCert
 
