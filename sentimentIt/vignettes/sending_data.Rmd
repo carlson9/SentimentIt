@@ -17,6 +17,10 @@ The system we designed, which we label SentimentIt, is based on the following pr
 
 Second, we designed the task structure to be cognitively appropriate for non-experts. Specifically, we ask workers to conduct pairwise comparisons of texts, simply indicating which text is more extreme along a single dimension of interest (e.g., “Which text is more positive?”). A significant body of research indicates that pairwise comparisons can reduce the cognitive burden for respondents, improve the reliability of responses, and eliminate problems such as differential item functioning and reference group effects that plague alternative question formats such as Likert scales or sliders (e.g., King et al. 2004; Oishi et al. 2005).
 
+A diagram of the SentimentIt workflow is shown below.
+
+![**SentimentIt Workflow**](sentimentit_workflow.png)
+
 # Create the necessary accounts
 
 Before interacting with the package in R, go to the following link: https://www.sentimentit.com/documentation/getting_started. The manual attached to the link explains how to create the necessary accounts with Amazon and SentimentIt so you can interact with Mechanical Turk. A SentimentIt account MUST be created before the SentimentIt R package can be used. 
@@ -124,8 +128,7 @@ At this point, you should have run both the `readText()` and `createBatches()` f
 To generate these random pairings, run the `makeComps()` function, which will generate random pairings of your data objects and distribute them evenly among the number of batches you specify. Before running this function, you should have your unique batch ID numbers stored in your R workspace. You should also determine what characteristic you want to measure in the texts. This should be specified as a character vector in the `question` input to the function.
 
 The screenshot below displays an example of the interface Mechanical Turk workers will interact with when completing a task. The title corresponds to the `question` parameter and the two texts underneath come from a pairwise comparison generated in the `makeComps()` function.
-<br>
-<br>
+
 ![**Example of Mechanical Turk HIT**](mturk_example.png)
 
 Once the comparisons have been generated, they will be stored in the SentimentIt server and sent to Mechanical Turk when you direct them to. The function should return a vector of the batch IDs you provided. If not, the function did not correctly set up your batches.
