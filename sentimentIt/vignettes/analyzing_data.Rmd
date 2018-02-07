@@ -11,7 +11,7 @@ vignette: >
 
 # Background
 
-This is a tutorial on how to use the SentimentIt R package. SentimentIt provides a pairwise comparison framework for fast, flexible, and reliable human coding of political texts. The tutorial is broken up into three separate vignettes: one explaining how to send comparisons to Mechanical Turk and retrieve data, a second explaining how to perform analysis on retrieved data, and a third explaining how to use this analysis to identify and ban poorly performing workers in Mechanical Turk. This is the second of the three tutorials.
+This is a tutorial on how to use the SentimentIt R package. SentimentIt provides a pairwise comparison framework for fast, flexible, and reliable human coding of political texts. The tutorial consists of three separate vignettes: one explaining how to send comparisons to Mechanical Turk and retrieve data, a second explaining how to perform analysis once data has been retreived, and a third explaining how to regulate who can work on your comparisons in Mechanical Turk. This is the second of the three tutorials.
 
 The system we designed, which we label SentimentIt, is based on the following principles. First, it leverages human ability to understand language and socially constructed political concepts. Thus, our focus is measuring researcher-defined characteristics embedded within text (e.g., positivity). However, we exclude explicitly subjective characteristics (e.g., persuasiveness).
 
