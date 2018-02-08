@@ -65,7 +65,7 @@ stan_model2 <- fitStan(data = comp_output)
 
 ### Output
 
-The `fitStan()` function outputs a list containing two items: 1) an object of class "stanfit" and 2) a matrix.
+The `fitStan()` function outputs an object of class "stanfit" containing estimates for the position on the latent scale of interest for each object of comparison from the data as well as each workers reliability.
 
 ## checkWorkers
 
@@ -86,7 +86,7 @@ ban_workers <- checkWorkers(stan_fit = stan_model[[1]], data = comp_output)
 
 -   `cut_point`: A cutoff point to classify posterior coefficients. The proportion of posterior coefficients below `cut_point` is used to determine outliers (Default is 1).
 
--   `cut_proportion`: A cutoff proportion of posterior coefficients below `cut_point`. If the proportion of posterior coefficients below `cut_points` is higher than `cut_proportion`, a worker will be considered as an outlier provided that she answers more than the number of questions in `n.questions` (Default is 0.9).
+-   `cut_proportion`: A cutoff proportion of posterior coefficients below `cut_point`. If the proportion of posterior coefficients below `cut_points` is higher than `cut_proportion`, a worker will be considered as an outlier provided that she answers more than the number of questions in `n.questions` (Default is 0.9) The number of posterior draws for a worker must be below the cut proportion or that worker will be considered an outlier.
 
 -   `n.questions`: The number of questions to consider in order to determine suggested banned workers (Default is 50).
 
