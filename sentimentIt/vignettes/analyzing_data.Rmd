@@ -29,7 +29,7 @@ The data simply indicate which of the two documents was selected, the unique wor
 
 You can fit either a non-hierarchical or a hierarchical Stan model. To estimate a non-hierarchical Stan model, use the `fitStan()` function. To estimate a hierarchical Stan model, use the `fitStanHier()` function. For the `data` parameter, you can input the batch IDs for the batches you would like to include, which requires you to include your SentimentIt email and password. Alternately, if you have already pulled in data from a batch using the `readInData()` function, you can input this data for the `data` parameter, in which case you don't need to include `email` or `password`. Examples are shown below.
 
-To use the `fitStan()` function, you must have a C++ compiler on your machine. If you receive an error in the `fitStan()` function, refer to the following link to ensure you have properly installed RStan on your machine: https://github.com/stan-dev/rstan/wiki/RStan-Mac-OS-X-Prerequisite-Installation-Instructions#step-2--install-c-toolchain. 
+To use the `fitStan()` function, you must have a C++ compiler on your machine. If you receive an error in the `fitStan()` function, refer to the following link to ensure you have properly installed RStan on your machine: https://github.com/stan-dev/rstan/wiki/RStan-Mac-OS-X-Prerequisite-Installation-Instructions#step-2--install-c-toolchain.
 
 ### Syntax
 
@@ -42,7 +42,7 @@ stan_model <- fitStan(email = "johndoe@school.edu", password = "12345",
 
 #alternately, you can use the output from readInData()
 
-stan_model2 <- fitStan(data = comp_output)
+stan_model <- fitStan(data = comp_output)
 ```
 
 ### Inputs
@@ -65,7 +65,22 @@ stan_model2 <- fitStan(data = comp_output)
 
 ### Output
 
-The `fitStan()` function outputs an object of class "stanfit" containing estimates for the position on the latent scale of interest for each object of comparison from the data as well as each workers reliability.
+The `fitStan()` function outputs a list containing 1) an object of class `stanfit` that can be used in the `checkWorkers()` function to obtain estimates of worker reliability (example below) and 2) a data frame of mean estimates on the latent scale of interest for each object from the data. In addition to the mean estimates, the data frame contains the standard deviation, 2.5%, 25%, 50%, 75%, and 97.5% quantile estimates, sample size (n_eff), and the Rhat statistic.
+
+The data frame returned by `fitStan()` includes the ID number for each document used in the pairwise comparison. To merge the estimates with the original text data used in the comparison, merge the data frame with the data frame previously returned by the `readText()` function (refer to the sending_data vignette). Both data frames should contain the unique ID numbers for each document, and by using the `merge()` function on these two columns, the estimates can be joined with the original text. An example of this is shown below.
+
+```{r, eval = FALSE}
+
+#merging the data frame from the stan model with the output from the 
+#readText() function (see the sending_data vignette). Both datasets 
+#should contain a column of unique document IDs, and we specify this 
+#column as the basis of the merge. 
+
+merged_data <- merge(x = stan_model[[2]], 
+                     y = "/Users/johndoe/Desktop/reviews_with_ids.csv",
+                     by = 'ids')
+
+```
 
 ## checkWorkers
 
@@ -99,4 +114,4 @@ The `checkWorkers()` function outputs a list containing two items: 1) a characte
 Reference Paper
 ------
 
-Carlson, David and Jacob M. Montgomery. Forthcoming. “A Pairwise Comparison Framework for Fast, Flexible, and Reliable Human Coding of Political Texts.” American Political Science Review.
+CARLSON, D., & MONTGOMERY, J. (2017). A Pairwise Comparison Framework for Fast, Flexible, and Reliable Human Coding of Political Texts. <i>American Political Science Review,</i> <i>111</i>(4), 835-843. doi:10.1017/S0003055417000302

@@ -45,6 +45,8 @@ The `readText()` function will take the data as an input, import it into the Sen
 
 Your data should contain the set of objects on which you want to perform pairwise comparisons. It may contain other data as well, but you will need to specify which column contains the data to be used in the pairwise comparisons. The best practice for running this function is to first import your data into your R workspace before running the function.
 
+Saving the output from this function is recommended. Doing so will allow you to easily merge the results of your analysis with the original texts.
+
 The following example uses a sample dataset, "reviews.rda", to show how to use the `readText()` function to assign unique ID numbers
 
 ### Syntax
@@ -272,4 +274,4 @@ repostExpired(email = "johndoe@school.edu", password = "12345",
 Reference Paper
 ------
 
-Carlson, David and Jacob M. Montgomery. Forthcoming. “A Pairwise Comparison Framework for Fast, Flexible, and Reliable Human Coding of Political Texts.” American Political Science Review.
+CARLSON, D., & MONTGOMERY, J. (2017). A Pairwise Comparison Framework for Fast, Flexible, and Reliable Human Coding of Political Texts. <i>American Political Science Review,</i> <i>111</i>(4), 835-843. doi:10.1017/S0003055417000302
