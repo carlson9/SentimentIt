@@ -77,14 +77,56 @@ The data frame returned by `fitStan()` includes the ID number for each document 
 #column as the basis of the merge. 
 
 merged_data <- merge(x = stan_model[[2]], 
-                     y = "/Users/johndoe/Desktop/reviews_with_ids.csv",
-                     by = 'ids')
+                     y = reviews_with_ids,
+                     by = "ids")
 
 ```
 
+## fitStanHier
+
+To fit a hierarchical Stan model, you must use `fitStanHier()` instead of `fitStan()`. An example where a hierarchical Stan model could be necessary is if you are trying to get paragraph-level posterior estimates for many different documents. To estimate a hierarchical Stan model in SentimentIt, you must follow the same steps to estimate a non-hierarchical model, and you must additionally specify the data and, more specifically, the variable that is used as a hierarchy. 
+
+### Syntax
+
+```{r, eval = FALSE}
+
+#fitting a hierarchical Stan model
+
+stan_hier_model <- fitStanHier(email = "johndoe@school.edu", password = "12345",
+                          data = hier_batch_ids, hierarchy_data = hier_data_with_ids,
+                          hierarchy_var = hier_data_with_ids$document_id)
+
+```
+
+### Inputs
+
+`fitStanHier()` accepts the following arguments:
+
+-   `email`: Character vector, the email address for the registered SentimentIt account.
+
+-   `password`: Character vector, the password associated with `email`.
+
+-   `data`: Numeric vector containing the batch IDs for the comparisons to be used in the model. Can also be a data frame containing the output from the `readInData()` function.
+
+-   `hierarchy_data`: A file that contains the variable that is used as a hierarchy, with column ids filled with SentimentIt document IDs (created from `readText()`).
+
+-   `hierarchy_var`: The name of the variable in `hierarchy_data` that is used as a hierarchy.
+
+-   `chains`: Integer, the number of chains. (Default is 3).
+
+-   `iter`: Numeric vector, the number of iteration. (Default is 2500).
+
+-   `seed`: Set seed. (Defalt is 1234).
+
+-   `n.cores`: Integer vector, the number of cores to be used in Stan fit (Default is 3).
+
+### Output
+
+The `fitStanHier()` function outputs a list containing 1) an object of class `stanfit` that can be used in the `checkWorkers()` function to obtain estimates of worker reliability (example below) 2) a matrix with the full posteriors of the lower-level estimates merged with the document IDs from the SentimentIt server and 3) a matrix with the full posteriors of the higher-level estimates merged with the hierarchical identifier.
+
 ## checkWorkers
 
-Once you have used the `fitStan()` function to estimate a Stan model, you can use this model to identify workers who are unreliable. The output from the Stan model, as well as the output from the completed comparisons, is required to identify unreliable workers.
+Once you have used the `fitStan()` (or `fitStanHier()`) function to estimate a Stan model, you can use this model to identify workers who are unreliable. The output from the Stan model, as well as the output from the completed comparisons, is required to identify unreliable workers.
 
 Use the `checkWorkers()` function to detect these outlying workers. This function returns a vector of IDs identifying workers who are unreliable. 
 
