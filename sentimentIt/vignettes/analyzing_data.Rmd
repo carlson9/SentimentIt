@@ -17,6 +17,8 @@ The system we designed, which we label SentimentIt, is based on the following pr
 
 Second, we designed the task structure to be cognitively appropriate for non-experts. Specifically, we ask workers to conduct pairwise comparisons of texts, simply indicating which text is more extreme along a single dimension of interest (e.g., “Which text is more positive?”). A significant body of research indicates that pairwise comparisons can reduce the cognitive burden for respondents, improve the reliability of responses, and eliminate problems such as differential item functioning and reference group effects that plague alternative question formats such as Likert scales or sliders (e.g., King et al. 2004; Oishi et al. 2005).
 
+Before reading this vignette, it is important to read the sending_data vignette to learn how to create batches of comparisons from your data, send these comparisons to Mechanical Turk, and retrieve data from Mechanical Turk once the comparisons are completed.
+
 A diagram of the SentimentIt workflow is shown below.
 
 ![**SentimentIt Workflow**](sentimentit_workflow.png)

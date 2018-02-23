@@ -1,6 +1,6 @@
 #' sentimentIt
 #'
-#' \code{sentimentIt()} is a wrapper function of all base functionality.
+#' \code{sentimentIt()} is a wrapper function of all base functionality. THIS FUNCTION IS IN THE BETA STAGE AND IS STILL A WORK IN PROGRESS.
 #'
 #' @param email The researcher's email used for SentimentIt registration
 #' @param password The researcher's password used for SentimentIt

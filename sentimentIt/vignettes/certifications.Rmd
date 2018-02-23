@@ -17,13 +17,13 @@ The system we designed, which we label SentimentIt, is based on the following pr
 
 Second, we designed the task structure to be cognitively appropriate for non-experts. Specifically, we ask workers to conduct pairwise comparisons of texts, simply indicating which text is more extreme along a single dimension of interest (e.g., “Which text is more positive?”). A significant body of research indicates that pairwise comparisons can reduce the cognitive burden for respondents, improve the reliability of responses, and eliminate problems such as differential item functioning and reference group effects that plague alternative question formats such as Likert scales or sliders (e.g., King et al. 2004; Oishi et al. 2005).
 
+When running an analysis, certifications can be used to control which workers are allowed to access your tasks. These certifications allow you to ensure that all workers have passed a training module, and no workers that you have determined delivery poor quality work are allowed to continue responding to your task (refer to the analyzing_data vignette for more information on how to use the `checkWorkers()` function to assess worker performance). Keep in mind that setting up a certification on SentimentIt is not sufficient, as the certification must also be set up in Mechanical Turk. Additional certification documentation can be found here: https://www.sentimentit.com/documentation/certifications.markdown.
+
 A diagram of the SentimentIt workflow is shown below.
 
 ![**SentimentIt Workflow**](sentimentit_workflow.png)
 
 ## checkCert
-
-When running an analysis, certifications can be used to control which workers are allowed to access your tasks. These certifications allow you to ensure that all workers have passed a training module, and no workers that you have determined delivery poor quality work are allowed to continue responding to your task. Additional certification documentation can be found here: https://www.sentimentit.com/documentation/certifications.markdown.
 
 To check if a worker has a particular certification, use the `checkCert()` function. To use this function, you must know the name of the certification you would like to check for as well as the Mechanical Turk ID for the worker of interest.
 
