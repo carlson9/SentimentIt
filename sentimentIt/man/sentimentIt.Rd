@@ -108,6 +108,8 @@ sentimentItOut A list with the requested information returned. The data with doc
 \description{
 The sentimentIt package interacts with the SentimentIt API to analyze text and capture latent traits of interest.
 
+THIS FUNCTION IS IN THE BETA STAGE AND IS STILL A WORK IN PROGRESS.
+
 \code{sentimentIt()} is a wrapper function of all base functionality.
 }
 \details{
